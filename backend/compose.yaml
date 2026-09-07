@@ -1,0 +1,32 @@
+services:
+  api:
+    build: .
+    restart: unless-stopped
+    environment:
+      ENVIRONMENT: production
+      DATABASE_URL: postgresql+psycopg://quran:${POSTGRES_PASSWORD}@database:5432/quran
+      SECRET_KEY: ${SECRET_KEY}
+      CORS_ORIGINS: ${CORS_ORIGINS}
+    depends_on:
+      database:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+
+  database:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: quran
+      POSTGRES_USER: quran
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - quran_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U quran -d quran"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  quran_postgres:

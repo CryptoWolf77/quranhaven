@@ -1,0 +1,8 @@
+*
+!Dockerfile
+!nginx.conf
+!prepare_content.py
+!public/
+!public/**
+**/*.part*
+**/__pycache__

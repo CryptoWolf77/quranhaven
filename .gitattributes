@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.bat text eol=crlf
+
+# Preserve publisher data and verified resource hashes on every platform.
+content/public/** -text
+vendor/quran_library/assets/** -text

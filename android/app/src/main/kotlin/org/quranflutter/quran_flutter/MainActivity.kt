@@ -1,0 +1,5 @@
+package org.quranflutter.quran_flutter
+
+import com.ryanheise.audioservice.AudioServiceActivity
+
+class MainActivity : AudioServiceActivity()

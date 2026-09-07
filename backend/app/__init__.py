@@ -1,0 +1,1 @@
+"""Quran Flutter cloud service."""
