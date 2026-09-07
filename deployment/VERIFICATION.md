@@ -6,6 +6,20 @@ This section supersedes the build-3 source counts below. Earlier deployment and
 browser-outage results are preserved as dated historical evidence, not repeated
 claims about the new artifact. See [the audited plan](../PLAN.md).
 
+- Web source `5799d7964448050e59744d2085d29ef624d1542c` deployed successfully in
+  `7qvypq0wqzqh3uycjmttsq79`. The new container was healthy and its rolling update
+  completed at 14:38:24 UTC. The backend was not redeployed or reconfigured.
+- Public version reports build 4. Public offline manifest has 667 files,
+  97,770,794 bytes and identity
+  `a147f20c8ba116280d3103ced11da68fa2de02bda30b767d88d5eb9116782ea0`.
+  Exact public hashes passed for the Bengali font, unchanged OFL license,
+  `main.dart.js` and `AssetManifest.bin`; app/content smoke checks also passed.
+- Final delivery APK: `Quran Haven - test build 4.apk` in the project root,
+  144,430,318 bytes; SHA-256
+  `c0e4c0f5c17e81e73d54d8be39cc7c7648e61d2ebfa90b72f444874d2fef06bf`.
+  VersionCode 4, Quran Haven label, INTERNET permission and Android Debug
+  certificate verified. Previous delivery APKs were preserved, not overwritten.
+
 - 81 Flutter tests passed, including bookmark payload validation, restore
   preflight, persistence-failure handling, legacy backup compatibility, all 44
   catalogue/file-format checks and Home layouts at 360 px / 2x text in three
@@ -20,11 +34,15 @@ claims about the new artifact. See [the audited plan](../PLAN.md).
   are bundled; all Quran content and page-font bytes remain unchanged.
 - In the local real browser, Home Search opened Search directly and Arabic
   `الرحمن` returned 55 results. Home Bookmarks opened its own tab directly.
+  The final Library displayed commentary under Tafsir and only the nine
+  translation entries under Translations. Settings opened the license page.
 - A temporary read-only Pixel 10 Android emulator installed the test APK, with
   airplane mode on, Wi-Fi off and mobile data off. Al-Fatihah rendered visually;
   Browse Surahs opened its index and Al-Baqarah opened page 2. After force-stop
   and restart, Home reported Last read · Page 2. This is emulator evidence, not
-  physical Android/iOS acceptance. The temporary emulator was stopped afterward.
+  physical Android/iOS acceptance. This exercise preceded the final two
+  label-only corrections; the final APK was rebuilt and all 81 tests rerun.
+  The temporary emulator was stopped afterward.
 - Live API checks passed with two synthetic accounts: a bookmark-containing
   snapshot round-tripped exactly, accounts remained isolated, deletion rejected
   old tokens and login. Only the two test accounts were deleted; no real account
@@ -35,6 +53,8 @@ claims about the new artifact. See [the audited plan](../PLAN.md).
 - Private Android keys, email credentials, backup destinations and CDN settings
   were not invented, changed or published. Physical-device and owner-dependent
   release gates remain open in [RELEASE.md](RELEASE.md).
+- Git whitespace checking passes outside the unchanged upstream OFL file,
+  which intentionally retains its original trailing space and exact hash.
 
 ## Cloud-connected release
 
