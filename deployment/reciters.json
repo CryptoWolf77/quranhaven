@@ -1,0 +1,10 @@
+[
+  {"name": "Mishary Rashid Alafasy", "arabic": "مشاري راشد العفاسي", "reciter_id": 123, "moshaf_id": 123, "surah_index": 21, "ayah_index": 12, "surah_root": "https://server8.mp3quran.net/afs/", "ayah_folder": "Alafasy_128kbps"},
+  {"name": "Abdulrahman Al-Sudais", "arabic": "عبد الرحمن السديس", "reciter_id": 54, "moshaf_id": 54, "surah_index": 22, "ayah_index": 13, "surah_root": "https://server11.mp3quran.net/sds/", "ayah_folder": "Abdurrahmaan_As-Sudais_192kbps"},
+  {"name": "Abu Bakr Al-Shatri", "arabic": "أبو بكر الشاطري", "reciter_id": 4, "moshaf_id": 4, "surah_index": 23, "ayah_index": 14, "surah_root": "https://server11.mp3quran.net/shatri/", "ayah_folder": "Abu_Bakr_Ash-Shaatree_128kbps"},
+  {"name": "Ali Al-Hudhaify", "arabic": "علي الحذيفي", "reciter_id": 74, "moshaf_id": 74, "surah_index": 24, "ayah_index": 15, "surah_root": "https://server9.mp3quran.net/hthfi/", "ayah_folder": "Hudhaify_128kbps"},
+  {"name": "Abdullah Basfar", "arabic": "عبد الله بصفر", "reciter_id": 60, "moshaf_id": 60, "surah_index": 25, "ayah_index": 16, "surah_root": "https://server6.mp3quran.net/bsfr/", "ayah_folder": "Abdullah_Basfar_192kbps"},
+  {"name": "Hani Al-Rifai", "arabic": "هاني الرفاعي", "reciter_id": 89, "moshaf_id": 89, "surah_index": 26, "ayah_index": 17, "surah_root": "https://server8.mp3quran.net/hani/", "ayah_folder": "Hani_Rifai_192kbps"},
+  {"name": "Salah Al-Budair", "arabic": "صلاح البدير", "reciter_id": 43, "moshaf_id": 43, "surah_index": 27, "ayah_index": 18, "surah_root": "https://server6.mp3quran.net/s_bud/", "ayah_folder": "Salah_Al_Budair_128kbps"},
+  {"name": "Abdulmohsen Al-Qasim", "arabic": "عبد المحسن القاسم", "reciter_id": 67, "moshaf_id": 67, "surah_index": 28, "ayah_index": 19, "surah_root": "https://server8.mp3quran.net/qasm/", "ayah_folder": "Muhsin_Al_Qasim_192kbps"}
+]

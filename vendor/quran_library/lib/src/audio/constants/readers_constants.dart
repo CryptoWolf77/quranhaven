@@ -96,6 +96,55 @@ class ReadersConstants {
       readerNamePath: 'Ali_Jaber_64kbps',
       url: ayahs2ndSource,
     ),
+    // Append only: existing indices and paths identify saved audio downloads.
+    const ReaderInfo(
+      index: 12,
+      name: 'مشاري راشد العفاسي',
+      readerNamePath: 'Alafasy_128kbps',
+      url: ayahs2ndSource,
+    ),
+    const ReaderInfo(
+      index: 13,
+      name: 'عبد الرحمن السديس',
+      readerNamePath: 'Abdurrahmaan_As-Sudais_192kbps',
+      url: ayahs2ndSource,
+    ),
+    const ReaderInfo(
+      index: 14,
+      name: 'أبو بكر الشاطري',
+      readerNamePath: 'Abu_Bakr_Ash-Shaatree_128kbps',
+      url: ayahs2ndSource,
+    ),
+    const ReaderInfo(
+      index: 15,
+      name: 'علي الحذيفي',
+      readerNamePath: 'Hudhaify_128kbps',
+      url: ayahs2ndSource,
+    ),
+    const ReaderInfo(
+      index: 16,
+      name: 'عبد الله بصفر',
+      readerNamePath: 'Abdullah_Basfar_192kbps',
+      url: ayahs2ndSource,
+    ),
+    const ReaderInfo(
+      index: 17,
+      name: 'هاني الرفاعي',
+      readerNamePath: 'Hani_Rifai_192kbps',
+      url: ayahs2ndSource,
+    ),
+    const ReaderInfo(
+      index: 18,
+      name: 'صلاح البدير',
+      readerNamePath: 'Salah_Al_Budair_128kbps',
+      url: ayahs2ndSource,
+    ),
+    const ReaderInfo(
+      index: 19,
+      name: 'عبد المحسن القاسم',
+      readerNamePath: 'Muhsin_Al_Qasim_192kbps',
+      url: ayahs2ndSource,
+    ),
   ];
 
   static final List<ReaderInfo> surahReaderInfo = [
@@ -224,6 +273,55 @@ class ReadersConstants {
       name: 'علي جابر',
       readerNamePath: 'ali_jaber/',
       url: surahUrl1,
+    ),
+    // Verified Hafs Murattal editions; provider IDs are in deployment/reciters.json.
+    const ReaderInfo(
+      index: 21,
+      name: 'مشاري راشد العفاسي',
+      readerNamePath: 'afs/',
+      url: 'https://server8.mp3quran.net/',
+    ),
+    const ReaderInfo(
+      index: 22,
+      name: 'عبد الرحمن السديس',
+      readerNamePath: 'sds/',
+      url: surahUrl5,
+    ),
+    const ReaderInfo(
+      index: 23,
+      name: 'أبو بكر الشاطري',
+      readerNamePath: 'shatri/',
+      url: surahUrl5,
+    ),
+    const ReaderInfo(
+      index: 24,
+      name: 'علي الحذيفي',
+      readerNamePath: 'hthfi/',
+      url: 'https://server9.mp3quran.net/',
+    ),
+    const ReaderInfo(
+      index: 25,
+      name: 'عبد الله بصفر',
+      readerNamePath: 'bsfr/',
+      url: surahUrl4,
+    ),
+    const ReaderInfo(
+      index: 26,
+      name: 'هاني الرفاعي',
+      readerNamePath: 'hani/',
+      url: 'https://server8.mp3quran.net/',
+    ),
+    const ReaderInfo(
+      index: 27,
+      name: 'صلاح البدير',
+      readerNamePath: 's_bud/',
+      url: surahUrl4,
+    ),
+    const ReaderInfo(
+      index: 28,
+      name: 'عبد المحسن القاسم',
+      readerNamePath: 'qasm/',
+      url: 'https://server8.mp3quran.net/',
     ),
   ];
 }

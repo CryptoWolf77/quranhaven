@@ -1,7 +1,7 @@
 name: quran_flutter
 description: A multilingual Quran application, free for everyone as Sadakah Jariyah.
 publish_to: 'none'
-version: 1.0.0+4
+version: 1.0.0+5
 
 environment:
   sdk: ^3.12.2
