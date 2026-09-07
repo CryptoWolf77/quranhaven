@@ -136,6 +136,25 @@ class TafsirCtrl extends GetxController {
   Future<void>? _catalogMigrationFuture;
 
   static const _gzipJsonService = GzipJsonAssetService();
+  final _webCache = VerifiedTafsirCache();
+  bool get canPersistWebResources => kIsWeb && _webCache.supported;
+
+  Uri _webResourceUrl(TafsirNameModel resource) {
+    if (!QuranContentConfig.isConfigured) {
+      throw StateError('A self-hosted Quran content server is required.');
+    }
+    final file = resource.isTranslation
+        ? '${resource.fileName}.json.gz'
+        : resource.databaseName;
+    return Uri.parse(
+        QuranContentConfig.candidates('tafsir/$file', upstream: const [])
+            .single);
+  }
+
+  Future<void> refreshDownloadStatus() async {
+    await _checkAllTafsirDownloaded();
+    update(['tafsirs_menu_list']);
+  }
 
   bool _looksLikeGzip(Uint8List bytes) {
     if (bytes.length < 2) return false;
@@ -163,6 +182,15 @@ class TafsirCtrl extends GetxController {
     String url,
     String fallbackUrl,
   ) async {
+    if (kIsWeb) {
+      try {
+        return await _webCache.loadText(_webResourceUrl(selectedTafsir),
+            translation: selectedTafsir.isTranslation,
+            onProgress: (value) => progress.value = value);
+      } finally {
+        await refreshDownloadStatus();
+      }
+    }
     final urls = QuranContentConfig.candidates(
       'tafsir/${Uri.parse(url).pathSegments.last}',
       upstream: [url, fallbackUrl],
@@ -619,11 +647,31 @@ class TafsirCtrl extends GetxController {
     update(['tafsirs_menu_list']);
 
     if (kIsWeb) {
-      // على الويب لا يوجد تنزيل محلي، اعتبره "متاح" مباشرةً
-      _onDownloadSuccess(i);
-      // انتهاء مرحلة التهيئة
-      isPreparingDownload.value = false;
-      update(['tafsirs_menu_list']);
+      if (i < 0 || i >= tafsirAndTranslationsItems.length) {
+        isPreparingDownload.value = false;
+        throw RangeError.index(i, tafsirAndTranslationsItems);
+      }
+      if (onDownloading.value) {
+        isPreparingDownload.value = false;
+        throw StateError('Another Quran download is already running.');
+      }
+      final resource = tafsirAndTranslationsItems[i];
+      downloadIndex.value = i;
+      onDownloading.value = true;
+      isDownloading.value = true;
+      progress.value = 0;
+      try {
+        await _webCache.loadText(_webResourceUrl(resource),
+            translation: resource.isTranslation,
+            onProgress: (value) => progress.value = value);
+        await refreshDownloadStatus();
+        await prepareResource(i);
+      } finally {
+        isPreparingDownload.value = false;
+        onDownloading.value = false;
+        isDownloading.value = false;
+        await refreshDownloadStatus();
+      }
       return;
     }
 
@@ -699,11 +747,30 @@ class TafsirCtrl extends GetxController {
   /// Explanation: Check all tafsir files
   Future<Map<int, bool>> _checkAllTafsirDownloaded() async {
     if (kIsWeb) {
-      // على الويب: نعتبر جميع العناصر "متاحة" بدون تنزيلات محلية
-      for (int i = 0; i < tafsirAndTranslationsItems.length; i++) {
-        tafsirDownloadStatus.value[i] = true;
+      Set<Uri> available = {}, saved = {};
+      try {
+        available = await _webCache.available();
+        saved = await _webCache.savedUrls();
+      } catch (_) {
+        // Browsers may deny storage; bundled resources remain usable.
       }
-      return tafsirDownloadStatus.value;
+      final status = <int, bool>{};
+      final removable = <int>[];
+      for (int i = 0; i < tafsirAndTranslationsItems.length; i++) {
+        final resource = tafsirAndTranslationsItems[i];
+        final bundled = resource.fileName == 'saadi' ||
+            resource.fileName == 'en' ||
+            resource.isCustom;
+        Uri? url;
+        if (!bundled && QuranContentConfig.isConfigured) {
+          url = _webResourceUrl(resource);
+        }
+        status[i] = bundled || available.contains(url);
+        if (bundled || saved.contains(url)) removable.add(i);
+      }
+      tafsirDownloadIndexList.assignAll(removable);
+      tafsirDownloadStatus.value = status;
+      return status;
     }
     for (int i = 0; i < tafsirAndTranslationsItems.length; i++) {
       if (i == _defaultTafsirIndex ||
@@ -750,8 +817,24 @@ class TafsirCtrl extends GetxController {
   /// Explanation: Delete a downloaded tafsir or translation
   Future<bool> deleteTafsirOrTranslation({required int itemIndex}) async {
     if (kIsWeb) {
-      log('Cannot delete files on web platform', name: 'TafsirCtrl');
-      return false;
+      if (itemIndex < 0 ||
+          itemIndex >= tafsirAndTranslationsItems.length ||
+          itemIndex == _defaultTafsirIndex ||
+          itemIndex == translationsStartIndex ||
+          tafsirAndTranslationsItems[itemIndex].isCustom) {
+        return false;
+      }
+      try {
+        await _webCache
+            .delete(_webResourceUrl(tafsirAndTranslationsItems[itemIndex]));
+        await refreshDownloadStatus();
+        if (radioValue.value == itemIndex) {
+          await prepareResource(_defaultTafsirIndex);
+        }
+        return true;
+      } catch (_) {
+        return false;
+      }
     }
 
     // منع حذف التفسير والترجمة الافتراضية

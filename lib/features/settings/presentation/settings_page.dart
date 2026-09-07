@@ -1,8 +1,10 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../../l10n/generated/app_localizations.dart';
 import '../../account/presentation/account_card.dart';
 import '../../account/domain/reading_preferences.dart';
+import '../../offline/presentation/offline_card.dart';
 import '../../reminders/data/reminder_repository.dart';
 import '../../reminders/data/reminder_service.dart';
 
@@ -154,6 +156,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 onPreferencesRestored: widget.onPreferencesRestored,
               ),
               const SizedBox(height: 14),
+              if (kIsWeb) ...[const OfflineCard(), const SizedBox(height: 14)],
               _SettingsCard(
                 title: l10n.dailyReminder,
                 icon: Icons.notifications_none_rounded,

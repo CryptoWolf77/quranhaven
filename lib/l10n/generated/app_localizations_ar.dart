@@ -226,7 +226,11 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get webOfflineNote =>
-      'يعمل صوت الويب بالبث المباشر. تنزيل الصوت المُدار دون اتصال متاح في تطبيقَي أندرويد وiOS.';
+      'على الويب، يمكنك حفظ التفسير والترجمات المحددة في هذا المتصفح (حتى 160 MiB)، وقد يزيلها المتصفح عند انخفاض مساحة التخزين. الصوت يتطلب الإنترنت. جهّز التطبيق وصفحات القرآن بشكل منفصل من الإعدادات.';
+
+  @override
+  String get webResourceStorageUnavailable =>
+      'لا يستطيع هذا المتصفح حفظ مصادر القراءة. استخدم متصفحًا مدعومًا مع تفعيل تخزين بيانات المواقع.';
 
   @override
   String get readers => 'القراء';
@@ -536,6 +540,21 @@ class AppLocalizationsAr extends AppLocalizations {
   String get password => 'كلمة المرور';
 
   @override
+  String get showPassword => 'إظهار كلمة المرور';
+
+  @override
+  String get hidePassword => 'إخفاء كلمة المرور';
+
+  @override
+  String get previousAyah => 'الآية السابقة';
+
+  @override
+  String get nextAyah => 'الآية التالية';
+
+  @override
+  String get removeRevisionMarker => 'إلغاء التحديد للمراجعة';
+
+  @override
   String get passwordRules => 'استخدم 8 أحرف على الأقل.';
 
   @override
@@ -644,4 +663,71 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get contentServerNotConfigured =>
       'القرآن والتفسير المرفق والملفات المحمّلة متاحة. ستتوفر مصادر القراءة الإضافية عند ربط خدمة المحتوى.';
+
+  @override
+  String get offlineTitle => 'القراءة دون اتصال';
+
+  @override
+  String get offlineBody =>
+      'احفظ التطبيق وصفحات القرآن في هذا المتصفح قبل قطع الاتصال. يمكنك حفظ التفسير والترجمات بشكل منفصل من المكتبة. لا تشمل هذه العملية الملفات الصوتية.';
+
+  @override
+  String get offlinePrepare => 'تجهيز القراءة دون اتصال';
+
+  @override
+  String get offlinePreparing => 'جارٍ حفظ القرآن للقراءة دون اتصال…';
+
+  @override
+  String get offlineReady => 'جاهز للقراءة دون اتصال';
+
+  @override
+  String get offlineUpdateReady => 'تحديث القراءة دون اتصال جاهز';
+
+  @override
+  String get offlineActivate => 'تطبيق التحديث وإعادة التحميل';
+
+  @override
+  String get offlineCancel => 'إلغاء التحميل';
+
+  @override
+  String get offlineRemove => 'إزالة ملفات التطبيق المحفوظة دون اتصال';
+
+  @override
+  String get offlineRemoveWarning =>
+      'هل تريد إزالة ملفات التطبيق وصفحات القرآن المحفوظة فقط من هذا المتصفح؟ سيبقى تقدّم القراءة وحسابك والتفسير المحفوظ. ستحتاج إلى الإنترنت لفتح التطبيق مجددًا.';
+
+  @override
+  String get offlineRemoved => 'تمت إزالة ملفات التطبيق المحفوظة دون اتصال';
+
+  @override
+  String get offlineUnavailable =>
+      'تجهيز القراءة دون اتصال غير متاح في هذا المتصفح. جرّب متصفحًا مدعومًا عبر اتصال HTTPS.';
+
+  @override
+  String get offlineError =>
+      'تعذّر إكمال تجهيز القراءة دون اتصال. تحقق من الاتصال ومساحة التخزين المتاحة ثم حاول مجددًا.';
+
+  @override
+  String get offlineOtherTabs =>
+      'أغلق تبويبات Quran Haven الأخرى، ثم طبّق التحديث مجددًا.';
+
+  @override
+  String get offlineActivationTimeout =>
+      'تعذّر تفعيل التحديث بعد. أعد تحميل هذا التبويب وحاول مجددًا.';
+
+  @override
+  String get offlineStorageWarning =>
+      'قد يزيل المتصفح الملفات المحفوظة عند انخفاض مساحة التخزين. تحقق من هذه الشاشة قبل الاعتماد على القراءة دون اتصال.';
+
+  @override
+  String offlineProgress(String completed, String total) {
+    return 'تم حفظ $completed / $total ميغابايت';
+  }
+
+  @override
+  String get offlineNotReady => 'القراءة دون اتصال غير مجهّزة';
+
+  @override
+  String get offlineCancelled =>
+      'تم إلغاء التحميل. ستبقى النسخة المجهّزة سابقًا، إن وجدت.';
 }

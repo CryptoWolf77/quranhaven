@@ -227,7 +227,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get webOfflineNote =>
-      'Web playback streams online. Managed offline audio downloads are available in the Android and iOS apps.';
+      'On web, selected Tafsir and translations can be saved in this browser (up to 160 MiB); the browser may remove them if storage is low. Audio needs internet. Prepare the app and Quran pages separately in Settings.';
+
+  @override
+  String get webResourceStorageUnavailable =>
+      'This browser cannot save reading resources. Use a supported browser with site storage enabled.';
 
   @override
   String get readers => 'Reciters';
@@ -540,6 +544,21 @@ class AppLocalizationsEn extends AppLocalizations {
   String get password => 'Password';
 
   @override
+  String get showPassword => 'Show password';
+
+  @override
+  String get hidePassword => 'Hide password';
+
+  @override
+  String get previousAyah => 'Previous Ayah';
+
+  @override
+  String get nextAyah => 'Next Ayah';
+
+  @override
+  String get removeRevisionMarker => 'Remove revision marker';
+
+  @override
   String get passwordRules => 'Use at least 8 characters.';
 
   @override
@@ -648,4 +667,71 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get contentServerNotConfigured =>
       'The Quran, included Tafsir and saved downloads are available. Additional reading resources will be available when the content service is connected.';
+
+  @override
+  String get offlineTitle => 'Offline reading';
+
+  @override
+  String get offlineBody =>
+      'Save the app and Quran pages on this browser before going offline. Tafsir and translations can be saved separately in Library. Audio is not included.';
+
+  @override
+  String get offlinePrepare => 'Prepare offline reading';
+
+  @override
+  String get offlinePreparing => 'Saving Quran for offline reading…';
+
+  @override
+  String get offlineReady => 'Ready for offline reading';
+
+  @override
+  String get offlineUpdateReady => 'An offline update is ready';
+
+  @override
+  String get offlineActivate => 'Apply update and reload';
+
+  @override
+  String get offlineCancel => 'Cancel download';
+
+  @override
+  String get offlineRemove => 'Remove offline app files';
+
+  @override
+  String get offlineRemoveWarning =>
+      'Remove only the saved app and Quran page files from this browser? Your reading progress, account, and saved Tafsir are kept. You will need internet to reopen the app.';
+
+  @override
+  String get offlineRemoved => 'Offline app files removed';
+
+  @override
+  String get offlineUnavailable =>
+      'Offline preparation is unavailable in this browser. Try a supported browser over HTTPS.';
+
+  @override
+  String get offlineError =>
+      'Offline preparation could not finish. Check your connection and available storage, then try again.';
+
+  @override
+  String get offlineOtherTabs =>
+      'Close other Quran Haven tabs, then apply the update again.';
+
+  @override
+  String get offlineActivationTimeout =>
+      'The update could not activate yet. Reload this tab and try again.';
+
+  @override
+  String get offlineStorageWarning =>
+      'The browser may remove saved files when storage is low. Check this screen before relying on offline reading.';
+
+  @override
+  String offlineProgress(String completed, String total) {
+    return '$completed / $total MB saved';
+  }
+
+  @override
+  String get offlineNotReady => 'Not prepared for offline reading';
+
+  @override
+  String get offlineCancelled =>
+      'Download cancelled. A previously prepared version, if any, is kept.';
 }

@@ -127,9 +127,10 @@ change public content, regenerate and verify the manifest with the preparation
 tool, then deploy both manifest and files together. The present `/v1/` cache
 lifetime is one hour, not immutable; browsers revalidate the manifest each time.
 
-Audio still uses the existing recitation providers. The current web library does
-not guarantee persistent offline caching of optional text downloads after a
-reload. See [the content inventory](../content/README.md) for full limitations.
+Audio still uses the existing recitation providers. The web app now has explicit
+offline preparation and a separate verified persistent text cache. See
+[browser offline reading](OFFLINE.md) for setup, browser-storage limits and
+update behavior, and [the content inventory](../content/README.md) for sources.
 
 ## References
 

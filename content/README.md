@@ -27,8 +27,10 @@ app catalog and recorded in provenance; no other language was substituted.
 
 Audio recordings remain on the existing recitation providers. This archive is
 for text, metadata and fonts, not an audio mirror. Native devices retain their
-downloaded text resources; the existing web library loads optional resources
-into memory and does not yet guarantee their persistence after an offline reload.
+downloaded text resources. The web library now saves optional resources in a
+separate, verified browser cache (160 MiB maximum). Prepare the app and Quran
+pages separately in Settings before offline use. Browser storage can be evicted;
+see [offline reading](../deployment/OFFLINE.md).
 
 ## Verify before publishing
 

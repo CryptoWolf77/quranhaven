@@ -511,8 +511,14 @@ abstract class AppLocalizations {
   /// No description provided for @webOfflineNote.
   ///
   /// In en, this message translates to:
-  /// **'Web playback streams online. Managed offline audio downloads are available in the Android and iOS apps.'**
+  /// **'On web, selected Tafsir and translations can be saved in this browser (up to 160 MiB); the browser may remove them if storage is low. Audio needs internet. Prepare the app and Quran pages separately in Settings.'**
   String get webOfflineNote;
+
+  /// No description provided for @webResourceStorageUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'This browser cannot save reading resources. Use a supported browser with site storage enabled.'**
+  String get webResourceStorageUnavailable;
 
   /// No description provided for @readers.
   ///
@@ -1060,6 +1066,36 @@ abstract class AppLocalizations {
   /// **'Password'**
   String get password;
 
+  /// No description provided for @showPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Show password'**
+  String get showPassword;
+
+  /// No description provided for @hidePassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide password'**
+  String get hidePassword;
+
+  /// No description provided for @previousAyah.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous Ayah'**
+  String get previousAyah;
+
+  /// No description provided for @nextAyah.
+  ///
+  /// In en, this message translates to:
+  /// **'Next Ayah'**
+  String get nextAyah;
+
+  /// No description provided for @removeRevisionMarker.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove revision marker'**
+  String get removeRevisionMarker;
+
   /// No description provided for @passwordRules.
   ///
   /// In en, this message translates to:
@@ -1251,6 +1287,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The Quran, included Tafsir and saved downloads are available. Additional reading resources will be available when the content service is connected.'**
   String get contentServerNotConfigured;
+
+  /// No description provided for @offlineTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline reading'**
+  String get offlineTitle;
+
+  /// No description provided for @offlineBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Save the app and Quran pages on this browser before going offline. Tafsir and translations can be saved separately in Library. Audio is not included.'**
+  String get offlineBody;
+
+  /// No description provided for @offlinePrepare.
+  ///
+  /// In en, this message translates to:
+  /// **'Prepare offline reading'**
+  String get offlinePrepare;
+
+  /// No description provided for @offlinePreparing.
+  ///
+  /// In en, this message translates to:
+  /// **'Saving Quran for offline reading…'**
+  String get offlinePreparing;
+
+  /// No description provided for @offlineReady.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready for offline reading'**
+  String get offlineReady;
+
+  /// No description provided for @offlineUpdateReady.
+  ///
+  /// In en, this message translates to:
+  /// **'An offline update is ready'**
+  String get offlineUpdateReady;
+
+  /// No description provided for @offlineActivate.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply update and reload'**
+  String get offlineActivate;
+
+  /// No description provided for @offlineCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel download'**
+  String get offlineCancel;
+
+  /// No description provided for @offlineRemove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove offline app files'**
+  String get offlineRemove;
+
+  /// No description provided for @offlineRemoveWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove only the saved app and Quran page files from this browser? Your reading progress, account, and saved Tafsir are kept. You will need internet to reopen the app.'**
+  String get offlineRemoveWarning;
+
+  /// No description provided for @offlineRemoved.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline app files removed'**
+  String get offlineRemoved;
+
+  /// No description provided for @offlineUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline preparation is unavailable in this browser. Try a supported browser over HTTPS.'**
+  String get offlineUnavailable;
+
+  /// No description provided for @offlineError.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline preparation could not finish. Check your connection and available storage, then try again.'**
+  String get offlineError;
+
+  /// No description provided for @offlineOtherTabs.
+  ///
+  /// In en, this message translates to:
+  /// **'Close other Quran Haven tabs, then apply the update again.'**
+  String get offlineOtherTabs;
+
+  /// No description provided for @offlineActivationTimeout.
+  ///
+  /// In en, this message translates to:
+  /// **'The update could not activate yet. Reload this tab and try again.'**
+  String get offlineActivationTimeout;
+
+  /// No description provided for @offlineStorageWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'The browser may remove saved files when storage is low. Check this screen before relying on offline reading.'**
+  String get offlineStorageWarning;
+
+  /// No description provided for @offlineProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{completed} / {total} MB saved'**
+  String offlineProgress(String completed, String total);
+
+  /// No description provided for @offlineNotReady.
+  ///
+  /// In en, this message translates to:
+  /// **'Not prepared for offline reading'**
+  String get offlineNotReady;
+
+  /// No description provided for @offlineCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Download cancelled. A previously prepared version, if any, is kept.'**
+  String get offlineCancelled;
 }
 
 class _AppLocalizationsDelegate

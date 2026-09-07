@@ -208,13 +208,27 @@ class TafsirItemWidget extends StatelessWidget {
       id: 'tafsirs_menu_list',
       builder: (tafsirCtrl) {
         RxBool isDownloaded =
-            (kIsWeb || tafsirCtrl.tafsirDownloadIndexList.contains(tafsirIndex))
-                .obs;
+            QuranLibrary().getTafsirDownloaded(tafsirIndex).obs;
         return InkWell(
           onTap: () async {
             if (!isDownloaded.value) return;
-            await tafsirCtrl.handleRadioValueChanged(tafsirIndex,
-                pageNumber: pageNumber);
+            if (kIsWeb) {
+              try {
+                await tafsirCtrl.prepareResource(tafsirIndex,
+                    pageNumber: pageNumber);
+              } catch (_) {
+                if (context.mounted) {
+                  ScaffoldMessenger.maybeOf(context)?.showSnackBar(SnackBar(
+                    content: Text(tafsirStyle.tafsirIsEmptyNote ??
+                        'بيانات التفسير غير محمّلة.'),
+                  ));
+                }
+                return;
+              }
+            } else {
+              await tafsirCtrl.handleRadioValueChanged(tafsirIndex,
+                  pageNumber: pageNumber);
+            }
             // GetStorage().write(_StorageConstants().radioValue, index);
             // tafsirCtrl.fetchTranslate();
             // tafsirCtrl.update(['tafsirs_menu_list']);
@@ -325,62 +339,68 @@ class TafsirItemWidget extends StatelessWidget {
                                 ),
                               ),
                               // زر التحميل يُخفى أثناء التهيئة أو عند بدء التحميل بدون تقدم
-                              if (!kIsWeb)
-                                Obx(
-                                  () {
-                                    final isThisItem = tafsirIndex ==
-                                        tafsirCtrl.downloadIndex.value;
-                                    final preparing =
-                                        tafsirCtrl.isPreparingDownload.value;
-                                    final startedNoProgress =
-                                        tafsirCtrl.onDownloading.value &&
-                                            tafsirCtrl.progress.value == 0.0;
-                                    final hideIcon = isThisItem &&
-                                        (preparing ||
-                                            startedNoProgress ||
-                                            tafsirCtrl.onDownloading.value);
-                                    return Visibility(
-                                      visible: !hideIcon,
-                                      child: IconButton(
-                                        icon: tafsirStyle
-                                                .downloadTafsirIconWidget ??
-                                            Icon(
-                                              Icons.cloud_download_outlined,
-                                              size: 22,
-                                              color:
-                                                  tafsirStyle.downloadIconColor,
-                                            ),
-                                        onPressed: () async {
-                                          tafsirCtrl.downloadIndex.value =
-                                              tafsirIndex;
-                                          tafsirCtrl
-                                              .update(['tafsirs_menu_list']);
-                                          try {
-                                            await tafsirCtrl
-                                                .tafsirAndTranslationDownload(
-                                                    tafsirIndex);
-                                          } catch (e) {
-                                            log('Tafsir download unavailable: $e');
-                                            if (context.mounted) {
-                                              ScaffoldMessenger.maybeOf(context)
-                                                  ?.showSnackBar(SnackBar(
-                                                content: Text(
-                                                  tafsirStyle
-                                                          .tafsirIsEmptyNote ??
-                                                      'بيانات التفسير غير محمّلة.',
-                                                ),
-                                              ));
-                                            }
+                              Obx(
+                                () {
+                                  final isThisItem = tafsirIndex ==
+                                      tafsirCtrl.downloadIndex.value;
+                                  final preparing =
+                                      tafsirCtrl.isPreparingDownload.value;
+                                  final startedNoProgress =
+                                      tafsirCtrl.onDownloading.value &&
+                                          tafsirCtrl.progress.value == 0.0;
+                                  final hideIcon = isThisItem &&
+                                      (preparing ||
+                                          startedNoProgress ||
+                                          tafsirCtrl.onDownloading.value);
+                                  return Visibility(
+                                    visible: !hideIcon,
+                                    child: IconButton(
+                                      icon: tafsirStyle
+                                              .downloadTafsirIconWidget ??
+                                          Icon(
+                                            Icons.cloud_download_outlined,
+                                            size: 22,
+                                            color:
+                                                tafsirStyle.downloadIconColor,
+                                          ),
+                                      onPressed: () async {
+                                        tafsirCtrl.downloadIndex.value =
+                                            tafsirIndex;
+                                        tafsirCtrl
+                                            .update(['tafsirs_menu_list']);
+                                        try {
+                                          await tafsirCtrl
+                                              .tafsirAndTranslationDownload(
+                                                  tafsirIndex);
+                                        } catch (e) {
+                                          log('Tafsir download unavailable: $e');
+                                          if (context.mounted) {
+                                            ScaffoldMessenger.maybeOf(context)
+                                                ?.showSnackBar(SnackBar(
+                                              content: Text(
+                                                tafsirStyle.tafsirIsEmptyNote ??
+                                                    'بيانات التفسير غير محمّلة.',
+                                              ),
+                                            ));
                                           }
-                                        },
-                                      ),
-                                    );
-                                  },
-                                ),
+                                        }
+                                      },
+                                    ),
+                                  );
+                                },
+                              ),
                             ],
                           );
                   },
                 ),
+                if (kIsWeb &&
+                    !isDownloaded.value &&
+                    tafsirCtrl.getIsRemovableItem(tafsirIndex))
+                  IconButton(
+                    icon: const Icon(Icons.delete_outline_rounded),
+                    onPressed: () => tafsirCtrl.deleteTafsirOrTranslation(
+                        itemIndex: tafsirIndex),
+                  ),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Align(

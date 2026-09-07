@@ -1019,59 +1019,91 @@ class _MemorizationCard extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 18),
-                Row(
-                  children: [
-                    IconButton.filledTonal(
-                      onPressed: plan.currentAyah > plan.startAyah
-                          ? () => onChanged(
-                              plan.copyWith(currentAyah: plan.currentAyah - 1),
-                            )
-                          : null,
-                      icon: const Icon(Icons.arrow_back_rounded),
-                    ),
-                    const SizedBox(width: 8),
-                    IconButton.filledTonal(
-                      onPressed: plan.currentAyah < plan.endAyah
-                          ? () => onChanged(
-                              plan.copyWith(currentAyah: plan.currentAyah + 1),
-                            )
-                          : null,
-                      icon: const Icon(Icons.arrow_forward_rounded),
-                    ),
-                    const Spacer(),
-                    IconButton(
-                      tooltip: l10n.markForRevision,
-                      onPressed: () {
-                        onChanged(plan.toggleCurrentRevision());
-                      },
-                      color: plan.isCurrentForRevision
-                          ? scheme.secondary
-                          : null,
-                      icon: Icon(
-                        plan.isCurrentForRevision
-                            ? Icons.history_edu_rounded
-                            : Icons.history_edu_outlined,
-                      ),
-                    ),
-                    const SizedBox(width: 6),
-                    FilledButton.tonalIcon(
-                      onPressed: plan.isCurrentMemorized
-                          ? null
-                          : () => onChanged(plan.markCurrentMemorized()),
-                      icon: const Icon(Icons.check_rounded),
-                      label: Text(
-                        plan.isCurrentMemorized
-                            ? l10n.memorized
-                            : l10n.markMemorized,
-                      ),
-                    ),
-                  ],
-                ),
+                MemorizationAyahControls(plan: plan, onChanged: onChanged),
               ],
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class MemorizationAyahControls extends StatelessWidget {
+  const MemorizationAyahControls({
+    required this.plan,
+    required this.onChanged,
+    super.key,
+  });
+
+  final MemorizationPlan plan;
+  final ValueChanged<MemorizationPlan> onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final scheme = Theme.of(context).colorScheme;
+    return OverflowBar(
+      alignment: MainAxisAlignment.spaceBetween,
+      spacing: 12,
+      overflowSpacing: 12,
+      overflowAlignment: OverflowBarAlignment.end,
+      children: [
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton.filledTonal(
+              tooltip: l10n.previousAyah,
+              onPressed: plan.currentAyah > plan.startAyah
+                  ? () => onChanged(
+                      plan.copyWith(currentAyah: plan.currentAyah - 1),
+                    )
+                  : null,
+              icon: const Icon(Icons.arrow_back_rounded),
+            ),
+            const SizedBox(width: 8),
+            IconButton.filledTonal(
+              tooltip: l10n.nextAyah,
+              onPressed: plan.currentAyah < plan.endAyah
+                  ? () => onChanged(
+                      plan.copyWith(currentAyah: plan.currentAyah + 1),
+                    )
+                  : null,
+              icon: const Icon(Icons.arrow_forward_rounded),
+            ),
+          ],
+        ),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(
+              tooltip: plan.isCurrentForRevision
+                  ? l10n.removeRevisionMarker
+                  : l10n.markForRevision,
+              isSelected: plan.isCurrentForRevision,
+              onPressed: () => onChanged(plan.toggleCurrentRevision()),
+              color: plan.isCurrentForRevision ? scheme.secondary : null,
+              icon: Icon(
+                plan.isCurrentForRevision
+                    ? Icons.history_edu_rounded
+                    : Icons.history_edu_outlined,
+              ),
+            ),
+            const SizedBox(width: 6),
+            Flexible(
+              child: FilledButton.tonalIcon(
+                onPressed: plan.isCurrentMemorized
+                    ? null
+                    : () => onChanged(plan.markCurrentMemorized()),
+                icon: const Icon(Icons.check_rounded),
+                label: Text(
+                  plan.isCurrentMemorized ? l10n.memorized : l10n.markMemorized,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

@@ -33,6 +33,41 @@ class _LibraryPageState extends State<LibraryPage> {
     if (lastSurah >= 1 && lastSurah <= 114) {
       _selectedSurah = lastSurah;
     }
+    if (kIsWeb) _refreshResources();
+  }
+
+  Future<void> _refreshResources() async {
+    await QuranLibrary().refreshTafsirDownloads();
+    if (mounted) setState(() {});
+  }
+
+  Future<void> _removeResource(int index) async {
+    if (_busyResourceIndex != null) return;
+    final l10n = AppLocalizations.of(context);
+    final remove = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(l10n.delete),
+        content: Text(
+          QuranLibrary().tafsirAndTraslationsCollection[index].name,
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: Text(l10n.cancel),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(context, true),
+            child: Text(l10n.delete),
+          ),
+        ],
+      ),
+    );
+    if (remove != true || !mounted) return;
+    setState(() => _busyResourceIndex = index);
+    final success = await QuranLibrary().removeTafsirDownload(index);
+    if (mounted) setState(() => _busyResourceIndex = null);
+    if (!success) _showMessage(l10n.resourceFailed);
   }
 
   void _showMessage(String message) {
@@ -45,12 +80,14 @@ class _LibraryPageState extends State<LibraryPage> {
   Future<void> _prepareResource(int index) async {
     final l10n = AppLocalizations.of(context);
     final library = QuranLibrary();
-    final isAvailable = kIsWeb || library.getTafsirDownloaded(index);
+    final isAvailable = library.getTafsirDownloaded(index);
     final resource = library.tafsirAndTraslationsCollection[index];
     final isBundled = resource.fileName == 'saadi' || resource.fileName == 'en';
-    if (AppConfig.contentBaseUri == null &&
-        !isBundled &&
-        (kIsWeb || !isAvailable)) {
+    if (kIsWeb && !isBundled && !library.canPersistWebTafsir) {
+      _showMessage(l10n.webResourceStorageUnavailable);
+      return;
+    }
+    if (AppConfig.contentBaseUri == null && !isBundled && !isAvailable) {
       _showMessage(l10n.contentServerNotConfigured);
       return;
     }
@@ -144,6 +181,10 @@ class _LibraryPageState extends State<LibraryPage> {
                 const SizedBox(height: 16),
                 Text(l10n.contentServerNotConfigured),
               ],
+              if (kIsWeb && !QuranLibrary().canPersistWebTafsir) ...[
+                const SizedBox(height: 16),
+                Text(l10n.webResourceStorageUnavailable),
+              ],
               const SizedBox(height: 22),
               SegmentedButton<int>(
                 showSelectedIcon: false,
@@ -175,12 +216,14 @@ class _LibraryPageState extends State<LibraryPage> {
                   entries: tafsirs,
                   busyIndex: _busyResourceIndex,
                   onPrepare: _prepareResource,
+                  onRemove: _removeResource,
                 )
               else if (_section == 1)
                 _ResourceList(
                   entries: translations,
                   busyIndex: _busyResourceIndex,
                   onPrepare: _prepareResource,
+                  onRemove: _removeResource,
                 )
               else
                 _RecitationsPanel(
@@ -272,11 +315,13 @@ class _ResourceList extends StatelessWidget {
     required this.entries,
     required this.busyIndex,
     required this.onPrepare,
+    required this.onRemove,
   });
 
   final List<_ResourceEntry> entries;
   final int? busyIndex;
   final ValueChanged<int> onPrepare;
+  final ValueChanged<int> onRemove;
 
   @override
   Widget build(BuildContext context) {
@@ -315,8 +360,9 @@ class _ResourceList extends StatelessWidget {
               final entry = entries[listIndex];
               final isSelected =
                   library.selectedTafsirIndex == entry.catalogIndex;
-              final isAvailable =
-                  kIsWeb || library.getTafsirDownloaded(entry.catalogIndex);
+              final isAvailable = library.getTafsirDownloaded(
+                entry.catalogIndex,
+              );
               final isBusy = busyIndex == entry.catalogIndex;
 
               return Card(
@@ -373,7 +419,7 @@ class _ResourceList extends StatelessWidget {
                           height: 24,
                           child: CircularProgressIndicator(strokeWidth: 2.5),
                         )
-                      else if (isSelected)
+                      else if (isSelected && isAvailable)
                         Chip(
                           avatar: const Icon(Icons.check_rounded, size: 16),
                           label: Text(l10n.selected),
@@ -391,6 +437,15 @@ class _ResourceList extends StatelessWidget {
                           label: Text(
                             isAvailable ? l10n.select : l10n.download,
                           ),
+                        ),
+                      if (!isBusy &&
+                          library.canRemoveTafsir(entry.catalogIndex))
+                        IconButton(
+                          tooltip: l10n.delete,
+                          onPressed: busyIndex == null
+                              ? () => onRemove(entry.catalogIndex)
+                              : null,
+                          icon: const Icon(Icons.delete_outline_rounded),
                         ),
                     ],
                   ),

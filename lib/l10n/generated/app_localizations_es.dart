@@ -231,7 +231,11 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get webOfflineNote =>
-      'La reproducción web usa transmisión. Las descargas de audio administradas están disponibles en Android e iOS.';
+      'En la web puedes guardar el Tafsir y las traducciones seleccionados en este navegador (hasta 160 MiB); el navegador puede eliminarlos si queda poco espacio. El audio necesita internet. Prepara la aplicación y las páginas del Corán por separado en Ajustes.';
+
+  @override
+  String get webResourceStorageUnavailable =>
+      'Este navegador no puede guardar recursos de lectura. Usa un navegador compatible con el almacenamiento de sitios habilitado.';
 
   @override
   String get readers => 'Recitadores';
@@ -545,6 +549,21 @@ class AppLocalizationsEs extends AppLocalizations {
   String get password => 'Contraseña';
 
   @override
+  String get showPassword => 'Mostrar contraseña';
+
+  @override
+  String get hidePassword => 'Ocultar contraseña';
+
+  @override
+  String get previousAyah => 'Aya anterior';
+
+  @override
+  String get nextAyah => 'Aya siguiente';
+
+  @override
+  String get removeRevisionMarker => 'Quitar marca de repaso';
+
+  @override
   String get passwordRules => 'Usa al menos 8 caracteres.';
 
   @override
@@ -656,4 +675,72 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get contentServerNotConfigured =>
       'El Corán, el Tafsir incluido y las descargas guardadas están disponibles. Los recursos de lectura adicionales estarán disponibles al conectar el servicio de contenido.';
+
+  @override
+  String get offlineTitle => 'Lectura sin conexión';
+
+  @override
+  String get offlineBody =>
+      'Guarda la aplicación y las páginas del Corán en este navegador antes de desconectarte. El Tafsir y las traducciones se pueden guardar por separado en la Biblioteca. El audio no está incluido.';
+
+  @override
+  String get offlinePrepare => 'Preparar lectura sin conexión';
+
+  @override
+  String get offlinePreparing => 'Guardando el Corán para leer sin conexión…';
+
+  @override
+  String get offlineReady => 'Listo para leer sin conexión';
+
+  @override
+  String get offlineUpdateReady => 'Hay una actualización sin conexión lista';
+
+  @override
+  String get offlineActivate => 'Aplicar actualización y recargar';
+
+  @override
+  String get offlineCancel => 'Cancelar descarga';
+
+  @override
+  String get offlineRemove => 'Eliminar archivos de la aplicación sin conexión';
+
+  @override
+  String get offlineRemoveWarning =>
+      '¿Eliminar solo los archivos de la aplicación y las páginas del Corán guardados en este navegador? Se conservarán tu progreso de lectura, tu cuenta y el Tafsir guardado. Necesitarás internet para volver a abrir la aplicación.';
+
+  @override
+  String get offlineRemoved =>
+      'Archivos de la aplicación sin conexión eliminados';
+
+  @override
+  String get offlineUnavailable =>
+      'La preparación sin conexión no está disponible en este navegador. Prueba un navegador compatible mediante HTTPS.';
+
+  @override
+  String get offlineError =>
+      'No se pudo completar la preparación sin conexión. Comprueba tu conexión y el espacio disponible e inténtalo de nuevo.';
+
+  @override
+  String get offlineOtherTabs =>
+      'Cierra las otras pestañas de Quran Haven y vuelve a aplicar la actualización.';
+
+  @override
+  String get offlineActivationTimeout =>
+      'La actualización aún no pudo activarse. Recarga esta pestaña e inténtalo de nuevo.';
+
+  @override
+  String get offlineStorageWarning =>
+      'El navegador puede eliminar archivos guardados si queda poco espacio. Revisa esta pantalla antes de depender de la lectura sin conexión.';
+
+  @override
+  String offlineProgress(String completed, String total) {
+    return '$completed / $total MB guardados';
+  }
+
+  @override
+  String get offlineNotReady => 'No está preparado para leer sin conexión';
+
+  @override
+  String get offlineCancelled =>
+      'Descarga cancelada. Se conserva la versión preparada anteriormente, si existe.';
 }

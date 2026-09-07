@@ -74,14 +74,15 @@ Verified locally and deployed on 7 September 2026. The working project is
   and cause of the reported restriction on the original publisher's website.
 - The account/synchronization backend is not connected in this deployment.
 - Audio providers are unchanged. This is not an audio recording mirror.
-- Optional web downloads are memory-backed in the current library; persistent
-  PWA offline resource caching remains future work.
+- Subsequent Phase 7 adds verified persistent optional web downloads and explicit
+  offline app preparation. See `deployment/OFFLINE.md`; browser storage remains
+  subject to browser quotas and eviction.
 - With every external host blocked, some library interface labels still request
   fallback fonts from Google and can display missing glyphs. Core Quran page
   fonts and the main application fonts are bundled. Complete interface-font
   coverage belongs in the accessibility/offline finishing work.
-- Further accessibility, persistent PWA downloads, account-server connection,
-  and store-release work remain separate from this web/content deployment.
+- Subsequent phases connect the account server and add accessibility/offline
+  controls. Final store release and physical-device acceptance remain outstanding.
 
 ## This Windows machine's Android build workaround
 

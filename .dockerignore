@@ -18,6 +18,7 @@
 !content/public/**
 !deployment/
 !deployment/nginx.conf
+!deployment/prepare_offline.py
 **/.git
 **/.dart_tool
 **/build

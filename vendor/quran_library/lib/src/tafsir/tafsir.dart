@@ -16,6 +16,7 @@ import 'package:quran_library/quran_library.dart';
 import '/src/tafsir/core/extensions/helpers.dart';
 import '../core/platform/io_helpers_stub.dart'
     if (dart.library.io) '../core/platform/io_helpers_io.dart';
+import '../core/platform/verified_tafsir_cache.dart';
 import '../core/utils/app_colors.dart';
 import '../core/widgets/download_button_widget.dart';
 import '../core/widgets/header_dialog_widget.dart';

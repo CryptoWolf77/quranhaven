@@ -628,8 +628,17 @@ class QuranLibrary {
 
   /// التحقق إذا كان التفسير تم تحميله مسبقاً.
   /// Check if the tafsir is already downloaded.
-  bool getTafsirDownloaded(int index) =>
-      TafsirCtrl.instance.tafsirDownloadIndexList.contains(index);
+  bool getTafsirDownloaded(int index) => kIsWeb
+      ? TafsirCtrl.instance.tafsirDownloadStatus.value[index] == true
+      : TafsirCtrl.instance.tafsirDownloadIndexList.contains(index);
+
+  Future<void> refreshTafsirDownloads() =>
+      TafsirCtrl.instance.refreshDownloadStatus();
+  bool get canPersistWebTafsir => TafsirCtrl.instance.canPersistWebResources;
+  bool canRemoveTafsir(int index) =>
+      TafsirCtrl.instance.getIsRemovableItem(index);
+  Future<bool> removeTafsirDownload(int index) =>
+      TafsirCtrl.instance.deleteTafsirOrTranslation(itemIndex: index);
 
   /// الحصول على قائمة أسماء التفاسير والترجمات.
   /// Get the list of tafsir and translation names.

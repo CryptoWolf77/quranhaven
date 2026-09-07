@@ -35,10 +35,13 @@ WORKDIR /content
 COPY content/prepare_content.py ./
 COPY content/public/ ./public/
 RUN python prepare_content.py --root /content --verify --public-only
+COPY --from=web-build /app/build/web/ /web/
+COPY deployment/prepare_offline.py ./prepare_offline.py
+RUN python prepare_offline.py --web-root /web
 
 FROM nginxinc/nginx-unprivileged:stable-alpine
 COPY deployment/nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=web-build /app/build/web/ /usr/share/nginx/html/
+COPY --from=verified-content /web/ /usr/share/nginx/html/
 COPY --from=verified-content /content/public/ /usr/share/nginx/html/
 EXPOSE 8080
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \

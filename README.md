@@ -81,10 +81,10 @@ flutter run \
   --dart-define=QURAN_API_URL=https://api.example.org
 ```
 
-See `backend/README.md` for local and Coolify setup. The public web reader does
-not enable accounts until the separate API has been deployed and verified.
+See `backend/README.md` for local and Coolify setup. The optional cloud service
+is now live and verified at `https://api.quranhaven.org`.
 
-## Phase 6 — cloud deployment preparation
+## Phase 6 — cloud deployment and connected clients
 
 - Optional cloud-account deletion, preserving device progress and downloads.
 - Clear data notices and manual-backup wording in Arabic, English and Spanish.
@@ -94,8 +94,21 @@ not enable accounts until the separate API has been deployed and verified.
   networking, a non-superuser database role and a rate-limited gateway.
 - Automated API/isolation/deletion tests and an opt-in live deployment checker.
 
-Cloud activation, PostgreSQL/container integration, email recovery, off-server
-database backups and store/privacy preparation remain separate release tasks.
+Cloud activation and live PostgreSQL/gateway integration are verified. Web and
+Android builds connect to the live service. Snapshot restore validates before
+writing, restores language/theme and persists them across restarts. Android
+release builds include INTERNET permission. See `backend/VERIFICATION.md`.
+
+## Phase 7 — web offline reading and accessibility
+
+- Explicit offline app preparation with byte progress, cancellation and removal.
+- Verified persistent browser Tafsir/translation downloads and actual saved state.
+- Release-specific app caches with staged, user-controlled updates.
+- Localized screen-reader labels, keyboard controls and large-text fixes for
+  memorization/account controls, tested in Arabic, English and Spanish.
+- Offline settings and confirmation dialogs tested at narrow widths and 2x text.
+
+See `deployment/OFFLINE.md` for offline preparation, limits and verification.
 
 ## Quran content independence
 
@@ -115,7 +128,7 @@ See `content/README.md` for the resource inventory, verification, deployment,
 and remaining audio/PWA limitations. The root `Dockerfile` packages the web app
 and content together for `https://quranhaven.org`, with optional downloads using
 `https://quranhaven.org/v1/`. See `deployment/README.md` for Coolify, DNS, HTTPS and
-verification steps. The separate account backend is not enabled by this image.
+verification steps. The image connects optional accounts to the separate API.
 
 ## Run locally
 
@@ -131,7 +144,14 @@ flutter run
    complete.
 3. Tafsir, translations, recitations, and offline downloads — complete.
 4. Khatmah and memorization tools — complete.
-5. Optional account/manual-backup implementation and notifications — complete;
-   production cloud activation remains pending.
-6. Accessibility, cloud deployment safeguards, store preparation, and production
-   release — in progress.
+5. Optional account/manual-backup implementation and notifications — complete.
+6. Cloud service activation and connected clients — complete; manual snapshots.
+7. Browser offline reading and accessibility — implementation and testing.
+8. Public-release readiness — pending recovery email, private off-server database
+   backups with restore testing, final privacy contact/disclosures, production
+   Android signing and Google Play/Apple accounts. iOS release also needs macOS.
+
+The APK is currently test-signed. Do not upload it as a final store release or
+describe the cloud database volume as a disaster-recovery backup. Bookmarks,
+notes and audio are not part of the current cloud snapshot; automatic merging,
+email verification/recovery and device-session management are not implemented.

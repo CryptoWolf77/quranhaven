@@ -510,15 +510,11 @@ class _AccountDialogState extends State<_AccountDialog> {
                 decoration: InputDecoration(
                   labelText: l10n.password,
                   helperText: widget.register ? l10n.passwordRules : null,
-                  suffixIcon: IconButton(
+                  suffixIcon: PasswordVisibilityButton(
+                    obscured: _obscurePassword,
                     onPressed: () => setState(() {
                       _obscurePassword = !_obscurePassword;
                     }),
-                    icon: Icon(
-                      _obscurePassword
-                          ? Icons.visibility_outlined
-                          : Icons.visibility_off_outlined,
-                    ),
                   ),
                 ),
                 validator: (value) =>
@@ -538,6 +534,30 @@ class _AccountDialogState extends State<_AccountDialog> {
           child: Text(widget.register ? l10n.createAccount : l10n.signIn),
         ),
       ],
+    );
+  }
+}
+
+/// The tooltip describes the action, not the current password visibility.
+class PasswordVisibilityButton extends StatelessWidget {
+  const PasswordVisibilityButton({
+    required this.obscured,
+    required this.onPressed,
+    super.key,
+  });
+
+  final bool obscured;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    return IconButton(
+      tooltip: obscured ? l10n.showPassword : l10n.hidePassword,
+      onPressed: onPressed,
+      icon: Icon(
+        obscured ? Icons.visibility_outlined : Icons.visibility_off_outlined,
+      ),
     );
   }
 }
