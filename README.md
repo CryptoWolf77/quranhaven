@@ -108,7 +108,10 @@ release builds include INTERNET permission. See `backend/VERIFICATION.md`.
   memorization/account controls, tested in Arabic, English and Spanish.
 - Offline settings and confirmation dialogs tested at narrow widths and 2x text.
 
-See `deployment/OFFLINE.md` for offline preparation, limits and verification.
+The release is deployed. A real browser prepared the app and reopened its
+Mushaf with the temporary app server stopped. Physical-device airplane-mode and
+wider browser acceptance remain. See `deployment/OFFLINE.md` for instructions
+and `deployment/VERIFICATION.md` for the exact test and delivery results.
 
 ## Quran content independence
 
@@ -146,7 +149,8 @@ flutter run
 4. Khatmah and memorization tools — complete.
 5. Optional account/manual-backup implementation and notifications — complete.
 6. Cloud service activation and connected clients — complete; manual snapshots.
-7. Browser offline reading and accessibility — implementation and testing.
+7. Browser offline reading and accessibility — deployed; automated and real
+   browser app-server-outage checks passed, physical-device acceptance pending.
 8. Public-release readiness — pending recovery email, private off-server database
    backups with restore testing, final privacy contact/disclosures, production
    Android signing and Google Play/Apple accounts. iOS release also needs macOS.

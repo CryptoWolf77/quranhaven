@@ -70,3 +70,16 @@ offline responses, excluded account requests, integrity failures, interrupted
 downloads, missing-entry repair, quota failure, cancellation, deletion scope,
 multi-tab activation and successive updates. These tests do not substitute for
 physical-device/browser offline acceptance testing.
+
+For a local browser acceptance check after building and stamping the app:
+
+```sh
+python deployment/serve_web.py --web-root build/web --port 8087
+```
+
+This helper binds only to loopback, supplies deterministic JavaScript/WASM MIME
+types on Windows and disables HTTP caching so it cannot mask worker failures.
+Prepare offline reading in the browser, stop the helper and navigate from `/`
+to `/index.html` to verify a fresh application startup without its server.
+Other internet hosts remain reachable in this test; separately test airplane
+mode and optional downloaded resources on supported physical devices.

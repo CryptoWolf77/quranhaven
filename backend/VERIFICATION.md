@@ -7,11 +7,11 @@ Private credentials were generated and retained by Coolify, never copied to Git.
 ## Passed locally
 
 - 74 backend tests, including 12 deployment-checker tests, using isolated SQLite.
-- 32 Flutter tests, including full restore preflight, persisted preferences,
+- 69 Flutter tests, including full restore preflight, persisted preferences,
   account-deletion preservation and exact memorization Ayah boundaries.
 - 22 content and website-deployment utility tests.
-- Release JavaScript web build with the existing self-hosted content URL and
-  no cloud API URL enabled.
+- Release JavaScript web build with the self-hosted content URL and verified
+  production cloud API URL enabled.
 - Compose YAML parsing, database initialization shell syntax and production
   configuration validation with synthetic settings.
 - Git whitespace checks.
@@ -24,8 +24,8 @@ warnings.
 
 ## Live reader checks
 
-The existing website remains on the prior reader/content release. Normal DNS
-resolution for `quranhaven.org` now works on this computer. The public HTTPS
+The website now includes the cloud-connected and browser-offline release. Normal
+DNS resolution for `quranhaven.org` works on this computer. The public HTTPS
 deployment checker passed without an address override, including exact Quran
 resource bytes and missing-file responses. Chrome loaded the home page and
 Library; selecting the Spanish resource reached the selected state.
@@ -57,13 +57,14 @@ or replace the shared server proxy to change this behavior.
 
 ## Client update and remaining work
 
-The next web rebuild defaults to the verified API URL. Android source now has
-the INTERNET permission needed by release builds. Android/iOS display names
-are Quran Haven. Language and theme restore together and persist on restart;
+The deployed web build and version-3 test APK include the verified API URL.
+The APK has the INTERNET permission needed by release builds. Android/iOS
+display names are Quran Haven. Language and theme restore together and persist on restart;
 malformed backups are rejected before local fields are changed.
 
 Email recovery/verification, private off-server backups and tested restoration,
 privacy contact/disclosures, and final store signing/accounts remain outstanding.
 The feature is manual snapshot backup/restore, not automatic conflict-merging
-synchronization. See [README.md](README.md). The APK must be rebuilt with both
-the content and API URLs before it includes this phase.
+synchronization. See [README.md](README.md) and the newer
+[connected/offline release checks](../deployment/VERIFICATION.md) for deployment,
+APK hashes and real browser outage verification.
