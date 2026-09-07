@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quran_library/quran_library.dart';
 
 import '../../../l10n/generated/app_localizations.dart';
+import '../../account/domain/reading_preferences.dart';
 import '../../home/presentation/home_page.dart';
 import '../../library/presentation/library_page.dart';
 import '../../plans/presentation/plans_page.dart';
@@ -14,6 +15,7 @@ class AppShell extends StatefulWidget {
     required this.themeMode,
     required this.onLocaleChanged,
     required this.onThemeModeChanged,
+    required this.onPreferencesRestored,
     super.key,
   });
 
@@ -21,6 +23,7 @@ class AppShell extends StatefulWidget {
   final ThemeMode themeMode;
   final ValueChanged<Locale> onLocaleChanged;
   final ValueChanged<ThemeMode> onThemeModeChanged;
+  final Future<void> Function(ReadingPreferences) onPreferencesRestored;
 
   @override
   State<AppShell> createState() => _AppShellState();
@@ -94,6 +97,7 @@ class _AppShellState extends State<AppShell> {
         onLocaleChanged: widget.onLocaleChanged,
         onThemeModeChanged: widget.onThemeModeChanged,
         onCloudRestored: _handleCloudRestored,
+        onPreferencesRestored: widget.onPreferencesRestored,
       ),
     ];
 

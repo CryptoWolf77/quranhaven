@@ -6,6 +6,7 @@ import 'package:quran_library/quran_library.dart';
 
 import '../../../l10n/generated/app_localizations.dart';
 import '../data/plans_repository.dart';
+import '../domain/memorization_ayah_bounds.dart';
 import '../domain/plans_models.dart';
 
 class PlansPage extends StatefulWidget {
@@ -1302,14 +1303,17 @@ class _CreateMemorizationSheetState extends State<_CreateMemorizationSheet> {
     super.dispose();
   }
 
-  int get _ayahCount =>
-      QuranLibrary().getSurahInfo(surahNumber: _surah).ayahsNumber;
+  MemorizationAyahBounds get _ayahBounds => MemorizationAyahBounds.forSurah(
+    surahNumber: _surah,
+    surahs: QuranCtrl.instance.surahsList,
+  );
 
   String? _validateAyah(String? text) {
     final l10n = AppLocalizations.of(context);
     final value = int.tryParse(text ?? '');
-    if (value == null || value < 1 || value > _ayahCount) {
-      return l10n.ayahRangeError(_ayahCount);
+    final bounds = _ayahBounds;
+    if (!bounds.contains(value)) {
+      return l10n.ayahRangeError(bounds.ayahCount);
     }
     return null;
   }
@@ -1397,11 +1401,7 @@ class _CreateMemorizationSheetState extends State<_CreateMemorizationSheet> {
                 setState(() {
                   _surah = value;
                   _startController.text = '1';
-                  _endController.text = QuranLibrary()
-                      .getSurahInfo(surahNumber: value)
-                      .ayahsNumber
-                      .clamp(1, 7)
-                      .toString();
+                  _endController.text = _ayahBounds.defaultEndAyah.toString();
                 });
               },
             ),

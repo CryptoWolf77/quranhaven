@@ -178,7 +178,7 @@
   "backupNow": "Guardar copia ahora",
   "backupComplete": "Se guardó una copia de tu progreso coránico.",
   "restoreBackup": "Restaurar copia",
-  "restoreBackupWarning": "Esto reemplazará la última página leída y el progreso de Jatma y memorización de este dispositivo por la copia de la nube.",
+  "restoreBackupWarning": "Esto reemplazará la última página leída, el progreso de Jatma y memorización, el idioma y la apariencia de este dispositivo por la copia de la nube. Los ajustes o el progreso que no figuren en una copia antigua no cambiarán.",
   "restore": "Restaurar",
   "restoreComplete": "Tu progreso de la nube ha sido restaurado.",
   "noCloudBackup": "Esta cuenta aún no tiene una copia en la nube.",

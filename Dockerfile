@@ -25,7 +25,7 @@ COPY web/ ./web/
 # pub get also generates localizations, so ARB files must already be present.
 RUN flutter pub get --enforce-lockfile
 ARG QURAN_CONTENT_URL=https://quranhaven.org/v1/
-ARG QURAN_API_URL=
+ARG QURAN_API_URL=https://api.quranhaven.org
 RUN flutter build web --release --no-pub --no-web-resources-cdn \
       --dart-define=QURAN_CONTENT_URL=${QURAN_CONTENT_URL} \
       --dart-define=QURAN_API_URL=${QURAN_API_URL}

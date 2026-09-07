@@ -19,9 +19,9 @@ configuration requires PostgreSQL and refuses placeholder signing secrets.
 
 ## Coolify deployment
 
-Activation is a separate step from publishing the web reader. Obtain the
-owner's approval before creating the private database/signing credentials and
-enabling public registration.
+The owner approved activation on 2026-09-07. The service is running separately
+from the web reader at `https://api.quranhaven.org`, with private generated
+credentials and a persistent PostgreSQL volume. See [verification](VERIFICATION.md).
 
 Create a separate Docker Compose application in the existing Quran Haven
 production project, using the same repository and `main` branch:
@@ -37,9 +37,11 @@ production project, using the same repository and `main` branch:
 The port in Coolify's domain field selects the internal service port; public
 clients still use normal HTTPS on port 443. Add the `api` DNS record to the
 existing origin server and retain Cloudflare Full (strict). Do not publish any
-host ports, expose API/database services directly, or attach them to shared
-external networks. Verify the effective networks after Coolify generates its
-configuration.
+host ports or expose API/database services directly. Verify the effective
+networks after Coolify generates its configuration. Coolify also attaches all
+three services and its reverse proxy to a resource-specific bridge; no unrelated
+application is on that bridge. The custom `private` network remains internal,
+but it is not the only network attached to API/database in this deployment.
 
 Coolify generates and retains these private values on the server:
 
@@ -52,8 +54,10 @@ redeployment. The database initialization script runs only for an empty volume;
 changing a password variable does not rotate an existing PostgreSQL role. Do not
 delete the persistent volume to resolve a credential problem.
 
-The API connects as the non-superuser `quran`. Its database and API network is
-internal. Only the gateway also joins the proxy-facing network. The gateway
+The API connects as the non-superuser `quran`. No service publishes host ports;
+only the gateway has a public domain. API/database have `traefik.enable=false`.
+The shared reverse proxy is a trusted infrastructure boundary and can reach the
+resource-specific bridge; do not claim gateway-only network isolation. The gateway
 limits authentication requests, concurrent connections and request-body sizes,
 allows the exact web origin, disables access logs and hides documentation routes.
 It trusts private proxy hops and Cloudflare's published IP ranges; keep those
@@ -85,8 +89,9 @@ flutter build apk --release \
 ```
 
 For the web service, set the Docker build argument `QURAN_API_URL` to the same
-HTTPS origin and rebuild only after the API checks pass. It defaults to empty,
-so deploying reader changes alone does not activate accounts.
+HTTPS origin and rebuild only after the API checks pass. Following the verified
+activation, the root Dockerfile defaults to the production API URL. Override it
+with an empty value to build a reader with cloud accounts disabled.
 
 ## API
 
@@ -107,8 +112,9 @@ delete device progress or downloaded resources.
 
 - The backup includes last-read page, Khatmah and memorization plans, and selected
   preferences. It does not yet include bookmarks, notes or downloaded audio.
-- Restore currently applies the last-read page and plans. Uploaded preferences
-  are retained in the snapshot but are not yet reapplied to device settings.
+- Restore validates the entire included snapshot before applying the last-read
+  page, plans, language and theme. Missing legacy fields retain local values.
+  Preferences persist after restarting the app; malformed snapshots are rejected.
 - Backups are at most 1 MB. Upload replaces the previous snapshot; restoring
   replaces the corresponding local fields. There is no conflict merge or history.
 - There is no email verification, password reset, token refresh or device-session

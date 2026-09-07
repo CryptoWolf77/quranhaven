@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../l10n/generated/app_localizations.dart';
 import '../../account/presentation/account_card.dart';
+import '../../account/domain/reading_preferences.dart';
 import '../../reminders/data/reminder_repository.dart';
 import '../../reminders/data/reminder_service.dart';
 
@@ -13,6 +14,7 @@ class SettingsPage extends StatefulWidget {
     required this.onLocaleChanged,
     required this.onThemeModeChanged,
     required this.onCloudRestored,
+    required this.onPreferencesRestored,
     super.key,
   });
 
@@ -22,6 +24,7 @@ class SettingsPage extends StatefulWidget {
   final ValueChanged<Locale> onLocaleChanged;
   final ValueChanged<ThemeMode> onThemeModeChanged;
   final ValueChanged<int> onCloudRestored;
+  final Future<void> Function(ReadingPreferences) onPreferencesRestored;
 
   @override
   State<SettingsPage> createState() => _SettingsPageState();
@@ -148,6 +151,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 locale: widget.locale,
                 themeMode: widget.themeMode,
                 onCloudRestored: widget.onCloudRestored,
+                onPreferencesRestored: widget.onPreferencesRestored,
               ),
               const SizedBox(height: 14),
               _SettingsCard(

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:quran_library/quran_library.dart';
 
 import '../../../l10n/generated/app_localizations.dart';
 import '../../plans/data/plans_repository.dart';
 import '../data/account_repository.dart';
+import '../data/cloud_restore_service.dart';
 import '../domain/account_models.dart';
+import '../domain/reading_preferences.dart';
 
 class AccountCard extends StatefulWidget {
   const AccountCard({
@@ -11,6 +14,7 @@ class AccountCard extends StatefulWidget {
     required this.locale,
     required this.themeMode,
     required this.onCloudRestored,
+    required this.onPreferencesRestored,
     super.key,
   });
 
@@ -18,6 +22,7 @@ class AccountCard extends StatefulWidget {
   final Locale? locale;
   final ThemeMode themeMode;
   final ValueChanged<int> onCloudRestored;
+  final Future<void> Function(ReadingPreferences) onPreferencesRestored;
 
   @override
   State<AccountCard> createState() => _AccountCardState();
@@ -136,20 +141,29 @@ class _AccountCardState extends State<AccountCard> {
         _message(l10n.noCloudBackup);
         return;
       }
-      final plans = data['plans'];
-      if (plans is Map<String, Object?>) {
-        await _plans.replaceFromCloud(plans);
-      }
-      final page =
-          (data['last_read_page'] as num?)?.toInt().clamp(1, 604) ??
-          widget.currentPage;
+      if (!mounted) return;
+      await CloudRestoreService(plans: _plans).restore(
+        data: data,
+        currentPreferences: ReadingPreferences(
+          locale: widget.locale,
+          themeMode: widget.themeMode,
+        ),
+        ayahsInSurah: (surah) => QuranCtrl.instance.surahsList
+            .singleWhere((info) => info.number == surah)
+            .ayahsNumber,
+        onPreferencesRestored: widget.onPreferencesRestored,
+        onProgressRestored: (page) {
+          if (mounted) widget.onCloudRestored(page ?? widget.currentPage);
+        },
+      );
       if (!mounted) return;
       setState(() => _lastSync = backup.updatedAt ?? DateTime.now());
-      widget.onCloudRestored(page);
       _message(l10n.restoreComplete);
     } on AccountFailure catch (failure) {
       _handleFailure(failure.kind);
     } on TypeError {
+      _message(l10n.cloudDataInvalid);
+    } on FormatException {
       _message(l10n.cloudDataInvalid);
     } finally {
       if (mounted) setState(() => _busy = false);

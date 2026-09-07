@@ -22,7 +22,7 @@ unrelated services):
 | Health check path | `/health` |
 | Health check port | `8080` |
 | Build argument `QURAN_CONTENT_URL` | `https://quranhaven.org/v1/` (already the default) |
-| Build argument `QURAN_API_URL` | Empty until the separate cloud API is verified |
+| Build argument `QURAN_API_URL` | `https://api.quranhaven.org` (verified cloud service) |
 
 Use the existing amd64 server. The build downloads the official Flutter 3.44.7
 Linux SDK and checks its pinned SHA-256, resolves dependencies against
@@ -54,10 +54,10 @@ committed or copied into it.
 Cloudflare documents the origin-certificate requirements for
 [Full (strict)](https://developers.cloudflare.com/ssl/origin-configuration/ssl-modes/full-strict/).
 
-No `QURAN_API_URL` is set in this deployment. Optional account/synchronization
-features remain unconnected until the separate backend is deliberately deployed
-with its own secrets, database and security configuration.
-The next-phase configuration and activation checks are in
+The optional cloud service was activated separately after owner approval and
+passed live account, backup isolation and deletion checks on 2026-09-07.
+The web build now enables `QURAN_API_URL=https://api.quranhaven.org` by default.
+Reading still needs no account. The configuration and activation checks are in
 [the cloud service guide](../backend/README.md). Changing the build argument
 requires a web rebuild; it is not a runtime setting for an existing app bundle.
 
@@ -106,7 +106,8 @@ Once the public checks pass, build the Android package with the same content roo
 
 ```sh
 flutter build apk --release \
-  --dart-define=QURAN_CONTENT_URL=https://quranhaven.org/v1/
+  --dart-define=QURAN_CONTENT_URL=https://quranhaven.org/v1/ \
+  --dart-define=QURAN_API_URL=https://api.quranhaven.org
 ```
 
 The APK is written to `build/app/outputs/flutter-apk/app-release.apk`. Keep release
