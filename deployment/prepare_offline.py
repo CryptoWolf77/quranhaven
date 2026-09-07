@@ -78,8 +78,9 @@ def generate(web_root: Path) -> dict:
         raise ValueError("Built web directory is missing required offline files: " + ", ".join(sorted(missing)))
     bootstrap_path = root / "flutter_bootstrap.js"
     worker_path = root / "quran_service_worker.js"
-    if worker_path.is_symlink():
-        raise ValueError("The service worker must not be a symlink")
+    offline_index_path = root / "offline-index.bin"
+    if worker_path.is_symlink() or offline_index_path.is_symlink():
+        raise ValueError("Generated offline files must not be symlinks")
     bootstrap = normalize_version(bootstrap_path.read_text(encoding="utf-8"), "SHELL_VERSION")
     worker = normalize_version(worker_path.read_text(encoding="utf-8"), "BUILD_VERSION")
     # Derive a repeatable release identity before stamping the bootstrap itself.
@@ -105,6 +106,11 @@ def generate(web_root: Path) -> dict:
     # These are generated build artifacts, never application sources.
     bootstrap_path.write_text(stamped_bootstrap, encoding="utf-8", newline="\n")
     worker_path.write_text(stamped_worker, encoding="utf-8", newline="\n")
+    # Serve this exact-byte copy as application/octet-stream. HTML-aware CDN
+    # features may inject markup into index.html; the manifest still hashes the
+    # original index and the worker stores these verified bytes under that key.
+    # This transport alias is deliberately not a separate offline cache entry.
+    offline_index_path.write_bytes((root / "index.html").read_bytes())
     (root / "offline-manifest.json").write_text(
         json.dumps(result, ensure_ascii=True, separators=(",", ":")) + "\n", encoding="utf-8", newline="\n")
     return result

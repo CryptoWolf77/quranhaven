@@ -38,6 +38,19 @@ class OfflineManifestTests(unittest.TestCase):
         self.assertNotIn(offline.TOKEN, (self.root / "flutter_bootstrap.js").read_text())
         self.assertEqual(first, json.loads((self.root / "offline-manifest.json").read_text()))
 
+    def test_index_binary_alias_preserves_exact_bytes_without_duplicate_entry(self):
+        original = b"<!doctype html>\r\n<html><body>Quran Haven \xd8\xa7</body></html>\r\n"
+        (self.root / "index.html").write_bytes(original)
+        result = offline.generate(self.root)
+        self.assertEqual((self.root / "offline-index.bin").read_bytes(), original)
+        self.assertEqual((self.root / "index.html").read_bytes(), original)
+        entries = {entry["path"]: entry for entry in result["files"]}
+        self.assertNotIn("/offline-index.bin", entries)
+        self.assertEqual(entries["/index.html"]["sha256"], hashlib.sha256(original).hexdigest())
+        self.assertEqual(entries["/index.html"]["bytes"], len(original))
+        self.assertFalse(offline.allowed("offline-index.bin"))
+        self.assertEqual(result, offline.generate(self.root))
+
     def test_excludes_api_content_health_maps_and_unused_renderers(self):
         for name in (".env", "v1/tafsir/es.json.gz", "api/account.json", "health",
                      "main.dart.js.map", "assets/private.pem", "assets/.hidden.json",

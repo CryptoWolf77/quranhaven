@@ -47,6 +47,7 @@ function harness(options = {}) {
   const fixture = manifest(options.version || VERSION);
   let offline = false;
   let corrupt = false;
+  let injectedHTML = false;
   let activated = false;
   let blockAsset = null;
   const context = vm.createContext({
@@ -71,6 +72,8 @@ function harness(options = {}) {
       const pathname = new URL(url).pathname;
       if (pathname === "/offline-manifest.json") return new Response(JSON.stringify(fixture.data));
       if (blockAsset && pathname !== "/offline-manifest.json") await blockAsset(init.signal);
+      if (pathname === "/offline-index.bin") return new Response(corrupt ? "corrupt" : fixture.contents.get("/index.html"), {headers: {"Content-Type": "application/octet-stream"}});
+      if (pathname === "/index.html" && injectedHTML) return new Response(fixture.contents.get(pathname) + '<script src="/injected-analytics.js"></script>', {headers: {"Content-Type": "text/html"}});
       if (fixture.contents.has(pathname)) return new Response(corrupt ? "corrupt" : fixture.contents.get(pathname), {headers: {"Content-Type": pathname.endsWith(".js") ? "application/javascript" : "text/html"}});
       return new Response("not found", {status: 404});
     },
@@ -80,6 +83,7 @@ function harness(options = {}) {
     context, caches, messages, requests, fixture,
     setOffline: value => { offline = value; },
     setCorrupt: value => { corrupt = value; },
+    setInjectedHTML: value => { injectedHTML = value; },
     setBlockAsset: value => { blockAsset = value; },
     activated: () => activated,
     call: async action => {
@@ -119,6 +123,24 @@ test("explicit prepare verifies all files and survives a worker restart offline"
   assert.equal(loaded.intercepted, true);
   assert.match(await loaded.response.text(), /Quran Haven/);
   assert.equal(restarted.requests.length, 0);
+});
+
+test("HTML edge injection is irrelevant to strict offline index integrity", async () => {
+  const app = harness();
+  app.setInjectedHTML(true);
+  assert.match(await (await app.fetch("/index.html")).response.text(), /injected-analytics/);
+  const requestStart = app.requests.length;
+  assert.equal((await app.call("prepare")).state, "ready");
+  const downloads = app.requests.slice(requestStart).map(request => new URL(request.url).pathname);
+  assert.ok(downloads.includes("/offline-index.bin"));
+  assert.ok(!downloads.includes("/index.html"));
+  app.setOffline(true);
+  const loaded = await app.fetch("/", {mode: "navigate"});
+  assert.equal(await loaded.response.text(), app.fixture.contents.get("/index.html"));
+  assert.equal(loaded.response.headers.get("Content-Type"), "text/html; charset=utf-8");
+  assert.equal((await app.fetch("/offline-index.bin")).intercepted, false);
+  const keys = await (await app.caches.open("quran-haven-shell-v1-" + VERSION)).keys();
+  assert.ok(!keys.some(request => new URL(request.url).pathname === "/offline-index.bin"));
 });
 
 test("auth, API, Quran content, health, arbitrary navigation and queries are never intercepted", async () => {
@@ -179,7 +201,7 @@ test("cancel removes partial work; removal touches only shell-owned caches", asy
 });
 
 test("invalid manifests cannot enroll sensitive paths or duplicate files", async () => {
-  for (const illegal of ["/v1/auth/login", "/v1/tafsir/es.json.gz", "/assets/.env", "//other.example/file", "/assets/%2e%2e/account"] ) {
+  for (const illegal of ["/v1/auth/login", "/v1/tafsir/es.json.gz", "/offline-index.bin", "/assets/.env", "//other.example/file", "/assets/%2e%2e/account"] ) {
     const app = harness();
     app.fixture.data.files[0].path = illegal;
     assert.equal((await app.call("prepare")).errorCode, "invalid_manifest");

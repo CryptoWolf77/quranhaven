@@ -36,6 +36,12 @@ stamps the custom bootstrap and worker with a repeatable release identity and
 writes exact byte counts and SHA-256 hashes into `offline-manifest.json`. Do not
 serve an unstamped build when testing offline behavior.
 
+The build also emits `offline-index.bin`, an exact byte copy of `index.html`.
+NGINX serves it as binary so CDN HTML optimization or analytics injection cannot
+change the offline payload. The worker downloads that fixed transport URL,
+verifies the original HTML hash, and only then stores it as `text/html` under
+`/index.html`. Online HTML remains subject to the domain's existing CDN settings.
+
 ## Boundaries
 
 - Explicit preparation only; installation does not silently fetch the bundle.

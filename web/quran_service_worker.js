@@ -6,6 +6,7 @@ const CONTROL_CACHE = "quran-haven-shell-control-v1";
 const META_PATH = "/_quran_shell_metadata";
 const STATE_PATH = "/_quran_shell_state";
 const MANIFEST_PATH = "/offline-manifest.json";
+const INDEX_SOURCE_PATH = "/offline-index.bin";
 const MAX_TOTAL = 160 * 1024 * 1024;
 const MAX_STORED = 320 * 1024 * 1024;
 const MAX_FILE = 64 * 1024 * 1024;
@@ -138,6 +139,7 @@ async function readLimited(response, limit, signal) {
 }
 
 async function download(path, limit, signal) {
+  if (path !== MANIFEST_PATH && path !== INDEX_SOURCE_PATH && !staticPath(path)) throw failure("invalid_manifest");
   const controller = new AbortController();
   const cancel = () => controller.abort();
   if (signal?.aborted) cancel();
@@ -210,9 +212,14 @@ async function prepare(requestingClientId, pageVersion) {
       let bytesDone = 0;
       for (const entry of manifest.files) {
         if (controller.signal.aborted) throw failure("cancelled");
-        const file = await download(entry.path, entry.bytes, controller.signal);
+        // Keep index.html's original manifest hash. Only its fixed transport
+        // alias avoids HTML-aware CDN rewriting; no arbitrary source URL is
+        // accepted from the manifest and the alias is never an offline key.
+        const sourcePath = entry.path === "/index.html" ? INDEX_SOURCE_PATH : entry.path;
+        const file = await download(sourcePath, entry.bytes, controller.signal);
         if (file.bytes.byteLength !== entry.bytes || await digest(file.bytes) !== entry.sha256) throw failure("integrity_failed");
-        await cache.put(originURL(entry.path), new Response(file.bytes, {headers: {"Content-Type": file.contentType}}));
+        const contentType = entry.path === "/index.html" ? "text/html; charset=utf-8" : file.contentType;
+        await cache.put(originURL(entry.path), new Response(file.bytes, {headers: {"Content-Type": contentType}}));
         completed++;
         bytesDone += entry.bytes;
         await publish(await status({completedFiles: completed, totalFiles: manifest.files.length, completedBytes: bytesDone, totalBytes: manifest.totalBytes}));
