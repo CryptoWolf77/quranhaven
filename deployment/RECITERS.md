@@ -46,3 +46,17 @@ selection/download compatibility without network access.
   `c557fb0f777b22226152ab84bfe72ceaf47801b1c9d7227880f7f25ade93e517`.
 - Native offline download code is unchanged. Physical-device download/replay
   acceptance and owner-controlled production signing remain release gates.
+- Browser playback check: Alafasy's full-Surah Al-Fatihah recording loaded
+  with a 51-second duration and progressed to 27 seconds. His selections in
+  both audio modes survived a full app reload. This is not a listening audit
+  of every recording.
+- Website source `a4f82c91b5d936707aef1d9eb0bf6059f464cd1f` deployed through
+  Coolify job `pbdibzurak7xu66lg2mnp6nc`; its replacement container was healthy
+  and the rolling update completed at 15:39:34 UTC.
+- Public HTTPS checks passed for the application, verified Quran resources,
+  safe missing-file responses, build number 5, main-JavaScript manifest hash
+  and all eight newly configured Ayah sources.
+- Public offline release identity:
+  `5ef22e38c738c84adb7023c9e4b4c7240fadfd40195be1a2cf7959b29816152f`.
+- No backend, DNS, CDN, account, donation or existing reciter settings changed.
+  Temporary browser checks and the local preview server were closed.
