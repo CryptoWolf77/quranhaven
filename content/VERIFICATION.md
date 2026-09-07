@@ -54,9 +54,19 @@ Verified locally and deployed on 7 September 2026. The working project is
   retains its own gzip layer for the app to decode.
 - The full live smoke check passed, including app entry points, CORS, and 404
   responses for missing files and `.env`.
+- Final application revision `28b202c12ef8ea089721ea7a628d38e6905ad144`
+  deployed successfully at approximately 10:51 UTC. HTTPS `www` redirects to
+  `https://quranhaven.org/`; the public title/description show Quran Haven.
+  Final live smoke verification passed again at 10:52 UTC.
 - Public DNS resolvers see the new records. During deployment this computer's
   default resolver retained an earlier negative response; per-request DNS
   overrides allowed HTTPS checks without weakening TLS or changing DNS settings.
+- Live Chrome and in-app-browser rendering could not be verified on this
+  computer because its default DNS resolver still returned `ERR_NAME_NOT_RESOLVED`.
+  Public DNS (Cloudflare, Google, Quad9), certificate validation, server health,
+  and independent live HTTP/content checks passed. Earlier local browser tests
+  and current production web builds passed; this is not a claim of completed
+  live browser testing from outside Saudi Arabia.
 
 ## Limitations
 
@@ -70,8 +80,8 @@ Verified locally and deployed on 7 September 2026. The working project is
   fallback fonts from Google and can display missing glyphs. Core Quran page
   fonts and the main application fonts are bundled. Complete interface-font
   coverage belongs in the accessibility/offline finishing work.
-- Next-phase production/accessibility work has not begun: the requested content
-  deployment and app connection come first.
+- Further accessibility, persistent PWA downloads, account-server connection,
+  and store-release work remain separate from this web/content deployment.
 
 ## This Windows machine's Android build workaround
 
