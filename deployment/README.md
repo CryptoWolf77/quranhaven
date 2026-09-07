@@ -22,6 +22,7 @@ unrelated services):
 | Health check path | `/health` |
 | Health check port | `8080` |
 | Build argument `QURAN_CONTENT_URL` | `https://quranhaven.org/v1/` (already the default) |
+| Build argument `QURAN_API_URL` | Empty until the separate cloud API is verified |
 
 Use the existing amd64 server. The build downloads the official Flutter 3.44.7
 Linux SDK and checks its pinned SHA-256, resolves dependencies against
@@ -56,6 +57,9 @@ Cloudflare documents the origin-certificate requirements for
 No `QURAN_API_URL` is set in this deployment. Optional account/synchronization
 features remain unconnected until the separate backend is deliberately deployed
 with its own secrets, database and security configuration.
+The next-phase configuration and activation checks are in
+[the cloud service guide](../backend/README.md). Changing the build argument
+requires a web rebuild; it is not a runtime setting for an existing app bundle.
 
 ## Publish and verify
 

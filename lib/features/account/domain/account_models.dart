@@ -24,10 +24,12 @@ class CloudBackup {
 
 enum AccountFailureKind {
   unavailable,
+  invalidConfiguration,
   invalidCredentials,
   emailAlreadyUsed,
   validation,
   unauthorized,
+  rateLimited,
   server,
 }
 

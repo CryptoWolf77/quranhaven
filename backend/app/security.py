@@ -1,4 +1,5 @@
 from datetime import UTC, datetime, timedelta
+from uuid import UUID
 
 import jwt
 from pwdlib import PasswordHash
@@ -30,8 +31,26 @@ def create_access_token(user_id: str) -> str:
 
 def decode_access_token(token: str) -> str | None:
     try:
-        payload = jwt.decode(token, settings.secret_key, algorithms=["HS256"])
+        payload = jwt.decode(
+            token,
+            settings.secret_key,
+            algorithms=["HS256"],
+            options={"require": ["sub", "iat", "exp"]},
+        )
     except jwt.PyJWTError:
         return None
     subject = payload.get("sub")
-    return subject if isinstance(subject, str) else None
+    issued_at, expires_at = payload.get("iat"), payload.get("exp")
+    if (
+        not isinstance(subject, str)
+        or type(issued_at) is not int
+        or type(expires_at) is not int
+        or expires_at <= issued_at
+    ):
+        return None
+    try:
+        if str(UUID(subject)) != subject:
+            return None
+    except ValueError:
+        return None
+    return subject

@@ -81,7 +81,21 @@ flutter run \
   --dart-define=QURAN_API_URL=https://api.example.org
 ```
 
-See `backend/README.md` for local and Coolify setup.
+See `backend/README.md` for local and Coolify setup. The public web reader does
+not enable accounts until the separate API has been deployed and verified.
+
+## Phase 6 — cloud deployment preparation
+
+- Optional cloud-account deletion, preserving device progress and downloads.
+- Clear data notices and manual-backup wording in Arabic, English and Spanish.
+- HTTPS-only account connections (with loopback development support), expired
+  session handling, and useful rate-limit messages.
+- Production configuration checks, database-aware readiness, private PostgreSQL
+  networking, a non-superuser database role and a rate-limited gateway.
+- Automated API/isolation/deletion tests and an opt-in live deployment checker.
+
+Cloud activation, PostgreSQL/container integration, email recovery, off-server
+database backups and store/privacy preparation remain separate release tasks.
 
 ## Quran content independence
 
@@ -117,5 +131,7 @@ flutter run
    complete.
 3. Tafsir, translations, recitations, and offline downloads — complete.
 4. Khatmah and memorization tools — complete.
-5. Optional accounts, sync backend, and notifications — complete.
-6. Accessibility, security, store preparation, and production release.
+5. Optional account/manual-backup implementation and notifications — complete;
+   production cloud activation remains pending.
+6. Accessibility, cloud deployment safeguards, store preparation, and production
+   release — in progress.

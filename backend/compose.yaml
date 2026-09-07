@@ -1,32 +1,81 @@
+# Coolify: base directory /backend, compose file /compose.yaml.
+# Assign https://api.quranhaven.org:8080 ONLY to gateway. Never publish host ports.
 services:
+  gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile.gateway
+    restart: unless-stopped
+    expose: ["8080"]
+    depends_on:
+      api:
+        condition: service_healthy
+    networks: [default, private]
+    read_only: true
+    tmpfs: ["/tmp:size=32m,mode=1777"]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 128m
+    pids_limit: 64
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
   api:
     build: .
     restart: unless-stopped
     environment:
       ENVIRONMENT: production
-      DATABASE_URL: postgresql+psycopg://quran:${POSTGRES_PASSWORD}@database:5432/quran
-      SECRET_KEY: ${SECRET_KEY}
-      CORS_ORIGINS: ${CORS_ORIGINS}
+      APP_NAME: Quran Haven Cloud
+      DATABASE_URL: postgresql+psycopg://quran:${SERVICE_PASSWORD_64_QURANDB:?}@database:5432/quran
+      SECRET_KEY: ${SERVICE_HEX_64_QURANJWT:?}
+      CORS_ORIGINS: ${CORS_ORIGINS:-https://quranhaven.org}
+      ACCESS_TOKEN_MINUTES: 10080
     depends_on:
       database:
         condition: service_healthy
-    ports:
-      - "8000:8000"
+    networks: [private]
+    labels:
+      traefik.enable: "false"
+    read_only: true
+    tmpfs: ["/tmp:size=16m,mode=1777"]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 512m
+    cpus: 1.0
+    pids_limit: 128
 
   database:
-    image: postgres:17-alpine
+    build:
+      context: .
+      dockerfile: Dockerfile.database
     restart: unless-stopped
     environment:
       POSTGRES_DB: quran
-      POSTGRES_USER: quran
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_USER: quran_admin
+      POSTGRES_PASSWORD: ${SERVICE_PASSWORD_64_QURANDBADMIN:?}
+      QURAN_APP_PASSWORD: ${SERVICE_PASSWORD_64_QURANDB:?}
+    command: ["postgres", "-c", "max_connections=30", "-c", "shared_buffers=64MB"]
     volumes:
       - quran_postgres:/var/lib/postgresql/data
+    networks: [private]
+    labels:
+      traefik.enable: "false"
+    security_opt: [no-new-privileges:true]
+    mem_limit: 256m
+    pids_limit: 128
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U quran -d quran"]
+      test: ["CMD-SHELL", "pg_isready -U quran_admin -d quran"]
       interval: 10s
       timeout: 5s
       retries: 5
+
+networks:
+  default:
+  private:
+    internal: true
 
 volumes:
   quran_postgres:

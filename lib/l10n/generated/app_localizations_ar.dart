@@ -495,8 +495,16 @@ class AppLocalizationsAr extends AppLocalizations {
       'الحسابات السحابية جاهزة داخل التطبيق، وستتوفر عند ربط عنوان الخادم الخاص بالمشروع.';
 
   @override
+  String get cloudInvalidConfiguration =>
+      'عنوان الخادم السحابي غير صالح أو غير آمن. الحسابات السحابية غير متاحة في هذا الإصدار، ولا تتأثر قراءة القرآن على الجهاز.';
+
+  @override
   String get accountOptionalBody =>
       'الحساب اختياري. أنشئ حسابًا فقط إذا أردت نسخ تقدّمك احتياطيًا واستعادته بين أجهزتك.';
+
+  @override
+  String get cloudRegistrationNotice =>
+      'الحساب اختياري. يُخزّن بريدك الإلكتروني واسمك الظاهر وأي تقدّم تختار نسخه احتياطيًا على خادم المشروع. إنشاء الحساب أو حذفه لا يغيّر قراءة القرآن أو تقدّمك على هذا الجهاز. التحقق من البريد الإلكتروني واستعادة كلمة المرور غير متاحين بعد، لذا احفظ كلمة مرورك في مكان آمن. النسخ السحابية ليست مشفّرة من طرف إلى طرف، ويمكن لمشغّل الخادم الوصول إليها.';
 
   @override
   String get signIn => 'تسجيل الدخول';
@@ -506,6 +514,17 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get signOut => 'تسجيل الخروج';
+
+  @override
+  String get deleteCloudAccount => 'حذف الحساب السحابي';
+
+  @override
+  String get deleteCloudAccountWarning =>
+      'هل تريد حذف حسابك ونسخة تقدّمك الاحتياطية من الخادم؟ لا يمكن التراجع عن ذلك. ستبقى مصادر القرآن المحمّلة وتقدّمك على هذا الجهاز. وسيتم تسجيل خروجك أيضًا.';
+
+  @override
+  String get cloudAccountDeleted =>
+      'تم حذف حسابك السحابي ونسخته الاحتياطية. تبقى بيانات القرآن المحلية على هذا الجهاز.';
 
   @override
   String get displayName => 'الاسم الظاهر';
@@ -536,15 +555,14 @@ class AppLocalizationsAr extends AppLocalizations {
   String get backupNow => 'نسخ احتياطي الآن';
 
   @override
-  String get backupComplete =>
-      'تم حفظ تقدّمك القرآني بأمان في النسخة الاحتياطية.';
+  String get backupComplete => 'تم نسخ تقدّمك القرآني احتياطيًا.';
 
   @override
   String get restoreBackup => 'استعادة النسخة';
 
   @override
   String get restoreBackupWarning =>
-      'سيستبدل هذا تقدّم الختمة والحفظ على هذا الجهاز بالنسخة السحابية.';
+      'سيستبدل هذا آخر صفحة قرأتها وتقدّم الختمة والحفظ على هذا الجهاز بالنسخة السحابية.';
 
   @override
   String get restore => 'استعادة';
@@ -560,12 +578,12 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String lastSynced(String date) {
-    return 'آخر مزامنة: $date';
+    return 'آخر نسخ احتياطي أو استعادة: $date';
   }
 
   @override
   String get accountPrivacyNote =>
-      'لا تُحفظ كلمة المرور في التطبيق. الحساب يحمي نسختك السحابية الاختيارية فقط.';
+      'لا يُنسخ تقدّمك احتياطيًا إلا عند اختيار «نسخ احتياطي الآن». قراءة القرآن لا تتطلب حسابًا.';
 
   @override
   String get invalidCredentials =>
@@ -579,6 +597,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get sessionExpired => 'انتهت جلستك. يرجى تسجيل الدخول من جديد.';
+
+  @override
+  String get cloudRateLimited =>
+      'طلبات سحابية كثيرة. انتظر قليلًا ثم حاول مجددًا. لم تتغيّر بيانات القرآن المحلية.';
 
   @override
   String get cloudServerError => 'حدثت مشكلة في الخدمة السحابية. حاول لاحقًا.';

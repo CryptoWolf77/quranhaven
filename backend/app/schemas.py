@@ -10,10 +10,10 @@ class RegisterRequest(BaseModel):
     email: EmailStr
     password: str = Field(min_length=8, max_length=128)
 
-    @field_validator("display_name")
+    @field_validator("display_name", mode="before")
     @classmethod
-    def clean_display_name(cls, value: str) -> str:
-        return " ".join(value.split())
+    def clean_display_name(cls, value: Any) -> Any:
+        return " ".join(value.split()) if isinstance(value, str) else value
 
 
 class LoginRequest(BaseModel):
@@ -41,7 +41,10 @@ class SyncWrite(BaseModel):
     @field_validator("data")
     @classmethod
     def limit_backup_size(cls, value: dict[str, Any]) -> dict[str, Any]:
-        size = len(json.dumps(value, separators=(",", ":")).encode("utf-8"))
+        try:
+            size = len(json.dumps(value, separators=(",", ":"), allow_nan=False).encode("utf-8"))
+        except (ValueError, TypeError, RecursionError) as error:
+            raise ValueError("Cloud backup must contain valid JSON data") from error
         if size > 1_000_000:
             raise ValueError("Cloud backup cannot exceed 1 MB")
         return value

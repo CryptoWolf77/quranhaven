@@ -14,7 +14,9 @@ class AccountRepository {
     Uri? apiBaseUri,
   }) : _client = client ?? http.Client(),
        _storage = secureStorage ?? const FlutterSecureStorage(),
-       _apiBaseUri = apiBaseUri ?? AppConfig.apiBaseUri;
+       _apiBaseUri = apiBaseUri ?? Uri.tryParse(AppConfig.apiBaseUrl.trim()),
+       _hasApiValue =
+           apiBaseUri != null || AppConfig.apiBaseUrl.trim().isNotEmpty;
 
   static const _tokenKey = 'account.access_token.v1';
   static const _emailKey = 'account.email.v1';
@@ -24,8 +26,29 @@ class AccountRepository {
   final http.Client _client;
   final FlutterSecureStorage _storage;
   final Uri? _apiBaseUri;
+  final bool _hasApiValue;
 
-  bool get isConfigured => _apiBaseUri != null;
+  bool get isConfigured =>
+      _apiBaseUri != null && isValidApiBaseUri(_apiBaseUri);
+
+  bool get hasInvalidConfiguration => _hasApiValue && !isConfigured;
+
+  /// Account credentials must use HTTPS, except for loopback development.
+  static bool isValidApiBaseUri(Uri uri) {
+    if (!uri.hasAuthority ||
+        uri.host.isEmpty ||
+        uri.userInfo.isNotEmpty ||
+        uri.hasQuery ||
+        uri.hasFragment) {
+      return false;
+    }
+    final isLoopback = const {
+      'localhost',
+      '127.0.0.1',
+      '::1',
+    }.contains(uri.host);
+    return uri.scheme == 'https' || (uri.scheme == 'http' && isLoopback);
+  }
 
   Future<AccountSession?> loadSession() async {
     final values = await Future.wait([
@@ -76,6 +99,20 @@ class AccountRepository {
     ]);
   }
 
+  /// Deletes the remote account and backup, but never touches device progress.
+  Future<void> deleteAccount(AccountSession session) async {
+    final response = await _send(
+      () => _client.delete(
+        _endpoint('/v1/account'),
+        headers: _headers(session.accessToken),
+      ),
+    );
+    if (response.statusCode != 204) {
+      throw const AccountFailure(AccountFailureKind.server);
+    }
+    await signOut();
+  }
+
   Future<CloudBackup> backup({
     required AccountSession session,
     required Map<String, Object?> data,
@@ -113,11 +150,19 @@ class AccountRepository {
       authenticating: true,
     );
     final data = _decodeObject(response.body);
-    final user = data['user']! as Map<String, Object?>;
+    final user = data['user'];
+    final token = data['access_token'];
+    if (user is! Map<String, Object?> ||
+        user['email'] is! String ||
+        user['display_name'] is! String ||
+        token is! String ||
+        token.isEmpty) {
+      throw const AccountFailure(AccountFailureKind.server);
+    }
     final session = AccountSession(
       email: user['email']! as String,
       displayName: user['display_name']! as String,
-      accessToken: data['access_token']! as String,
+      accessToken: token,
     );
     await Future.wait([
       _storage.write(key: _tokenKey, value: session.accessToken),
@@ -132,7 +177,11 @@ class AccountRepository {
     bool authenticating = false,
   }) async {
     if (!isConfigured) {
-      throw const AccountFailure(AccountFailureKind.unavailable);
+      throw AccountFailure(
+        hasInvalidConfiguration
+            ? AccountFailureKind.invalidConfiguration
+            : AccountFailureKind.unavailable,
+      );
     }
     try {
       final response = await request().timeout(_requestTimeout);
@@ -140,6 +189,7 @@ class AccountRepository {
         return response;
       }
       if (response.statusCode == 401) {
+        if (!authenticating) await signOut();
         throw AccountFailure(
           authenticating
               ? AccountFailureKind.invalidCredentials
@@ -151,6 +201,9 @@ class AccountRepository {
       }
       if (response.statusCode == 422) {
         throw const AccountFailure(AccountFailureKind.validation);
+      }
+      if (response.statusCode == 429) {
+        throw const AccountFailure(AccountFailureKind.rateLimited);
       }
       throw const AccountFailure(AccountFailureKind.server);
     } on AccountFailure {

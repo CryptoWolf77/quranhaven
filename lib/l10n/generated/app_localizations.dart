@@ -988,11 +988,23 @@ abstract class AppLocalizations {
   /// **'Cloud accounts are ready in the app. They will become available when the project\'s private server address is connected.'**
   String get cloudNotConfigured;
 
+  /// No description provided for @cloudInvalidConfiguration.
+  ///
+  /// In en, this message translates to:
+  /// **'The cloud server address is not valid or secure. Cloud accounts are unavailable in this version; local Quran reading is unaffected.'**
+  String get cloudInvalidConfiguration;
+
   /// No description provided for @accountOptionalBody.
   ///
   /// In en, this message translates to:
   /// **'An account is optional. Create one only if you want to back up and restore your progress across devices.'**
   String get accountOptionalBody;
+
+  /// No description provided for @cloudRegistrationNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'An account is optional. Your email, display name and any progress you choose to back up are stored on the project\'s server. Creating or deleting an account does not change your local Quran reading or progress. Email verification and password recovery are not available yet, so store your password securely. Cloud backups are not end-to-end encrypted; the server operator can access them.'**
+  String get cloudRegistrationNotice;
 
   /// No description provided for @signIn.
   ///
@@ -1011,6 +1023,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sign out'**
   String get signOut;
+
+  /// No description provided for @deleteCloudAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete cloud account'**
+  String get deleteCloudAccount;
+
+  /// No description provided for @deleteCloudAccountWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete your account and its progress backup from the server? This cannot be undone. Your downloaded Quran resources and progress on this device will remain. This also signs you out.'**
+  String get deleteCloudAccountWarning;
+
+  /// No description provided for @cloudAccountDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Your cloud account and backup were deleted. Your local Quran data remains on this device.'**
+  String get cloudAccountDeleted;
 
   /// No description provided for @displayName.
   ///
@@ -1069,7 +1099,7 @@ abstract class AppLocalizations {
   /// No description provided for @backupComplete.
   ///
   /// In en, this message translates to:
-  /// **'Your Quran progress is safely backed up.'**
+  /// **'Your Quran progress has been backed up.'**
   String get backupComplete;
 
   /// No description provided for @restoreBackup.
@@ -1081,7 +1111,7 @@ abstract class AppLocalizations {
   /// No description provided for @restoreBackupWarning.
   ///
   /// In en, this message translates to:
-  /// **'This will replace the Khatmah and memorization progress stored on this device with the cloud copy.'**
+  /// **'This will replace the last-read page, Khatmah progress and memorization progress stored on this device with the cloud copy.'**
   String get restoreBackupWarning;
 
   /// No description provided for @restore.
@@ -1111,13 +1141,13 @@ abstract class AppLocalizations {
   /// No description provided for @lastSynced.
   ///
   /// In en, this message translates to:
-  /// **'Last synced: {date}'**
+  /// **'Last backup or restore: {date}'**
   String lastSynced(String date);
 
   /// No description provided for @accountPrivacyNote.
   ///
   /// In en, this message translates to:
-  /// **'Your password is never saved in the app. The account only protects your voluntary cloud backup.'**
+  /// **'Backups happen only when you choose Back up now. Quran reading works without an account.'**
   String get accountPrivacyNote;
 
   /// No description provided for @invalidCredentials.
@@ -1143,6 +1173,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your session expired. Please sign in again.'**
   String get sessionExpired;
+
+  /// No description provided for @cloudRateLimited.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many cloud requests. Wait a moment and try again. Your local Quran data is unchanged.'**
+  String get cloudRateLimited;
 
   /// No description provided for @cloudServerError.
   ///

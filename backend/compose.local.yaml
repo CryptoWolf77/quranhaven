@@ -1,0 +1,6 @@
+# Optional local container testing; no public interface is bound.
+# docker compose -f compose.yaml -f compose.local.yaml up --build
+services:
+  gateway:
+    ports:
+      - "127.0.0.1:8000:8080"

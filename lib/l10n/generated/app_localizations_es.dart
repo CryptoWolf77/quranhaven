@@ -504,8 +504,16 @@ class AppLocalizationsEs extends AppLocalizations {
       'Las cuentas en la nube están preparadas en la aplicación. Estarán disponibles al conectar el servidor privado del proyecto.';
 
   @override
+  String get cloudInvalidConfiguration =>
+      'La dirección del servidor de la nube no es válida o segura. Las cuentas no están disponibles en esta versión; la lectura local del Corán no se ve afectada.';
+
+  @override
   String get accountOptionalBody =>
       'La cuenta es opcional. Créala solo si quieres guardar y restaurar tu progreso entre dispositivos.';
+
+  @override
+  String get cloudRegistrationNotice =>
+      'La cuenta es opcional. Tu correo, nombre visible y el progreso que decidas guardar se almacenan en el servidor del proyecto. Crear o eliminar una cuenta no cambia tu lectura del Corán ni tu progreso local. La verificación del correo y la recuperación de contraseña aún no están disponibles, así que guarda tu contraseña de forma segura. Las copias en la nube no tienen cifrado de extremo a extremo; el administrador del servidor puede acceder a ellas.';
 
   @override
   String get signIn => 'Iniciar sesión';
@@ -515,6 +523,17 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get signOut => 'Cerrar sesión';
+
+  @override
+  String get deleteCloudAccount => 'Eliminar cuenta de la nube';
+
+  @override
+  String get deleteCloudAccountWarning =>
+      '¿Eliminar tu cuenta y su copia de progreso del servidor? Esta acción no se puede deshacer. Los recursos descargados del Corán y el progreso de este dispositivo se conservarán. También se cerrará tu sesión.';
+
+  @override
+  String get cloudAccountDeleted =>
+      'Se eliminaron tu cuenta y su copia de la nube. Tus datos locales del Corán permanecen en este dispositivo.';
 
   @override
   String get displayName => 'Nombre visible';
@@ -545,15 +564,14 @@ class AppLocalizationsEs extends AppLocalizations {
   String get backupNow => 'Guardar copia ahora';
 
   @override
-  String get backupComplete =>
-      'Tu progreso coránico se guardó de forma segura.';
+  String get backupComplete => 'Se guardó una copia de tu progreso coránico.';
 
   @override
   String get restoreBackup => 'Restaurar copia';
 
   @override
   String get restoreBackupWarning =>
-      'Esto reemplazará el progreso de Jatma y memorización de este dispositivo por la copia de la nube.';
+      'Esto reemplazará la última página leída y el progreso de Jatma y memorización de este dispositivo por la copia de la nube.';
 
   @override
   String get restore => 'Restaurar';
@@ -570,12 +588,12 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String lastSynced(String date) {
-    return 'Última sincronización: $date';
+    return 'Última copia o restauración: $date';
   }
 
   @override
   String get accountPrivacyNote =>
-      'La contraseña nunca se guarda en la aplicación. La cuenta solo protege tu copia voluntaria en la nube.';
+      'Solo se crea una copia cuando eliges Guardar copia ahora. La lectura del Corán no requiere una cuenta.';
 
   @override
   String get invalidCredentials => 'El correo o la contraseña son incorrectos.';
@@ -589,6 +607,10 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get sessionExpired => 'Tu sesión ha caducado. Inicia sesión de nuevo.';
+
+  @override
+  String get cloudRateLimited =>
+      'Demasiadas solicitudes a la nube. Espera un momento e inténtalo de nuevo. Tus datos locales del Corán no han cambiado.';
 
   @override
   String get cloudServerError =>

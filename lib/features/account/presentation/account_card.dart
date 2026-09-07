@@ -69,7 +69,7 @@ class _AccountCardState extends State<AccountCard> {
       setState(() => _session = session);
       _message(AppLocalizations.of(context).signedInSuccessfully);
     } on AccountFailure catch (failure) {
-      _message(_failureMessage(failure.kind));
+      _handleFailure(failure.kind);
     } finally {
       if (mounted) setState(() => _busy = false);
     }
@@ -97,7 +97,7 @@ class _AccountCardState extends State<AccountCard> {
       setState(() => _lastSync = backup.updatedAt ?? DateTime.now());
       _message(AppLocalizations.of(context).backupComplete);
     } on AccountFailure catch (failure) {
-      _message(_failureMessage(failure.kind));
+      _handleFailure(failure.kind);
     } finally {
       if (mounted) setState(() => _busy = false);
     }
@@ -148,7 +148,7 @@ class _AccountCardState extends State<AccountCard> {
       widget.onCloudRestored(page);
       _message(l10n.restoreComplete);
     } on AccountFailure catch (failure) {
-      _message(_failureMessage(failure.kind));
+      _handleFailure(failure.kind);
     } on TypeError {
       _message(l10n.cloudDataInvalid);
     } finally {
@@ -165,6 +165,61 @@ class _AccountCardState extends State<AccountCard> {
     });
   }
 
+  Future<void> _deleteAccount() async {
+    final session = _session;
+    if (session == null) return;
+    final l10n = AppLocalizations.of(context);
+    final confirmed =
+        await showDialog<bool>(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text(l10n.deleteCloudAccount),
+            content: Text(l10n.deleteCloudAccountWarning),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context, false),
+                child: Text(l10n.cancel),
+              ),
+              FilledButton(
+                style: FilledButton.styleFrom(
+                  backgroundColor: Theme.of(context).colorScheme.error,
+                  foregroundColor: Theme.of(context).colorScheme.onError,
+                ),
+                onPressed: () => Navigator.pop(context, true),
+                child: Text(l10n.deleteCloudAccount),
+              ),
+            ],
+          ),
+        ) ??
+        false;
+    if (!confirmed || !mounted) return;
+    setState(() => _busy = true);
+    try {
+      await _accounts.deleteAccount(session);
+      if (!mounted) return;
+      setState(() {
+        _session = null;
+        _lastSync = null;
+      });
+      _message(l10n.cloudAccountDeleted);
+    } on AccountFailure catch (failure) {
+      _handleFailure(failure.kind);
+    } finally {
+      if (mounted) setState(() => _busy = false);
+    }
+  }
+
+  void _handleFailure(AccountFailureKind kind) {
+    if (!mounted) return;
+    if (kind == AccountFailureKind.unauthorized) {
+      setState(() {
+        _session = null;
+        _lastSync = null;
+      });
+    }
+    _message(_failureMessage(kind));
+  }
+
   void _message(String message) {
     if (!mounted) return;
     ScaffoldMessenger.of(context)
@@ -175,10 +230,12 @@ class _AccountCardState extends State<AccountCard> {
   String _failureMessage(AccountFailureKind kind) {
     final l10n = AppLocalizations.of(context);
     return switch (kind) {
+      AccountFailureKind.invalidConfiguration => l10n.cloudInvalidConfiguration,
       AccountFailureKind.invalidCredentials => l10n.invalidCredentials,
       AccountFailureKind.emailAlreadyUsed => l10n.emailAlreadyUsed,
       AccountFailureKind.validation => l10n.accountValidationFailed,
       AccountFailureKind.unauthorized => l10n.sessionExpired,
+      AccountFailureKind.rateLimited => l10n.cloudRateLimited,
       AccountFailureKind.server => l10n.cloudServerError,
       AccountFailureKind.unavailable => l10n.cloudUnavailable,
     };
@@ -219,7 +276,9 @@ class _AccountCardState extends State<AccountCard> {
             if (!_accounts.isConfigured)
               _InfoPanel(
                 icon: Icons.cloud_off_outlined,
-                text: l10n.cloudNotConfigured,
+                text: _accounts.hasInvalidConfiguration
+                    ? l10n.cloudInvalidConfiguration
+                    : l10n.cloudNotConfigured,
               )
             else if (_session == null && !_loading) ...[
               Text(l10n.accountOptionalBody),
@@ -289,6 +348,12 @@ class _AccountCardState extends State<AccountCard> {
                   TextButton(
                     onPressed: _busy ? null : _signOut,
                     child: Text(l10n.signOut),
+                  ),
+                  TextButton.icon(
+                    onPressed: _busy ? null : _deleteAccount,
+                    style: TextButton.styleFrom(foregroundColor: scheme.error),
+                    icon: const Icon(Icons.person_remove_outlined),
+                    label: Text(l10n.deleteCloudAccount),
                   ),
                 ],
               ),
@@ -389,6 +454,7 @@ class _AccountDialogState extends State<_AccountDialog> {
     final l10n = AppLocalizations.of(context);
     return AlertDialog(
       title: Text(widget.register ? l10n.createAccount : l10n.signIn),
+      scrollable: true,
       content: SizedBox(
         width: 420,
         child: Form(
@@ -397,6 +463,8 @@ class _AccountDialogState extends State<_AccountDialog> {
             mainAxisSize: MainAxisSize.min,
             children: [
               if (widget.register) ...[
+                Text(l10n.cloudRegistrationNotice),
+                const SizedBox(height: 16),
                 TextFormField(
                   controller: _nameController,
                   textInputAction: TextInputAction.next,
