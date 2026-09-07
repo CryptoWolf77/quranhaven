@@ -8,6 +8,9 @@ void main() {
   testWidgets('home opens the Quran reader', (tester) async {
     var openedReader = false;
     var openedLibrary = false;
+    var browsedSurahs = false;
+    var searched = false;
+    var openedBookmarks = false;
 
     await tester.pumpWidget(
       MaterialApp(
@@ -23,6 +26,9 @@ void main() {
           currentPage: 42,
           onOpenReader: () => openedReader = true,
           onOpenLibrary: () => openedLibrary = true,
+          onBrowseSurahs: () => browsedSurahs = true,
+          onSearch: () => searched = true,
+          onBookmarks: () => openedBookmarks = true,
         ),
       ),
     );
@@ -32,12 +38,17 @@ void main() {
     await tester.tap(find.text('Open the Mushaf'));
     expect(openedReader, isTrue);
 
-    await tester.drag(
-      find.byType(CustomScrollView),
-      const Offset(0, -500),
-    );
+    await tester.drag(find.byType(CustomScrollView), const Offset(0, -500));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Downloads'));
     expect(openedLibrary, isTrue);
+    openedReader = false;
+    await tester.tap(find.text('Browse Surahs'));
+    await tester.tap(find.text('Search Quran'));
+    await tester.tap(find.text('Bookmarks'));
+    expect(browsedSurahs, isTrue);
+    expect(searched, isTrue);
+    expect(openedBookmarks, isTrue);
+    expect(openedReader, isFalse);
   });
 }

@@ -161,7 +161,7 @@ class _LibraryPageState extends State<LibraryPage> {
 
     for (var index = 0; index < resources.length; index++) {
       final entry = _ResourceEntry(index, resources[index]);
-      if (entry.resource.isTranslation) {
+      if (!entry.resource.isCommentary) {
         translations.add(entry);
       } else {
         tafsirs.add(entry);
@@ -343,7 +343,9 @@ class _ResourceList extends StatelessWidget {
             children: [
               Icon(Icons.offline_pin_outlined, color: scheme.primary),
               const SizedBox(width: 12),
-              Expanded(child: Text(l10n.resourceHint)),
+              Expanded(
+                child: Text(kIsWeb ? l10n.webOfflineNote : l10n.resourceHint),
+              ),
             ],
           ),
         ),
@@ -380,7 +382,7 @@ class _ResourceList extends StatelessWidget {
                           borderRadius: BorderRadius.circular(14),
                         ),
                         child: Icon(
-                          entry.resource.isTranslation
+                          !entry.resource.isCommentary
                               ? Icons.translate_rounded
                               : Icons.auto_stories_outlined,
                           color: isSelected ? scheme.primary : scheme.secondary,

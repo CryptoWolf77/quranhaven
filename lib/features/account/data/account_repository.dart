@@ -218,10 +218,20 @@ class AccountRepository {
   CloudBackup _decodeBackup(http.Response response) {
     final data = _decodeObject(response.body);
     final rawData = data['data'];
+    final revision = data['revision'];
+    final rawDate = data['updated_at'];
+    final updatedAt = rawDate is String ? DateTime.tryParse(rawDate) : null;
+    if (!data.containsKey('data') ||
+        (rawData != null && rawData is! Map<String, Object?>) ||
+        revision is! int ||
+        revision < 0 ||
+        (rawDate != null && updatedAt == null)) {
+      throw const AccountFailure(AccountFailureKind.server);
+    }
     return CloudBackup(
       data: rawData == null ? null : rawData as Map<String, Object?>,
-      revision: (data['revision'] as num?)?.toInt() ?? 0,
-      updatedAt: DateTime.tryParse(data['updated_at'] as String? ?? ''),
+      revision: revision,
+      updatedAt: updatedAt,
     );
   }
 

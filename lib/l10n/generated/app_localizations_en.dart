@@ -585,7 +585,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get restoreBackupWarning =>
-      'This will replace the last-read page, Khatmah progress, memorization progress, language and appearance stored on this device with the cloud copy. Settings or progress missing from an older backup will stay unchanged.';
+      'This will replace the last-read page, bookmarks, Khatmah progress, memorization progress, language and appearance stored on this device with the cloud copy. Fields missing from an older backup will stay unchanged.';
 
   @override
   String get restore => 'Restore';

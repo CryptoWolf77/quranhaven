@@ -198,7 +198,7 @@
   "backupNow": "Back up now",
   "backupComplete": "Your Quran progress has been backed up.",
   "restoreBackup": "Restore backup",
-  "restoreBackupWarning": "This will replace the last-read page, Khatmah progress, memorization progress, language and appearance stored on this device with the cloud copy. Settings or progress missing from an older backup will stay unchanged.",
+  "restoreBackupWarning": "This will replace the last-read page, bookmarks, Khatmah progress, memorization progress, language and appearance stored on this device with the cloud copy. Fields missing from an older backup will stay unchanged.",
   "restore": "Restore",
   "restoreComplete": "Your cloud progress has been restored.",
   "noCloudBackup": "There is no cloud backup for this account yet.",

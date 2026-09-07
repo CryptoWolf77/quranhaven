@@ -270,6 +270,9 @@ def exercise_accounts(client: APIClient, *, sleep=time.sleep) -> None:
                     "A new synthetic account already has backup data")
 
         snapshot = {"schema_version": 1, "last_read_page": 42,
+                    "bookmarks": [{"id": 1, "color": 4283215696,
+                                   "name": "Smoke check", "ayah_id": 1,
+                                   "ayah_number": 1, "page": 1}],
                     "smoke_check_id": uuid4().hex, "plans": {"khatmah": None, "memorization": []}}
         saved = request("PUT", "/v1/sync", token=first.token,
                                payload={"data": snapshot}).json_object()

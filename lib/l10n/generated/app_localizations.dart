@@ -1147,7 +1147,7 @@ abstract class AppLocalizations {
   /// No description provided for @restoreBackupWarning.
   ///
   /// In en, this message translates to:
-  /// **'This will replace the last-read page, Khatmah progress, memorization progress, language and appearance stored on this device with the cloud copy. Settings or progress missing from an older backup will stay unchanged.'**
+  /// **'This will replace the last-read page, bookmarks, Khatmah progress, memorization progress, language and appearance stored on this device with the cloud copy. Fields missing from an older backup will stay unchanged.'**
   String get restoreBackupWarning;
 
   /// No description provided for @restore.

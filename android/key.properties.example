@@ -1,0 +1,6 @@
+# Copy to key.properties only after the owner supplies the signing keystore.
+# Keep the real file and keystore private, backed up outside this repository.
+storeFile=/private/path/quran-haven-upload.jks
+storePassword=REPLACE_PRIVATELY
+keyAlias=REPLACE_PRIVATELY
+keyPassword=REPLACE_PRIVATELY

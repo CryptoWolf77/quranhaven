@@ -92,6 +92,7 @@ class BookmarksCtrl extends GetxController {
       }
     } else {
       final savedBookmarks = _quranRepository.getBookmarks();
+      bookmarks.clear();
       if (savedBookmarks.isEmpty) {
         // إذا لم توجد إشارات محفوظة، يمكن تحميل افتراضية
         bookmarks[0xAAFFD354] = []; // اللون الأصفر
@@ -114,6 +115,19 @@ class BookmarksCtrl extends GetxController {
   }
 
   /// Saves a new bookmark to the list of bookmarks.
+  Future<void> replaceBookmarks(List<BookmarkModel> restored) async {
+    // Persist first; a storage failure must not publish an in-memory success.
+    await _quranRepository.saveBookmarks(restored);
+    bookmarks.clear();
+    for (final bookmark in restored) {
+      bookmarks.putIfAbsent(bookmark.colorCode, () => []).add(bookmark);
+    }
+    _rebuildBookmarksCache();
+    update(['bookmarks']);
+    if (Get.isRegistered<QuranCtrl>()) QuranCtrl.instance.update();
+  }
+
+  /// Saves a new bookmark to the list of bookmarks.
   ///
   /// The bookmark is created with a unique ID, the provided [colorCode],
   /// [surahName], [ayahId], [ayahNumber], and [page].
@@ -131,8 +145,13 @@ class BookmarksCtrl extends GetxController {
     required int page,
     required int colorCode,
   }) {
+    var id = DateTime.now().microsecondsSinceEpoch;
+    final ids = _flattenBookmarks().map((bookmark) => bookmark.id).toSet();
+    while (ids.contains(id)) {
+      id++;
+    }
     final bookmark = BookmarkModel(
-      id: DateTime.now().millisecondsSinceEpoch,
+      id: id,
       // إنشاء ID فريد
       colorCode: colorCode,
       name: surahName,

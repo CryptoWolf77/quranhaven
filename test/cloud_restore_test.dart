@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:quran_flutter/features/account/data/cloud_restore_service.dart';
+import 'package:quran_flutter/features/account/data/bookmarks_backup_repository.dart';
+import 'package:quran_flutter/features/account/domain/cloud_bookmark.dart';
 import 'package:quran_flutter/features/account/data/reading_preferences_repository.dart';
 import 'package:quran_flutter/features/account/domain/reading_preferences.dart';
 import 'package:quran_flutter/features/plans/data/plans_repository.dart';
@@ -46,6 +48,7 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   late _MemoryPlans plans;
+  late _MemoryBookmarks bookmarks;
   late ReadingPreferences preferences;
   late int page;
   late int preferenceWrites;
@@ -54,6 +57,7 @@ void main() {
   setUp(() {
     SharedPreferences.setMockInitialValues({});
     plans = _MemoryPlans();
+    bookmarks = _MemoryBookmarks();
     preferences = _originalPreferences;
     page = 42;
     preferenceWrites = 0;
@@ -61,7 +65,7 @@ void main() {
   });
 
   Future<void> restore(Map<String, Object?> data) {
-    return CloudRestoreService(plans: plans).restore(
+    return CloudRestoreService(plans: plans, bookmarks: bookmarks).restore(
       data: data,
       currentPreferences: preferences,
       ayahsInSurah: (surah) => surah == 1 ? 7 : 286,
@@ -91,6 +95,56 @@ void main() {
       expect(reloaded.locale, const Locale('es'));
       expect(reloaded.themeMode, ThemeMode.dark);
       expect(preferenceWrites, 1);
+    },
+  );
+
+  test(
+    'bookmark snapshots restore, empty clears and old backups preserve',
+    () async {
+      final mark = <String, Object?>{
+        'id': 12,
+        'color': 0xAAFFD354,
+        'name': 'Al-Fatihah',
+        'ayah_id': 1,
+        'ayah_number': 1,
+        'page': 1,
+      };
+      await restore({
+        ..._backup(),
+        'bookmarks': [mark],
+      });
+      expect(bookmarks.saved.single.toJson(), mark);
+      await restore(_backup());
+      expect(bookmarks.writes, 1);
+      await restore({'bookmarks': []});
+      expect(bookmarks.saved, isEmpty);
+      expect(bookmarks.writes, 2);
+    },
+  );
+
+  test(
+    'invalid bookmarks or later fields never partially replace bookmarks',
+    () async {
+      for (final invalid in <Map<String, Object?>>[
+        {
+          'bookmarks': ['bad'],
+        },
+        {
+          'bookmarks': [],
+          'preferences': {'locale': 'not-supported'},
+        },
+        {
+          'bookmarks': [],
+          'plans': {'memorization': 'bad'},
+        },
+      ]) {
+        await expectLater(
+          restore({..._backup(), ...invalid}),
+          throwsFormatException,
+        );
+        expect(bookmarks.writes, 0);
+        expect(plans.writes, 0);
+      }
     },
   );
 
@@ -248,6 +302,20 @@ void main() {
       expect(storage.getString('plans.khatmah.v1'), 'keep-local-progress');
     },
   );
+}
+
+class _MemoryBookmarks implements BookmarksBackupRepository {
+  List<CloudBookmark> saved = [];
+  int writes = 0;
+  @override
+  Future<void> replace(List<CloudBookmark> bookmarks) async {
+    writes++;
+    saved = bookmarks;
+  }
+
+  @override
+  List<Map<String, Object?>> exportForCloud() =>
+      saved.map((e) => e.toJson()).toList();
 }
 
 class _MemoryPlans implements PlansRepository {

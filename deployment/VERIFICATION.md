@@ -1,5 +1,41 @@
 # Connected/offline release verification — 2026-09-07
 
+## Plan-audit release (build 4)
+
+This section supersedes the build-3 source counts below. Earlier deployment and
+browser-outage results are preserved as dated historical evidence, not repeated
+claims about the new artifact. See [the audited plan](../PLAN.md).
+
+- 81 Flutter tests passed, including bookmark payload validation, restore
+  preflight, persistence-failure handling, legacy backup compatibility, all 44
+  catalogue/file-format checks and Home layouts at 360 px / 2x text in three
+  interface languages.
+- 74 isolated backend tests, 22 content/website tests, 13 offline/server Python
+  tests and 17 actual-worker/bridge JavaScript tests passed.
+- Analysis reports only the same three vendored `cacheExtent` deprecation
+  notices; no new errors or warnings. JavaScript web compilation is supported;
+  the existing `get_storage` Wasm limitation remains.
+- Production-configured JavaScript web build passed. Local offline manifest:
+  667 files, 97,770,891 bytes, release prefix `2370b4527428`. Bengali font and OFL
+  are bundled; all Quran content and page-font bytes remain unchanged.
+- In the local real browser, Home Search opened Search directly and Arabic
+  `الرحمن` returned 55 results. Home Bookmarks opened its own tab directly.
+- A temporary read-only Pixel 10 Android emulator installed the test APK, with
+  airplane mode on, Wi-Fi off and mobile data off. Al-Fatihah rendered visually;
+  Browse Surahs opened its index and Al-Baqarah opened page 2. After force-stop
+  and restart, Home reported Last read · Page 2. This is emulator evidence, not
+  physical Android/iOS acceptance. The temporary emulator was stopped afterward.
+- Live API checks passed with two synthetic accounts: a bookmark-containing
+  snapshot round-tripped exactly, accounts remained isolated, deletion rejected
+  old tokens and login. Only the two test accounts were deleted; no real account
+  was inspected or changed.
+- A release-task dry run with test signing disabled refused missing private
+  signing configuration as intended. Explicit test signing built successfully;
+  its certificate is Android Debug, not an owner production certificate.
+- Private Android keys, email credentials, backup destinations and CDN settings
+  were not invented, changed or published. Physical-device and owner-dependent
+  release gates remain open in [RELEASE.md](RELEASE.md).
+
 ## Cloud-connected release
 
 - Backend `6e4a005` is healthy at `https://api.quranhaven.org`.

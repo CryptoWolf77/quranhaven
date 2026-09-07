@@ -1,5 +1,6 @@
 import '../../plans/domain/plans_models.dart';
 import 'reading_preferences.dart';
+import 'cloud_bookmark.dart';
 
 /// Fully validated data. Missing fields in earlier backups remain untouched.
 class CloudRestoreSnapshot {
@@ -9,6 +10,7 @@ class CloudRestoreSnapshot {
     this.hasKhatmah = false,
     this.khatmah,
     this.memorization,
+    this.bookmarks,
   });
 
   final int? page;
@@ -16,17 +18,26 @@ class CloudRestoreSnapshot {
   final bool hasKhatmah;
   final KhatmahPlan? khatmah;
   final List<MemorizationPlan>? memorization;
+  final List<CloudBookmark>? bookmarks;
 
   factory CloudRestoreSnapshot.parse(
     Map<String, Object?> data, {
     required ReadingPreferences currentPreferences,
     required int Function(int surah) ayahsInSurah,
+    int Function(int ayahId)? pageForAyah,
   }) {
     if (data.containsKey('schema_version') && data['schema_version'] != 1) {
       throw const FormatException('Unsupported cloud backup version');
     }
     final page = data.containsKey('last_read_page')
         ? _integer(data['last_read_page'], 1, quranPageCount)
+        : null;
+    final bookmarks = data.containsKey('bookmarks')
+        ? CloudBookmark.parseList(
+            data['bookmarks'],
+            ayahsInSurah: ayahsInSurah,
+            pageForAyah: pageForAyah,
+          )
         : null;
     ReadingPreferences? preferences;
     if (data.containsKey('preferences')) {
@@ -98,6 +109,7 @@ class CloudRestoreSnapshot {
       hasKhatmah: hasKhatmah,
       khatmah: khatmah,
       memorization: memorization,
+      bookmarks: bookmarks,
     );
   }
 

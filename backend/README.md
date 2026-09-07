@@ -82,6 +82,9 @@ it retains hostname and certificate verification and changes no system DNS.
 
 Build the Flutter app with the deployed service:
 
+This command requires the owner's private Android signing configuration. For
+explicit test signing, follow [the release guide](../deployment/RELEASE.md).
+
 ```sh
 flutter build apk --release \
   --dart-define=QURAN_CONTENT_URL=https://quranhaven.org/v1/ \
@@ -110,10 +113,10 @@ delete device progress or downloaded resources.
 
 ## Current limits and launch checklist
 
-- The backup includes last-read page, Khatmah and memorization plans, and selected
-  preferences. It does not yet include bookmarks, notes or downloaded audio.
+- The backup includes bookmarks, last-read page, Khatmah and memorization plans,
+  and selected preferences. It does not include notes or downloaded audio.
 - Restore validates the entire included snapshot before applying the last-read
-  page, plans, language and theme. Missing legacy fields retain local values.
+  page, bookmarks, plans, language and theme. Missing legacy fields retain local values.
   Preferences persist after restarting the app; malformed snapshots are rejected.
 - Backups are at most 1 MB. Upload replaces the previous snapshot; restoring
   replaces the corresponding local fields. There is no conflict merge or history.

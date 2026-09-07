@@ -97,7 +97,7 @@ class QuranRepository {
   /// using the appropriate read method from `GetStorage`.
   ///
   /// [bookmarks] - A list of [BookmarkModel] instances to be saved.
-  void saveBookmarks(List<BookmarkModel> bookmarks) => GetStorage().write(
+  Future<void> saveBookmarks(List<BookmarkModel> bookmarks) => GetStorage().write(
         _StorageConstants().bookmarks,
         bookmarks.map((bookmark) => jsonEncode(bookmark._toJson())).toList(),
       );

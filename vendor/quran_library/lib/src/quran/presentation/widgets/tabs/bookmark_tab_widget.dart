@@ -66,8 +66,13 @@ class _BookmarksTab extends StatelessWidget {
                         color: effectiveStyle.textColor!),
                   ),
                   subtitle: Text(
-                    'عدد: ${bookmarks.length}'.convertNumbersAccordingToLang(
-                        languageCode: languageCode),
+                    '${switch (languageCode) {
+                      'ar' => 'عدد',
+                      'es' => 'Cantidad',
+                      _ => 'Count'
+                    }}: ${bookmarks.length}'
+                        .convertNumbersAccordingToLang(
+                            languageCode: languageCode),
                     style: QuranLibrary().cairoStyle.copyWith(
                         color: effectiveStyle.subtitleTextColor!,
                         fontSize: effectiveStyle.subtitleFontSize!),

@@ -7,12 +7,18 @@ class HomePage extends StatelessWidget {
     required this.currentPage,
     required this.onOpenReader,
     required this.onOpenLibrary,
+    required this.onBrowseSurahs,
+    required this.onSearch,
+    required this.onBookmarks,
     super.key,
   });
 
   final int currentPage;
   final VoidCallback onOpenReader;
   final VoidCallback onOpenLibrary;
+  final VoidCallback onBrowseSurahs;
+  final VoidCallback onSearch;
+  final VoidCallback onBookmarks;
 
   @override
   Widget build(BuildContext context) {
@@ -81,17 +87,17 @@ class HomePage extends StatelessWidget {
               _QuickAction(
                 icon: Icons.format_list_bulleted_rounded,
                 label: l10n.browseSurahs,
-                onTap: onOpenReader,
+                onTap: onBrowseSurahs,
               ),
               _QuickAction(
                 icon: Icons.search_rounded,
                 label: l10n.searchQuran,
-                onTap: onOpenReader,
+                onTap: onSearch,
               ),
               _QuickAction(
                 icon: Icons.bookmark_border_rounded,
                 label: l10n.bookmarks,
-                onTap: onOpenReader,
+                onTap: onBookmarks,
               ),
               _QuickAction(
                 icon: Icons.download_for_offline_outlined,

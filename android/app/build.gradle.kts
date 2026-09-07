@@ -1,7 +1,30 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
+}
+
+val quranSigningFile = rootProject.file("key.properties")
+val quranSigning = Properties()
+if (quranSigningFile.exists()) {
+    quranSigningFile.inputStream().use { quranSigning.load(it) }
+    check(listOf("storeFile", "storePassword", "keyAlias", "keyPassword").all {
+        !quranSigning.getProperty(it).isNullOrBlank()
+    }) { "Quran Haven: key.properties must contain all four signing fields." }
+}
+// Test signing is an explicit per-build choice, never the production fallback.
+val quranTestSigning = providers.environmentVariable("QURAN_HAVEN_TEST_SIGNING").orNull == "true"
+val quranAppProject = project
+gradle.taskGraph.whenReady {
+    val buildsRelease = allTasks.any {
+        it.project == quranAppProject && it.name.contains("Release")
+    }
+    check(!buildsRelease || quranSigningFile.exists() || quranTestSigning) {
+        "Quran Haven: configure private android/key.properties for a store release. " +
+        "For a local TEST APK only, set QURAN_HAVEN_TEST_SIGNING=true."
+    }
 }
 
 android {
@@ -16,7 +39,7 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        // Preserve the installed app's identity and its existing local data.
         applicationId = "org.quranflutter.quran_flutter"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
@@ -26,11 +49,24 @@ android {
         versionName = flutter.versionName
     }
 
+    signingConfigs {
+        if (quranSigningFile.exists()) {
+            create("quranRelease") {
+                storeFile = rootProject.file(quranSigning.getProperty("storeFile"))
+                storePassword = quranSigning.getProperty("storePassword")
+                keyAlias = quranSigning.getProperty("keyAlias")
+                keyPassword = quranSigning.getProperty("keyPassword")
+            }
+        }
+    }
+
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfig = when {
+                quranSigningFile.exists() -> signingConfigs.getByName("quranRelease")
+                quranTestSigning -> signingConfigs.getByName("debug")
+                else -> null
+            }
         }
     }
 }

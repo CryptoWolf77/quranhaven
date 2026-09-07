@@ -159,9 +159,10 @@ class DailogBuild extends StatelessWidget {
   }
 
   Widget tafsirOrTranslateTitle(int index, {String? title}) {
-    if (index == 0 || index == TafsirCtrl.instance.translationsStartIndex) {
-      title ??=
-          index == 0 ? tafsirStyle?.tafsirName! : tafsirStyle?.translateName!;
+    final items = TafsirCtrl.instance.tafsirAndTranslationsItems;
+    final commentary = items[index].isCommentary;
+    if (index == 0 || commentary != items[index - 1].isCommentary) {
+      title ??= commentary ? tafsirStyle?.tafsirName! : tafsirStyle?.translateName!;
       return Container(
         width: double.infinity,
         padding: const EdgeInsets.symmetric(vertical: 2.0),

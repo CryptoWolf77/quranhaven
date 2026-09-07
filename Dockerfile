@@ -22,6 +22,7 @@ COPY pubspec.yaml pubspec.lock l10n.yaml analysis_options.yaml .metadata ./
 COPY vendor/ ./vendor/
 COPY lib/ ./lib/
 COPY web/ ./web/
+COPY assets/ ./assets/
 # pub get also generates localizations, so ARB files must already be present.
 RUN flutter pub get --enforce-lockfile
 ARG QURAN_CONTENT_URL=https://quranhaven.org/v1/

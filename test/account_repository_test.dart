@@ -68,6 +68,36 @@ void main() {
   });
 
   test(
+    'malformed cloud envelopes return a controlled error, not a type crash',
+    () async {
+      for (final body in [
+        {'data': [], 'revision': 1},
+        {'data': {}, 'revision': '1'},
+        {'data': {}, 'revision': 1.5},
+        {'data': {}, 'revision': -1},
+        {'revision': 1},
+        {'data': {}, 'revision': 1, 'updated_at': 123},
+        {'data': {}, 'revision': 1, 'updated_at': 'not-a-date'},
+      ]) {
+        final repository = AccountRepository(
+          apiBaseUri: Uri.parse('https://api.example.com'),
+          client: MockClient((_) async => http.Response(jsonEncode(body), 200)),
+        );
+        await expectLater(
+          repository.restore(_session),
+          throwsA(
+            isA<AccountFailure>().having(
+              (e) => e.kind,
+              'kind',
+              AccountFailureKind.server,
+            ),
+          ),
+        );
+      }
+    },
+  );
+
+  test(
     'an unauthorized sync persistently expires only the cloud session',
     () async {
       FlutterSecureStorage.setMockInitialValues({..._storedSession});

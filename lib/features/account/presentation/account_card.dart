@@ -4,6 +4,7 @@ import 'package:quran_library/quran_library.dart';
 import '../../../l10n/generated/app_localizations.dart';
 import '../../plans/data/plans_repository.dart';
 import '../data/account_repository.dart';
+import '../data/bookmarks_backup_repository.dart';
 import '../data/cloud_restore_service.dart';
 import '../domain/account_models.dart';
 import '../domain/reading_preferences.dart';
@@ -92,6 +93,7 @@ class _AccountCardState extends State<AccountCard> {
           'schema_version': 1,
           'last_read_page': widget.currentPage,
           'plans': planData,
+          'bookmarks': BookmarksBackupRepository().exportForCloud(),
           'preferences': {
             'locale': widget.locale?.languageCode,
             'theme_mode': widget.themeMode.name,
@@ -151,6 +153,7 @@ class _AccountCardState extends State<AccountCard> {
         ayahsInSurah: (surah) => QuranCtrl.instance.surahsList
             .singleWhere((info) => info.number == surah)
             .ayahsNumber,
+        pageForAyah: (id) => QuranCtrl.instance.getAyahByUq(id).page,
         onPreferencesRestored: widget.onPreferencesRestored,
         onProgressRestored: (page) {
           if (mounted) widget.onCloudRestored(page ?? widget.currentPage);

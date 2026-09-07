@@ -7,6 +7,7 @@ import '../../home/presentation/home_page.dart';
 import '../../library/presentation/library_page.dart';
 import '../../plans/presentation/plans_page.dart';
 import '../../quran/presentation/quran_reader_page.dart';
+import '../../quran/presentation/reader_navigation.dart';
 import '../../settings/presentation/settings_page.dart';
 
 class AppShell extends StatefulWidget {
@@ -41,6 +42,13 @@ class _AppShellState extends State<AppShell> {
   }
 
   void _selectPage(int index) => setState(() => _selectedIndex = index);
+
+  void _openReaderTab(QuranNavigationTab tab) {
+    _selectPage(1);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) showReaderNavigation(context, tab);
+    });
+  }
 
   void _updateCurrentPage(int page) {
     if (page == _currentPage || !mounted) return;
@@ -79,6 +87,9 @@ class _AppShellState extends State<AppShell> {
         currentPage: _currentPage,
         onOpenReader: () => _selectPage(1),
         onOpenLibrary: () => _selectPage(2),
+        onBrowseSurahs: () => _openReaderTab(QuranNavigationTab.surahs),
+        onSearch: () => _openReaderTab(QuranNavigationTab.search),
+        onBookmarks: () => _openReaderTab(QuranNavigationTab.bookmarks),
       ),
       QuranReaderPage(onPageChanged: _updateCurrentPage),
       LibraryPage(

@@ -1,5 +1,9 @@
 part of '../../../tafsir.dart';
 
+/// Stable catalogue order; semantic categories do not change saved indices.
+List<TafsirNameModel> get defaultTafsirResources =>
+    List.unmodifiable(_defaultTafsirList);
+
 final List<TafsirNameModel> _defaultTafsirTranslationsList = [
   TafsirNameModel(
     name: 'English',
@@ -7,6 +11,7 @@ final List<TafsirNameModel> _defaultTafsirTranslationsList = [
     fileName: 'en',
     databaseName: 'en.json.gz',
     isTranslation: true,
+    isCommentary: false,
   ),
   TafsirNameModel(
     name: 'Español',
@@ -14,6 +19,7 @@ final List<TafsirNameModel> _defaultTafsirTranslationsList = [
     fileName: 'es',
     databaseName: 'es.json.gz',
     isTranslation: true,
+    isCommentary: false,
   ),
   TafsirNameModel(
     name: 'বাংলা',
@@ -21,6 +27,7 @@ final List<TafsirNameModel> _defaultTafsirTranslationsList = [
     fileName: 'be',
     databaseName: 'be.json.gz',
     isTranslation: true,
+    isCommentary: false,
   ),
   TafsirNameModel(
     name: 'اردو',
@@ -28,6 +35,7 @@ final List<TafsirNameModel> _defaultTafsirTranslationsList = [
     fileName: 'urdu',
     databaseName: 'urdu.json.gz',
     isTranslation: true,
+    isCommentary: false,
   ),
   TafsirNameModel(
     name: 'Soomaali',
@@ -35,6 +43,7 @@ final List<TafsirNameModel> _defaultTafsirTranslationsList = [
     fileName: 'so',
     databaseName: 'so.json.gz',
     isTranslation: true,
+    isCommentary: false,
   ),
   TafsirNameModel(
     name: 'bahasa Indonesia',
@@ -42,6 +51,7 @@ final List<TafsirNameModel> _defaultTafsirTranslationsList = [
     fileName: 'in',
     databaseName: 'in.json.gz',
     isTranslation: true,
+    isCommentary: false,
   ),
   TafsirNameModel(
     name: 'کوردی',
@@ -49,6 +59,7 @@ final List<TafsirNameModel> _defaultTafsirTranslationsList = [
     fileName: 'ku',
     databaseName: 'ku.json.gz',
     isTranslation: true,
+    isCommentary: false,
   ),
   TafsirNameModel(
     name: 'Türkçe',
@@ -56,6 +67,7 @@ final List<TafsirNameModel> _defaultTafsirTranslationsList = [
     fileName: 'tr',
     databaseName: 'tr.json.gz',
     isTranslation: true,
+    isCommentary: false,
   ),
   TafsirNameModel(
     name: 'French',
@@ -63,6 +75,7 @@ final List<TafsirNameModel> _defaultTafsirTranslationsList = [
     fileName: 'fr',
     databaseName: 'fr.json.gz',
     isTranslation: true,
+    isCommentary: false,
   ),
   TafsirNameModel(
     name: 'Tafsir Ibn Kathir (EN)',
@@ -70,6 +83,7 @@ final List<TafsirNameModel> _defaultTafsirTranslationsList = [
     fileName: 'en-tafisr-ibn-kathir',
     databaseName: 'en-tafisr-ibn-kathir.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -78,6 +92,7 @@ final List<TafsirNameModel> _defaultTafsirTranslationsList = [
     fileName: 'tr-tafsir-ibne-kathir',
     databaseName: 'tr-tafsir-ibne-kathir.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -86,6 +101,7 @@ final List<TafsirNameModel> _defaultTafsirTranslationsList = [
     fileName: 'tafsir-as-saadi',
     databaseName: 'tafsir-as-saadi.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -94,6 +110,7 @@ final List<TafsirNameModel> _defaultTafsirTranslationsList = [
     fileName: 'id-tafsir-as-saadi',
     databaseName: 'id-tafsir-as-saadi.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -102,6 +119,7 @@ final List<TafsirNameModel> _defaultTafsirTranslationsList = [
     fileName: 'tafseer-ibn-e-kaseer-urdu',
     databaseName: 'tafseer-ibn-e-kaseer-urdu.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -110,6 +128,7 @@ final List<TafsirNameModel> _defaultTafsirTranslationsList = [
     fileName: 'tafsir-fe-zalul-quran-syed-qatab',
     databaseName: 'tafsir-fe-zalul-quran-syed-qatab.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -118,6 +137,7 @@ final List<TafsirNameModel> _defaultTafsirTranslationsList = [
     fileName: 'tr-tafsir-as-saadi',
     databaseName: 'tr-tafsir-as-saadi.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
 ];
@@ -130,6 +150,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'ibnkatheer',
     databaseName: 'ibnkatheer.json.gz',
     isTranslation: false,
+    isCommentary: true,
     type: TafsirFileType.json,
   ),
   TafsirNameModel(
@@ -138,6 +159,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'baghawy',
     databaseName: 'baghawy.json.gz',
     isTranslation: false,
+    isCommentary: true,
     type: TafsirFileType.json,
   ),
   TafsirNameModel(
@@ -146,6 +168,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'qurtubi',
     databaseName: 'qurtubi.json.gz',
     isTranslation: false,
+    isCommentary: true,
     type: TafsirFileType.json,
   ),
   TafsirNameModel(
@@ -154,6 +177,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'saadi',
     databaseName: 'saadi.json.gz',
     isTranslation: false,
+    isCommentary: true,
     type: TafsirFileType.json,
   ),
   TafsirNameModel(
@@ -162,6 +186,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'tabari',
     databaseName: 'tabari.json.gz',
     isTranslation: false,
+    isCommentary: true,
     type: TafsirFileType.json,
   ),
   TafsirNameModel(
@@ -170,6 +195,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'tafsir-ibn-juzay',
     databaseName: 'tafsir-ibn-juzay.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -178,6 +204,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'al-muharrar-al-wajiz-ibn-atiyyah',
     databaseName: 'al-muharrar-al-wajiz-ibn-atiyyah.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -186,6 +213,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'al-basit',
     databaseName: 'al-basit.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -194,6 +222,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'tafsir-al-nasafi',
     databaseName: 'tafsir-al-nasafi.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -202,6 +231,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'al-lubab-fi-ulum-al-kitab',
     databaseName: 'al-lubab-fi-ulum-al-kitab.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -210,6 +240,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'tafsir-jalalayn',
     databaseName: 'tafsir-jalalayn.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -218,6 +249,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'tafsir-al-baydawi',
     databaseName: 'tafsir-al-baydawi.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -226,6 +258,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'tafsir-ibn-abi-zamanin',
     databaseName: 'tafsir-ibn-abi-zamanin.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -234,6 +267,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'ar-tafsir-al-wasit',
     databaseName: 'ar-tafsir-al-wasit.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -242,6 +276,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'tafsir-al-sam-ani',
     databaseName: 'tafsir-al-sam-ani.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -250,6 +285,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'al-bahr-al-muhit',
     databaseName: 'al-bahr-al-muhit.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -258,6 +294,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'tafsir-al-tha-alibi',
     databaseName: 'tafsir-al-tha-alibi.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -266,6 +303,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'adwa-al-bayan',
     databaseName: 'adwa-al-bayan.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -274,6 +312,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'al-wajiz-wahidi',
     databaseName: 'al-wajiz-wahidi.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -282,6 +321,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'fath-al-qadir-al-shawkani',
     databaseName: 'fath-al-qadir-al-shawkani.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -290,6 +330,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'tafsir-ibn-al-jawzi',
     databaseName: 'tafsir-ibn-al-jawzi.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -298,6 +339,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'tafsir-ibn-al-qayyim',
     databaseName: 'tafsir-ibn-al-qayyim.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -306,6 +348,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'al-durr-al-manthur',
     databaseName: 'al-durr-al-manthur.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -314,6 +357,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'tafsir-al-samarqandi',
     databaseName: 'tafsir-al-samarqandi.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -322,6 +366,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'tafsir-ibn-abi-hatim',
     databaseName: 'tafsir-ibn-abi-hatim.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -330,6 +375,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'tafsir-abi-al-su-ood',
     databaseName: 'tafsir-abi-al-su-ood.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -338,6 +384,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'tafsir-al-mawardi',
     databaseName: 'tafsir-al-mawardi.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
   TafsirNameModel(
@@ -346,6 +393,7 @@ final List<TafsirNameModel> _defaultTafsirItemsList = [
     fileName: 'al-kashshaf-al-zamakhshari',
     databaseName: 'al-kashshaf-al-zamakhshari.json.gz',
     isTranslation: true,
+    isCommentary: true,
     type: TafsirFileType.json, // تحديد النوع كـ JSON
   ),
 ];

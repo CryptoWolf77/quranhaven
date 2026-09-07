@@ -6,6 +6,10 @@ abstract final class AppTheme {
   static const _parchment = Color(0xFFF7F2E7);
   static const _gold = Color(0xFFC79B45);
   static const _interfaceFont = 'packages/quran_library/cairo';
+  static const _fallbackFonts = [
+    'packages/quran_library/naskh',
+    'NotoSansBengali',
+  ];
 
   static ThemeData light() {
     final scheme =
@@ -43,12 +47,12 @@ abstract final class AppTheme {
       colorScheme: scheme,
       scaffoldBackgroundColor: scheme.surface,
       fontFamily: _interfaceFont,
-      fontFamilyFallback: const ['packages/quran_library/naskh'],
+      fontFamilyFallback: _fallbackFonts,
       textTheme: Typography.material2021().black.apply(
         bodyColor: scheme.onSurface,
         displayColor: scheme.onSurface,
         fontFamily: _interfaceFont,
-        fontFamilyFallback: const ['packages/quran_library/naskh'],
+        fontFamilyFallback: _fallbackFonts,
       ),
       appBarTheme: AppBarTheme(
         elevation: 0,

@@ -240,7 +240,11 @@ class _SearchTabState extends State<_SearchTab> {
                           ),
                           const SizedBox(width: 8),
                           Text(
-                            'صفحة: ${ayah.page.toString().convertNumbersAccordingToLang(languageCode: widget.languageCode)}',
+                            '${switch (widget.languageCode) {
+                              'ar' => 'صفحة',
+                              'es' => 'Página',
+                              _ => 'Page'
+                            }}: ${ayah.page.toString().convertNumbersAccordingToLang(languageCode: widget.languageCode)}',
                             style: TextStyle(
                                 color: textColor.withValues(
                                     alpha: s.subtitleTextAlpha ?? 0.8)),

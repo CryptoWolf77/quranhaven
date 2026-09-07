@@ -68,6 +68,9 @@ The instructions below remain available for a separate content-only service.
    `/v1/tafsir/es.json.gz` from outside Saudi Arabia.
 6. Build the app with the complete versioned root:
 
+The Android release command requires private signing configuration, or the
+explicit test-only flag described in [release gates](../deployment/RELEASE.md).
+
 ```sh
 flutter build apk --release \
   --dart-define=QURAN_CONTENT_URL=https://YOUR-CONTENT-DOMAIN/v1/

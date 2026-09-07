@@ -66,8 +66,8 @@ The optional connected experience now includes:
 - Guest-first use with no account requirement for any Quran feature.
 - Optional account registration and sign-in against a configurable API.
 - Encrypted on-device storage for cloud session tokens.
-- Explicit progress backup and restore for the last-read page, Khatmah plans,
-  memorization ranges, and selected preferences.
+- Explicit progress backup and restore for bookmarks, the last-read page,
+  Khatmah plans, memorization ranges, and selected preferences.
 - A self-hosted FastAPI and PostgreSQL backend packaged for Coolify.
 - Argon2 password hashing, expiring JWT sessions, and per-user sync records.
 - User-controlled daily reading reminders on Android and iOS.
@@ -142,6 +142,10 @@ flutter run
 
 ## Planned phases
 
+See [PLAN.md](PLAN.md) for the audited checklist, completed gap fixes and the
+remaining owner-dependent release gates. This list is a summary, not a claim
+that public store acceptance is finished.
+
 1. Foundation and Quran reader — complete.
 2. Reader experience, navigation, search, bookmarks, and last-read state —
    complete.
@@ -156,6 +160,8 @@ flutter run
    Android signing and Google Play/Apple accounts. iOS release also needs macOS.
 
 The APK is currently test-signed. Do not upload it as a final store release or
-describe the cloud database volume as a disaster-recovery backup. Bookmarks,
-notes and audio are not part of the current cloud snapshot; automatic merging,
+describe the cloud database volume as a disaster-recovery backup. Notes and
+audio are not part of the current cloud snapshot; automatic merging,
 email verification/recovery and device-session management are not implemented.
+Release builds now require private signing configuration or an explicit test-only
+flag; see [deployment/RELEASE.md](deployment/RELEASE.md).

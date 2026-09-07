@@ -1,5 +1,40 @@
 part of '/quran.dart';
 
+/// Reuses the reader's navigation controls from app-level shortcuts.
+enum QuranNavigationTab { surahs, search, bookmarks }
+
+class QuranNavigationSheet extends StatelessWidget {
+  const QuranNavigationSheet({
+    super.key,
+    required this.initialTab,
+    required this.isDark,
+    required this.languageCode,
+    required this.style,
+    required this.indexStyle,
+    required this.searchStyle,
+    required this.bookmarksStyle,
+  });
+
+  final QuranNavigationTab initialTab;
+  final bool isDark;
+  final String languageCode;
+  final QuranTopBarStyle style;
+  final IndexTabStyle indexStyle;
+  final SearchTabStyle searchStyle;
+  final BookmarksTabStyle bookmarksStyle;
+
+  @override
+  Widget build(BuildContext context) => _MenuBottomSheet(
+        initialIndex: initialTab.index,
+        isDark: isDark,
+        languageCode: languageCode,
+        style: style,
+        indexTabStyle: indexStyle,
+        searchTabStyle: searchStyle,
+        bookmarksTabStyle: bookmarksStyle,
+      );
+}
+
 class _QuranTopBar extends StatelessWidget {
   final String languageCode;
   final bool isDark;
@@ -245,6 +280,7 @@ class _QuranTopBar extends StatelessWidget {
 
 // BottomSheet container with main TabBar
 class _MenuBottomSheet extends StatelessWidget {
+  final int initialIndex;
   final bool isDark;
   final String languageCode;
   final Color? backgroundColor;
@@ -255,6 +291,7 @@ class _MenuBottomSheet extends StatelessWidget {
   final bool isSingleSurah;
 
   const _MenuBottomSheet({
+    this.initialIndex = 0,
     required this.isDark,
     required this.languageCode,
     this.backgroundColor,
@@ -273,6 +310,7 @@ class _MenuBottomSheet extends StatelessWidget {
 
     return DefaultTabController(
       length: isSingleSurah ? 2 : 3,
+      initialIndex: initialIndex,
       child: SafeArea(
         top: false,
         child: Container(

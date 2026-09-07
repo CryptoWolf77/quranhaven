@@ -57,19 +57,19 @@ class TafsirCtrl extends GetxController {
       tafsirAndTranslationsItems[radioValue.value];
 
   List<TafsirNameModel> get tafsirWithoutTranslationItems =>
-      tafsirAndTranslationsItems.where((t) => !t.isTranslation).toList();
+      tafsirAndTranslationsItems.where((t) => t.isCommentary).toList();
 
   List<TafsirNameModel> get translationsWithoutTafsirItems =>
-      tafsirAndTranslationsItems.where((t) => t.isTranslation).toList();
+      tafsirAndTranslationsItems.where((t) => !t.isCommentary).toList();
 
   List<TafsirNameModel> get customTafsirAndTranslationsItems =>
       tafsirAndTranslationsItems.where((e) => e.isCustom).toList();
 
   List<TafsirNameModel> get customTafsirWithoutTranslationsItems =>
-      customTafsirAndTranslationsItems.where((e) => !e.isTranslation).toList();
+      customTafsirAndTranslationsItems.where((e) => e.isCommentary).toList();
 
   List<TafsirNameModel> get customTranslationsItems =>
-      customTafsirAndTranslationsItems.where((e) => e.isTranslation).toList();
+      customTafsirAndTranslationsItems.where((e) => !e.isCommentary).toList();
 
   bool getIsRemovableItem(int index) {
     return tafsirDownloadIndexList.contains(index) &&

@@ -590,7 +590,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get restoreBackupWarning =>
-      'Esto reemplazará la última página leída, el progreso de Jatma y memorización, el idioma y la apariencia de este dispositivo por la copia de la nube. Los ajustes o el progreso que no figuren en una copia antigua no cambiarán.';
+      'Esto reemplazará la última página leída, los marcadores, el progreso de Jatmah y memorización, el idioma y la apariencia de este dispositivo con la copia en la nube. Los datos que falten en una copia antigua no cambiarán.';
 
   @override
   String get restore => 'Restaurar';

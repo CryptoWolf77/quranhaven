@@ -220,6 +220,17 @@ class _SettingsPageState extends State<SettingsPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(l10n.aboutBody),
+                    TextButton(
+                      onPressed: () => showLicensePage(
+                        context: context,
+                        applicationName: 'Quran Haven',
+                      ),
+                      child: Text(
+                        MaterialLocalizations.of(
+                          context,
+                        ).viewLicensesButtonLabel,
+                      ),
+                    ),
                     const SizedBox(height: 12),
                     Text(
                       l10n.charityMessage,
