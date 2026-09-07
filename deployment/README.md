@@ -38,14 +38,17 @@ committed or copied into it.
 
 1. Point the Cloudflare DNS `A` record for `quranhaven.org` at the existing
    Coolify server's public IPv4 address. Only add `AAAA` if IPv6 is configured.
-2. Keep the record DNS-only during initial certificate issuance; allow the
-   existing Coolify proxy to receive ports 80/443. Do not replace proxy settings
-   shared by other applications.
+2. The current deployment keeps Cloudflare proxying enabled for both the apex
+   and `www` records. Allow the existing Coolify proxy to receive ports 80/443;
+   do not replace proxy settings shared by other applications. If certificate
+   issuance fails, inspect the exact ACME error before changing DNS or TLS.
 3. Let Coolify issue the HTTPS certificate for `quranhaven.org` and verify HTTPS.
-4. If enabling Cloudflare proxy afterward, use Full (strict) TLS, not Flexible.
-   Do not enable response transformations on `/v1/*` that decompress or rewrite
-   the `.json.gz` files. These must remain file downloads without the HTTP
-   `Content-Encoding: gzip` header.
+4. Cloudflare is configured to use Full (strict) TLS, not Flexible.
+   Preserve the original `/v1/*` file bytes after HTTP decoding. A proxy may add
+   a separate `Content-Encoding: gzip` transport layer; browsers remove that
+   layer before the app reads the file. A `.json.gz` resource must still be the
+   original gzip file at that point, not already-decoded JSON. Do not relabel the
+   file's own gzip layer as HTTP encoding or rewrite its contents.
 
 Cloudflare documents the origin-certificate requirements for
 [Full (strict)](https://developers.cloudflare.com/ssl/origin-configuration/ssl-modes/full-strict/).
@@ -68,8 +71,17 @@ After Coolify reports a healthy deployment:
 python deployment/smoke_check.py --base-url https://quranhaven.org
 ```
 
+If this computer's DNS cache has not caught up with verified public DNS, the
+optional `--resolve-address VERIFIED_IP` flag directs this check alone to that
+address. HTTPS certificate validation and the original hostname remain enabled;
+system DNS and browser settings are not changed. This is a diagnostic option,
+not a permanent IP configuration for the app.
+
 This checks HTTPS app entry points, the content manifest, a byte-for-byte
-translation download, gzip handling and missing-file behavior. Also open the
+translation download, gzip handling and missing-file behavior. It accepts
+identity or one gzip HTTP transport layer, checks the original file's hash, then
+decodes the separate `.json.gz` file format for validation. Unknown encodings,
+damaged payloads and incorrectly labeled gzip files fail verification. Also open the
 app from outside Saudi Arabia and select an additional translation from Library.
 Core Quran reading continues to use its bundled data and page fonts.
 

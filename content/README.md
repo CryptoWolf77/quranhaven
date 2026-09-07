@@ -76,8 +76,11 @@ flutter build web --no-web-resources-cdn \
 The account API can be configured independently with `QURAN_API_URL`. The content
 server needs no database, secrets, user account, or connection to the Saudi site.
 It serves public read-only files with CORS for the Flutter web app. TLS is handled
-by Coolify. Preserve the HTTP headers: `.gz` downloads must not be given
-`Content-Encoding: gzip`, since Flutter decompresses the file itself.
+by Coolify. Preserve each `.gz` file's original bytes after HTTP transport
+decoding, since Flutter decompresses the file itself. A proxy may add a separate
+`Content-Encoding: gzip` layer around those bytes; it must not falsely label the
+file's existing compression as HTTP encoding. The deployment smoke check tests
+this distinction and verifies hashes after transport decoding.
 
 For a local container, use `docker compose -f content/compose.yaml up --build`.
 The compose port is bound only to localhost. The Docker service uses the official
