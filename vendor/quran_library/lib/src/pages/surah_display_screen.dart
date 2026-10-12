@@ -315,10 +315,13 @@ class SurahDisplayScreen extends StatelessWidget {
 
                 // على الويب: لا تسرق التركيز من حقول الكتابة
                 // On web: don't steal focus from text fields
-                if (kIsWeb) {
+                if (kIsWeb && (ModalRoute.of(context)?.isCurrent ?? false)) {
                   final pf = FocusManager.instance.primaryFocus;
-                  final isTextFieldFocused =
-                      pf?.context?.widget is EditableText;
+                  final isTextFieldFocused = pf?.context?.widget
+                          is EditableText ||
+                      pf?.context
+                              ?.findAncestorWidgetOfExactType<EditableText>() !=
+                          null;
                   if (!isTextFieldFocused) {
                     FocusScope.of(context)
                         .requestFocus(quranCtrl.state.quranPageRLFocusNode);
@@ -555,7 +558,7 @@ class SurahDisplayScreen extends StatelessWidget {
                 showAyahBookmarkedIcon: showAyahBookmarkedIcon,
                 onAyahLongPress: onAyahLongPress,
                 bookmarksColor: bookmarksColor,
-                                  customBookmarksColor: customBookmarksColor,
+                customBookmarksColor: customBookmarksColor,
                 surahNameStyle: surahNameStyle,
                 bannerStyle: bannerStyle,
                 basmalaStyle: basmalaStyle,

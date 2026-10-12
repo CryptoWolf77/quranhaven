@@ -66,6 +66,21 @@ class OfflineManifestTests(unittest.TestCase):
         (self.root / "main.dart.js").write_text("changed application")
         self.assertNotEqual(first["version"], offline.generate(self.root)["version"])
 
+    def test_entrypoint_release_query_is_stamped_hashed_and_repeatable(self):
+        index = '<script src="flutter_bootstrap.js?quran-release=__QURAN_OFFLINE_VERSION__" async></script>'
+        (self.root / "index.html").write_text(index, encoding="utf-8")
+        first = offline.generate(self.root)
+        stamped = (self.root / "index.html").read_bytes()
+        self.assertIn(first["version"].encode(), stamped)
+        self.assertNotIn(offline.TOKEN.encode(), stamped)
+        self.assertEqual(stamped, (self.root / "offline-index.bin").read_bytes())
+        self.assertEqual(first, offline.generate(self.root))
+        (self.root / "main.dart.js").write_text("next application")
+        second = offline.generate(self.root)
+        self.assertNotEqual(first["version"], second["version"])
+        self.assertIn(second["version"], (self.root / "index.html").read_text())
+        self.assertNotIn(first["version"], (self.root / "index.html").read_text())
+
     def test_missing_core_asset_fails_before_stamping(self):
         (self.root / "assets/AssetManifest.bin").unlink()
         with self.assertRaisesRegex(ValueError, "missing required"):

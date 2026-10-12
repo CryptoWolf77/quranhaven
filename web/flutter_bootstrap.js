@@ -23,7 +23,7 @@
       return null;
     }
     try {
-      registration = await navigator.serviceWorker.register("quran_service_worker.js", {
+      registration = await navigator.serviceWorker.register("quran_service_worker.js?quran-release=" + SHELL_VERSION, {
         scope: "./", updateViaCache: "none",
       });
       navigator.serviceWorker.addEventListener("message", event => {
@@ -119,6 +119,11 @@
   const startupTimer = setTimeout(() => {
     notice.textContent = "Quran Haven is taking longer to open. If you are offline, reconnect once and prepare offline reading in Settings.";
   }, 20000);
+  // Flutter reuses main.dart.js across releases. Isolate the online entrypoint
+  // just like the verified offline downloads, without changing CDN settings.
+  for (const build of _flutter.buildConfig.builds) {
+    if (build.mainJsPath) build.mainJsPath += "?quran-release=" + SHELL_VERSION;
+  }
   Promise.resolve(_flutter.loader.load({
     config: {canvasKitBaseUrl: "canvaskit/"},
     onEntrypointLoaded: async engine => {

@@ -343,13 +343,15 @@ self.addEventListener("fetch", event => {
   const request = event.request;
   if (request.method !== "GET" || request.headers.has("Authorization") || request.headers.has("Cookie")) return;
   const url = new URL(request.url);
-  if (url.origin !== self.location.origin || url.search || url.hash) return;
+  if (url.origin !== self.location.origin || url.hash) return;
+  const requestedVersion = url.searchParams.get("quran-release");
+  if (url.search && (url.searchParams.size !== 1 || !versionOK(requestedVersion))) return;
   const path = url.pathname === "/" && request.mode === "navigate" ? "/index.html" : url.pathname;
   if (!staticPath(path)) return;
   event.respondWith((async () => {
     try {
       const active = await activeVersion();
-      if (active) {
+      if (active && (!requestedVersion || requestedVersion === active)) {
         const name = cacheName(active);
         const meta = await storedMeta(name);
         const entry = meta.manifest.files.find(entry => entry.path === path);
@@ -369,6 +371,6 @@ self.addEventListener("fetch", event => {
     } catch (_) { /* Storage denial must not prevent normal online reading. */ }
     // Online assets also need release separation when no complete local shell
     // exists yet. CacheStorage keys stay canonical and remain hash-verified.
-    return fetch(releaseURL(path), {headers: request.headers, credentials: "omit", cache: "no-store", redirect: "error"});
+    return fetch(requestedVersion ? url.href : releaseURL(path), {headers: request.headers, credentials: "omit", cache: "no-store", redirect: "error"});
   })());
 });

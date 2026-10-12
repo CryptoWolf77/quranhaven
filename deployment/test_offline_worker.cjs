@@ -284,7 +284,7 @@ test("cancellation waits for every parallel download before removing partial wor
 test("bootstrap uses direct registration, stable bridge and no automatic prepare", () => {
   const bootstrap = fs.readFileSync(path.join(__dirname, "../web/flutter_bootstrap.js"), "utf8");
   new vm.Script(bootstrap.replace("{{flutter_js}}", "").replace("{{flutter_build_config}}", ""));
-  assert.match(bootstrap, /navigator\.serviceWorker\.register\("quran_service_worker.js"/);
+  assert.match(bootstrap, /navigator\.serviceWorker\.register\("quran_service_worker.js\?quran-release=" \+ SHELL_VERSION/);
   assert.doesNotMatch(bootstrap, /serviceWorkerSettings\s*:/);
   assert.match(bootstrap, /window\.quranOffline = Object\.freeze/);
   assert.match(bootstrap, /return command\("prepare", \{persisted\}\)/);
@@ -404,7 +404,7 @@ test("bootstrap does not reload until the new controller actually takes over", a
     CustomEvent: class {constructor(type, options) {this.type = type; this.detail = options.detail;}},
     document: {createElement: () => notice, body: {appendChild: () => {}}},
     setTimeout, clearTimeout,
-    _flutter: {loader: {load: options => options.onEntrypointLoaded({initializeEngine: async () => ({runApp: async () => {}})})}},
+    _flutter: {buildConfig: {builds: [{mainJsPath: "main.dart.js"}]}, loader: {load: options => options.onEntrypointLoaded({initializeEngine: async () => ({runApp: async () => {}})})}},
   });
   vm.runInContext(bootstrap.replace("{{flutter_js}}", "").replace("{{flutter_build_config}}", "").replace("__QURAN_OFFLINE_VERSION__", VERSION), context);
   const activation = window.quranOffline.activateAndReload();
@@ -416,4 +416,21 @@ test("bootstrap does not reload until the new controller actually takes over", a
   events.get("controllerchange")();
   await activation;
   assert.equal(reloads, 1);
+});
+
+test("release-keyed bootstrap and entrypoint reuse only the matching verified cache", async () => {
+  const app = harness();
+  await app.call("prepare");
+  const count = app.requests.length;
+  app.setOffline(true);
+  for (const file of ["flutter_bootstrap.js", "main.dart.js"]) {
+    const result = await app.fetch("/" + file + "?quran-release=" + VERSION);
+    assert.equal(result.intercepted, true);
+    assert.equal(await result.response.text(), app.fixture.contents.get("/" + file));
+  }
+  assert.equal(app.requests.length, count);
+  assert.equal((await app.fetch("/main.dart.js?quran-release=" + VERSION + "&token=private")).intercepted, false);
+  app.setOffline(false);
+  await app.fetch("/main.dart.js?quran-release=" + NEXT);
+  assert.equal(app.requests.at(-1).url, ORIGIN + "/main.dart.js?quran-release=" + NEXT);
 });

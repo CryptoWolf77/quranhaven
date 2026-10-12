@@ -83,18 +83,24 @@ def generate(web_root: Path) -> dict:
         raise ValueError("Generated offline files must not be symlinks")
     bootstrap = normalize_version(bootstrap_path.read_text(encoding="utf-8"), "SHELL_VERSION")
     worker = normalize_version(worker_path.read_text(encoding="utf-8"), "BUILD_VERSION")
+    index_path = root / "index.html"
+    index = index_path.read_bytes()
+    # Normalize a previously stamped entrypoint too, keeping regeneration stable.
+    index = re.sub(rb'flutter_bootstrap\.js\?quran-release=(?:__QURAN_OFFLINE_VERSION__|[a-f0-9]{64})',
+                   b'flutter_bootstrap.js?quran-release=' + TOKEN.encode(), index)
     # Derive a repeatable release identity before stamping the bootstrap itself.
     identity = hashlib.sha256(b"quran-haven-offline-shell-policy-v1\n")
     identity.update(worker.encode())
     for name, path in files:
-        data = bootstrap.encode() if name == "flutter_bootstrap.js" else path.read_bytes()
+        data = bootstrap.encode() if name == "flutter_bootstrap.js" else index if name == "index.html" else path.read_bytes()
         identity.update(name.encode() + b"\0" + hashlib.sha256(data).digest())
     version = identity.hexdigest()
     stamped_bootstrap = bootstrap.replace(TOKEN, version)
     stamped_worker = worker.replace(TOKEN, version)
+    stamped_index = index.replace(TOKEN.encode(), version.encode())
     entries = []
     for name, path in files:
-        data = stamped_bootstrap.encode() if name == "flutter_bootstrap.js" else path.read_bytes()
+        data = stamped_bootstrap.encode() if name == "flutter_bootstrap.js" else stamped_index if name == "index.html" else path.read_bytes()
         if not data or len(data) > MAX_FILE_BYTES:
             raise ValueError("An offline asset is empty or exceeds the individual size limit")
         entries.append({"path": "/" + quote(name, safe="/-._~"), "bytes": len(data),
@@ -106,6 +112,7 @@ def generate(web_root: Path) -> dict:
     # These are generated build artifacts, never application sources.
     bootstrap_path.write_text(stamped_bootstrap, encoding="utf-8", newline="\n")
     worker_path.write_text(stamped_worker, encoding="utf-8", newline="\n")
+    index_path.write_bytes(stamped_index)
     # Serve this exact-byte copy as application/octet-stream. HTML-aware CDN
     # features may inject markup into index.html; the manifest still hashes the
     # original index and the worker stores these verified bytes under that key.
