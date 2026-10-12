@@ -612,4 +612,223 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get localStorageBody =>
       'Your bookmarks, last-read position, plans, settings and downloads are saved only on this device or in this browser. There are no accounts, cloud backups or cross-device sync. Uninstalling the app or clearing its data/site storage can erase these saved items.';
+
+  @override
+  String get guideTitle => 'How to use Quran Haven';
+
+  @override
+  String get guideOpen => 'Open the guide';
+
+  @override
+  String get guideEntryBody =>
+      'Short visual demonstrations and practical steps for reading, listening and building a daily practice.';
+
+  @override
+  String get guideIntroTitle => 'Your journey, one step at a time';
+
+  @override
+  String get guideIntro =>
+      'Start with the Mushaf, then explore the tools that support your reading. These instructions describe the features available now, with separate guidance for the website and phone app.';
+
+  @override
+  String get guideMediaHint =>
+      'Demonstrations stay still until you choose Play. Every demonstration has written steps below it.';
+
+  @override
+  String get guideGoodToKnow => 'Good to know';
+
+  @override
+  String get guidePlayDemo => 'Play demonstration';
+
+  @override
+  String get guideStopDemo => 'Stop demonstration';
+
+  @override
+  String get guideMediaUnavailable =>
+      'Demonstration unavailable. Follow the written steps below.';
+
+  @override
+  String get guideReducedMotion =>
+      'Animation is off because reduced motion is enabled on your device.';
+
+  @override
+  String guideDemoDescription(String topic) {
+    return 'Screen demonstration: $topic';
+  }
+
+  @override
+  String get guideReadingTitle => 'Read and find your place';
+
+  @override
+  String get guideReadingStep1 =>
+      'From Home, choose Open the Mushaf to continue at your last-read page.';
+
+  @override
+  String get guideReadingStep2 =>
+      'Open Quick navigation in the reader. Choose a Surah or Juz, or enter a page number from 1 to 604 and choose Go to page.';
+
+  @override
+  String get guideReadingStep3 =>
+      'Swipe between pages. Your last-read position is saved automatically on this device.';
+
+  @override
+  String get guideReadingTip =>
+      'The Quran remains Arabic when you change the interface language. You do not need an account to read.';
+
+  @override
+  String get guideSearchTitle => 'Search and save bookmarks';
+
+  @override
+  String get guideSearchStep1 =>
+      'Choose Search Quran on Home, or open Search in the reader. Enter a word or phrase from the Arabic Quran.';
+
+  @override
+  String get guideSearchStep2 =>
+      'Select a search result, then use Close at the top of the panel to return to the Mushaf at that Ayah. Press and hold an Ayah to open its actions.';
+
+  @override
+  String get guideSearchStep3 =>
+      'Choose a bookmark color from the Ayah actions. Open Bookmarks to return to your saved Ayahs.';
+
+  @override
+  String get guideSearchTip =>
+      'Search currently covers the Arabic Quran, not Tafsir or translations. Bookmarks use the existing yellow, red and green groups.';
+
+  @override
+  String get guideLibraryTitle => 'Choose Tafsir and translations';
+
+  @override
+  String get guideLibraryStep1 =>
+      'Open Library, then choose Tafsir or Translations.';
+
+  @override
+  String get guideLibraryStep2 =>
+      'Use Download for an additional resource, or Select for one already available. Wait for the ready confirmation.';
+
+  @override
+  String get guideLibraryStep3 =>
+      'Return to the Mushaf, press and hold an Ayah and open its Tafsir action to read the selected resource.';
+
+  @override
+  String get guideLibraryTip =>
+      'Interface language and reading resource are independent. Saved resources can be read offline; browser storage must be available.';
+
+  @override
+  String get guideAudioTitle => 'Listen to recitations';
+
+  @override
+  String get guideAudioStep1 =>
+      'Open the reader audio controls to choose a reciter. Different controls may offer different reciter lists.';
+
+  @override
+  String get guideAudioStep2 =>
+      'In Library, choose Recitations, select a Surah and press Play. You can also play an Ayah from its actions in the Mushaf.';
+
+  @override
+  String get guideAudioStep3 =>
+      'Use the audio player to pause or continue. Resume listening returns to the saved audio position when one is available.';
+
+  @override
+  String get guideAudioTip =>
+      'Online audio needs an internet connection and may come from external recitation providers. Browser offline audio downloads are not available.';
+
+  @override
+  String get guideOfflineTitle => 'Prepare before going offline';
+
+  @override
+  String get guideOfflineStep1 =>
+      'On the website, open Settings and choose Prepare offline reading. Keep the tab open until Ready for offline reading appears. The phone app includes the Mushaf.';
+
+  @override
+  String get guideOfflineStep2 =>
+      'In Library, download the Tafsir and translations you want while connected. Offline app preparation does not download these additional resources or audio.';
+
+  @override
+  String get guideOfflineStep3 =>
+      'In the phone app, choose a Surah under Library → Recitations and use Download for offline. Test your saved content without a connection before relying on it.';
+
+  @override
+  String get guideOfflineTip =>
+      'Browsers may remove saved files when space is low. Private browsing is not suitable for lasting storage. Offline audio is available in the phone app, not the website.';
+
+  @override
+  String get guidePlansTitle => 'Build a reading and memorization routine';
+
+  @override
+  String get guidePlansStep1 =>
+      'Open Plans → Khatmah. Create a plan, choose a completion period and start it. Mark the daily reading only after you finish it.';
+
+  @override
+  String get guidePlansStep2 =>
+      'Open Memorization and create a plan with a Surah, Ayah range, repetition count and delay.';
+
+  @override
+  String get guidePlansStep3 =>
+      'Play the range, hide or reveal the text, and mark Ayahs as memorized or for revision. Use the previous and next controls to move within your range.';
+
+  @override
+  String get guidePlansTip =>
+      'Plan progress is saved on this device. Audio repetition still needs a playable source or a supported saved download.';
+
+  @override
+  String get guideSettingsTitle => 'Make the experience comfortable';
+
+  @override
+  String get guideSettingsStep1 =>
+      'In Settings → Language, choose العربية, English or Español. The guide and interface follow your choice.';
+
+  @override
+  String get guideSettingsStep2 =>
+      'In Settings → Appearance, choose light, dark or the system setting.';
+
+  @override
+  String get guideSettingsStep3 =>
+      'In the phone app, optionally enable a daily reminder, choose its time and grant notification permission.';
+
+  @override
+  String get guideSettingsTip =>
+      'Daily reminder notifications are available on supported phones, not the website. You can turn them off again in Settings.';
+
+  @override
+  String get guideStorageTitle => 'Understand your local data';
+
+  @override
+  String get guideStorageStep1 =>
+      'Bookmarks, reading position, plans, preferences and saved downloads remain on this device or in this browser. There is no account or cross-device sync.';
+
+  @override
+  String get guideStorageStep2 =>
+      'Keep using the same browser profile to retain website data. Another device, browser or profile has its own separate data.';
+
+  @override
+  String get guideStorageTip =>
+      'Uninstalling the app, clearing app or site data, or losing the device can erase your saved items. A local export/import tool is not currently available.';
+
+  @override
+  String get playAyah => 'Play ayah';
+
+  @override
+  String get playFromAyah => 'Play from this ayah';
+
+  @override
+  String get copyAyah => 'Copy ayah';
+
+  @override
+  String get saveYellowBookmark => 'Save a yellow bookmark';
+
+  @override
+  String get saveRedBookmark => 'Save a red bookmark';
+
+  @override
+  String get saveGreenBookmark => 'Save a green bookmark';
+
+  @override
+  String get guideViewLarger => 'View larger';
+
+  @override
+  String get guideZoomHint =>
+      'Pinch or scroll to zoom, then drag to move around the screen. Use Reset zoom to see the full demonstration again.';
+
+  @override
+  String get guideResetZoom => 'Reset zoom';
 }

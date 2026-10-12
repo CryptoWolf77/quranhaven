@@ -296,19 +296,39 @@ class TafsirStyle {
     final onBg = isDark ? Colors.white : Colors.black87;
     final titleOnBg = primary;
 
-    // أسماء افتراضية نصية
-    const defaultTafsirName = 'التفسير';
-    const defaultTranslateName = 'الترجمة';
-    const defaultFootnotesName = 'الحواشي';
-    const defaultEmptyNote = '\n\nتفسير هذه الآية في الأيات السابقة';
+    final language = Localizations.localeOf(context).languageCode;
+    String localized(String ar, String en, String es) => switch (language) {
+          'en' => en,
+          'es' => es,
+          _ => ar,
+        };
+    final defaultTafsirName = localized('التفسير', 'Tafsir', 'Tafsir');
+    final defaultTranslateName =
+        localized('الترجمة', 'Translation', 'Traducción');
+    final defaultFootnotesName = localized('الحواشي', 'Footnotes', 'Notas');
+    final defaultEmptyNote = localized(
+        '\n\nتفسير هذه الآية في الأيات السابقة',
+        '\n\nThe commentary for this ayah is in the previous ayahs.',
+        '\n\nEl comentario de esta aleya está en las aleyas anteriores.');
 
     // نصوص افتراضية لتبويب أحكام التجويد
-    const tajweedSurahNumberError = 'تعذّر تحديد رقم السورة';
-    const tajweedUnavailable = 'بيانات أحكام التجويد غير محمّلة.';
-    const tajweedDownload = 'تحميل';
-    const tajweedDownloading = 'جاري التحميل...';
-    const tajweedLoadError = 'تعذّر تحميل أحكام التجويد.';
-    const tajweedNoData = 'لا توجد بيانات تجويد لهذه الآية.';
+    final tajweedSurahNumberError = localized('تعذّر تحديد رقم السورة',
+        'Could not identify the Surah.', 'No se pudo identificar la sura.');
+    final tajweedUnavailable = localized(
+        'بيانات أحكام التجويد غير محمّلة.',
+        'Tajwid rules are not downloaded.',
+        'Las reglas de taywid no están descargadas.');
+    final tajweedDownload = localized('تحميل', 'Download', 'Descargar');
+    final tajweedDownloading =
+        localized('جاري التحميل...', 'Downloading…', 'Descargando…');
+    final tajweedLoadError = localized(
+        'تعذّر تحميل أحكام التجويد.',
+        'Could not load Tajwid rules.',
+        'No se pudieron cargar las reglas de taywid.');
+    final tajweedNoData = localized(
+        'لا توجد بيانات تجويد لهذه الآية.',
+        'No Tajwid data is available for this ayah.',
+        'No hay datos de taywid para esta aleya.');
 
     return TafsirStyle(
       // الألوان العامة
@@ -369,7 +389,8 @@ class TafsirStyle {
       fontSizeIconWidget: Semantics(
         button: true,
         enabled: true,
-        label: 'Change Font Size',
+        label: localized(
+            'تغيير حجم الخط', 'Change font size', 'Cambiar tamaño de letra'),
         child: Icon(
           Icons.text_format_outlined,
           size: 34,
@@ -436,7 +457,8 @@ class TafsirStyle {
           primary.withValues(alpha: 0.05),
         ],
       ),
-      dialogHeaderTitle: 'تغيير التفسير',
+      dialogHeaderTitle:
+          localized('تغيير التفسير', 'Change Tafsir', 'Cambiar Tafsir'),
       tabBarLabelStyle: TextStyle(
         fontFamily: 'cairo',
         package: 'quran_library',

@@ -1,6 +1,6 @@
 # Quran Haven — current implementation plan
 
-Updated 2026-10-01: the owner cancelled accounts, cloud backup and synchronization.
+Updated 2026-10-12: the owner cancelled accounts, cloud backup and synchronization.
 All personal app data must stay on the user's device/browser. Public Quran
 content hosting and recitation downloads remain in scope.
 
@@ -15,8 +15,8 @@ Project folder: `C:\Users\ThaherTech\Documents\Quran Flutter`.
 | 2. Reader | Surah/Juz/page navigation, Arabic search, bookmarks, last-read persistence and reader customization implemented | Wider physical-device/display acceptance. |
 | 3. Text/audio | 44 verified text resources, reciter selection/playback, mobile audio downloads and browser text downloads implemented | Browser offline audio remains backlog; audio uses external providers. |
 | 4. Plans | Local Khatmah/memorization progress, targets, repetition, hide/reveal and revision markers implemented | Physical-device background audio acceptance. |
-| 5. Local preferences/reminders | Local language/theme, plans, bookmarks and optional device reminders; cloud client removed in build 6 | Verify in-place upgrades and reminder delivery on physical phones. |
-| 6. Public content deployment | HTTPS web and read-only content hosting implemented; current builds have no personal-data API configuration | Publish and verify the local-only build; old remote accounts are not deleted by this change. |
+| 5. Local preferences/reminders | Local language/theme, plans, bookmarks and optional device reminders; cloud client removed in build 6 | Physical-phone upgrade and reminder delivery acceptance. |
+| 6. Public content deployment | Local-only build 6 published and verified over HTTPS on 2026-10-12; no personal-data API configuration | Deploy the build-7 guide/CDN fix and verify it publicly; old remote accounts are untouched. |
 | 7. Offline/accessibility | Browser preparation, verified caches, staged updates, keyboard/semantic controls and large-text layouts implemented | Physical phones, Safari/iOS, quota/eviction and full assistive-technology checks. |
 | 8. Store release | Signing guard, key template, attribution and release checklist prepared | Owner signing/store setup, privacy approval, iOS platform access and final acceptance. |
 
@@ -39,7 +39,8 @@ decision is needed for the previously deployed cloud service/data.
 
 ## Release gates still open
 
-- [ ] Publish the new local-only web build and verify actual browser delivery.
+- [x] Publish the local-only web build and verify actual browser delivery (build 6).
+- [ ] Publish and verify the build-7 guide and release-isolated offline downloads.
 - [ ] Supply public privacy contact and approve accurate disclosures covering
   local storage, content/audio providers and existing CDN analytics.
 - [ ] Supply owner-controlled Android signing and Google Play setup.
@@ -47,6 +48,22 @@ decision is needed for the previously deployed cloud service/data.
 - [ ] Complete install/upgrade, offline, interruption/background audio, denied
   permissions, reminders, large-text and screen-reader acceptance.
 - [ ] Verify browser storage limits/eviction, private browsing and multi-tab updates.
+
+## Usage guide and acceptance update (build 7)
+
+- [x] Integrated guide with eight topics in Arabic, English and Spanish.
+- [x] Twelve real-screen GIFs and twelve posters, explicit Play/Stop, enlarged
+  zoom viewer, reduced-motion support and written steps.
+- [x] Independent desktop/tablet/mobile design evaluation passed in all three
+  languages; this was a same-provider evaluator, not an external-provider audit.
+- [x] Android build repaired with a process-only Java temporary-socket path;
+  test APK build 7 produced. Previous delivery APKs remain untouched.
+- [x] Local real-browser navigation, Arabic search (55 results), translation
+  persistence, Khatmah/memorization creation and offline reload in all languages.
+- [x] Actual browser Surah playback, bookmark save/reload, Tafsir display and
+  expanded-bookmark Escape closure verified.
+- [x] Fix stale CDN asset integrity failures using a fixed release query key;
+  keep canonical verified cache keys and bounded three-file downloads.
 
 ## Additional product backlog
 

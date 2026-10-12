@@ -1185,6 +1185,366 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your bookmarks, last-read position, plans, settings and downloads are saved only on this device or in this browser. There are no accounts, cloud backups or cross-device sync. Uninstalling the app or clearing its data/site storage can erase these saved items.'**
   String get localStorageBody;
+
+  /// No description provided for @guideTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How to use Quran Haven'**
+  String get guideTitle;
+
+  /// No description provided for @guideOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Open the guide'**
+  String get guideOpen;
+
+  /// No description provided for @guideEntryBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Short visual demonstrations and practical steps for reading, listening and building a daily practice.'**
+  String get guideEntryBody;
+
+  /// No description provided for @guideIntroTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your journey, one step at a time'**
+  String get guideIntroTitle;
+
+  /// No description provided for @guideIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Start with the Mushaf, then explore the tools that support your reading. These instructions describe the features available now, with separate guidance for the website and phone app.'**
+  String get guideIntro;
+
+  /// No description provided for @guideMediaHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Demonstrations stay still until you choose Play. Every demonstration has written steps below it.'**
+  String get guideMediaHint;
+
+  /// No description provided for @guideGoodToKnow.
+  ///
+  /// In en, this message translates to:
+  /// **'Good to know'**
+  String get guideGoodToKnow;
+
+  /// No description provided for @guidePlayDemo.
+  ///
+  /// In en, this message translates to:
+  /// **'Play demonstration'**
+  String get guidePlayDemo;
+
+  /// No description provided for @guideStopDemo.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop demonstration'**
+  String get guideStopDemo;
+
+  /// No description provided for @guideMediaUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Demonstration unavailable. Follow the written steps below.'**
+  String get guideMediaUnavailable;
+
+  /// No description provided for @guideReducedMotion.
+  ///
+  /// In en, this message translates to:
+  /// **'Animation is off because reduced motion is enabled on your device.'**
+  String get guideReducedMotion;
+
+  /// No description provided for @guideDemoDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Screen demonstration: {topic}'**
+  String guideDemoDescription(String topic);
+
+  /// No description provided for @guideReadingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Read and find your place'**
+  String get guideReadingTitle;
+
+  /// No description provided for @guideReadingStep1.
+  ///
+  /// In en, this message translates to:
+  /// **'From Home, choose Open the Mushaf to continue at your last-read page.'**
+  String get guideReadingStep1;
+
+  /// No description provided for @guideReadingStep2.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Quick navigation in the reader. Choose a Surah or Juz, or enter a page number from 1 to 604 and choose Go to page.'**
+  String get guideReadingStep2;
+
+  /// No description provided for @guideReadingStep3.
+  ///
+  /// In en, this message translates to:
+  /// **'Swipe between pages. Your last-read position is saved automatically on this device.'**
+  String get guideReadingStep3;
+
+  /// No description provided for @guideReadingTip.
+  ///
+  /// In en, this message translates to:
+  /// **'The Quran remains Arabic when you change the interface language. You do not need an account to read.'**
+  String get guideReadingTip;
+
+  /// No description provided for @guideSearchTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Search and save bookmarks'**
+  String get guideSearchTitle;
+
+  /// No description provided for @guideSearchStep1.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose Search Quran on Home, or open Search in the reader. Enter a word or phrase from the Arabic Quran.'**
+  String get guideSearchStep1;
+
+  /// No description provided for @guideSearchStep2.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a search result, then use Close at the top of the panel to return to the Mushaf at that Ayah. Press and hold an Ayah to open its actions.'**
+  String get guideSearchStep2;
+
+  /// No description provided for @guideSearchStep3.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a bookmark color from the Ayah actions. Open Bookmarks to return to your saved Ayahs.'**
+  String get guideSearchStep3;
+
+  /// No description provided for @guideSearchTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Search currently covers the Arabic Quran, not Tafsir or translations. Bookmarks use the existing yellow, red and green groups.'**
+  String get guideSearchTip;
+
+  /// No description provided for @guideLibraryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose Tafsir and translations'**
+  String get guideLibraryTitle;
+
+  /// No description provided for @guideLibraryStep1.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Library, then choose Tafsir or Translations.'**
+  String get guideLibraryStep1;
+
+  /// No description provided for @guideLibraryStep2.
+  ///
+  /// In en, this message translates to:
+  /// **'Use Download for an additional resource, or Select for one already available. Wait for the ready confirmation.'**
+  String get guideLibraryStep2;
+
+  /// No description provided for @guideLibraryStep3.
+  ///
+  /// In en, this message translates to:
+  /// **'Return to the Mushaf, press and hold an Ayah and open its Tafsir action to read the selected resource.'**
+  String get guideLibraryStep3;
+
+  /// No description provided for @guideLibraryTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Interface language and reading resource are independent. Saved resources can be read offline; browser storage must be available.'**
+  String get guideLibraryTip;
+
+  /// No description provided for @guideAudioTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Listen to recitations'**
+  String get guideAudioTitle;
+
+  /// No description provided for @guideAudioStep1.
+  ///
+  /// In en, this message translates to:
+  /// **'Open the reader audio controls to choose a reciter. Different controls may offer different reciter lists.'**
+  String get guideAudioStep1;
+
+  /// No description provided for @guideAudioStep2.
+  ///
+  /// In en, this message translates to:
+  /// **'In Library, choose Recitations, select a Surah and press Play. You can also play an Ayah from its actions in the Mushaf.'**
+  String get guideAudioStep2;
+
+  /// No description provided for @guideAudioStep3.
+  ///
+  /// In en, this message translates to:
+  /// **'Use the audio player to pause or continue. Resume listening returns to the saved audio position when one is available.'**
+  String get guideAudioStep3;
+
+  /// No description provided for @guideAudioTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Online audio needs an internet connection and may come from external recitation providers. Browser offline audio downloads are not available.'**
+  String get guideAudioTip;
+
+  /// No description provided for @guideOfflineTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Prepare before going offline'**
+  String get guideOfflineTitle;
+
+  /// No description provided for @guideOfflineStep1.
+  ///
+  /// In en, this message translates to:
+  /// **'On the website, open Settings and choose Prepare offline reading. Keep the tab open until Ready for offline reading appears. The phone app includes the Mushaf.'**
+  String get guideOfflineStep1;
+
+  /// No description provided for @guideOfflineStep2.
+  ///
+  /// In en, this message translates to:
+  /// **'In Library, download the Tafsir and translations you want while connected. Offline app preparation does not download these additional resources or audio.'**
+  String get guideOfflineStep2;
+
+  /// No description provided for @guideOfflineStep3.
+  ///
+  /// In en, this message translates to:
+  /// **'In the phone app, choose a Surah under Library → Recitations and use Download for offline. Test your saved content without a connection before relying on it.'**
+  String get guideOfflineStep3;
+
+  /// No description provided for @guideOfflineTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Browsers may remove saved files when space is low. Private browsing is not suitable for lasting storage. Offline audio is available in the phone app, not the website.'**
+  String get guideOfflineTip;
+
+  /// No description provided for @guidePlansTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Build a reading and memorization routine'**
+  String get guidePlansTitle;
+
+  /// No description provided for @guidePlansStep1.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Plans → Khatmah. Create a plan, choose a completion period and start it. Mark the daily reading only after you finish it.'**
+  String get guidePlansStep1;
+
+  /// No description provided for @guidePlansStep2.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Memorization and create a plan with a Surah, Ayah range, repetition count and delay.'**
+  String get guidePlansStep2;
+
+  /// No description provided for @guidePlansStep3.
+  ///
+  /// In en, this message translates to:
+  /// **'Play the range, hide or reveal the text, and mark Ayahs as memorized or for revision. Use the previous and next controls to move within your range.'**
+  String get guidePlansStep3;
+
+  /// No description provided for @guidePlansTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan progress is saved on this device. Audio repetition still needs a playable source or a supported saved download.'**
+  String get guidePlansTip;
+
+  /// No description provided for @guideSettingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Make the experience comfortable'**
+  String get guideSettingsTitle;
+
+  /// No description provided for @guideSettingsStep1.
+  ///
+  /// In en, this message translates to:
+  /// **'In Settings → Language, choose العربية, English or Español. The guide and interface follow your choice.'**
+  String get guideSettingsStep1;
+
+  /// No description provided for @guideSettingsStep2.
+  ///
+  /// In en, this message translates to:
+  /// **'In Settings → Appearance, choose light, dark or the system setting.'**
+  String get guideSettingsStep2;
+
+  /// No description provided for @guideSettingsStep3.
+  ///
+  /// In en, this message translates to:
+  /// **'In the phone app, optionally enable a daily reminder, choose its time and grant notification permission.'**
+  String get guideSettingsStep3;
+
+  /// No description provided for @guideSettingsTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily reminder notifications are available on supported phones, not the website. You can turn them off again in Settings.'**
+  String get guideSettingsTip;
+
+  /// No description provided for @guideStorageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Understand your local data'**
+  String get guideStorageTitle;
+
+  /// No description provided for @guideStorageStep1.
+  ///
+  /// In en, this message translates to:
+  /// **'Bookmarks, reading position, plans, preferences and saved downloads remain on this device or in this browser. There is no account or cross-device sync.'**
+  String get guideStorageStep1;
+
+  /// No description provided for @guideStorageStep2.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep using the same browser profile to retain website data. Another device, browser or profile has its own separate data.'**
+  String get guideStorageStep2;
+
+  /// No description provided for @guideStorageTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Uninstalling the app, clearing app or site data, or losing the device can erase your saved items. A local export/import tool is not currently available.'**
+  String get guideStorageTip;
+
+  /// No description provided for @playAyah.
+  ///
+  /// In en, this message translates to:
+  /// **'Play ayah'**
+  String get playAyah;
+
+  /// No description provided for @playFromAyah.
+  ///
+  /// In en, this message translates to:
+  /// **'Play from this ayah'**
+  String get playFromAyah;
+
+  /// No description provided for @copyAyah.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy ayah'**
+  String get copyAyah;
+
+  /// No description provided for @saveYellowBookmark.
+  ///
+  /// In en, this message translates to:
+  /// **'Save a yellow bookmark'**
+  String get saveYellowBookmark;
+
+  /// No description provided for @saveRedBookmark.
+  ///
+  /// In en, this message translates to:
+  /// **'Save a red bookmark'**
+  String get saveRedBookmark;
+
+  /// No description provided for @saveGreenBookmark.
+  ///
+  /// In en, this message translates to:
+  /// **'Save a green bookmark'**
+  String get saveGreenBookmark;
+
+  /// No description provided for @guideViewLarger.
+  ///
+  /// In en, this message translates to:
+  /// **'View larger'**
+  String get guideViewLarger;
+
+  /// No description provided for @guideZoomHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Pinch or scroll to zoom, then drag to move around the screen. Use Reset zoom to see the full demonstration again.'**
+  String get guideZoomHint;
+
+  /// No description provided for @guideResetZoom.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset zoom'**
+  String get guideResetZoom;
 }
 
 class _AppLocalizationsDelegate

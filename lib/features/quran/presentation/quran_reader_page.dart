@@ -92,6 +92,15 @@ class QuranReaderPage extends StatelessWidget {
       ayahMenuStyle: AyahMenuStyle.defaults(isDark: isDark, context: context)
           .copyWith(
             copySuccessMessage: l10n.ayahCopied,
+            playLabel: l10n.playAyah,
+            playAllLabel: l10n.playFromAyah,
+            tafsirLabel: l10n.tafsir,
+            copyLabel: l10n.copyAyah,
+            bookmarkLabels: {
+              0xAAFFD354: l10n.saveYellowBookmark,
+              0xAAF36077: l10n.saveRedBookmark,
+              0xAA00CD00: l10n.saveGreenBookmark,
+            },
             tafsirIconColor: scheme.primary,
             playIconColor: scheme.primary,
             playAllIconColor: scheme.primary,

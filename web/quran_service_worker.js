@@ -11,12 +11,21 @@ const MAX_TOTAL = 160 * 1024 * 1024;
 const MAX_STORED = 320 * 1024 * 1024;
 const MAX_FILE = 64 * 1024 * 1024;
 const MAX_MANIFEST = 2 * 1024 * 1024;
+const DOWNLOAD_CONCURRENCY = 3;
+const MAX_BATCH_BYTES = 12 * 1024 * 1024;
 let operation = null;
 let storagePersistence = null;
 const metadataMemory = new Map();
 
 function failure(code) { const error = new Error(code); error.code = code; return error; }
 function originURL(path) { return self.location.origin + path; }
+function releaseURL(path) {
+  const url = new URL(originURL(path));
+  // A CDN can retain an older asset at an unchanged Flutter filename. A fixed
+  // release key bypasses that stale object without trusting manifest URLs.
+  if (versionOK(BUILD_VERSION)) url.searchParams.set("quran_release", BUILD_VERSION);
+  return url.href;
+}
 function versionOK(value) { return typeof value === "string" && /^[a-f0-9]{64}$/.test(value); }
 function cacheName(version) { if (!versionOK(version)) throw failure("invalid_manifest"); return PREFIX + version; }
 
@@ -146,7 +155,7 @@ async function download(path, limit, signal) {
   signal?.addEventListener("abort", cancel, {once: true});
   const timer = setTimeout(cancel, 60000);
   try {
-    const response = await fetch(originURL(path), {credentials: "omit", cache: "no-store", redirect: "error", signal: controller.signal});
+    const response = await fetch(releaseURL(path), {credentials: "omit", cache: "no-store", redirect: "error", signal: controller.signal});
     return {bytes: await readLimited(response, limit, controller.signal), contentType: response.headers.get("Content-Type") || "application/octet-stream"};
   } catch (error) {
     if (controller.signal.aborted && !signal?.aborted) throw failure("download_failed");
@@ -210,18 +219,35 @@ async function prepare(requestingClientId, pageVersion) {
       const cache = await caches.open(name);
       let completed = 0;
       let bytesDone = 0;
-      for (const entry of manifest.files) {
+      for (let next = 0; next < manifest.files.length;) {
         if (controller.signal.aborted) throw failure("cancelled");
-        // Keep index.html's original manifest hash. Only its fixed transport
-        // alias avoids HTML-aware CDN rewriting; no arbitrary source URL is
-        // accepted from the manifest and the alias is never an offline key.
-        const sourcePath = entry.path === "/index.html" ? INDEX_SOURCE_PATH : entry.path;
-        const file = await download(sourcePath, entry.bytes, controller.signal);
-        if (file.bytes.byteLength !== entry.bytes || await digest(file.bytes) !== entry.sha256) throw failure("integrity_failed");
-        const contentType = entry.path === "/index.html" ? "text/html; charset=utf-8" : file.contentType;
-        await cache.put(originURL(entry.path), new Response(file.bytes, {headers: {"Content-Type": contentType}}));
-        completed++;
-        bytesDone += entry.bytes;
+        const batch = [];
+        let batchBytes = 0;
+        while (next < manifest.files.length && batch.length < DOWNLOAD_CONCURRENCY) {
+          const entry = manifest.files[next];
+          // A single large file retains the previous per-file limit, but is
+          // never downloaded alongside others. Bound small-file memory too.
+          if (batch.length && batchBytes + entry.bytes > MAX_BATCH_BYTES) break;
+          batch.push(entry);
+          batchBytes += entry.bytes;
+          next++;
+        }
+        const results = await Promise.allSettled(batch.map(async entry => {
+          if (controller.signal.aborted) throw failure("cancelled");
+          // The index alias is fixed policy, never a manifest-supplied URL.
+          const sourcePath = entry.path === "/index.html" ? INDEX_SOURCE_PATH : entry.path;
+          const file = await download(sourcePath, entry.bytes, controller.signal);
+          if (file.bytes.byteLength !== entry.bytes || await digest(file.bytes) !== entry.sha256) throw failure("integrity_failed");
+          if (controller.signal.aborted) throw failure("cancelled");
+          const contentType = entry.path === "/index.html" ? "text/html; charset=utf-8" : file.contentType;
+          await cache.put(originURL(entry.path), new Response(file.bytes, {headers: {"Content-Type": contentType}}));
+          completed++;
+          bytesDone += entry.bytes;
+        }));
+        // All in-flight puts settle BEFORE failure/cancellation cleanup. No
+        // late write can recreate a cache after it has been removed.
+        const rejected = results.find(result => result.status === "rejected");
+        if (rejected) throw rejected.reason;
         await publish(await status({completedFiles: completed, totalFiles: manifest.files.length, completedBytes: bytesDone, totalBytes: manifest.totalBytes}));
       }
       if (controller.signal.aborted) throw failure("cancelled");
@@ -341,6 +367,8 @@ self.addEventListener("fetch", event => {
         }
       }
     } catch (_) { /* Storage denial must not prevent normal online reading. */ }
-    return fetch(request);
+    // Online assets also need release separation when no complete local shell
+    // exists yet. CacheStorage keys stay canonical and remain hash-verified.
+    return fetch(releaseURL(path), {headers: request.headers, credentials: "omit", cache: "no-store", redirect: "error"});
   })());
 });

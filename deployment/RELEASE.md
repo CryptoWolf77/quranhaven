@@ -11,17 +11,20 @@ Put them in ignored `android/key.properties`; use `android/key.properties.exampl
 only as a field guide. Never commit the actual file, print it or upload the key.
 The application ID stays `org.quranflutter.quran_flutter` to preserve installations.
 
-For an explicitly test-signed APK in PowerShell, set a process-only variable:
+For an explicitly test-signed APK in PowerShell, use the scoped build helper:
 
 ```powershell
-$env:QURAN_HAVEN_TEST_SIGNING = 'true'
-flutter build apk --release --dart-define=QURAN_CONTENT_URL=https://quranhaven.org/v1/
-Remove-Item Env:QURAN_HAVEN_TEST_SIGNING
+./deployment/build_android.ps1 -TestSigning
 ```
 
+The helper temporarily puts Windows Java socket files in ignored `android/.gradle`
+to avoid failures caused by long redirected TEMP paths. It restores process
+settings on completion; no system network or Java settings are changed. Pass
+`-FlutterExecutable C:\flutter\bin\flutter.bat` if Flutter is not on PATH.
+
 Do not publish that artifact in Google Play. With the owner's production signing
-configuration, omit the test flag and use `flutter build appbundle` with the same
-content define. Verify the certificate before uploading. See the official
+configuration, omit `-TestSigning` and use `-AppBundle` with the same content root.
+Verify the certificate before uploading. See the official
 [Flutter Android release guide](https://docs.flutter.dev/deployment/android).
 
 ## Still required from the owner

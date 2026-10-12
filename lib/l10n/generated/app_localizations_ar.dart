@@ -609,4 +609,222 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get localStorageBody =>
       'تُحفظ العلامات المرجعية وآخر قراءة والخطط والإعدادات والتنزيلات على هذا الجهاز أو في هذا المتصفح فقط. لا توجد حسابات أو نسخ سحابية أو مزامنة بين الأجهزة. قد يؤدي حذف التطبيق أو مسح بياناته أو بيانات الموقع إلى فقدان هذه العناصر المحفوظة.';
+
+  @override
+  String get guideTitle => 'دليل استخدام قرآن هيفن';
+
+  @override
+  String get guideOpen => 'افتح دليل الاستخدام';
+
+  @override
+  String get guideEntryBody =>
+      'عروض مرئية قصيرة وخطوات عملية للقراءة والاستماع وبناء ورد يومي.';
+
+  @override
+  String get guideIntroTitle => 'رحلتك، خطوة بخطوة';
+
+  @override
+  String get guideIntro =>
+      'ابدأ بالمصحف، ثم تعرّف على الأدوات التي تساعدك في القراءة. يشرح هذا الدليل المميزات المتاحة حالياً، مع توضيح ما يختلف بين الموقع وتطبيق الهاتف.';
+
+  @override
+  String get guideMediaHint =>
+      'تبقى العروض ثابتة حتى تضغط تشغيل. وتجد تحت كل عرض خطوات مكتوبة.';
+
+  @override
+  String get guideGoodToKnow => 'من المفيد أن تعرف';
+
+  @override
+  String get guidePlayDemo => 'تشغيل العرض';
+
+  @override
+  String get guideStopDemo => 'إيقاف العرض';
+
+  @override
+  String get guideMediaUnavailable =>
+      'العرض غير متاح. اتبع الخطوات المكتوبة أدناه.';
+
+  @override
+  String get guideReducedMotion =>
+      'العرض المتحرك معطّل لأن تقليل الحركة مفعّل على جهازك.';
+
+  @override
+  String guideDemoDescription(String topic) {
+    return 'عرض توضيحي للشاشة: $topic';
+  }
+
+  @override
+  String get guideReadingTitle => 'اقرأ وانتقل إلى موضعك';
+
+  @override
+  String get guideReadingStep1 =>
+      'من الرئيسية، اختر فتح المصحف للمتابعة من آخر صفحة قرأتها.';
+
+  @override
+  String get guideReadingStep2 =>
+      'افتح التنقل السريع داخل القارئ. اختر سورة أو جزءاً، أو أدخل رقم صفحة من 1 إلى 604 ثم اضغط الانتقال إلى الصفحة.';
+
+  @override
+  String get guideReadingStep3 =>
+      'اسحب للتنقل بين الصفحات. يُحفظ موضع آخر قراءة تلقائياً على هذا الجهاز.';
+
+  @override
+  String get guideReadingTip =>
+      'يبقى نص القرآن بالعربية عند تغيير لغة الواجهة. لا تحتاج إلى حساب لقراءة المصحف.';
+
+  @override
+  String get guideSearchTitle => 'ابحث واحفظ العلامات المرجعية';
+
+  @override
+  String get guideSearchStep1 =>
+      'اختر البحث في القرآن من الرئيسية، أو افتح البحث داخل القارئ. أدخل كلمة أو عبارة من نص القرآن العربي.';
+
+  @override
+  String get guideSearchStep2 =>
+      'اختر نتيجة البحث، ثم اضغط إغلاق أعلى اللوحة للعودة إلى المصحف عند الآية المختارة. اضغط مطولاً على آية لفتح خياراتها.';
+
+  @override
+  String get guideSearchStep3 =>
+      'اختر لون العلامة المرجعية من خيارات الآية. افتح العلامات المرجعية للعودة إلى الآيات المحفوظة.';
+
+  @override
+  String get guideSearchTip =>
+      'يشمل البحث حالياً النص القرآني العربي، وليس التفاسير أو الترجمات. تُنظّم العلامات ضمن المجموعات الصفراء والحمراء والخضراء.';
+
+  @override
+  String get guideLibraryTitle => 'اختر التفسير والترجمة';
+
+  @override
+  String get guideLibraryStep1 => 'افتح المكتبة، ثم اختر التفسير أو الترجمات.';
+
+  @override
+  String get guideLibraryStep2 =>
+      'اضغط تنزيل لمصدر إضافي، أو اختيار لمصدر متاح بالفعل. انتظر رسالة تأكيد الجاهزية.';
+
+  @override
+  String get guideLibraryStep3 =>
+      'عُد إلى المصحف، واضغط مطولاً على آية، ثم افتح خيار التفسير لقراءة المصدر الذي اخترته.';
+
+  @override
+  String get guideLibraryTip =>
+      'لغة الواجهة مستقلة عن مصدر القراءة. تعمل المصادر المحفوظة دون اتصال، بشرط إتاحة التخزين في المتصفح.';
+
+  @override
+  String get guideAudioTitle => 'استمع إلى التلاوات';
+
+  @override
+  String get guideAudioStep1 =>
+      'افتح أدوات الصوت في القارئ لاختيار قارئ. قد تختلف قائمة القراء بين أدوات التشغيل.';
+
+  @override
+  String get guideAudioStep2 =>
+      'في المكتبة، اختر التلاوات، ثم حدّد سورة واضغط تشغيل. يمكنك أيضاً تشغيل آية من خياراتها داخل المصحف.';
+
+  @override
+  String get guideAudioStep3 =>
+      'استخدم مشغّل الصوت للإيقاف المؤقت أو المتابعة. يعيدك استئناف الاستماع إلى موضع الصوت المحفوظ إن كان متاحاً.';
+
+  @override
+  String get guideAudioTip =>
+      'تحتاج التلاوات عبر الإنترنت إلى اتصال، وقد تأتي من مزودي تلاوات خارجيين. تنزيل الصوت للاستخدام دون اتصال غير متاح في المتصفح.';
+
+  @override
+  String get guideOfflineTitle => 'استعد قبل انقطاع الاتصال';
+
+  @override
+  String get guideOfflineStep1 =>
+      'على الموقع، افتح الإعدادات واضغط تجهيز القراءة دون اتصال. أبقِ الصفحة مفتوحة حتى تظهر رسالة جاهز للقراءة دون اتصال. المصحف مضمّن في تطبيق الهاتف.';
+
+  @override
+  String get guideOfflineStep2 =>
+      'نزّل التفاسير والترجمات المطلوبة من المكتبة أثناء الاتصال. تجهيز الموقع دون اتصال لا ينزّل هذه المصادر الإضافية أو الصوت.';
+
+  @override
+  String get guideOfflineStep3 =>
+      'في تطبيق الهاتف، اختر سورة من المكتبة ← التلاوات، ثم اضغط تنزيل دون اتصال. جرّب المحتوى المحفوظ دون إنترنت قبل الاعتماد عليه.';
+
+  @override
+  String get guideOfflineTip =>
+      'قد يحذف المتصفح الملفات المحفوظة عند نقص المساحة. التصفح الخاص لا يناسب الحفظ الدائم. يعمل تنزيل الصوت دون اتصال في تطبيق الهاتف، وليس الموقع.';
+
+  @override
+  String get guidePlansTitle => 'نظّم الختمة والحفظ';
+
+  @override
+  String get guidePlansStep1 =>
+      'افتح الخطط ثم الختمة. أنشئ خطة وحدّد مدة الإتمام وابدأها. سجّل إنجاز الورد اليومي بعد الانتهاء منه فقط.';
+
+  @override
+  String get guidePlansStep2 =>
+      'افتح الحفظ وأنشئ خطة تحدّد فيها السورة ونطاق الآيات وعدد التكرارات والفاصل بينها.';
+
+  @override
+  String get guidePlansStep3 =>
+      'شغّل النطاق، وأخفِ النص أو أظهره، وحدّد الآيات المحفوظة أو المطلوبة للمراجعة. تنقّل داخل النطاق بأزرار الآية السابقة والتالية.';
+
+  @override
+  String get guidePlansTip =>
+      'يُحفظ تقدم الخطط على هذا الجهاز. يحتاج تكرار الصوت إلى مصدر قابل للتشغيل أو تنزيل محفوظ تدعمه أداة التشغيل.';
+
+  @override
+  String get guideSettingsTitle => 'اضبط التجربة بما يناسبك';
+
+  @override
+  String get guideSettingsStep1 =>
+      'من الإعدادات ثم اللغة، اختر العربية أو English أو Español. تتبع الواجهة وهذا الدليل اللغة المختارة.';
+
+  @override
+  String get guideSettingsStep2 =>
+      'من الإعدادات ثم المظهر، اختر الوضع الفاتح أو الداكن أو إعداد النظام.';
+
+  @override
+  String get guideSettingsStep3 =>
+      'في تطبيق الهاتف، يمكنك تفعيل تذكير يومي وتحديد وقته والسماح بإشعارات التطبيق.';
+
+  @override
+  String get guideSettingsTip =>
+      'تتوفر إشعارات التذكير اليومي على الهواتف المدعومة، وليس الموقع. ويمكنك تعطيلها مجدداً من الإعدادات.';
+
+  @override
+  String get guideStorageTitle => 'تعرّف على بياناتك المحلية';
+
+  @override
+  String get guideStorageStep1 =>
+      'تُحفظ العلامات وموضع القراءة والخطط والإعدادات والتنزيلات على هذا الجهاز أو في هذا المتصفح. لا يوجد حساب أو مزامنة بين الأجهزة.';
+
+  @override
+  String get guideStorageStep2 =>
+      'استخدم ملف المتصفح نفسه للاحتفاظ ببيانات الموقع. لكل جهاز أو متصفح أو ملف مستخدم بيانات مستقلة.';
+
+  @override
+  String get guideStorageTip =>
+      'قد تفقد العناصر المحفوظة عند حذف التطبيق أو مسح بيانات التطبيق أو الموقع أو فقدان الجهاز. لا تتوفر حالياً أداة لتصدير البيانات المحلية واستيرادها.';
+
+  @override
+  String get playAyah => 'تشغيل الآية';
+
+  @override
+  String get playFromAyah => 'التشغيل من هذه الآية';
+
+  @override
+  String get copyAyah => 'نسخ الآية';
+
+  @override
+  String get saveYellowBookmark => 'حفظ علامة صفراء';
+
+  @override
+  String get saveRedBookmark => 'حفظ علامة حمراء';
+
+  @override
+  String get saveGreenBookmark => 'حفظ علامة خضراء';
+
+  @override
+  String get guideViewLarger => 'عرض بحجم أكبر';
+
+  @override
+  String get guideZoomHint =>
+      'كبّر بإصبعين أو عجلة التمرير، ثم اسحب لاستكشاف الشاشة. اضغط إعادة ضبط التكبير لرؤية العرض كاملاً من جديد.';
+
+  @override
+  String get guideResetZoom => 'إعادة ضبط التكبير';
 }

@@ -12,6 +12,16 @@ class _BookmarksTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ayahLabel = switch (languageCode) {
+      'en' => 'Ayah',
+      'es' => 'Aleya',
+      _ => 'آية',
+    };
+    final pageLabel = switch (languageCode) {
+      'en' => 'Page',
+      'es' => 'Página',
+      _ => 'صفحة',
+    };
     final effectiveStyle = style ??
         (BookmarksTabTheme.of(context)?.style ??
             BookmarksTabStyle.defaults(isDark: isDark, context: context));
@@ -182,7 +192,7 @@ class _BookmarksTab extends StatelessWidget {
                                           _chip(
                                             context,
                                             effectiveStyle,
-                                            'آية ${bookmark.ayahNumber}'
+                                            '$ayahLabel ${bookmark.ayahNumber}'
                                                 .convertNumbersAccordingToLang(
                                                     languageCode: languageCode),
                                             groupColor.withValues(alpha: 0.12),
@@ -192,7 +202,7 @@ class _BookmarksTab extends StatelessWidget {
                                             _chip(
                                               context,
                                               effectiveStyle,
-                                              'صفحة ${bookmark.page}'
+                                              '$pageLabel ${bookmark.page}'
                                                   .convertNumbersAccordingToLang(
                                                       languageCode:
                                                           languageCode),

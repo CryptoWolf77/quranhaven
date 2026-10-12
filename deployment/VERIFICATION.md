@@ -1,5 +1,59 @@
 # Connected/offline release verification — 2026-09-07
 
+## Publication, Android repair and usage guide — 2026-10-12 (build 7)
+
+This section supersedes the unpushed/build-blocked status recorded on 2026-10-01.
+The local-only source was pushed as `a61dbbe`; the owner triggered the public
+Quran Haven deployment. HTTPS now reports build 6, exact `main.dart.js` matches
+the build-6 hash below, and app/content smoke checks pass. No remote cloud service
+or existing user record was stopped, inspected or deleted.
+
+Build 7 is prepared locally with eight guide topics, 12 real-screen GIFs and 12
+PNG posters in Arabic, English and Spanish. Written steps distinguish browser
+and native limitations. Media is local, static by default, explicitly played,
+zoomable and disabled when reduced motion is requested.
+
+- 94 Flutter tests, 22 content/deployment Python tests, 13 offline/server Python
+  tests and 21 real-worker/bridge Node tests passed. All 1,161 public Quran files
+  pass integrity checks; text/font/resource bytes are unchanged.
+- Analysis: no errors/warnings; the same three vendored `cacheExtent` notices.
+- Final JavaScript build passed. `main.dart.js` SHA-256:
+  `d6a4494bbb3bfdd093a606a83fdefcfd8a752eb4f9c7b917c404b241b117ba4f`.
+  Local shell: 691 files, 100,959,899 bytes, identity prefix `fc4ff3214737`.
+- Real independent Chrome tests passed reader navigation, Arabic `الرحمن`
+  search (55 results), downloaded Spanish translation, Khatmah creation/daily
+  completion/pause, memorization creation, and full offline app reload/reader
+  rendering in all three interface languages. The wide two-page reader retains
+  page 49 for the 49/50 spread selected through Aal-Imran. No account API request
+  or page error was observed in these tests.
+- A yellow Ayah bookmark survives reload; named actions, close control and
+  Escape after expanding a bookmark group work. Arabic Tafsir content renders;
+  its interface tabs now follow the app language.
+- On the public build-6 site, real Surah playback was verified: the HTML media
+  element was playing, readyState 4, and time advanced from 2.007863 to 3.522889
+  seconds. The provider returned HTTP 206; no page errors occurred.
+- Public build-6 offline preparation exposed a stale CDN MaterialIcons font:
+  22,308 bytes delivered versus 21,432 bytes required. A fixed release query
+  returned the correct file/hash. Build 7 uses release-isolated requests and
+  revalidation, with bounded three-file downloads and settled cancellation.
+- Independent guide evaluation passed at 1440, 768 and 375 px in all languages,
+  including explicit playback, enlarged viewer, Escape and reduced motion. The
+  evaluator was independent but same-provider; no external-provider audit is
+  claimed. Supplemental dark-mode evaluation was inconclusive, not a pass.
+- Android build repaired using scoped `jdk.net.unixdomain.tmpdir` under ignored
+  `android/.gradle`. Windows long TEMP paths caused Java's local pipe failure.
+  No global SDK/Java/network setting was changed.
+- Delivery APK: `Quran Haven - test build 7.apk`, 147,697,744 bytes, SHA-256
+  `d9ccac7d04eead24b8d7003463de2ede0ea61d0847f49e6d56261f759456e910`.
+  VersionCode 7, same app ID, Android Debug certificate, and disabled automatic
+  backup verified. This is not a store-signed package.
+
+The build-7 public deployment and native in-place upgrade checks are still being
+completed. A first update attempt on the existing Pixel 10 emulator failed due
+to insufficient storage (541 MiB free). Its existing fixtures/data were preserved;
+a separate roomier test emulator is being used. Physical Android/iOS, store
+signing, privacy contact and wider storage/assistive-technology checks remain open.
+
 ## Local-only update — 2026-10-01 (build 6)
 
 This supersedes historical cloud-client details below. Accounts, sign-in,

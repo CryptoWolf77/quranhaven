@@ -620,4 +620,223 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get localStorageBody =>
       'Tus marcadores, última lectura, planes, ajustes y descargas se guardan solo en este dispositivo o navegador. No hay cuentas, copias en la nube ni sincronización entre dispositivos. Desinstalar la aplicación o borrar sus datos o los del sitio puede eliminar estos elementos guardados.';
+
+  @override
+  String get guideTitle => 'Guía de Quran Haven';
+
+  @override
+  String get guideOpen => 'Abrir la guía';
+
+  @override
+  String get guideEntryBody =>
+      'Demostraciones visuales breves y pasos prácticos para leer, escuchar y crear una rutina diaria.';
+
+  @override
+  String get guideIntroTitle => 'Tu recorrido, paso a paso';
+
+  @override
+  String get guideIntro =>
+      'Empieza con el Mushaf y descubre las herramientas que acompañan tu lectura. Esta guía describe las funciones disponibles actualmente e indica las diferencias entre el sitio web y la aplicación móvil.';
+
+  @override
+  String get guideMediaHint =>
+      'Las demostraciones permanecen inmóviles hasta que pulses Reproducir. Debajo de cada una encontrarás los pasos por escrito.';
+
+  @override
+  String get guideGoodToKnow => 'Conviene saber';
+
+  @override
+  String get guidePlayDemo => 'Reproducir demostración';
+
+  @override
+  String get guideStopDemo => 'Detener demostración';
+
+  @override
+  String get guideMediaUnavailable =>
+      'Demostración no disponible. Sigue los pasos escritos abajo.';
+
+  @override
+  String get guideReducedMotion =>
+      'La animación está desactivada porque tu dispositivo tiene activada la reducción de movimiento.';
+
+  @override
+  String guideDemoDescription(String topic) {
+    return 'Demostración en pantalla: $topic';
+  }
+
+  @override
+  String get guideReadingTitle => 'Lee y encuentra tu lugar';
+
+  @override
+  String get guideReadingStep1 =>
+      'En Inicio, elige Abrir el Mushaf para continuar en la última página leída.';
+
+  @override
+  String get guideReadingStep2 =>
+      'Abre Navegación rápida en el lector. Elige una sura o un juz, o escribe un número de página entre 1 y 604 y pulsa Ir a la página.';
+
+  @override
+  String get guideReadingStep3 =>
+      'Desliza para cambiar de página. Tu última posición de lectura se guarda automáticamente en este dispositivo.';
+
+  @override
+  String get guideReadingTip =>
+      'El texto del Corán permanece en árabe al cambiar el idioma de la interfaz. No necesitas una cuenta para leer.';
+
+  @override
+  String get guideSearchTitle => 'Busca y guarda marcadores';
+
+  @override
+  String get guideSearchStep1 =>
+      'Elige Buscar en el Corán en Inicio o abre Buscar en el lector. Escribe una palabra o frase del texto árabe del Corán.';
+
+  @override
+  String get guideSearchStep2 =>
+      'Selecciona un resultado y pulsa Cerrar arriba del panel para volver al Mushaf en esa aleya. Mantén pulsada una aleya para abrir sus opciones.';
+
+  @override
+  String get guideSearchStep3 =>
+      'Elige un color de marcador en las opciones de la aleya. Abre Marcadores para volver a las aleyas guardadas.';
+
+  @override
+  String get guideSearchTip =>
+      'La búsqueda cubre actualmente el Corán en árabe, no el tafsir ni las traducciones. Los marcadores se organizan en los grupos amarillo, rojo y verde.';
+
+  @override
+  String get guideLibraryTitle => 'Elige tafsir y traducciones';
+
+  @override
+  String get guideLibraryStep1 =>
+      'Abre Biblioteca y elige Tafsir o Traducciones.';
+
+  @override
+  String get guideLibraryStep2 =>
+      'Pulsa Descargar para un recurso adicional, o Seleccionar para uno ya disponible. Espera la confirmación de que está listo.';
+
+  @override
+  String get guideLibraryStep3 =>
+      'Vuelve al Mushaf, mantén pulsada una aleya y abre la opción Tafsir para leer el recurso seleccionado.';
+
+  @override
+  String get guideLibraryTip =>
+      'El idioma de la interfaz y el recurso de lectura son independientes. Los recursos guardados funcionan sin conexión si el navegador permite el almacenamiento.';
+
+  @override
+  String get guideAudioTitle => 'Escucha recitaciones';
+
+  @override
+  String get guideAudioStep1 =>
+      'Abre los controles de audio del lector para elegir un recitador. La lista puede variar según los controles de reproducción.';
+
+  @override
+  String get guideAudioStep2 =>
+      'En Biblioteca, elige Recitaciones, selecciona una sura y pulsa Reproducir. También puedes reproducir una aleya desde sus opciones en el Mushaf.';
+
+  @override
+  String get guideAudioStep3 =>
+      'Usa el reproductor para pausar o continuar. Reanudar la escucha vuelve a la posición de audio guardada cuando está disponible.';
+
+  @override
+  String get guideAudioTip =>
+      'El audio en línea necesita conexión y puede proceder de proveedores externos de recitaciones. No hay descargas de audio sin conexión en el navegador.';
+
+  @override
+  String get guideOfflineTitle => 'Prepárate antes de desconectarte';
+
+  @override
+  String get guideOfflineStep1 =>
+      'En el sitio web, abre Ajustes y pulsa Preparar lectura sin conexión. Mantén la pestaña abierta hasta que aparezca Listo para leer sin conexión. La aplicación móvil incluye el Mushaf.';
+
+  @override
+  String get guideOfflineStep2 =>
+      'Descarga en Biblioteca los tafsires y las traducciones que necesites mientras tienes conexión. Preparar el sitio sin conexión no descarga estos recursos adicionales ni el audio.';
+
+  @override
+  String get guideOfflineStep3 =>
+      'En la aplicación móvil, elige una sura en Biblioteca → Recitaciones y pulsa Descargar sin conexión. Prueba el contenido guardado sin internet antes de depender de él.';
+
+  @override
+  String get guideOfflineTip =>
+      'El navegador puede borrar archivos cuando queda poco espacio. La navegación privada no es adecuada para conservar datos. El audio sin conexión está disponible en la aplicación móvil, no en el sitio web.';
+
+  @override
+  String get guidePlansTitle => 'Crea una rutina de lectura y memorización';
+
+  @override
+  String get guidePlansStep1 =>
+      'Abre Planes → Khatmah. Crea un plan, elige el plazo y comienza. Marca la lectura diaria solo después de terminarla.';
+
+  @override
+  String get guidePlansStep2 =>
+      'Abre Memorización y crea un plan con una sura, un intervalo de aleyas, las repeticiones y la pausa entre ellas.';
+
+  @override
+  String get guidePlansStep3 =>
+      'Reproduce el intervalo, oculta o muestra el texto y marca las aleyas memorizadas o pendientes de repaso. Usa los controles anterior y siguiente para moverte dentro del intervalo.';
+
+  @override
+  String get guidePlansTip =>
+      'El progreso de los planes se guarda en este dispositivo. La repetición de audio necesita una fuente reproducible o una descarga guardada compatible.';
+
+  @override
+  String get guideSettingsTitle => 'Ajusta la experiencia a tu gusto';
+
+  @override
+  String get guideSettingsStep1 =>
+      'En Ajustes → Idioma, elige العربية, English o Español. La interfaz y esta guía siguen tu elección.';
+
+  @override
+  String get guideSettingsStep2 =>
+      'En Ajustes → Apariencia, elige el modo claro, oscuro o el ajuste del sistema.';
+
+  @override
+  String get guideSettingsStep3 =>
+      'En la aplicación móvil, puedes activar un recordatorio diario, elegir la hora y conceder permiso para las notificaciones.';
+
+  @override
+  String get guideSettingsTip =>
+      'Los recordatorios diarios están disponibles en teléfonos compatibles, no en el sitio web. Puedes desactivarlos en Ajustes.';
+
+  @override
+  String get guideStorageTitle => 'Entiende tus datos locales';
+
+  @override
+  String get guideStorageStep1 =>
+      'Los marcadores, la posición de lectura, los planes, los ajustes y las descargas se guardan en este dispositivo o navegador. No hay cuenta ni sincronización entre dispositivos.';
+
+  @override
+  String get guideStorageStep2 =>
+      'Utiliza el mismo perfil del navegador para conservar los datos del sitio. Cada dispositivo, navegador o perfil tiene sus propios datos.';
+
+  @override
+  String get guideStorageTip =>
+      'Desinstalar la aplicación, borrar sus datos o los del sitio, o perder el dispositivo puede eliminar lo guardado. Actualmente no hay una herramienta de exportación e importación local.';
+
+  @override
+  String get playAyah => 'Reproducir aleya';
+
+  @override
+  String get playFromAyah => 'Reproducir desde esta aleya';
+
+  @override
+  String get copyAyah => 'Copiar aleya';
+
+  @override
+  String get saveYellowBookmark => 'Guardar marcador amarillo';
+
+  @override
+  String get saveRedBookmark => 'Guardar marcador rojo';
+
+  @override
+  String get saveGreenBookmark => 'Guardar marcador verde';
+
+  @override
+  String get guideViewLarger => 'Ver más grande';
+
+  @override
+  String get guideZoomHint =>
+      'Pellizca o desplázate para ampliar y arrastra para recorrer la pantalla. Usa Restablecer zoom para volver a ver la demostración completa.';
+
+  @override
+  String get guideResetZoom => 'Restablecer zoom';
 }

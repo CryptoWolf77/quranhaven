@@ -49,6 +49,7 @@ app.*.map.json
 **/.dart_tool/
 **/build/
 **/.gradle/
+**/.kotlin/
 **/__pycache__/
 .pytest_cache/
 **/.env

@@ -164,6 +164,17 @@ class AyahMenuDialog extends StatelessWidget {
                         if (widgets.isNotEmpty) widgets.add(divider());
                       }
 
+                      Widget labeledIcon(
+                              String label, IconData? data, Color? color) =>
+                          Tooltip(
+                            message: label,
+                            excludeFromSemantics: true,
+                            child: Icon(data,
+                                color: color,
+                                size: s.iconSize,
+                                semanticLabel: label),
+                          );
+
                       // عناصر إضافية مخصّصة (من الستايل ثم الاستدعاء)
                       if (customMenuItems.isNotEmpty) {
                         for (final item in customMenuItems) {
@@ -198,11 +209,8 @@ class AyahMenuDialog extends StatelessWidget {
                               );
                               log('Second Menu Child Tapped: ${ayah!.ayahUQNumber}');
                             },
-                            child: Icon(
-                              s.playIconData,
-                              color: s.playIconColor,
-                              size: s.iconSize,
-                            ),
+                            child: labeledIcon(s.playLabel ?? 'Play ayah',
+                                s.playIconData, s.playIconColor),
                           ),
                         );
                       }
@@ -225,11 +233,10 @@ class AyahMenuDialog extends StatelessWidget {
                               );
                               log('Second Menu Child Tapped: ${ayah!.ayahUQNumber}');
                             },
-                            child: Icon(
-                              s.playAllIconData,
-                              color: s.playAllIconColor,
-                              size: s.iconSize,
-                            ),
+                            child: labeledIcon(
+                                s.playAllLabel ?? 'Play from this ayah',
+                                s.playAllIconData,
+                                s.playAllIconColor),
                           ),
                         );
                       }
@@ -251,11 +258,8 @@ class AyahMenuDialog extends StatelessWidget {
                                 externalTafsirStyle: externalTafsirStyle,
                               );
                             },
-                            child: Icon(
-                              s.tafsirIconData,
-                              color: s.tafsirIconColor,
-                              size: s.iconSize,
-                            ),
+                            child: labeledIcon(s.tafsirLabel ?? 'Tafsir',
+                                s.tafsirIconData, s.tafsirIconColor),
                           ),
                         );
                       }
@@ -270,11 +274,8 @@ class AyahMenuDialog extends StatelessWidget {
                                   ClipboardData(text: ayah!.text));
                               close();
                             },
-                            child: Icon(
-                              s.copyIconData,
-                              color: s.copyIconColor,
-                              size: s.iconSize,
-                            ),
+                            child: labeledIcon(s.copyLabel ?? 'Copy ayah',
+                                s.copyIconData, s.copyIconColor),
                           ),
                         );
                       }
@@ -306,10 +307,11 @@ class AyahMenuDialog extends StatelessWidget {
                                   );
                                   close();
                                 },
-                                child: Icon(
+                                child: labeledIcon(
+                                  s.bookmarkLabels?[colorCode] ??
+                                      'Bookmark ayah',
                                   s.bookmarkIconData,
-                                  color: Color(colorCode),
-                                  size: s.iconSize,
+                                  Color(colorCode),
                                 ),
                               ),
                             ),

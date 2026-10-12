@@ -109,9 +109,15 @@ class ShowTafseer extends StatelessWidget {
                           fontSize: 14,
                           color: AppColors.getTextColor(isDark),
                         ),
-                    tabs: const [
-                      Tab(text: 'التفسير'),
-                      Tab(text: 'أحكام التجويد'),
+                    tabs: [
+                      Tab(text: s.tafsirName ?? 'التفسير'),
+                      Tab(
+                          text: switch (
+                              Localizations.localeOf(context).languageCode) {
+                        'en' => 'Tajwid rules',
+                        'es' => 'Reglas de taywid',
+                        _ => 'أحكام التجويد',
+                      }),
                     ],
                   ),
                   const Divider(height: 1),

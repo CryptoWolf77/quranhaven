@@ -111,6 +111,13 @@ class AyahMenuStyle {
   /// رسالة نجاح النسخ (مستحسن ربطها بـ i18n/intl).
   final String? copySuccessMessage;
 
+  /// Localized action names for tooltips and assistive technology.
+  final String? playLabel;
+  final String? playAllLabel;
+  final String? tafsirLabel;
+  final String? copyLabel;
+  final Map<int, String>? bookmarkLabels;
+
   /// عناصر إضافية مخصّصة لعرضها ضمن قائمة الضغط المطوّل.
   ///
   /// تسمح بحقن Widgets (أزرار/أيقونات/نصوص) ضمن الشريط، قبل العناصر الافتراضية.
@@ -147,6 +154,11 @@ class AyahMenuStyle {
     this.tapOffsetSpacing,
     this.edgeSafeMargin,
     this.copySuccessMessage,
+    this.playLabel,
+    this.playAllLabel,
+    this.tafsirLabel,
+    this.copyLabel,
+    this.bookmarkLabels,
     this.customMenuItems,
     this.showPlayAllButton,
     this.showPlayButton,
@@ -186,6 +198,11 @@ class AyahMenuStyle {
     double? tapOffsetSpacing,
     double? edgeSafeMargin,
     String? copySuccessMessage,
+    String? playLabel,
+    String? playAllLabel,
+    String? tafsirLabel,
+    String? copyLabel,
+    Map<int, String>? bookmarkLabels,
     List<Widget>? customMenuItems,
     bool? showPlayAllButton,
     bool? showPlayButton,
@@ -225,6 +242,11 @@ class AyahMenuStyle {
       tapOffsetSpacing: tapOffsetSpacing ?? this.tapOffsetSpacing,
       edgeSafeMargin: edgeSafeMargin ?? this.edgeSafeMargin,
       copySuccessMessage: copySuccessMessage ?? this.copySuccessMessage,
+      playLabel: playLabel ?? this.playLabel,
+      playAllLabel: playAllLabel ?? this.playAllLabel,
+      tafsirLabel: tafsirLabel ?? this.tafsirLabel,
+      copyLabel: copyLabel ?? this.copyLabel,
+      bookmarkLabels: bookmarkLabels ?? this.bookmarkLabels,
       customMenuItems: customMenuItems ?? this.customMenuItems,
       showPlayAllButton: showPlayAllButton ?? this.showPlayAllButton,
       showPlayButton: showPlayButton ?? this.showPlayButton,

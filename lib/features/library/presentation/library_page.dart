@@ -367,89 +367,99 @@ class _ResourceList extends StatelessWidget {
               );
               final isBusy = busyIndex == entry.catalogIndex;
 
-              return Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 44,
-                        height: 44,
-                        decoration: BoxDecoration(
-                          color:
-                              (isSelected ? scheme.primary : scheme.secondary)
-                                  .withValues(alpha: 0.12),
-                          borderRadius: BorderRadius.circular(14),
+              return Semantics(
+                container: true,
+                explicitChildNodes: true,
+                label: '${entry.resource.name} ${entry.resource.bookName}'
+                    .trim(),
+                child: Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 44,
+                          height: 44,
+                          decoration: BoxDecoration(
+                            color:
+                                (isSelected ? scheme.primary : scheme.secondary)
+                                    .withValues(alpha: 0.12),
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          child: Icon(
+                            !entry.resource.isCommentary
+                                ? Icons.translate_rounded
+                                : Icons.auto_stories_outlined,
+                            color: isSelected
+                                ? scheme.primary
+                                : scheme.secondary,
+                          ),
                         ),
-                        child: Icon(
-                          !entry.resource.isCommentary
-                              ? Icons.translate_rounded
-                              : Icons.auto_stories_outlined,
-                          color: isSelected ? scheme.primary : scheme.secondary,
-                        ),
-                      ),
-                      const SizedBox(width: 14),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              entry.resource.name,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w800,
-                              ),
-                            ),
-                            if (entry.resource.bookName.isNotEmpty) ...[
-                              const SizedBox(height: 3),
-                              Text(
-                                entry.resource.bookName,
-                                style: TextStyle(
-                                  color: scheme.onSurface.withValues(
-                                    alpha: 0.65,
+                        const SizedBox(width: 14),
+                        Expanded(
+                          child: ExcludeSemantics(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  entry.resource.name,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.w800,
                                   ),
-                                  fontSize: 12,
                                 ),
-                              ),
-                            ],
-                          ],
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      if (isBusy)
-                        const SizedBox(
-                          width: 24,
-                          height: 24,
-                          child: CircularProgressIndicator(strokeWidth: 2.5),
-                        )
-                      else if (isSelected && isAvailable)
-                        Chip(
-                          avatar: const Icon(Icons.check_rounded, size: 16),
-                          label: Text(l10n.selected),
-                        )
-                      else
-                        TextButton.icon(
-                          onPressed: busyIndex == null
-                              ? () => onPrepare(entry.catalogIndex)
-                              : null,
-                          icon: Icon(
-                            isAvailable
-                                ? Icons.check_circle_outline_rounded
-                                : Icons.download_rounded,
-                          ),
-                          label: Text(
-                            isAvailable ? l10n.select : l10n.download,
+                                if (entry.resource.bookName.isNotEmpty) ...[
+                                  const SizedBox(height: 3),
+                                  Text(
+                                    entry.resource.bookName,
+                                    style: TextStyle(
+                                      color: scheme.onSurface.withValues(
+                                        alpha: 0.65,
+                                      ),
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                ],
+                              ],
+                            ),
                           ),
                         ),
-                      if (!isBusy &&
-                          library.canRemoveTafsir(entry.catalogIndex))
-                        IconButton(
-                          tooltip: l10n.delete,
-                          onPressed: busyIndex == null
-                              ? () => onRemove(entry.catalogIndex)
-                              : null,
-                          icon: const Icon(Icons.delete_outline_rounded),
-                        ),
-                    ],
+                        const SizedBox(width: 10),
+                        if (isBusy)
+                          const SizedBox(
+                            width: 24,
+                            height: 24,
+                            child: CircularProgressIndicator(strokeWidth: 2.5),
+                          )
+                        else if (isSelected && isAvailable)
+                          Chip(
+                            avatar: const Icon(Icons.check_rounded, size: 16),
+                            label: Text(l10n.selected),
+                          )
+                        else
+                          TextButton.icon(
+                            onPressed: busyIndex == null
+                                ? () => onPrepare(entry.catalogIndex)
+                                : null,
+                            icon: Icon(
+                              isAvailable
+                                  ? Icons.check_circle_outline_rounded
+                                  : Icons.download_rounded,
+                            ),
+                            label: Text(
+                              isAvailable ? l10n.select : l10n.download,
+                            ),
+                          ),
+                        if (!isBusy &&
+                            library.canRemoveTafsir(entry.catalogIndex))
+                          IconButton(
+                            tooltip: l10n.delete,
+                            onPressed: busyIndex == null
+                                ? () => onRemove(entry.catalogIndex)
+                                : null,
+                            icon: const Icon(Icons.delete_outline_rounded),
+                          ),
+                      ],
+                    ),
                   ),
                 ),
               );

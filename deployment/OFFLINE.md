@@ -42,6 +42,17 @@ change the offline payload. The worker downloads that fixed transport URL,
 verifies the original HTML hash, and only then stores it as `text/html` under
 `/index.html`. Online HTML remains subject to the domain's existing CDN settings.
 
+Build 7 separates network asset requests using a fixed `quran_release` query key
+derived from the worker's release identity. This prevents a CDN from returning
+an older subset icon font or another unchanged filename after deployment.
+Manifest paths and local cache keys remain query-free; original byte counts and
+SHA-256 checks are still required. NGINX revalidates unversioned assets.
+
+Preparation downloads at most three files concurrently, with a 12 MiB batch
+budget (a larger allowed individual file downloads alone). Every in-flight write
+settles before cancellation/failure cleanup. These limits reduce waiting without
+removing integrity, quota or staged-update safeguards.
+
 ## Boundaries
 
 - Explicit preparation only; installation does not silently fetch the bundle.

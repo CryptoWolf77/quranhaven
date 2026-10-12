@@ -1,7 +1,7 @@
 name: quran_flutter
 description: A multilingual Quran application, free for everyone as Sadakah Jariyah.
 publish_to: 'none'
-version: 1.0.0+6
+version: 1.0.0+7
 
 environment:
   sdk: ^3.12.2
@@ -32,6 +32,9 @@ flutter:
   uses-material-design: true
   assets:
     - assets/fonts/OFL-NotoSansBengali.txt
+    - assets/guides/ar/
+    - assets/guides/en/
+    - assets/guides/es/
   fonts:
     - family: NotoSansBengali
       fonts:

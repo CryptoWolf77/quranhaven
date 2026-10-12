@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../../l10n/generated/app_localizations.dart';
+import '../../guide/presentation/user_guide_page.dart';
 import '../../offline/presentation/offline_card.dart';
 import '../../reminders/data/reminder_repository.dart';
 import '../../reminders/data/reminder_service.dart';
@@ -140,6 +141,27 @@ class _SettingsPageState extends State<SettingsPage> {
                 ),
               ),
               const SizedBox(height: 24),
+              _SettingsCard(
+                title: l10n.guideTitle,
+                icon: Icons.help_outline_rounded,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(l10n.guideEntryBody),
+                    const SizedBox(height: 12),
+                    OutlinedButton.icon(
+                      onPressed: () => Navigator.of(context).push<void>(
+                        MaterialPageRoute(
+                          builder: (_) => const UserGuidePage(),
+                        ),
+                      ),
+                      icon: const Icon(Icons.play_circle_outline_rounded),
+                      label: Text(l10n.guideOpen),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 14),
               _SettingsCard(
                 title: l10n.localStorageTitle,
                 icon: Icons.phone_android_rounded,

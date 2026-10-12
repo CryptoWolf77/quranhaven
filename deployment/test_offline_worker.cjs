@@ -71,7 +71,7 @@ function harness(options = {}) {
       if (offline) throw new Error("offline");
       const pathname = new URL(url).pathname;
       if (pathname === "/offline-manifest.json") return new Response(JSON.stringify(fixture.data));
-      if (blockAsset && pathname !== "/offline-manifest.json") await blockAsset(init.signal);
+      if (blockAsset && pathname !== "/offline-manifest.json") await blockAsset(init.signal, pathname);
       if (pathname === "/offline-index.bin") return new Response(corrupt ? "corrupt" : fixture.contents.get("/index.html"), {headers: {"Content-Type": "application/octet-stream"}});
       if (pathname === "/index.html" && injectedHTML) return new Response(fixture.contents.get(pathname) + '<script src="/injected-analytics.js"></script>', {headers: {"Content-Type": "text/html"}});
       if (fixture.contents.has(pathname)) return new Response(corrupt ? "corrupt" : fixture.contents.get(pathname), {headers: {"Content-Type": pathname.endsWith(".js") ? "application/javascript" : "text/html"}});
@@ -209,6 +209,76 @@ test("invalid manifests cannot enroll sensitive paths or duplicate files", async
   const app = harness();
   app.fixture.data.files[1].path = app.fixture.data.files[0].path;
   assert.equal((await app.call("prepare")).errorCode, "invalid_manifest");
+});
+
+test("preparation bounds concurrent downloads to three and reports monotonic progress", async () => {
+  const app = harness();
+  let running = 0;
+  let peak = 0;
+  app.setBlockAsset(async () => {
+    running++;
+    peak = Math.max(peak, running);
+    await new Promise(resolve => setTimeout(resolve, 5));
+    running--;
+  });
+  assert.equal((await app.call("prepare")).state, "ready");
+  assert.equal(peak, 3);
+  const progress = app.messages.map(message => message.status.completedBytes);
+  assert.ok(progress.every((value, index) => !index || value >= progress[index - 1]));
+});
+
+test("downloads and online fallback isolate CDN objects by the fixed release identity", async () => {
+  const app = harness();
+  await app.fetch("/assets/AssetManifest.bin");
+  await app.call("prepare");
+  assert.ok(app.requests.every(request => new URL(request.url).searchParams.get("quran_release") === VERSION));
+  const cachedKeys = await (await app.caches.open("quran-haven-shell-v1-" + VERSION)).keys();
+  assert.ok(cachedKeys.every(request => !new URL(request.url).search));
+  app.setOffline(true);
+  assert.equal(await (await app.fetch("/assets/AssetManifest.bin")).response.text(), "public-assets");
+});
+
+test("large files are not downloaded together beyond the batch byte budget", async () => {
+  const app = harness();
+  for (const pathname of ["/assets/large-a.bin", "/assets/large-b.bin"]) {
+    const bytes = Buffer.alloc(9 * 1024 * 1024, 65);
+    app.fixture.contents.set(pathname, bytes);
+    app.fixture.data.files.push({path: pathname, bytes: bytes.length, sha256: createHash("sha256").update(bytes).digest("hex")});
+    app.fixture.data.totalBytes += bytes.length;
+  }
+  let runningBytes = 0;
+  let peakBytes = 0;
+  app.setBlockAsset(async (_signal, pathname) => {
+    const entry = app.fixture.data.files.find(file => file.path === (pathname === "/offline-index.bin" ? "/index.html" : pathname));
+    runningBytes += entry.bytes;
+    peakBytes = Math.max(peakBytes, runningBytes);
+    await new Promise(resolve => setTimeout(resolve, 5));
+    runningBytes -= entry.bytes;
+  });
+  assert.equal((await app.call("prepare")).state, "ready");
+  assert.ok(peakBytes < 12 * 1024 * 1024);
+  assert.ok(peakBytes >= 9 * 1024 * 1024);
+});
+
+test("cancellation waits for every parallel download before removing partial work", async () => {
+  const app = harness();
+  let started;
+  const inFlight = new Promise(resolve => { started = resolve; });
+  let running = 0;
+  app.setBlockAsset(signal => new Promise((resolve, reject) => {
+    running++;
+    if (running === 3) started();
+    signal.addEventListener("abort", () => setTimeout(() => {
+      running--;
+      reject(new Error("aborted"));
+    }, 5), {once: true});
+  }));
+  const preparation = app.call("prepare");
+  await inFlight;
+  await app.call("cancel");
+  assert.equal((await preparation).state, "cancelled");
+  assert.equal(running, 0);
+  assert.ok(!(await app.caches.keys()).includes("quran-haven-shell-v1-" + VERSION));
 });
 
 test("bootstrap uses direct registration, stable bridge and no automatic prepare", () => {
