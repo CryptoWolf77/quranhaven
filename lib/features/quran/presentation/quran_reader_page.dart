@@ -23,10 +23,12 @@ class QuranReaderPage extends StatelessWidget {
       withPageView: true,
       useDefaultAppBar: true,
       isShowAudioSlider: true,
-      isShowTabBar: true,
+      // The supported Mushaf is Hafs. Do not expose unprepared Qiraat/grammar
+      // download panels until their content and localization are audited.
+      isShowTabBar: false,
       isShowDisplayModeBar: true,
       showAyahBookmarkedIcon: true,
-      enableWordSelection: true,
+      enableWordSelection: false,
       isDark: isDark,
       appLanguageCode: locale.languageCode,
       backgroundColor: scheme.surface,
