@@ -15,20 +15,17 @@ For an explicitly test-signed APK in PowerShell, set a process-only variable:
 
 ```powershell
 $env:QURAN_HAVEN_TEST_SIGNING = 'true'
-flutter build apk --release --dart-define=QURAN_CONTENT_URL=https://quranhaven.org/v1/ --dart-define=QURAN_API_URL=https://api.quranhaven.org
+flutter build apk --release --dart-define=QURAN_CONTENT_URL=https://quranhaven.org/v1/
 Remove-Item Env:QURAN_HAVEN_TEST_SIGNING
 ```
 
 Do not publish that artifact in Google Play. With the owner's production signing
 configuration, omit the test flag and use `flutter build appbundle` with the same
-content/API defines. Verify the certificate before uploading. See the official
+content define. Verify the certificate before uploading. See the official
 [Flutter Android release guide](https://docs.flutter.dev/deployment/android).
 
 ## Still required from the owner
 
-- Recovery-email provider, sender address and private server-side credentials.
-- Private off-server backup repository, encryption-password custody and retention
-  decision; then run and verify a restore on an isolated database.
 - Public privacy-contact email and approval of accurate data/retention disclosures,
   including existing CDN analytics and third-party recitation services.
 - Google Play/Apple developer accounts, signing ownership, store artwork/listings.
@@ -38,13 +35,14 @@ content/API defines. Verify the certificate before uploading. See the official
 
 - Physical Android/iOS: fresh install, upgrade preserving bookmarks/plans, fully
   offline reading, optional downloads, audio interruption/background controls,
-  denied permissions, reminders, expired sessions and account deletion.
+  denied permissions, reminders and local data persistence.
 - Browser: actual offline mode, quota/eviction, multiple-tab update controls,
   private-browsing restrictions, narrow display/large text and screen-reader use.
-- Hosted backup: scheduled success/failure signal, encrypted off-server snapshot,
-  isolated restore and the owner's retention/deletion policy.
-- Cloud account recovery: real mailbox delivery, expired/one-use recovery token,
-  abuse limits and revocation of old sessions after password reset.
+- Local storage: existing bookmarks/plans/preferences survive an in-place update;
+  uninstall/clear-data warnings accurately explain that no remote recovery exists.
 
-No store enrollment, signing-key creation, mail sending, backup transfer or CDN
+No store enrollment, signing-key creation or CDN
 cache purge is implied by this checklist. Those must use the owner's setup.
+
+Cloud account recovery and user-database backup gates were cancelled on
+2026-10-01. Public content hosting remains; personal progress is local-only.

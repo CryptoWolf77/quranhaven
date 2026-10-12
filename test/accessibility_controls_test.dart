@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:quran_flutter/features/account/presentation/account_card.dart';
 import 'package:quran_flutter/features/plans/domain/plans_models.dart';
 import 'package:quran_flutter/features/plans/presentation/plans_page.dart';
 import 'package:quran_flutter/l10n/generated/app_localizations.dart';
@@ -51,55 +50,10 @@ Widget _host(
 }
 
 void main() {
-  testWidgets('password control exposes its action and responds to keyboard', (
-    tester,
-  ) async {
-    final semantics = tester.ensureSemantics();
-    var obscured = true;
-    await tester.pumpWidget(
-      _host(
-        StatefulBuilder(
-          builder: (context, setState) => PasswordVisibilityButton(
-            obscured: obscured,
-            onPressed: () => setState(() => obscured = !obscured),
-          ),
-        ),
-      ),
-    );
-
-    final data = tester
-        .getSemantics(find.byTooltip('Show password'))
-        .getSemanticsData();
-    expect(data.tooltip, 'Show password');
-    expect(data.flagsCollection.isButton, isTrue);
-    expect(data.hasAction(SemanticsAction.tap), isTrue);
-
-    await tester.sendKeyEvent(LogicalKeyboardKey.tab);
-    await tester.sendKeyEvent(LogicalKeyboardKey.space);
-    await tester.pump();
-    expect(obscured, isFalse);
-    expect(find.byTooltip('Hide password'), findsOneWidget);
-    await tester.sendKeyEvent(LogicalKeyboardKey.enter);
-    await tester.pump();
-    expect(obscured, isTrue);
-    expect(find.byTooltip('Show password'), findsOneWidget);
-    semantics.dispose();
-  });
-
   for (final entry in const {
-    'en': ['Previous Ayah', 'Next Ayah', 'Show password', 'Hide password'],
-    'ar': [
-      'الآية السابقة',
-      'الآية التالية',
-      'إظهار كلمة المرور',
-      'إخفاء كلمة المرور',
-    ],
-    'es': [
-      'Aya anterior',
-      'Aya siguiente',
-      'Mostrar contraseña',
-      'Ocultar contraseña',
-    ],
+    'en': ['Previous Ayah', 'Next Ayah'],
+    'ar': ['الآية السابقة', 'الآية التالية'],
+    'es': ['Aya anterior', 'Aya siguiente'],
   }.entries) {
     testWidgets(
       '${entry.key} controls have localized labels and correct reading order',
@@ -111,8 +65,6 @@ void main() {
               mainAxisSize: MainAxisSize.min,
               children: [
                 MemorizationAyahControls(plan: _plan, onChanged: (_) {}),
-                PasswordVisibilityButton(obscured: true, onPressed: () {}),
-                PasswordVisibilityButton(obscured: false, onPressed: () {}),
               ],
             ),
             locale: entry.key,

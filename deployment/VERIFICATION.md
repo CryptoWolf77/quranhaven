@@ -1,5 +1,39 @@
 # Connected/offline release verification — 2026-09-07
 
+## Local-only update — 2026-10-01 (build 6)
+
+This supersedes historical cloud-client details below. Accounts, sign-in,
+cloud backup/restore, auth/session storage and personal-data API configuration
+were removed. Local preference/progress keys and Android app identity are kept.
+The obsolete backend source is removed; its history remains recoverable. No
+remote service was stopped and no existing server user data was deleted.
+
+- 68 Flutter tests passed, including legacy preferences, local plan/reminder
+  persistence, localized Settings without account forms and cloud-client guards.
+- 22 content/deployment Python tests, 13 offline Python tests and 17 worker tests
+  passed. Public integrity verification passed for all 1,161 files, including
+  114 Surahs, 6,236 Ayahs, 604 page fonts and 44 Tafsir/translation resources.
+- Analyzer: no errors/warnings; three pre-existing vendored `cacheExtent`
+  deprecation informational notices remain.
+- JavaScript web build passed; build number 6. `main.dart.js` contains no
+  `api.quranhaven.org`, `QURAN_API_URL` or removed account-client symbols.
+  SHA-256: `185d989531e2955fceb44bb1f926f8a2ccd21649738b6853163d3fb81e58c7a8`.
+- Offline preparation: 667 files, 97,701,487 bytes; release `bab0224613f9`.
+  WebAssembly is not supported by the existing `get_storage` implementation;
+  this artifact is the supported JavaScript build.
+
+- A new Android APK was not produced: Gradle/Java fails before compilation with
+  `Unable to establish loopback connection` (`Invalid argument: connect` in
+  Java's local pipe/selector implementation). Scoped IPv4 and traditional
+  selector attempts did not resolve it. No system network settings were changed;
+  process-only Java/test-signing overrides were restored. Existing test APKs
+  remain untouched and do not contain this local-only update.
+
+This update has not been pushed or deployed to the public website. Physical
+device upgrade, browser quota/eviction and iOS acceptance remain outstanding.
+Uninstalling or clearing local app/site data can erase saved progress; no remote
+recovery or local file export/import is available.
+
 ## Plan-audit release (build 4)
 
 This section supersedes the build-3 source counts below. Earlier deployment and

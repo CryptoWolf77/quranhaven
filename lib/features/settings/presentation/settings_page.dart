@@ -2,31 +2,23 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../../l10n/generated/app_localizations.dart';
-import '../../account/presentation/account_card.dart';
-import '../../account/domain/reading_preferences.dart';
 import '../../offline/presentation/offline_card.dart';
 import '../../reminders/data/reminder_repository.dart';
 import '../../reminders/data/reminder_service.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({
-    required this.currentPage,
     required this.locale,
     required this.themeMode,
     required this.onLocaleChanged,
     required this.onThemeModeChanged,
-    required this.onCloudRestored,
-    required this.onPreferencesRestored,
     super.key,
   });
 
-  final int currentPage;
   final Locale? locale;
   final ThemeMode themeMode;
   final ValueChanged<Locale> onLocaleChanged;
   final ValueChanged<ThemeMode> onThemeModeChanged;
-  final ValueChanged<int> onCloudRestored;
-  final Future<void> Function(ReadingPreferences) onPreferencesRestored;
 
   @override
   State<SettingsPage> createState() => _SettingsPageState();
@@ -148,12 +140,10 @@ class _SettingsPageState extends State<SettingsPage> {
                 ),
               ),
               const SizedBox(height: 24),
-              AccountCard(
-                currentPage: widget.currentPage,
-                locale: widget.locale,
-                themeMode: widget.themeMode,
-                onCloudRestored: widget.onCloudRestored,
-                onPreferencesRestored: widget.onPreferencesRestored,
+              _SettingsCard(
+                title: l10n.localStorageTitle,
+                icon: Icons.phone_android_rounded,
+                child: Text(l10n.localStorageBody),
               ),
               const SizedBox(height: 14),
               if (kIsWeb) ...[const OfflineCard(), const SizedBox(height: 14)],

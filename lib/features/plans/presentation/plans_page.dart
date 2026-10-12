@@ -13,13 +13,11 @@ class PlansPage extends StatefulWidget {
   const PlansPage({
     required this.currentPage,
     required this.onOpenReader,
-    this.refreshToken = 0,
     super.key,
   });
 
   final int currentPage;
   final VoidCallback onOpenReader;
-  final int refreshToken;
 
   @override
   State<PlansPage> createState() => _PlansPageState();
@@ -40,14 +38,6 @@ class _PlansPageState extends State<PlansPage> {
   void initState() {
     super.initState();
     unawaited(_load());
-  }
-
-  @override
-  void didUpdateWidget(covariant PlansPage oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (widget.refreshToken != oldWidget.refreshToken) {
-      unawaited(_load());
-    }
   }
 
   @override

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:quran_library/quran_library.dart';
 
 import '../../../l10n/generated/app_localizations.dart';
-import '../../account/domain/reading_preferences.dart';
 import '../../home/presentation/home_page.dart';
 import '../../library/presentation/library_page.dart';
 import '../../plans/presentation/plans_page.dart';
@@ -16,7 +15,6 @@ class AppShell extends StatefulWidget {
     required this.themeMode,
     required this.onLocaleChanged,
     required this.onThemeModeChanged,
-    required this.onPreferencesRestored,
     super.key,
   });
 
@@ -24,7 +22,6 @@ class AppShell extends StatefulWidget {
   final ThemeMode themeMode;
   final ValueChanged<Locale> onLocaleChanged;
   final ValueChanged<ThemeMode> onThemeModeChanged;
-  final Future<void> Function(ReadingPreferences) onPreferencesRestored;
 
   @override
   State<AppShell> createState() => _AppShellState();
@@ -33,7 +30,6 @@ class AppShell extends StatefulWidget {
 class _AppShellState extends State<AppShell> {
   int _selectedIndex = 0;
   late int _currentPage;
-  int _plansRefreshToken = 0;
 
   @override
   void initState() {
@@ -53,15 +49,6 @@ class _AppShellState extends State<AppShell> {
   void _updateCurrentPage(int page) {
     if (page == _currentPage || !mounted) return;
     setState(() => _currentPage = page.clamp(1, 604));
-  }
-
-  void _handleCloudRestored(int page) {
-    final restoredPage = page.clamp(1, 604);
-    QuranLibrary().jumpToPage(restoredPage);
-    setState(() {
-      _currentPage = restoredPage;
-      _plansRefreshToken++;
-    });
   }
 
   @override
@@ -96,19 +83,12 @@ class _AppShellState extends State<AppShell> {
         currentPage: _currentPage,
         onOpenReader: () => _selectPage(1),
       ),
-      PlansPage(
-        currentPage: _currentPage,
-        refreshToken: _plansRefreshToken,
-        onOpenReader: () => _selectPage(1),
-      ),
+      PlansPage(currentPage: _currentPage, onOpenReader: () => _selectPage(1)),
       SettingsPage(
-        currentPage: _currentPage,
         locale: widget.locale,
         themeMode: widget.themeMode,
         onLocaleChanged: widget.onLocaleChanged,
         onThemeModeChanged: widget.onThemeModeChanged,
-        onCloudRestored: _handleCloudRestored,
-        onPreferencesRestored: widget.onPreferencesRestored,
       ),
     ];
 

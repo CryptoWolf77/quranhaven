@@ -1,5 +1,8 @@
 # Cloud phase verification — 2026-09-07
 
+Historical only: accounts/cloud storage were cancelled on 2026-10-01. The
+current app no longer connects to this service. Remote data was not deleted.
+
 The owner approved optional cloud activation. The separate Quran Haven Cloud
 application is live at `https://api.quranhaven.org`; core reading needs no account.
 Private credentials were generated and retained by Coolify, never copied to Git.

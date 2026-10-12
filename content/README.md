@@ -78,8 +78,9 @@ flutter build web --no-web-resources-cdn \
   --dart-define=QURAN_CONTENT_URL=https://YOUR-CONTENT-DOMAIN/v1/
 ```
 
-The account API can be configured independently with `QURAN_API_URL`. The content
-server needs no database, secrets, user account, or connection to the Saudi site.
+There is no account API in the app. Personal data stays on the user's device.
+The content server needs no database, secrets, user account, or connection to
+the Saudi site.
 It serves public read-only files with CORS for the Flutter web app. TLS is handled
 by Coolify. Preserve each `.gz` file's original bytes after HTTP transport
 decoding, since Flutter decompresses the file itself. A proxy may add a separate

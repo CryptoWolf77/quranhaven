@@ -19,7 +19,7 @@ not used for caching. Core reading is still bundled in the Android/iOS app.
    resource can be removed and downloaded again.
 
 Removing offline app files requires confirmation. It removes only the named
-Quran Haven shell caches, not account data, reading preferences, plans, bookmarks
+Quran Haven shell caches, not reading preferences, plans, bookmarks
 or the separate saved Tafsir/translation cache. Optional resources can be removed
 individually, except the two bundled defaults.
 
@@ -54,8 +54,9 @@ verifies the original HTML hash, and only then stores it as `text/html` under
   other Quran Haven tabs are closed.
 - Optional downloads use exact self-hosted manifest hashes and bounded
   decompression, with a cross-tab write lock and no silent eviction.
-- Browser storage is not a backup of personal data. Accounts still use explicit
-  remote snapshot backup; user data is never added to these static caches.
+- Personal data stays on this device/browser only. There are no accounts or
+  remote snapshots. Clearing site data, eviction or uninstalling can erase saved
+  items; user data is never added to these static app caches.
 
 ## Repeatable checks
 
@@ -66,7 +67,7 @@ flutter test
 ```
 
 The worker tests mock browser APIs without real network traffic. They check
-offline responses, excluded account requests, integrity failures, interrupted
+offline responses, excluded non-public requests, integrity failures, interrupted
 downloads, missing-entry repair, quota failure, cancellation, deletion scope,
 multi-tab activation and successive updates. These tests do not substitute for
 physical-device/browser offline acceptance testing.

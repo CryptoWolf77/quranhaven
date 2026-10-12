@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import '../features/account/data/reading_preferences_repository.dart';
-import '../features/account/domain/reading_preferences.dart';
+import '../features/settings/data/reading_preferences_repository.dart';
+import '../features/settings/domain/reading_preferences.dart';
 import '../features/shell/presentation/app_shell.dart';
 import '../l10n/generated/app_localizations.dart';
 import 'theme/app_theme.dart';
@@ -87,7 +87,6 @@ class _QuranAppState extends State<QuranApp> {
                   themeMode: mode,
                 ),
               ),
-              onPreferencesRestored: _savePreferences,
             ),
     );
   }

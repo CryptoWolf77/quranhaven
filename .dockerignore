@@ -1,4 +1,4 @@
-# An allowlist keeps local account data, credentials and build caches out.
+# An allowlist keeps personal device data, credentials and build caches out.
 *
 !Dockerfile
 !pubspec.yaml

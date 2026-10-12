@@ -150,9 +150,7 @@ void main() {
       await tester.pumpAndSettle();
       expect(service.removeCalls, 0);
       expect(
-        find.textContaining(
-          'Your reading progress, account, and saved Tafsir are kept.',
-        ),
+        find.textContaining('Your reading progress and saved Tafsir are kept.'),
         findsOneWidget,
       );
       await tester.tap(find.widgetWithText(TextButton, 'Cancel'));

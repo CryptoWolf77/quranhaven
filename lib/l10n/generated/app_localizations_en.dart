@@ -496,60 +496,6 @@ class AppLocalizationsEn extends AppLocalizations {
       'Practice audio could not be played. Check your connection and try again.';
 
   @override
-  String get accountAndSync => 'Account and cloud backup';
-
-  @override
-  String get cloudNotConfigured =>
-      'Cloud accounts are ready in the app. They will become available when the project\'s private server address is connected.';
-
-  @override
-  String get cloudInvalidConfiguration =>
-      'The cloud server address is not valid or secure. Cloud accounts are unavailable in this version; local Quran reading is unaffected.';
-
-  @override
-  String get accountOptionalBody =>
-      'An account is optional. Create one only if you want to back up and restore your progress across devices.';
-
-  @override
-  String get cloudRegistrationNotice =>
-      'An account is optional. Your email, display name and any progress you choose to back up are stored on the project\'s server. Creating or deleting an account does not change your local Quran reading or progress. Email verification and password recovery are not available yet, so store your password securely. Cloud backups are not end-to-end encrypted; the server operator can access them.';
-
-  @override
-  String get signIn => 'Sign in';
-
-  @override
-  String get createAccount => 'Create account';
-
-  @override
-  String get signOut => 'Sign out';
-
-  @override
-  String get deleteCloudAccount => 'Delete cloud account';
-
-  @override
-  String get deleteCloudAccountWarning =>
-      'Delete your account and its progress backup from the server? This cannot be undone. Your downloaded Quran resources and progress on this device will remain. This also signs you out.';
-
-  @override
-  String get cloudAccountDeleted =>
-      'Your cloud account and backup were deleted. Your local Quran data remains on this device.';
-
-  @override
-  String get displayName => 'Display name';
-
-  @override
-  String get email => 'Email';
-
-  @override
-  String get password => 'Password';
-
-  @override
-  String get showPassword => 'Show password';
-
-  @override
-  String get hidePassword => 'Hide password';
-
-  @override
   String get previousAyah => 'Previous Ayah';
 
   @override
@@ -557,81 +503,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get removeRevisionMarker => 'Remove revision marker';
-
-  @override
-  String get passwordRules => 'Use at least 8 characters.';
-
-  @override
-  String get displayNameRequired => 'Enter at least 2 characters.';
-
-  @override
-  String get validEmailRequired => 'Enter a valid email address.';
-
-  @override
-  String get passwordTooShort =>
-      'The password must contain at least 8 characters.';
-
-  @override
-  String get signedInSuccessfully => 'You are signed in.';
-
-  @override
-  String get backupNow => 'Back up now';
-
-  @override
-  String get backupComplete => 'Your Quran progress has been backed up.';
-
-  @override
-  String get restoreBackup => 'Restore backup';
-
-  @override
-  String get restoreBackupWarning =>
-      'This will replace the last-read page, bookmarks, Khatmah progress, memorization progress, language and appearance stored on this device with the cloud copy. Fields missing from an older backup will stay unchanged.';
-
-  @override
-  String get restore => 'Restore';
-
-  @override
-  String get restoreComplete => 'Your cloud progress has been restored.';
-
-  @override
-  String get noCloudBackup => 'There is no cloud backup for this account yet.';
-
-  @override
-  String get cloudDataInvalid => 'The cloud backup could not be read safely.';
-
-  @override
-  String lastSynced(String date) {
-    return 'Last backup or restore: $date';
-  }
-
-  @override
-  String get accountPrivacyNote =>
-      'Backups happen only when you choose Back up now. Quran reading works without an account.';
-
-  @override
-  String get invalidCredentials => 'The email or password is incorrect.';
-
-  @override
-  String get emailAlreadyUsed => 'An account already uses this email address.';
-
-  @override
-  String get accountValidationFailed =>
-      'Check the account details and try again.';
-
-  @override
-  String get sessionExpired => 'Your session expired. Please sign in again.';
-
-  @override
-  String get cloudRateLimited =>
-      'Too many cloud requests. Wait a moment and try again. Your local Quran data is unchanged.';
-
-  @override
-  String get cloudServerError =>
-      'The cloud service had a problem. Please try again later.';
-
-  @override
-  String get cloudUnavailable =>
-      'The cloud service cannot be reached. Your local Quran data is still safe.';
 
   @override
   String get dailyReminder => 'Daily reading reminder';
@@ -698,7 +569,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get offlineRemoveWarning =>
-      'Remove only the saved app and Quran page files from this browser? Your reading progress, account, and saved Tafsir are kept. You will need internet to reopen the app.';
+      'Remove only the saved app and Quran page files from this browser? Your reading progress and saved Tafsir are kept. You will need internet to reopen the app.';
 
   @override
   String get offlineRemoved => 'Offline app files removed';
@@ -734,4 +605,11 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get offlineCancelled =>
       'Download cancelled. A previously prepared version, if any, is kept.';
+
+  @override
+  String get localStorageTitle => 'On-device storage';
+
+  @override
+  String get localStorageBody =>
+      'Your bookmarks, last-read position, plans, settings and downloads are saved only on this device or in this browser. There are no accounts, cloud backups or cross-device sync. Uninstalling the app or clearing its data/site storage can erase these saved items.';
 }

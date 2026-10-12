@@ -90,23 +90,50 @@
   "createKhatmahBody": "Fija una meta cómoda. Puedes pausar el plan o cambiar la fecha en cualquier momento.",
   "completionPeriod": "Período para completar",
   "daysCount": "{days} días",
-  "@daysCount": {"placeholders": {"days": {"type": "int"}}},
+  "@daysCount": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "ramadanPlan": "Plan de Ramadán",
   "ramadanPlanBody": "Un plan de 30 días para completar el Corán.",
   "continueFromLastRead": "Continuar desde mi última página",
   "startAtPage": "Contar el progreso desde la página {page}",
-  "@startAtPage": {"placeholders": {"page": {"type": "int"}}},
+  "@startAtPage": {
+    "placeholders": {
+      "page": {
+        "type": "int"
+      }
+    }
+  },
   "startPlan": "Iniciar plan",
   "activeKhatmah": "Jatma activa",
   "ramadanKhatmah": "Jatma de Ramadán",
   "paused": "En pausa",
   "targetDate": "Meta: {date}",
-  "@targetDate": {"placeholders": {"date": {"type": "String"}}},
+  "@targetDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "adjustDate": "Cambiar fecha objetivo",
   "deletePlan": "Eliminar plan",
   "deletePlanBody": "El progreso de esta Jatma se eliminará de este dispositivo.",
   "pagesOfTotal": "{completed} de {total} páginas",
-  "@pagesOfTotal": {"placeholders": {"completed": {"type": "int"}, "total": {"type": "int"}}},
+  "@pagesOfTotal": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "pagesToday": "Páginas de hoy",
   "pagesRemaining": "Páginas restantes",
   "daysRemaining": "Días restantes",
@@ -131,23 +158,62 @@
   "rangeRepetitions": "Repeticiones del rango",
   "delayBetween": "Pausa entre repeticiones",
   "secondsCount": "{seconds} s",
-  "@secondsCount": {"placeholders": {"seconds": {"type": "int"}}},
+  "@secondsCount": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
   "startWithAyahHidden": "Comenzar con el Aya oculta",
   "startMemorizing": "Comenzar a memorizar",
   "ayahRangeError": "Introduce un Aya del 1 al {maximum}",
-  "@ayahRangeError": {"placeholders": {"maximum": {"type": "int"}}},
+  "@ayahRangeError": {
+    "placeholders": {
+      "maximum": {
+        "type": "int"
+      }
+    }
+  },
   "endBeforeStart": "El Aya final debe ser posterior al Aya inicial.",
   "ayahRange": "Ayas {start}–{end}",
-  "@ayahRange": {"placeholders": {"start": {"type": "int"}, "end": {"type": "int"}}},
+  "@ayahRange": {
+    "placeholders": {
+      "start": {
+        "type": "int"
+      },
+      "end": {
+        "type": "int"
+      }
+    }
+  },
   "currentAyah": "Aya actual · {ayah}",
-  "@currentAyah": {"placeholders": {"ayah": {"type": "int"}}},
+  "@currentAyah": {
+    "placeholders": {
+      "ayah": {
+        "type": "int"
+      }
+    }
+  },
   "ayahHidden": "Recita de memoria y luego muestra el Aya para comprobar.",
   "hideAyah": "Ocultar Aya",
   "revealAyah": "Mostrar Aya",
   "repeatCount": "Repetir ×{count}",
-  "@repeatCount": {"placeholders": {"count": {"type": "int"}}},
+  "@repeatCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "delayCount": "Pausa de {seconds} s",
-  "@delayCount": {"placeholders": {"seconds": {"type": "int"}}},
+  "@delayCount": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
   "repeatCurrent": "Repetir Aya actual",
   "repeatRange": "Repetir rango completo",
   "stop": "Detener",
@@ -157,54 +223,21 @@
   "memorized": "Memorizada",
   "deleteMemorizationBody": "Este rango y su progreso se eliminarán del dispositivo.",
   "audioFailed": "No se pudo reproducir el audio. Comprueba tu conexión e inténtalo de nuevo.",
-  "accountAndSync": "Cuenta y copia en la nube",
-  "cloudNotConfigured": "Las cuentas en la nube están preparadas en la aplicación. Estarán disponibles al conectar el servidor privado del proyecto.",
-  "cloudInvalidConfiguration": "La dirección del servidor de la nube no es válida o segura. Las cuentas no están disponibles en esta versión; la lectura local del Corán no se ve afectada.",
-  "accountOptionalBody": "La cuenta es opcional. Créala solo si quieres guardar y restaurar tu progreso entre dispositivos.",
-  "cloudRegistrationNotice": "La cuenta es opcional. Tu correo, nombre visible y el progreso que decidas guardar se almacenan en el servidor del proyecto. Crear o eliminar una cuenta no cambia tu lectura del Corán ni tu progreso local. La verificación del correo y la recuperación de contraseña aún no están disponibles, así que guarda tu contraseña de forma segura. Las copias en la nube no tienen cifrado de extremo a extremo; el administrador del servidor puede acceder a ellas.",
-  "signIn": "Iniciar sesión",
-  "createAccount": "Crear cuenta",
-  "signOut": "Cerrar sesión",
-  "deleteCloudAccount": "Eliminar cuenta de la nube",
-  "deleteCloudAccountWarning": "¿Eliminar tu cuenta y su copia de progreso del servidor? Esta acción no se puede deshacer. Los recursos descargados del Corán y el progreso de este dispositivo se conservarán. También se cerrará tu sesión.",
-  "cloudAccountDeleted": "Se eliminaron tu cuenta y su copia de la nube. Tus datos locales del Corán permanecen en este dispositivo.",
-  "displayName": "Nombre visible",
-  "email": "Correo electrónico",
-  "password": "Contraseña",
-  "showPassword": "Mostrar contraseña",
-  "hidePassword": "Ocultar contraseña",
   "previousAyah": "Aya anterior",
   "nextAyah": "Aya siguiente",
   "removeRevisionMarker": "Quitar marca de repaso",
-  "passwordRules": "Usa al menos 8 caracteres.",
-  "displayNameRequired": "Introduce al menos 2 caracteres.",
-  "validEmailRequired": "Introduce un correo electrónico válido.",
-  "passwordTooShort": "La contraseña debe tener al menos 8 caracteres.",
-  "signedInSuccessfully": "Has iniciado sesión.",
-  "backupNow": "Guardar copia ahora",
-  "backupComplete": "Se guardó una copia de tu progreso coránico.",
-  "restoreBackup": "Restaurar copia",
-  "restoreBackupWarning": "Esto reemplazará la última página leída, los marcadores, el progreso de Jatmah y memorización, el idioma y la apariencia de este dispositivo con la copia en la nube. Los datos que falten en una copia antigua no cambiarán.",
-  "restore": "Restaurar",
-  "restoreComplete": "Tu progreso de la nube ha sido restaurado.",
-  "noCloudBackup": "Esta cuenta aún no tiene una copia en la nube.",
-  "cloudDataInvalid": "La copia de la nube no se pudo leer con seguridad.",
-  "lastSynced": "Última copia o restauración: {date}",
-  "@lastSynced": {"placeholders": {"date": {"type": "String"}}},
-  "accountPrivacyNote": "Solo se crea una copia cuando eliges Guardar copia ahora. La lectura del Corán no requiere una cuenta.",
-  "invalidCredentials": "El correo o la contraseña son incorrectos.",
-  "emailAlreadyUsed": "Ya existe una cuenta con este correo.",
-  "accountValidationFailed": "Comprueba los datos de la cuenta e inténtalo de nuevo.",
-  "sessionExpired": "Tu sesión ha caducado. Inicia sesión de nuevo.",
-  "cloudRateLimited": "Demasiadas solicitudes a la nube. Espera un momento e inténtalo de nuevo. Tus datos locales del Corán no han cambiado.",
-  "cloudServerError": "El servicio en la nube tuvo un problema. Inténtalo más tarde.",
-  "cloudUnavailable": "No se puede acceder al servicio en la nube. Tus datos locales siguen seguros.",
   "dailyReminder": "Recordatorio diario de lectura",
   "remindMeDaily": "Recordarme cada día",
   "reminderBody": "Recibe un recordatorio amable a la hora que elijas.",
   "reminderMobileOnly": "Los recordatorios programados están disponibles actualmente en Android e iOS.",
   "reminderTime": "Hora del recordatorio: {time}",
-  "@reminderTime": {"placeholders": {"time": {"type": "String"}}},
+  "@reminderTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
   "dailyReminderTitle": "Un momento con el Corán",
   "dailyReminderBody": "Dedica hoy un momento de paz a leer, escuchar o repasar.",
   "reminderEnabled": "Tu recordatorio diario del Corán está activo.",
@@ -219,7 +252,7 @@
   "offlineActivate": "Aplicar actualización y recargar",
   "offlineCancel": "Cancelar descarga",
   "offlineRemove": "Eliminar archivos de la aplicación sin conexión",
-  "offlineRemoveWarning": "¿Eliminar solo los archivos de la aplicación y las páginas del Corán guardados en este navegador? Se conservarán tu progreso de lectura, tu cuenta y el Tafsir guardado. Necesitarás internet para volver a abrir la aplicación.",
+  "offlineRemoveWarning": "¿Eliminar solo los archivos de la aplicación y las páginas del Corán guardados en este navegador? Se conservarán tu progreso de lectura y el Tafsir guardado. Necesitarás internet para volver a abrir la aplicación.",
   "offlineRemoved": "Archivos de la aplicación sin conexión eliminados",
   "offlineUnavailable": "La preparación sin conexión no está disponible en este navegador. Prueba un navegador compatible mediante HTTPS.",
   "offlineError": "No se pudo completar la preparación sin conexión. Comprueba tu conexión y el espacio disponible e inténtalo de nuevo.",
@@ -228,5 +261,7 @@
   "offlineStorageWarning": "El navegador puede eliminar archivos guardados si queda poco espacio. Revisa esta pantalla antes de depender de la lectura sin conexión.",
   "offlineProgress": "{completed} / {total} MB guardados",
   "offlineNotReady": "No está preparado para leer sin conexión",
-  "offlineCancelled": "Descarga cancelada. Se conserva la versión preparada anteriormente, si existe."
+  "offlineCancelled": "Descarga cancelada. Se conserva la versión preparada anteriormente, si existe.",
+  "localStorageTitle": "Almacenamiento en el dispositivo",
+  "localStorageBody": "Tus marcadores, última lectura, planes, ajustes y descargas se guardan solo en este dispositivo o navegador. No hay cuentas, copias en la nube ni sincronización entre dispositivos. Desinstalar la aplicación o borrar sus datos o los del sitio puede eliminar estos elementos guardados."
 }

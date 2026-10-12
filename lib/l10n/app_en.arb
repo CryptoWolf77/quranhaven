@@ -104,23 +104,50 @@
   "createKhatmahBody": "Set a comfortable target. You can pause the plan or adjust its date at any time.",
   "completionPeriod": "Completion period",
   "daysCount": "{days} days",
-  "@daysCount": {"placeholders": {"days": {"type": "int"}}},
+  "@daysCount": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "ramadanPlan": "Ramadan plan",
   "ramadanPlanBody": "A focused 30-day Quran completion plan.",
   "continueFromLastRead": "Continue from my last-read page",
   "startAtPage": "Count progress from page {page}",
-  "@startAtPage": {"placeholders": {"page": {"type": "int"}}},
+  "@startAtPage": {
+    "placeholders": {
+      "page": {
+        "type": "int"
+      }
+    }
+  },
   "startPlan": "Start plan",
   "activeKhatmah": "Active Khatmah",
   "ramadanKhatmah": "Ramadan Khatmah",
   "paused": "Paused",
   "targetDate": "Target: {date}",
-  "@targetDate": {"placeholders": {"date": {"type": "String"}}},
+  "@targetDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "adjustDate": "Adjust target date",
   "deletePlan": "Delete plan",
   "deletePlanBody": "This Khatmah progress will be removed from this device.",
   "pagesOfTotal": "{completed} of {total} pages",
-  "@pagesOfTotal": {"placeholders": {"completed": {"type": "int"}, "total": {"type": "int"}}},
+  "@pagesOfTotal": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "pagesToday": "Pages today",
   "pagesRemaining": "Pages remaining",
   "daysRemaining": "Days remaining",
@@ -145,23 +172,62 @@
   "rangeRepetitions": "Full-range repetitions",
   "delayBetween": "Delay between repetitions",
   "secondsCount": "{seconds} sec",
-  "@secondsCount": {"placeholders": {"seconds": {"type": "int"}}},
+  "@secondsCount": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
   "startWithAyahHidden": "Start practice with the Ayah hidden",
   "startMemorizing": "Start memorizing",
   "ayahRangeError": "Enter an Ayah from 1 to {maximum}",
-  "@ayahRangeError": {"placeholders": {"maximum": {"type": "int"}}},
+  "@ayahRangeError": {
+    "placeholders": {
+      "maximum": {
+        "type": "int"
+      }
+    }
+  },
   "endBeforeStart": "The ending Ayah must be after the starting Ayah.",
   "ayahRange": "Ayahs {start}–{end}",
-  "@ayahRange": {"placeholders": {"start": {"type": "int"}, "end": {"type": "int"}}},
+  "@ayahRange": {
+    "placeholders": {
+      "start": {
+        "type": "int"
+      },
+      "end": {
+        "type": "int"
+      }
+    }
+  },
   "currentAyah": "Current Ayah · {ayah}",
-  "@currentAyah": {"placeholders": {"ayah": {"type": "int"}}},
+  "@currentAyah": {
+    "placeholders": {
+      "ayah": {
+        "type": "int"
+      }
+    }
+  },
   "ayahHidden": "Recite from memory, then reveal the Ayah to check.",
   "hideAyah": "Hide Ayah",
   "revealAyah": "Reveal Ayah",
   "repeatCount": "Repeat ×{count}",
-  "@repeatCount": {"placeholders": {"count": {"type": "int"}}},
+  "@repeatCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "delayCount": "{seconds}s delay",
-  "@delayCount": {"placeholders": {"seconds": {"type": "int"}}},
+  "@delayCount": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
   "repeatCurrent": "Repeat current Ayah",
   "repeatRange": "Repeat full range",
   "stop": "Stop",
@@ -171,54 +237,21 @@
   "memorized": "Memorized",
   "deleteMemorizationBody": "This memorization range and its progress will be removed from this device.",
   "audioFailed": "Practice audio could not be played. Check your connection and try again.",
-  "accountAndSync": "Account and cloud backup",
-  "cloudNotConfigured": "Cloud accounts are ready in the app. They will become available when the project's private server address is connected.",
-  "cloudInvalidConfiguration": "The cloud server address is not valid or secure. Cloud accounts are unavailable in this version; local Quran reading is unaffected.",
-  "accountOptionalBody": "An account is optional. Create one only if you want to back up and restore your progress across devices.",
-  "cloudRegistrationNotice": "An account is optional. Your email, display name and any progress you choose to back up are stored on the project's server. Creating or deleting an account does not change your local Quran reading or progress. Email verification and password recovery are not available yet, so store your password securely. Cloud backups are not end-to-end encrypted; the server operator can access them.",
-  "signIn": "Sign in",
-  "createAccount": "Create account",
-  "signOut": "Sign out",
-  "deleteCloudAccount": "Delete cloud account",
-  "deleteCloudAccountWarning": "Delete your account and its progress backup from the server? This cannot be undone. Your downloaded Quran resources and progress on this device will remain. This also signs you out.",
-  "cloudAccountDeleted": "Your cloud account and backup were deleted. Your local Quran data remains on this device.",
-  "displayName": "Display name",
-  "email": "Email",
-  "password": "Password",
-  "showPassword": "Show password",
-  "hidePassword": "Hide password",
   "previousAyah": "Previous Ayah",
   "nextAyah": "Next Ayah",
   "removeRevisionMarker": "Remove revision marker",
-  "passwordRules": "Use at least 8 characters.",
-  "displayNameRequired": "Enter at least 2 characters.",
-  "validEmailRequired": "Enter a valid email address.",
-  "passwordTooShort": "The password must contain at least 8 characters.",
-  "signedInSuccessfully": "You are signed in.",
-  "backupNow": "Back up now",
-  "backupComplete": "Your Quran progress has been backed up.",
-  "restoreBackup": "Restore backup",
-  "restoreBackupWarning": "This will replace the last-read page, bookmarks, Khatmah progress, memorization progress, language and appearance stored on this device with the cloud copy. Fields missing from an older backup will stay unchanged.",
-  "restore": "Restore",
-  "restoreComplete": "Your cloud progress has been restored.",
-  "noCloudBackup": "There is no cloud backup for this account yet.",
-  "cloudDataInvalid": "The cloud backup could not be read safely.",
-  "lastSynced": "Last backup or restore: {date}",
-  "@lastSynced": {"placeholders": {"date": {"type": "String"}}},
-  "accountPrivacyNote": "Backups happen only when you choose Back up now. Quran reading works without an account.",
-  "invalidCredentials": "The email or password is incorrect.",
-  "emailAlreadyUsed": "An account already uses this email address.",
-  "accountValidationFailed": "Check the account details and try again.",
-  "sessionExpired": "Your session expired. Please sign in again.",
-  "cloudRateLimited": "Too many cloud requests. Wait a moment and try again. Your local Quran data is unchanged.",
-  "cloudServerError": "The cloud service had a problem. Please try again later.",
-  "cloudUnavailable": "The cloud service cannot be reached. Your local Quran data is still safe.",
   "dailyReminder": "Daily reading reminder",
   "remindMeDaily": "Remind me every day",
   "reminderBody": "Receive one gentle reminder at your chosen time.",
   "reminderMobileOnly": "Scheduled reminders are currently available in the Android and iOS apps.",
   "reminderTime": "Reminder time: {time}",
-  "@reminderTime": {"placeholders": {"time": {"type": "String"}}},
+  "@reminderTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
   "dailyReminderTitle": "A moment with the Quran",
   "dailyReminderBody": "Take a peaceful moment to read, listen, or review today.",
   "reminderEnabled": "Your daily Quran reminder is active.",
@@ -233,7 +266,7 @@
   "offlineActivate": "Apply update and reload",
   "offlineCancel": "Cancel download",
   "offlineRemove": "Remove offline app files",
-  "offlineRemoveWarning": "Remove only the saved app and Quran page files from this browser? Your reading progress, account, and saved Tafsir are kept. You will need internet to reopen the app.",
+  "offlineRemoveWarning": "Remove only the saved app and Quran page files from this browser? Your reading progress and saved Tafsir are kept. You will need internet to reopen the app.",
   "offlineRemoved": "Offline app files removed",
   "offlineUnavailable": "Offline preparation is unavailable in this browser. Try a supported browser over HTTPS.",
   "offlineError": "Offline preparation could not finish. Check your connection and available storage, then try again.",
@@ -241,7 +274,18 @@
   "offlineActivationTimeout": "The update could not activate yet. Reload this tab and try again.",
   "offlineStorageWarning": "The browser may remove saved files when storage is low. Check this screen before relying on offline reading.",
   "offlineProgress": "{completed} / {total} MB saved",
-  "@offlineProgress": {"placeholders": {"completed": {"type": "String"}, "total": {"type": "String"}}},
+  "@offlineProgress": {
+    "placeholders": {
+      "completed": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
   "offlineNotReady": "Not prepared for offline reading",
-  "offlineCancelled": "Download cancelled. A previously prepared version, if any, is kept."
+  "offlineCancelled": "Download cancelled. A previously prepared version, if any, is kept.",
+  "localStorageTitle": "On-device storage",
+  "localStorageBody": "Your bookmarks, last-read position, plans, settings and downloads are saved only on this device or in this browser. There are no accounts, cloud backups or cross-device sync. Uninstalling the app or clearing its data/site storage can erase these saved items."
 }

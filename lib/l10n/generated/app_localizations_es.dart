@@ -501,60 +501,6 @@ class AppLocalizationsEs extends AppLocalizations {
       'No se pudo reproducir el audio. Comprueba tu conexión e inténtalo de nuevo.';
 
   @override
-  String get accountAndSync => 'Cuenta y copia en la nube';
-
-  @override
-  String get cloudNotConfigured =>
-      'Las cuentas en la nube están preparadas en la aplicación. Estarán disponibles al conectar el servidor privado del proyecto.';
-
-  @override
-  String get cloudInvalidConfiguration =>
-      'La dirección del servidor de la nube no es válida o segura. Las cuentas no están disponibles en esta versión; la lectura local del Corán no se ve afectada.';
-
-  @override
-  String get accountOptionalBody =>
-      'La cuenta es opcional. Créala solo si quieres guardar y restaurar tu progreso entre dispositivos.';
-
-  @override
-  String get cloudRegistrationNotice =>
-      'La cuenta es opcional. Tu correo, nombre visible y el progreso que decidas guardar se almacenan en el servidor del proyecto. Crear o eliminar una cuenta no cambia tu lectura del Corán ni tu progreso local. La verificación del correo y la recuperación de contraseña aún no están disponibles, así que guarda tu contraseña de forma segura. Las copias en la nube no tienen cifrado de extremo a extremo; el administrador del servidor puede acceder a ellas.';
-
-  @override
-  String get signIn => 'Iniciar sesión';
-
-  @override
-  String get createAccount => 'Crear cuenta';
-
-  @override
-  String get signOut => 'Cerrar sesión';
-
-  @override
-  String get deleteCloudAccount => 'Eliminar cuenta de la nube';
-
-  @override
-  String get deleteCloudAccountWarning =>
-      '¿Eliminar tu cuenta y su copia de progreso del servidor? Esta acción no se puede deshacer. Los recursos descargados del Corán y el progreso de este dispositivo se conservarán. También se cerrará tu sesión.';
-
-  @override
-  String get cloudAccountDeleted =>
-      'Se eliminaron tu cuenta y su copia de la nube. Tus datos locales del Corán permanecen en este dispositivo.';
-
-  @override
-  String get displayName => 'Nombre visible';
-
-  @override
-  String get email => 'Correo electrónico';
-
-  @override
-  String get password => 'Contraseña';
-
-  @override
-  String get showPassword => 'Mostrar contraseña';
-
-  @override
-  String get hidePassword => 'Ocultar contraseña';
-
-  @override
   String get previousAyah => 'Aya anterior';
 
   @override
@@ -562,82 +508,6 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get removeRevisionMarker => 'Quitar marca de repaso';
-
-  @override
-  String get passwordRules => 'Usa al menos 8 caracteres.';
-
-  @override
-  String get displayNameRequired => 'Introduce al menos 2 caracteres.';
-
-  @override
-  String get validEmailRequired => 'Introduce un correo electrónico válido.';
-
-  @override
-  String get passwordTooShort =>
-      'La contraseña debe tener al menos 8 caracteres.';
-
-  @override
-  String get signedInSuccessfully => 'Has iniciado sesión.';
-
-  @override
-  String get backupNow => 'Guardar copia ahora';
-
-  @override
-  String get backupComplete => 'Se guardó una copia de tu progreso coránico.';
-
-  @override
-  String get restoreBackup => 'Restaurar copia';
-
-  @override
-  String get restoreBackupWarning =>
-      'Esto reemplazará la última página leída, los marcadores, el progreso de Jatmah y memorización, el idioma y la apariencia de este dispositivo con la copia en la nube. Los datos que falten en una copia antigua no cambiarán.';
-
-  @override
-  String get restore => 'Restaurar';
-
-  @override
-  String get restoreComplete => 'Tu progreso de la nube ha sido restaurado.';
-
-  @override
-  String get noCloudBackup => 'Esta cuenta aún no tiene una copia en la nube.';
-
-  @override
-  String get cloudDataInvalid =>
-      'La copia de la nube no se pudo leer con seguridad.';
-
-  @override
-  String lastSynced(String date) {
-    return 'Última copia o restauración: $date';
-  }
-
-  @override
-  String get accountPrivacyNote =>
-      'Solo se crea una copia cuando eliges Guardar copia ahora. La lectura del Corán no requiere una cuenta.';
-
-  @override
-  String get invalidCredentials => 'El correo o la contraseña son incorrectos.';
-
-  @override
-  String get emailAlreadyUsed => 'Ya existe una cuenta con este correo.';
-
-  @override
-  String get accountValidationFailed =>
-      'Comprueba los datos de la cuenta e inténtalo de nuevo.';
-
-  @override
-  String get sessionExpired => 'Tu sesión ha caducado. Inicia sesión de nuevo.';
-
-  @override
-  String get cloudRateLimited =>
-      'Demasiadas solicitudes a la nube. Espera un momento e inténtalo de nuevo. Tus datos locales del Corán no han cambiado.';
-
-  @override
-  String get cloudServerError =>
-      'El servicio en la nube tuvo un problema. Inténtalo más tarde.';
-
-  @override
-  String get cloudUnavailable =>
-      'No se puede acceder al servicio en la nube. Tus datos locales siguen seguros.';
 
   @override
   String get dailyReminder => 'Recordatorio diario de lectura';
@@ -706,7 +576,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get offlineRemoveWarning =>
-      '¿Eliminar solo los archivos de la aplicación y las páginas del Corán guardados en este navegador? Se conservarán tu progreso de lectura, tu cuenta y el Tafsir guardado. Necesitarás internet para volver a abrir la aplicación.';
+      '¿Eliminar solo los archivos de la aplicación y las páginas del Corán guardados en este navegador? Se conservarán tu progreso de lectura y el Tafsir guardado. Necesitarás internet para volver a abrir la aplicación.';
 
   @override
   String get offlineRemoved =>
@@ -743,4 +613,11 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get offlineCancelled =>
       'Descarga cancelada. Se conserva la versión preparada anteriormente, si existe.';
+
+  @override
+  String get localStorageTitle => 'Almacenamiento en el dispositivo';
+
+  @override
+  String get localStorageBody =>
+      'Tus marcadores, última lectura, planes, ajustes y descargas se guardan solo en este dispositivo o navegador. No hay cuentas, copias en la nube ni sincronización entre dispositivos. Desinstalar la aplicación o borrar sus datos o los del sitio puede eliminar estos elementos guardados.';
 }

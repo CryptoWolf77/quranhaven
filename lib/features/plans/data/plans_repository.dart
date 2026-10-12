@@ -55,35 +55,4 @@ class PlansRepository {
       jsonEncode(plans.map((plan) => plan.toJson()).toList()),
     );
   }
-
-  Future<Map<String, Object?>> exportForCloud() async {
-    final khatmah = await loadKhatmah();
-    final memorization = await loadMemorizationPlans();
-    return {
-      'khatmah': khatmah?.toJson(),
-      'memorization': memorization.map((plan) => plan.toJson()).toList(),
-    };
-  }
-
-  Future<void> replaceFromCloud(Map<String, Object?> data) async {
-    final rawKhatmah = data['khatmah'];
-    if (rawKhatmah == null) {
-      await deleteKhatmah();
-    } else {
-      await saveKhatmah(
-        KhatmahPlan.fromJson(rawKhatmah as Map<String, Object?>),
-      );
-    }
-
-    final rawMemorization = data['memorization'];
-    final plans = rawMemorization is List<Object?>
-        ? rawMemorization
-              .map(
-                (value) =>
-                    MemorizationPlan.fromJson(value! as Map<String, Object?>),
-              )
-              .toList()
-        : <MemorizationPlan>[];
-    await saveMemorizationPlans(plans);
-  }
 }

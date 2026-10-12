@@ -90,23 +90,50 @@
   "createKhatmahBody": "حدّد هدفًا مريحًا، ويمكنك إيقاف الخطة مؤقتًا أو تعديل تاريخها.",
   "completionPeriod": "مدة الإكمال",
   "daysCount": "{days} يومًا",
-  "@daysCount": {"placeholders": {"days": {"type": "int"}}},
+  "@daysCount": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "ramadanPlan": "خطة رمضان",
   "ramadanPlanBody": "خطة مركّزة لإتمام القرآن خلال 30 يومًا.",
   "continueFromLastRead": "المتابعة من آخر صفحة قرأتها",
   "startAtPage": "احتساب التقدّم من الصفحة {page}",
-  "@startAtPage": {"placeholders": {"page": {"type": "int"}}},
+  "@startAtPage": {
+    "placeholders": {
+      "page": {
+        "type": "int"
+      }
+    }
+  },
   "startPlan": "بدء الخطة",
   "activeKhatmah": "الختمة الحالية",
   "ramadanKhatmah": "ختمة رمضان",
   "paused": "متوقفة مؤقتًا",
   "targetDate": "الهدف: {date}",
-  "@targetDate": {"placeholders": {"date": {"type": "String"}}},
+  "@targetDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "adjustDate": "تعديل تاريخ الهدف",
   "deletePlan": "حذف الخطة",
   "deletePlanBody": "سيُحذف تقدّم هذه الختمة من هذا الجهاز.",
   "pagesOfTotal": "{completed} من {total} صفحة",
-  "@pagesOfTotal": {"placeholders": {"completed": {"type": "int"}, "total": {"type": "int"}}},
+  "@pagesOfTotal": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "pagesToday": "صفحات اليوم",
   "pagesRemaining": "الصفحات المتبقية",
   "daysRemaining": "الأيام المتبقية",
@@ -131,23 +158,62 @@
   "rangeRepetitions": "تكرار النطاق كاملًا",
   "delayBetween": "الفاصل بين التكرارات",
   "secondsCount": "{seconds} ث",
-  "@secondsCount": {"placeholders": {"seconds": {"type": "int"}}},
+  "@secondsCount": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
   "startWithAyahHidden": "بدء التدريب مع إخفاء الآية",
   "startMemorizing": "بدء الحفظ",
   "ayahRangeError": "أدخل رقم آية من 1 إلى {maximum}",
-  "@ayahRangeError": {"placeholders": {"maximum": {"type": "int"}}},
+  "@ayahRangeError": {
+    "placeholders": {
+      "maximum": {
+        "type": "int"
+      }
+    }
+  },
   "endBeforeStart": "يجب أن تكون آية النهاية بعد آية البداية.",
   "ayahRange": "الآيات {start}–{end}",
-  "@ayahRange": {"placeholders": {"start": {"type": "int"}, "end": {"type": "int"}}},
+  "@ayahRange": {
+    "placeholders": {
+      "start": {
+        "type": "int"
+      },
+      "end": {
+        "type": "int"
+      }
+    }
+  },
   "currentAyah": "الآية الحالية · {ayah}",
-  "@currentAyah": {"placeholders": {"ayah": {"type": "int"}}},
+  "@currentAyah": {
+    "placeholders": {
+      "ayah": {
+        "type": "int"
+      }
+    }
+  },
   "ayahHidden": "اقرأ من حفظك، ثم أظهر الآية للتحقق.",
   "hideAyah": "إخفاء الآية",
   "revealAyah": "إظهار الآية",
   "repeatCount": "تكرار ×{count}",
-  "@repeatCount": {"placeholders": {"count": {"type": "int"}}},
+  "@repeatCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "delayCount": "فاصل {seconds} ث",
-  "@delayCount": {"placeholders": {"seconds": {"type": "int"}}},
+  "@delayCount": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
   "repeatCurrent": "تكرار الآية الحالية",
   "repeatRange": "تكرار النطاق كاملًا",
   "stop": "إيقاف",
@@ -157,54 +223,21 @@
   "memorized": "محفوظة",
   "deleteMemorizationBody": "سيُحذف نطاق الحفظ وتقدّمه من هذا الجهاز.",
   "audioFailed": "تعذّر تشغيل صوت التدريب. تحقق من الاتصال وحاول مرة أخرى.",
-  "accountAndSync": "الحساب والنسخ الاحتياطي السحابي",
-  "cloudNotConfigured": "الحسابات السحابية جاهزة داخل التطبيق، وستتوفر عند ربط عنوان الخادم الخاص بالمشروع.",
-  "cloudInvalidConfiguration": "عنوان الخادم السحابي غير صالح أو غير آمن. الحسابات السحابية غير متاحة في هذا الإصدار، ولا تتأثر قراءة القرآن على الجهاز.",
-  "accountOptionalBody": "الحساب اختياري. أنشئ حسابًا فقط إذا أردت نسخ تقدّمك احتياطيًا واستعادته بين أجهزتك.",
-  "cloudRegistrationNotice": "الحساب اختياري. يُخزّن بريدك الإلكتروني واسمك الظاهر وأي تقدّم تختار نسخه احتياطيًا على خادم المشروع. إنشاء الحساب أو حذفه لا يغيّر قراءة القرآن أو تقدّمك على هذا الجهاز. التحقق من البريد الإلكتروني واستعادة كلمة المرور غير متاحين بعد، لذا احفظ كلمة مرورك في مكان آمن. النسخ السحابية ليست مشفّرة من طرف إلى طرف، ويمكن لمشغّل الخادم الوصول إليها.",
-  "signIn": "تسجيل الدخول",
-  "createAccount": "إنشاء حساب",
-  "signOut": "تسجيل الخروج",
-  "deleteCloudAccount": "حذف الحساب السحابي",
-  "deleteCloudAccountWarning": "هل تريد حذف حسابك ونسخة تقدّمك الاحتياطية من الخادم؟ لا يمكن التراجع عن ذلك. ستبقى مصادر القرآن المحمّلة وتقدّمك على هذا الجهاز. وسيتم تسجيل خروجك أيضًا.",
-  "cloudAccountDeleted": "تم حذف حسابك السحابي ونسخته الاحتياطية. تبقى بيانات القرآن المحلية على هذا الجهاز.",
-  "displayName": "الاسم الظاهر",
-  "email": "البريد الإلكتروني",
-  "password": "كلمة المرور",
-  "showPassword": "إظهار كلمة المرور",
-  "hidePassword": "إخفاء كلمة المرور",
   "previousAyah": "الآية السابقة",
   "nextAyah": "الآية التالية",
   "removeRevisionMarker": "إلغاء التحديد للمراجعة",
-  "passwordRules": "استخدم 8 أحرف على الأقل.",
-  "displayNameRequired": "أدخل حرفين على الأقل.",
-  "validEmailRequired": "أدخل بريدًا إلكترونيًا صحيحًا.",
-  "passwordTooShort": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل.",
-  "signedInSuccessfully": "تم تسجيل دخولك.",
-  "backupNow": "نسخ احتياطي الآن",
-  "backupComplete": "تم نسخ تقدّمك القرآني احتياطيًا.",
-  "restoreBackup": "استعادة النسخة",
-  "restoreBackupWarning": "سيستبدل هذا آخر صفحة مقروءة والعلامات المرجعية وتقدم الختمة والحفظ واللغة والمظهر على هذا الجهاز بالنسخة السحابية. ستبقى البيانات غير الموجودة في النسخ القديمة دون تغيير.",
-  "restore": "استعادة",
-  "restoreComplete": "تمت استعادة تقدّمك من السحابة.",
-  "noCloudBackup": "لا توجد نسخة احتياطية سحابية لهذا الحساب بعد.",
-  "cloudDataInvalid": "تعذّرت قراءة النسخة السحابية بأمان.",
-  "lastSynced": "آخر نسخ احتياطي أو استعادة: {date}",
-  "@lastSynced": {"placeholders": {"date": {"type": "String"}}},
-  "accountPrivacyNote": "لا يُنسخ تقدّمك احتياطيًا إلا عند اختيار «نسخ احتياطي الآن». قراءة القرآن لا تتطلب حسابًا.",
-  "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
-  "emailAlreadyUsed": "يوجد حساب يستخدم هذا البريد الإلكتروني.",
-  "accountValidationFailed": "تحقق من بيانات الحساب وحاول مرة أخرى.",
-  "sessionExpired": "انتهت جلستك. يرجى تسجيل الدخول من جديد.",
-  "cloudRateLimited": "طلبات سحابية كثيرة. انتظر قليلًا ثم حاول مجددًا. لم تتغيّر بيانات القرآن المحلية.",
-  "cloudServerError": "حدثت مشكلة في الخدمة السحابية. حاول لاحقًا.",
-  "cloudUnavailable": "تعذّر الوصول إلى الخدمة السحابية. بيانات القرآن المحلية ما زالت آمنة.",
   "dailyReminder": "تذكير القراءة اليومي",
   "remindMeDaily": "ذكّرني كل يوم",
   "reminderBody": "استلم تذكيرًا لطيفًا واحدًا في الوقت الذي تختاره.",
   "reminderMobileOnly": "التذكيرات المجدولة متاحة حاليًا في تطبيقي أندرويد وiOS.",
   "reminderTime": "وقت التذكير: {time}",
-  "@reminderTime": {"placeholders": {"time": {"type": "String"}}},
+  "@reminderTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
   "dailyReminderTitle": "لحظة مع القرآن",
   "dailyReminderBody": "خذ لحظة هادئة اليوم للقراءة أو الاستماع أو المراجعة.",
   "reminderEnabled": "تم تفعيل تذكير القرآن اليومي.",
@@ -219,7 +252,7 @@
   "offlineActivate": "تطبيق التحديث وإعادة التحميل",
   "offlineCancel": "إلغاء التحميل",
   "offlineRemove": "إزالة ملفات التطبيق المحفوظة دون اتصال",
-  "offlineRemoveWarning": "هل تريد إزالة ملفات التطبيق وصفحات القرآن المحفوظة فقط من هذا المتصفح؟ سيبقى تقدّم القراءة وحسابك والتفسير المحفوظ. ستحتاج إلى الإنترنت لفتح التطبيق مجددًا.",
+  "offlineRemoveWarning": "هل تريد إزالة ملفات التطبيق وصفحات القرآن المحفوظة فقط من هذا المتصفح؟ سيبقى تقدّم القراءة والتفسير المحفوظ. ستحتاج إلى الإنترنت لفتح التطبيق مجددًا.",
   "offlineRemoved": "تمت إزالة ملفات التطبيق المحفوظة دون اتصال",
   "offlineUnavailable": "تجهيز القراءة دون اتصال غير متاح في هذا المتصفح. جرّب متصفحًا مدعومًا عبر اتصال HTTPS.",
   "offlineError": "تعذّر إكمال تجهيز القراءة دون اتصال. تحقق من الاتصال ومساحة التخزين المتاحة ثم حاول مجددًا.",
@@ -228,5 +261,7 @@
   "offlineStorageWarning": "قد يزيل المتصفح الملفات المحفوظة عند انخفاض مساحة التخزين. تحقق من هذه الشاشة قبل الاعتماد على القراءة دون اتصال.",
   "offlineProgress": "تم حفظ {completed} / {total} ميغابايت",
   "offlineNotReady": "القراءة دون اتصال غير مجهّزة",
-  "offlineCancelled": "تم إلغاء التحميل. ستبقى النسخة المجهّزة سابقًا، إن وجدت."
+  "offlineCancelled": "تم إلغاء التحميل. ستبقى النسخة المجهّزة سابقًا، إن وجدت.",
+  "localStorageTitle": "التخزين على جهازك",
+  "localStorageBody": "تُحفظ العلامات المرجعية وآخر قراءة والخطط والإعدادات والتنزيلات على هذا الجهاز أو في هذا المتصفح فقط. لا توجد حسابات أو نسخ سحابية أو مزامنة بين الأجهزة. قد يؤدي حذف التطبيق أو مسح بياناته أو بيانات الموقع إلى فقدان هذه العناصر المحفوظة."
 }
