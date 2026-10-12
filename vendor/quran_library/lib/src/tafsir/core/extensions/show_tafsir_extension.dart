@@ -22,9 +22,9 @@ extension ShowTafsirExtension on void {
       // Check if tafsir or translation is ready
       if (tafsirCtrl.selectedTafsir.isTafsir) {
         // tafsirCtrl.closeAndReinitializeDatabase();
-        await tafsirCtrl.fetchData(pageIndex + 1);
+        await tafsirCtrl.fetchData(pageIndex + 1, rethrowErrors: true);
       } else {
-        await tafsirCtrl.fetchTranslate();
+        await tafsirCtrl.fetchTranslate(rethrowErrors: true);
       }
 
       log('تم تحميل بيانات التفسير بنجاح', name: 'TafsirUi');
