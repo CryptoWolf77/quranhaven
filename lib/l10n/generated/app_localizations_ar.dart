@@ -9,6 +9,41 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
+  String get quranTextTab => 'القرآن الكريم';
+
+  @override
+  String get localSaveFailed =>
+      'تعذّر حفظ التغيير على هذا الجهاز. تم الاحتفاظ بآخر حالة محفوظة. تحقق من مساحة التخزين وحاول مجددًا.';
+
+  @override
+  String get localLoadFailed =>
+      'تعذّر قراءة التقدم المحلي. لم يتم استبدال أي بيانات محفوظة. فعّل تخزين الموقع وحاول مجددًا.';
+
+  @override
+  String get retry => 'حاول مجددًا';
+
+  @override
+  String get planOptions => 'خيارات الخطة';
+
+  @override
+  String get tenRecitationsTab => 'القراءات العشر';
+
+  @override
+  String get readerModeDefault => 'المصحف';
+
+  @override
+  String get readerModeScrollable => 'صفحة قابلة للتمرير';
+
+  @override
+  String get readerModeDual => 'صفحتان';
+
+  @override
+  String get readerModeTafsir => 'القرآن والتفسير';
+
+  @override
+  String get readerModeAyahTafsir => 'الآية مع التفسير';
+
+  @override
   String get appName => 'القرآن الكريم';
 
   @override

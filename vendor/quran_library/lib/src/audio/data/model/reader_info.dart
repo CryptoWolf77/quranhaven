@@ -14,11 +14,16 @@ class ReaderInfo {
   /// رابط المصدر الأساسي للصوتيات
   final String url;
 
+  /// Migrated remote root; keep readerNamePath stable for existing downloads.
+  final String? remoteBaseUrl;
+  String get recordingRoot => remoteBaseUrl ?? '$url$readerNamePath';
+
   const ReaderInfo({
     required this.index,
     required this.name,
     required this.readerNamePath,
     required this.url,
+    this.remoteBaseUrl,
   });
 
   /// إنشاء كائن من Map
@@ -28,6 +33,7 @@ class ReaderInfo {
       name: map['name'] as String,
       readerNamePath: map['readerNamePath'] as String,
       url: map['url'] as String,
+      remoteBaseUrl: map['remoteBaseUrl'] as String?,
     );
   }
 
@@ -38,6 +44,7 @@ class ReaderInfo {
       'name': name,
       'readerNamePath': readerNamePath,
       'url': url,
+      if (remoteBaseUrl != null) 'remoteBaseUrl': remoteBaseUrl,
     };
   }
 
@@ -47,12 +54,14 @@ class ReaderInfo {
     String? name,
     String? readerNamePath,
     String? url,
+    String? remoteBaseUrl,
   }) {
     return ReaderInfo(
       index: index ?? this.index,
       name: name ?? this.name,
       readerNamePath: readerNamePath ?? this.readerNamePath,
       url: url ?? this.url,
+      remoteBaseUrl: remoteBaseUrl ?? this.remoteBaseUrl,
     );
   }
 
@@ -63,12 +72,13 @@ class ReaderInfo {
         other.index == index &&
         other.name == name &&
         other.readerNamePath == readerNamePath &&
-        other.url == url;
+        other.url == url &&
+        other.remoteBaseUrl == remoteBaseUrl;
   }
 
   @override
   int get hashCode {
-    return Object.hash(index, name, readerNamePath, url);
+    return Object.hash(index, name, readerNamePath, url, remoteBaseUrl);
   }
 
   @override

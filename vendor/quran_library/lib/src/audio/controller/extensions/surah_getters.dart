@@ -14,7 +14,9 @@ extension SurahGetters on AudioCtrl {
   }
 
   String get urlSurahFilePath {
-    return '${state.surahReaderUrl}${state.surahReaderNamePath}${state.currentAudioListSurahNum.value.toString().padLeft(3, "0")}.mp3';
+    final reader =
+        ReadersConstants.activeSurahReaders[state.surahReaderIndex.value];
+    return '${reader.recordingRoot}${state.currentAudioListSurahNum.value.toString().padLeft(3, "0")}.mp3';
   }
 
   /// single verse

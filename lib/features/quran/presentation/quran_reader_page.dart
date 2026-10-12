@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:quran_library/quran_library.dart';
 
 import '../../../l10n/generated/app_localizations.dart';
+import 'reader_navigation.dart';
 
 class QuranReaderPage extends StatelessWidget {
   const QuranReaderPage({required this.onPageChanged, super.key});
@@ -48,6 +49,8 @@ class QuranReaderPage extends StatelessWidget {
             tabBookmarksLabel: l10n.bookmarks,
             tabSurahsLabel: l10n.surahs,
             tabJozzLabel: l10n.juz,
+            quranTabText: l10n.quranTextTab,
+            tenRecitationsTabText: l10n.tenRecitationsTab,
             customTopBarWidgets: [
               IconButton(
                 tooltip: l10n.quickNavigate,
@@ -152,6 +155,19 @@ class QuranReaderPage extends StatelessWidget {
             pageNumberColor: scheme.primary,
             sajdaNameColor: scheme.secondary,
           ),
+      displayModeBarStyle:
+          DisplayModeBarStyle.defaults(
+            isDark: isDark,
+            context: context,
+          ).copyWith(
+            modeLabels: {
+              QuranDisplayMode.defaultMode: l10n.readerModeDefault,
+              QuranDisplayMode.singleScrollable: l10n.readerModeScrollable,
+              QuranDisplayMode.dualPage: l10n.readerModeDual,
+              QuranDisplayMode.quranWithTafsirSide: l10n.readerModeTafsir,
+              QuranDisplayMode.ayahWithTafsirInline: l10n.readerModeAyahTafsir,
+            },
+          ),
     );
   }
 
@@ -164,7 +180,10 @@ class QuranReaderPage extends StatelessWidget {
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
       ),
-      builder: (context) => const _QuickNavigatorSheet(),
+      builder: (context) => const ReaderNavigationFrame(
+        showCloseButton: false,
+        child: _QuickNavigatorSheet(),
+      ),
     );
   }
 }

@@ -13,22 +13,26 @@ class PlansPage extends StatefulWidget {
   const PlansPage({
     required this.currentPage,
     required this.onOpenReader,
+    this.repository,
     super.key,
   });
 
   final int currentPage;
   final VoidCallback onOpenReader;
+  final PlansRepository? repository;
 
   @override
   State<PlansPage> createState() => _PlansPageState();
 }
 
 class _PlansPageState extends State<PlansPage> {
-  final PlansRepository _repository = PlansRepository();
+  late final PlansRepository _repository;
 
   KhatmahPlan? _khatmah;
   List<MemorizationPlan> _memorizationPlans = [];
   bool _loading = true;
+  bool _saving = false;
+  bool _loadFailed = false;
   int _section = 0;
   String? _expandedPlanId;
   String? _audioPlanId;
@@ -37,30 +41,60 @@ class _PlansPageState extends State<PlansPage> {
   @override
   void initState() {
     super.initState();
+    _repository = widget.repository ?? PlansRepository();
     unawaited(_load());
   }
 
   @override
   void dispose() {
     _cancelAudio = true;
-    unawaited(QuranLibrary().stopWordAudio());
+    // Do not initialize or stop a global player that this page never owned.
+    if (_audioPlanId != null) unawaited(QuranLibrary().stopWordAudio());
     super.dispose();
   }
 
   Future<void> _load() async {
-    final results = await Future.wait<Object?>([
-      _repository.loadKhatmah(),
-      _repository.loadMemorizationPlans(),
-    ]);
-    if (!mounted) return;
-    setState(() {
-      _khatmah = results[0] as KhatmahPlan?;
-      _memorizationPlans = results[1] as List<MemorizationPlan>;
-      _loading = false;
-    });
+    setState(() => _loading = true);
+    try {
+      final results = await Future.wait<Object?>([
+        _repository.loadKhatmah(),
+        _repository.loadMemorizationPlans(),
+      ]);
+      if (!mounted) return;
+      setState(() {
+        _khatmah = results[0] as KhatmahPlan?;
+        _memorizationPlans = results[1] as List<MemorizationPlan>;
+        _loadFailed = false;
+      });
+    } catch (_) {
+      if (mounted) setState(() => _loadFailed = true);
+    } finally {
+      if (mounted) setState(() => _loading = false);
+    }
+  }
+
+  Future<void> _persist(
+    Future<void> Function() write,
+    VoidCallback commit,
+  ) async {
+    if (!mounted || _saving || _loadFailed) return;
+    setState(() => _saving = true);
+    try {
+      await write();
+      if (mounted) setState(commit);
+    } catch (_) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(AppLocalizations.of(context).localSaveFailed)),
+        );
+      }
+    } finally {
+      if (mounted) setState(() => _saving = false);
+    }
   }
 
   Future<void> _createKhatmah() async {
+    if (_saving || _loadFailed) return;
     final draft = await showModalBottomSheet<_KhatmahDraft>(
       context: context,
       isScrollControlled: true,
@@ -81,13 +115,11 @@ class _PlansPageState extends State<PlansPage> {
       completedPages: draft.startFromLastRead ? widget.currentPage - 1 : 0,
       isRamadanPlan: draft.isRamadan,
     );
-    setState(() => _khatmah = plan);
-    await _repository.saveKhatmah(plan);
+    await _saveKhatmah(plan);
   }
 
   Future<void> _saveKhatmah(KhatmahPlan plan) async {
-    setState(() => _khatmah = plan);
-    await _repository.saveKhatmah(plan);
+    await _persist(() => _repository.saveKhatmah(plan), () => _khatmah = plan);
   }
 
   Future<void> _completeDailyTarget() async {
@@ -103,7 +135,7 @@ class _PlansPageState extends State<PlansPage> {
 
   Future<void> _adjustCompletedPages() async {
     final plan = _khatmah;
-    if (plan == null) return;
+    if (plan == null || _saving) return;
     final controller = TextEditingController(text: '${plan.completedPages}');
     final value = await showDialog<int>(
       context: context,
@@ -150,7 +182,7 @@ class _PlansPageState extends State<PlansPage> {
 
   Future<void> _adjustTargetDate() async {
     final plan = _khatmah;
-    if (plan == null) return;
+    if (plan == null || _saving) return;
     final now = DateTime.now();
     final date = await showDatePicker(
       context: context,
@@ -162,17 +194,18 @@ class _PlansPageState extends State<PlansPage> {
   }
 
   Future<void> _deleteKhatmah() async {
+    if (_saving) return;
     final l10n = AppLocalizations.of(context);
     final confirmed = await _confirm(
       title: l10n.deletePlan,
       body: l10n.deletePlanBody,
     );
     if (!confirmed) return;
-    setState(() => _khatmah = null);
-    await _repository.deleteKhatmah();
+    await _persist(_repository.deleteKhatmah, () => _khatmah = null);
   }
 
   Future<void> _createMemorizationPlan() async {
+    if (_saving || _loadFailed) return;
     final locale = Localizations.localeOf(context);
     final surahs = QuranLibrary.getAllSurahs(
       isArabic: locale.languageCode == 'ar',
@@ -188,24 +221,26 @@ class _PlansPageState extends State<PlansPage> {
       builder: (context) => _CreateMemorizationSheet(surahs: surahs),
     );
     if (plan == null || !mounted) return;
-    setState(() {
-      _memorizationPlans = [..._memorizationPlans, plan];
+    final updated = [..._memorizationPlans, plan];
+    await _persist(() => _repository.saveMemorizationPlans(updated), () {
+      _memorizationPlans = updated;
       _expandedPlanId = plan.id;
     });
-    await _repository.saveMemorizationPlans(_memorizationPlans);
   }
 
   Future<void> _replaceMemorizationPlan(MemorizationPlan plan) async {
-    setState(() {
-      _memorizationPlans = [
-        for (final item in _memorizationPlans)
-          if (item.id == plan.id) plan else item,
-      ];
-    });
-    await _repository.saveMemorizationPlans(_memorizationPlans);
+    final updated = [
+      for (final item in _memorizationPlans)
+        if (item.id == plan.id) plan else item,
+    ];
+    await _persist(
+      () => _repository.saveMemorizationPlans(updated),
+      () => _memorizationPlans = updated,
+    );
   }
 
   Future<void> _deleteMemorizationPlan(MemorizationPlan plan) async {
+    if (_saving) return;
     final l10n = AppLocalizations.of(context);
     final confirmed = await _confirm(
       title: l10n.deletePlan,
@@ -213,13 +248,13 @@ class _PlansPageState extends State<PlansPage> {
     );
     if (!confirmed) return;
     if (_audioPlanId == plan.id) await _stopPracticeAudio();
-    setState(() {
-      _memorizationPlans = _memorizationPlans
-          .where((item) => item.id != plan.id)
-          .toList();
+    final updated = _memorizationPlans
+        .where((item) => item.id != plan.id)
+        .toList();
+    await _persist(() => _repository.saveMemorizationPlans(updated), () {
+      _memorizationPlans = updated;
       if (_expandedPlanId == plan.id) _expandedPlanId = null;
     });
-    await _repository.saveMemorizationPlans(_memorizationPlans);
   }
 
   Future<bool> _confirm({required String title, required String body}) async {
@@ -339,6 +374,22 @@ class _PlansPageState extends State<PlansPage> {
                   child: Padding(
                     padding: EdgeInsets.all(48),
                     child: CircularProgressIndicator(),
+                  ),
+                )
+              else if (_loadFailed)
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(24),
+                    child: Column(
+                      children: [
+                        Text(l10n.localLoadFailed),
+                        const SizedBox(height: 12),
+                        OutlinedButton(
+                          onPressed: _load,
+                          child: Text(l10n.retry),
+                        ),
+                      ],
+                    ),
                   ),
                 )
               else if (_section == 0)
@@ -494,175 +545,184 @@ class _KhatmahPanel extends StatelessWidget {
 
     return Column(
       children: [
-        Card(
-          child: Padding(
-            padding: const EdgeInsets.all(22),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Text(
-                                activePlan.isRamadanPlan
-                                    ? l10n.ramadanKhatmah
-                                    : l10n.activeKhatmah,
-                                style: Theme.of(context).textTheme.titleLarge
-                                    ?.copyWith(fontWeight: FontWeight.w800),
-                              ),
-                              if (activePlan.isPaused) ...[
-                                const SizedBox(width: 8),
-                                Chip(label: Text(l10n.paused)),
+        Semantics(
+          container: true,
+          explicitChildNodes: true,
+          child: Card(
+            child: Padding(
+              padding: const EdgeInsets.all(22),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  activePlan.isRamadanPlan
+                                      ? l10n.ramadanKhatmah
+                                      : l10n.activeKhatmah,
+                                  style: Theme.of(context).textTheme.titleLarge
+                                      ?.copyWith(fontWeight: FontWeight.w800),
+                                ),
+                                if (activePlan.isPaused) ...[
+                                  const SizedBox(width: 8),
+                                  Chip(label: Text(l10n.paused)),
+                                ],
                               ],
-                            ],
+                            ),
+                            const SizedBox(height: 5),
+                            Text(l10n.targetDate(targetDate)),
+                          ],
+                        ),
+                      ),
+                      PopupMenuButton<String>(
+                        tooltip: l10n.planOptions,
+                        onSelected: (value) {
+                          if (value == 'date') onAdjustDate();
+                          if (value == 'delete') onDelete();
+                        },
+                        itemBuilder: (context) => [
+                          PopupMenuItem(
+                            value: 'date',
+                            child: Text(l10n.adjustDate),
                           ),
-                          const SizedBox(height: 5),
-                          Text(l10n.targetDate(targetDate)),
+                          PopupMenuItem(
+                            value: 'delete',
+                            child: Text(l10n.deletePlan),
+                          ),
                         ],
                       ),
-                    ),
-                    PopupMenuButton<String>(
-                      onSelected: (value) {
-                        if (value == 'date') onAdjustDate();
-                        if (value == 'delete') onDelete();
-                      },
-                      itemBuilder: (context) => [
-                        PopupMenuItem(
-                          value: 'date',
-                          child: Text(l10n.adjustDate),
-                        ),
-                        PopupMenuItem(
-                          value: 'delete',
-                          child: Text(l10n.deletePlan),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 22),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      '$percent%',
-                      style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                        color: scheme.primary,
-                        fontWeight: FontWeight.w900,
-                      ),
-                    ),
-                    const SizedBox(width: 12),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(bottom: 8),
-                        child: Text(
-                          l10n.pagesOfTotal(
-                            activePlan.completedPages,
-                            quranPageCount,
-                          ),
-                          textAlign: TextAlign.end,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 10),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(999),
-                  child: LinearProgressIndicator(
-                    value: activePlan.progress,
-                    minHeight: 11,
-                    backgroundColor: scheme.primary.withValues(alpha: 0.1),
+                    ],
                   ),
-                ),
-                const SizedBox(height: 22),
-                LayoutBuilder(
-                  builder: (context, constraints) {
-                    final cards = [
-                      _MetricCard(
-                        icon: Icons.today_outlined,
-                        value: '$dailyPages',
-                        label: l10n.pagesToday,
+                  const SizedBox(height: 22),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        '$percent%',
+                        style: Theme.of(context).textTheme.displaySmall
+                            ?.copyWith(
+                              color: scheme.primary,
+                              fontWeight: FontWeight.w900,
+                            ),
                       ),
-                      _MetricCard(
-                        icon: Icons.menu_book_outlined,
-                        value: '${activePlan.remainingPages}',
-                        label: l10n.pagesRemaining,
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 8),
+                          child: Text(
+                            l10n.pagesOfTotal(
+                              activePlan.completedPages,
+                              quranPageCount,
+                            ),
+                            textAlign: TextAlign.end,
+                          ),
+                        ),
                       ),
-                      _MetricCard(
-                        icon: Icons.event_available_outlined,
-                        value: '${activePlan.remainingDaysOn(DateTime.now())}',
-                        label: l10n.daysRemaining,
-                      ),
-                    ];
-                    if (constraints.maxWidth < 580) {
-                      return Column(
-                        children: [
-                          for (final card in cards) ...[
-                            card,
-                            if (card != cards.last) const SizedBox(height: 8),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(999),
+                    child: LinearProgressIndicator(
+                      value: activePlan.progress,
+                      minHeight: 11,
+                      backgroundColor: scheme.primary.withValues(alpha: 0.1),
+                    ),
+                  ),
+                  const SizedBox(height: 22),
+                  LayoutBuilder(
+                    builder: (context, constraints) {
+                      final cards = [
+                        _MetricCard(
+                          icon: Icons.today_outlined,
+                          value: '$dailyPages',
+                          label: l10n.pagesToday,
+                        ),
+                        _MetricCard(
+                          icon: Icons.menu_book_outlined,
+                          value: '${activePlan.remainingPages}',
+                          label: l10n.pagesRemaining,
+                        ),
+                        _MetricCard(
+                          icon: Icons.event_available_outlined,
+                          value:
+                              '${activePlan.remainingDaysOn(DateTime.now())}',
+                          label: l10n.daysRemaining,
+                        ),
+                      ];
+                      if (constraints.maxWidth < 580) {
+                        return Column(
+                          children: [
+                            for (final card in cards) ...[
+                              card,
+                              if (card != cards.last) const SizedBox(height: 8),
+                            ],
                           ],
+                        );
+                      }
+                      return Row(
+                        children: [
+                          for (final card in cards)
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 4,
+                                ),
+                                child: card,
+                              ),
+                            ),
                         ],
                       );
-                    }
-                    return Row(
-                      children: [
-                        for (final card in cards)
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 4,
-                              ),
-                              child: card,
-                            ),
-                          ),
-                      ],
-                    );
-                  },
-                ),
-                const SizedBox(height: 20),
-                Wrap(
-                  spacing: 10,
-                  runSpacing: 10,
-                  children: [
-                    FilledButton.icon(
-                      onPressed: activePlan.isPaused || activePlan.isComplete
-                          ? null
-                          : onCompleteDailyTarget,
-                      icon: Icon(
-                        activePlan.isComplete
-                            ? Icons.celebration_rounded
-                            : Icons.done_all_rounded,
+                    },
+                  ),
+                  const SizedBox(height: 20),
+                  Wrap(
+                    spacing: 10,
+                    runSpacing: 10,
+                    children: [
+                      FilledButton.icon(
+                        onPressed: activePlan.isPaused || activePlan.isComplete
+                            ? null
+                            : onCompleteDailyTarget,
+                        icon: Icon(
+                          activePlan.isComplete
+                              ? Icons.celebration_rounded
+                              : Icons.done_all_rounded,
+                        ),
+                        label: Text(
+                          activePlan.isComplete
+                              ? l10n.khatmahComplete
+                              : l10n.completeToday,
+                        ),
                       ),
-                      label: Text(
-                        activePlan.isComplete
-                            ? l10n.khatmahComplete
-                            : l10n.completeToday,
+                      OutlinedButton.icon(
+                        onPressed: onUpdateProgress,
+                        icon: const Icon(Icons.edit_outlined),
+                        label: Text(l10n.updateProgress),
                       ),
-                    ),
-                    OutlinedButton.icon(
-                      onPressed: onUpdateProgress,
-                      icon: const Icon(Icons.edit_outlined),
-                      label: Text(l10n.updateProgress),
-                    ),
-                    TextButton.icon(
-                      onPressed: activePlan.isComplete ? null : onTogglePause,
-                      icon: Icon(
-                        activePlan.isPaused
-                            ? Icons.play_arrow_rounded
-                            : Icons.pause_rounded,
+                      TextButton.icon(
+                        onPressed: activePlan.isComplete ? null : onTogglePause,
+                        icon: Icon(
+                          activePlan.isPaused
+                              ? Icons.play_arrow_rounded
+                              : Icons.pause_rounded,
+                        ),
+                        label: Text(
+                          activePlan.isPaused
+                              ? l10n.resumePlan
+                              : l10n.pausePlan,
+                        ),
                       ),
-                      label: Text(
-                        activePlan.isPaused ? l10n.resumePlan : l10n.pausePlan,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -1449,7 +1509,16 @@ class _CreateMemorizationSheetState extends State<_CreateMemorizationSheet> {
                     controller: _endController,
                     keyboardType: TextInputType.number,
                     inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                    validator: _validateAyah,
+                    validator: (text) {
+                      final error = _validateAyah(text);
+                      if (error != null) return error;
+                      final start = int.tryParse(_startController.text);
+                      final end = int.tryParse(text ?? '');
+                      if (start != null && end != null && end < start) {
+                        return l10n.endBeforeStart;
+                      }
+                      return null;
+                    },
                     decoration: InputDecoration(
                       labelText: l10n.endAyah,
                       border: const OutlineInputBorder(),

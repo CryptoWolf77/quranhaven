@@ -19,6 +19,7 @@ class _QuranAppState extends State<QuranApp> {
   ReadingPreferences _preferences = const ReadingPreferences();
   Future<void> _preferenceWrites = Future<void>.value();
   bool _preferencesLoaded = false;
+  final _messengerKey = GlobalKey<ScaffoldMessengerState>();
 
   @override
   void initState() {
@@ -27,12 +28,27 @@ class _QuranAppState extends State<QuranApp> {
   }
 
   Future<void> _loadPreferences() async {
-    final preferences = await _preferencesRepository.load();
-    if (!mounted) return;
-    setState(() {
-      _preferences = preferences;
-      _preferencesLoaded = true;
-    });
+    try {
+      final preferences = await _preferencesRepository.load();
+      if (mounted) setState(() => _preferences = preferences);
+    } catch (_) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _showStorageError(reading: true);
+      });
+    } finally {
+      if (mounted) setState(() => _preferencesLoaded = true);
+    }
+  }
+
+  void _showStorageError({bool reading = false}) {
+    final context = _messengerKey.currentContext;
+    if (context == null) return;
+    final l10n = AppLocalizations.of(context);
+    _messengerKey.currentState?.showSnackBar(
+      SnackBar(
+        content: Text(reading ? l10n.localLoadFailed : l10n.localSaveFailed),
+      ),
+    );
   }
 
   Future<void> _savePreferences(ReadingPreferences preferences) async {
@@ -43,12 +59,17 @@ class _QuranAppState extends State<QuranApp> {
         .catchError((Object _) {})
         .then((_) => _preferencesRepository.save(preferences));
     _preferenceWrites = write;
-    await write;
+    try {
+      await write;
+    } catch (_) {
+      if (mounted) _showStorageError();
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      scaffoldMessengerKey: _messengerKey,
       debugShowCheckedModeBanner: false,
       onGenerateTitle: (context) => AppLocalizations.of(context).appName,
       locale: _preferences.locale,

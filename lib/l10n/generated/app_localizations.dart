@@ -100,6 +100,72 @@ abstract class AppLocalizations {
     Locale('es'),
   ];
 
+  /// No description provided for @quranTextTab.
+  ///
+  /// In en, this message translates to:
+  /// **'Quran'**
+  String get quranTextTab;
+
+  /// No description provided for @localSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Your change could not be saved on this device. The last saved state is kept. Check available storage and try again.'**
+  String get localSaveFailed;
+
+  /// No description provided for @localLoadFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Local progress could not be read. No saved data has been replaced. Enable site storage and try again.'**
+  String get localLoadFailed;
+
+  /// No description provided for @retry.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get retry;
+
+  /// No description provided for @planOptions.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan options'**
+  String get planOptions;
+
+  /// No description provided for @tenRecitationsTab.
+  ///
+  /// In en, this message translates to:
+  /// **'Ten readings'**
+  String get tenRecitationsTab;
+
+  /// No description provided for @readerModeDefault.
+  ///
+  /// In en, this message translates to:
+  /// **'Mushaf'**
+  String get readerModeDefault;
+
+  /// No description provided for @readerModeScrollable.
+  ///
+  /// In en, this message translates to:
+  /// **'Scrollable page'**
+  String get readerModeScrollable;
+
+  /// No description provided for @readerModeDual.
+  ///
+  /// In en, this message translates to:
+  /// **'Dual page'**
+  String get readerModeDual;
+
+  /// No description provided for @readerModeTafsir.
+  ///
+  /// In en, this message translates to:
+  /// **'Quran and Tafsir'**
+  String get readerModeTafsir;
+
+  /// No description provided for @readerModeAyahTafsir.
+  ///
+  /// In en, this message translates to:
+  /// **'Ayah with Tafsir'**
+  String get readerModeAyahTafsir;
+
   /// No description provided for @appName.
   ///
   /// In en, this message translates to:

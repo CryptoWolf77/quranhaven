@@ -77,7 +77,8 @@ class DisplayModeBar extends StatelessWidget {
   }) {
     final iconSize = style.iconSize ?? 24;
     final spacing = style.spacing ?? 16;
-    final label = languageCode == 'ar' ? mode.labelAr : mode.labelEn;
+    final label = style.modeLabels?[mode] ??
+        (languageCode == 'ar' ? mode.labelAr : mode.labelEn);
     final showTooltip = style.showTooltip ?? true;
 
     Widget button = Padding(

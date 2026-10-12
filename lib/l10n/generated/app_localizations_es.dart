@@ -9,6 +9,41 @@ class AppLocalizationsEs extends AppLocalizations {
   AppLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
+  String get quranTextTab => 'Texto del Corán';
+
+  @override
+  String get localSaveFailed =>
+      'No se pudo guardar el cambio en este dispositivo. Se conserva el último estado guardado. Revisa el espacio disponible y vuelve a intentarlo.';
+
+  @override
+  String get localLoadFailed =>
+      'No se pudo leer el progreso local. No se reemplazó ningún dato guardado. Activa el almacenamiento del sitio y vuelve a intentarlo.';
+
+  @override
+  String get retry => 'Volver a intentar';
+
+  @override
+  String get planOptions => 'Opciones del plan';
+
+  @override
+  String get tenRecitationsTab => 'Diez lecturas';
+
+  @override
+  String get readerModeDefault => 'Mushaf';
+
+  @override
+  String get readerModeScrollable => 'Página desplazable';
+
+  @override
+  String get readerModeDual => 'Doble página';
+
+  @override
+  String get readerModeTafsir => 'Corán y Tafsir';
+
+  @override
+  String get readerModeAyahTafsir => 'Ayah con Tafsir';
+
+  @override
   String get appName => 'Corán';
 
   @override

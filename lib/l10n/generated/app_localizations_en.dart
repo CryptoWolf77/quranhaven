@@ -9,6 +9,41 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
+  String get quranTextTab => 'Quran';
+
+  @override
+  String get localSaveFailed =>
+      'Your change could not be saved on this device. The last saved state is kept. Check available storage and try again.';
+
+  @override
+  String get localLoadFailed =>
+      'Local progress could not be read. No saved data has been replaced. Enable site storage and try again.';
+
+  @override
+  String get retry => 'Try again';
+
+  @override
+  String get planOptions => 'Plan options';
+
+  @override
+  String get tenRecitationsTab => 'Ten readings';
+
+  @override
+  String get readerModeDefault => 'Mushaf';
+
+  @override
+  String get readerModeScrollable => 'Scrollable page';
+
+  @override
+  String get readerModeDual => 'Dual page';
+
+  @override
+  String get readerModeTafsir => 'Quran and Tafsir';
+
+  @override
+  String get readerModeAyahTafsir => 'Ayah with Tafsir';
+
+  @override
   String get appName => 'Quran';
 
   @override

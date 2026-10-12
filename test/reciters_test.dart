@@ -20,7 +20,7 @@ void main() {
       expect(ayah.index, entry['ayah_index']);
       expect(surah.name, entry['arabic']);
       expect(ayah.name, entry['arabic']);
-      expect('${surah.url}${surah.readerNamePath}', entry['surah_root']);
+      expect(surah.recordingRoot, entry['surah_root']);
       expect(ayah.url, 'https://everyayah.com/data/');
       expect(ayah.readerNamePath, entry['ayah_folder']);
     }
@@ -78,6 +78,31 @@ void main() {
         surahPaths[index],
       );
     }
+  });
+
+  test('remote migration preserves local paths and model round trips', () {
+    const paths = [
+      'afs/',
+      'sds/',
+      'shatri/',
+      'hthfi/',
+      'bsfr/',
+      'hani/',
+      's_bud/',
+      'qasm/',
+    ];
+    for (var i = 0; i < paths.length; i++) {
+      final reader = ReadersConstants.surahReaderInfo[21 + i];
+      expect(reader.readerNamePath, paths[i]);
+      expect(
+        reader.remoteBaseUrl,
+        startsWith('https://cdn.mp3quran.net/audio/'),
+      );
+      expect(ReaderInfo.fromMap(reader.toMap()), reader);
+      expect(reader.copyWith(index: 0).recordingRoot, reader.recordingRoot);
+    }
+    final legacy = ReadersConstants.surahReaderInfo.first;
+    expect(legacy.recordingRoot, '${legacy.url}${legacy.readerNamePath}');
   });
 
   test(

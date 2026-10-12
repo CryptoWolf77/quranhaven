@@ -43,6 +43,9 @@ class DisplayModeBarStyle {
   /// هل يظهر الـ tooltip عند الضغط المطوّل؟
   final bool? showTooltip;
 
+  /// Optional application-localized names without changing Quran content.
+  final Map<QuranDisplayMode, String>? modeLabels;
+
   const DisplayModeBarStyle({
     this.backgroundColor,
     this.selectedIconColor,
@@ -57,6 +60,7 @@ class DisplayModeBarStyle {
     this.tooltipBackgroundColor,
     this.tooltipTextStyle,
     this.showTooltip,
+    this.modeLabels,
   });
 
   DisplayModeBarStyle copyWith({
@@ -73,6 +77,7 @@ class DisplayModeBarStyle {
     Color? tooltipBackgroundColor,
     TextStyle? tooltipTextStyle,
     bool? showTooltip,
+    Map<QuranDisplayMode, String>? modeLabels,
   }) {
     return DisplayModeBarStyle(
       backgroundColor: backgroundColor ?? this.backgroundColor,
@@ -90,6 +95,7 @@ class DisplayModeBarStyle {
           tooltipBackgroundColor ?? this.tooltipBackgroundColor,
       tooltipTextStyle: tooltipTextStyle ?? this.tooltipTextStyle,
       showTooltip: showTooltip ?? this.showTooltip,
+      modeLabels: modeLabels ?? this.modeLabels,
     );
   }
 

@@ -57,9 +57,14 @@ Future<void> showReaderNavigation(
 
 /// Accessible dismissal for the app's navigation sheets, including keyboard use.
 class ReaderNavigationFrame extends StatefulWidget {
-  const ReaderNavigationFrame({required this.child, super.key});
+  const ReaderNavigationFrame({
+    required this.child,
+    this.showCloseButton = true,
+    super.key,
+  });
 
   final Widget child;
+  final bool showCloseButton;
 
   @override
   State<ReaderNavigationFrame> createState() => _ReaderNavigationFrameState();
@@ -95,6 +100,8 @@ class _ReaderNavigationFrameState extends State<ReaderNavigationFrame> {
 
   @override
   Widget build(BuildContext context) {
+    // Sheets with their own close control still need keyboard dismissal.
+    if (!widget.showCloseButton) return widget.child;
     return Focus(
       autofocus: true,
       child: ConstrainedBox(
