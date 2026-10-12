@@ -62,6 +62,9 @@ class _QuranAppState extends State<QuranApp> {
     try {
       await write;
     } catch (_) {
+      // The selected locale is applied on the next frame. Read its strings
+      // after that frame so a failed language write is explained in that language.
+      await WidgetsBinding.instance.endOfFrame;
       if (mounted) _showStorageError();
     }
   }
