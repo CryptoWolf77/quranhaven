@@ -16,7 +16,7 @@ Project folder: `C:\Users\ThaherTech\Documents\Quran Flutter`.
 | 3. Text/audio | 44 verified text resources, reciter selection/playback, mobile audio downloads and browser text downloads implemented | Browser offline audio remains backlog; audio uses external providers. |
 | 4. Plans | Local Khatmah/memorization progress, targets, repetition, hide/reveal and revision markers implemented | Physical-device background audio acceptance. |
 | 5. Local preferences/reminders | Local language/theme, plans, bookmarks and optional device reminders; cloud client removed in build 6 | Physical-phone upgrade and reminder delivery acceptance. |
-| 6. Public content deployment | Local-only build 6 published and verified over HTTPS on 2026-10-12; no personal-data API configuration | Deploy the build-7 guide/CDN fix and verify it publicly; old remote accounts are untouched. |
+| 6. Public content deployment | Local-only website build 7 with guide/CDN fix published and verified over HTTPS on 2026-10-12; no personal-data API configuration | Old remote accounts are untouched; retirement requires a separate owner decision. |
 | 7. Offline/accessibility | Browser preparation, verified caches, staged updates, keyboard/semantic controls and large-text layouts implemented | Physical phones, Safari/iOS, quota/eviction and full assistive-technology checks. |
 | 8. Store release | Signing guard, key template, attribution and release checklist prepared | Owner signing/store setup, privacy approval, iOS platform access and final acceptance. |
 
@@ -40,7 +40,7 @@ decision is needed for the previously deployed cloud service/data.
 ## Release gates still open
 
 - [x] Publish the local-only web build and verify actual browser delivery (build 6).
-- [ ] Publish and verify the build-7 guide and release-isolated offline downloads.
+- [x] Publish and verify the build-7 guide and release-isolated offline downloads.
 - [ ] Supply public privacy contact and approve accurate disclosures covering
   local storage, content/audio providers and existing CDN analytics.
 - [ ] Supply owner-controlled Android signing and Google Play setup.
@@ -64,6 +64,15 @@ decision is needed for the previously deployed cloud service/data.
   expanded-bookmark Escape closure verified.
 - [x] Fix stale CDN asset integrity failures using a fixed release query key;
   keep canonical verified cache keys and bounded three-file downloads.
+- [x] Publish `785ef16` through the correct Coolify **Quran Haven** website
+  resource; verify public build 7 and all three languages with actual browser
+  offline reloads. The Cloud resource was not changed or removed.
+- [x] Upgrade a dedicated Android emulator in place from build 6 → 7 → 8;
+  retain Spanish, page 2, a paused 21-page plan and downloaded Al-Fatihah.
+- [x] Build 8 retains dynamically referenced audio-service icons that Android
+  resource shrinking removed. Verify offline playback, background playback and
+  media-key pause/resume in the emulator. Test signing only; physical devices
+  and store signing remain open.
 
 ## Additional product backlog
 

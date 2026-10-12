@@ -7,8 +7,16 @@ or accounts. Personal app data is stored on the user's device/browser only.
 
 ## Coolify configuration
 
-Create one application in the existing Quran Haven project (do not replace any
-unrelated services):
+Use the existing **Quran Haven** application in the production environment, not
+**Quran Haven Cloud**. The website resource ID is `xt9b22auyjtr8m32snvgsxl3`.
+Open Actions → Redeploy to publish the latest `main`; no account API is needed.
+The old Cloud resource still references `/backend/compose.yaml`, which was
+intentionally removed when accounts were cancelled. A missing-compose failure
+on that resource does not mean the website Dockerfile is broken. Do not restore
+the cloud backend, stop its container or delete its records to publish the site.
+
+If provisioning elsewhere, create one application (do not replace unrelated
+services):
 
 | Setting | Value |
 | --- | --- |

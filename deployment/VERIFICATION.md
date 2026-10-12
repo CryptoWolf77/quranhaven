@@ -1,5 +1,62 @@
 # Connected/offline release verification — 2026-09-07
 
+## Public deployment completed and Android audio repair — 2026-10-12
+
+This supersedes the pending public/native acceptance statements in the build-7
+preparation section below. Website build 7 and Android test build 8 are separate
+artifacts; no build-8 public website deployment is claimed.
+
+- Windows Computer Use selected the correct **Quran Haven** website resource
+  `xt9b22auyjtr8m32snvgsxl3` in Coolify and redeployed `785ef16`. Deployment
+  `h1suf8wgekbyzu9hvk21pfse` finished successfully in 3m 37s. The failed
+  `/backend/compose.yaml` attempts belonged to **Quran Haven Cloud**, not this
+  website. The obsolete Cloud service/data was not changed, stopped or deleted.
+- Public HTTPS version reports build 7. App/content smoke checks pass. The
+  public shell has 691 files and 100,959,802 bytes, identity
+  `1bbdf92fc21c7f38717ff3a6ca0e3f0592b126d9e94ac033b9eb022e4f97661b`.
+- Actual public browser tests pass Surah/Juz navigation, Arabic search (55
+  results), page-49 persistence for the wide spread, saved Spanish translation,
+  Khatmah completion/pause, memorization creation and offline full reload/reader
+  rendering in Arabic, English and Spanish. No personal-data API request or
+  page error occurred. The same isolated context reuses the prepared shell
+  across the language checks; no user's browser data was cleared.
+- A public yellow Ayah bookmark survives reload; expanded-bookmark Escape and
+  close controls work. The selected Arabic Tafsir displays with English Tafsir
+  and Tajwid labels. Real browser audio is not mocked: paused=false, readyState
+  4, advancing from 2.024442 to 3.539463 seconds, provider HTTP 206, no page error.
+- The guide opens in the existing user Chrome session, plays/stops its actual
+  GIF and opens the enlarged viewer. Independent public checks in English,
+  Arabic and Spanish verify eight topics, no autoplay, play/stop, zoom
+  reset/Escape, 375px screenshots, reduced motion and all 24 media hashes.
+- Android build 8: `Quran Haven - test build 8.apk`, 147,718,648 bytes, SHA-256
+  `a7f198e5724a2d9457465aa7678b4f7677d606d234ddf776f75b520cae55f242`.
+  VersionCode 8, original app ID, Android Debug certificate and disabled
+  automatic backup verified. Previous delivery APKs were preserved.
+- Dedicated API-37 x86_64 emulator upgraded build 6 → 7 → 8 without uninstall
+  or data clearing. Spanish, last-read page 2, paused 21/604 Khatmah progress,
+  guide controls and offline Mushaf restart remain available. Downloaded
+  Al-Fatihah plays in airplane mode after the upgrade.
+- Build 7 had a native CustomAction exception because resource shrinking
+  removed `audio_service_*` icons. Build 8 keeps these drawables; the compiled
+  APK contains all seven standard controls. On the emulator, media state is
+  PLAYING in the background, PAUSED at 7,101ms via the media key, then PLAYING
+  at the same position after resume. These are emulator state checks, not an
+  assessment of physical speaker sound or real lock-screen/interruption UX.
+- The test-only startup harness initially sampled before audio was ready and
+  later selected the automatically advanced, undownloaded next Surah. Final
+  bounded checks explicitly used the retained Al-Fatihah download and observed
+  the media states above; those harness failures are not counted as passes.
+- Re-run: 94 Flutter tests and 23 content/deployment Python tests pass,
+  including a new resource-retention regression guard. Local build-8 web shell
+  has 691 files/100,959,899 bytes, identity prefix `0f4ea75950c1`; its JavaScript
+  is unchanged from build 7. This local artifact is not the public website.
+- Exact public `main.dart.js` SHA-256 matches the tested local JavaScript:
+  `d6a4494bbb3bfdd093a606a83fdefcfd8a752eb4f9c7b917c404b241b117ba4f`.
+
+Physical Android/iOS, denied permissions, reminder delivery, wider browser
+storage/assistive-technology acceptance, owner signing and privacy approval
+remain open. No production signing key or new account was created.
+
 ## Publication, Android repair and usage guide — 2026-10-12 (build 7)
 
 This section supersedes the unpushed/build-blocked status recorded on 2026-10-01.

@@ -73,10 +73,14 @@ under the revised local-only scope. Phase 7 still needs wider physical-device,
 Safari/iOS and accessibility acceptance. Phase 8 needs production signing,
 store setup, privacy disclosures and macOS/Xcode access for iOS.
 
-Build 6 is the local-only update, published and verified on 2026-10-12. Build 7
-adds the usage guide, reader accessibility fixes and release-isolated offline
-downloads that avoid stale CDN assets. Preparing a build locally does not update
-the public website automatically. Historical cloud verification is retained as history in
+Website build 7 was published and verified on 2026-10-12 with local-only storage,
+the multilingual usage guide, reader accessibility fixes and release-isolated
+offline downloads. Android test build 8 additionally fixes the audio-service
+icons needed by background/media controls and passed in-place emulator upgrade
+and offline playback checks. It is test-signed, not store-ready. The website and
+APK have separate build numbers; the current public website remains build 7.
+Preparing a build locally does not update the public website automatically.
+Historical cloud verification is retained as history in
 `backend/VERIFICATION.md`; it is not part of the current app. Retiring the old
 remote service or deleting existing server data requires a separate owner
 decision and is not performed by removing the client feature.
