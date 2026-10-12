@@ -373,6 +373,7 @@ class _ResourceList extends StatelessWidget {
                 label: '${entry.resource.name} ${entry.resource.bookName}'
                     .trim(),
                 child: Card(
+                  semanticContainer: false,
                   child: Padding(
                     padding: const EdgeInsets.all(16),
                     child: Row(
