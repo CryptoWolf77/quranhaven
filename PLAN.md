@@ -137,7 +137,8 @@ Final public build15 checks pass notes/collection CRUD and JSON safety-copy/
 replacement/reload in all three languages, actual Ayah PNG/text/link, last-Surah
 book search and cold-offline saved-Surah playback/seek. Native Android file
 restore/PNG tools passed actual emulator round trips. The owner-approved
-production AAB15 is uploaded to the new Quran Haven Play app as a draft;
+production AAB15 is uploaded to the new Quran Haven Play app as a draft.
+The owner-approved13+ current store audience and Data Safety are saved;
 physical-device/iOS/store-review gates remain open. Cloud storage is cancelled.
 
 See [deployment/RELEASE.md](deployment/RELEASE.md) for publication gates,

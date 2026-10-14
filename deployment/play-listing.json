@@ -3,7 +3,7 @@
   "publicationStatus": "draft-unpublished",
   "candidateVersion": "1.0.0+15",
   "packageName": "org.quranflutter.quran_flutter",
-  "ownerAudienceIntent": "All ages, including children",
+  "ownerAudienceIntent": "Ages 13 and older for the current Google Play release (owner approved 2026-10-15)",
   "contact": {
     "supportEmail": "admin@yahyazlab.com",
     "website": "https://quranhaven.org/",
@@ -21,7 +21,7 @@
     "Verify native JSON import/export, PNG saving/sharing, downloaded recording playback and persisted personal records in the final Android artifact.",
     "The HTTPS website and privacy document, including all three language queries, must be live before store submission.",
     "Use actual screenshots captured from that final Android artifact; none are supplied or fabricated by this source file.",
-    "The owner explicitly selected all ages, including children. Apply that intent accurately to the final store setup; this marker is not a legal or store-compliance declaration.",
+    "The owner approved targeting ages 13 and older for the current Google Play release on 2026-10-15, superseding the earlier all-age store intent. The public website remains openly accessible. This marker is not a legal or store-compliance declaration.",
     "Verify the final artifact's account/date-of-birth, advertising-identifier, SDK, network and social-feature disclosures, including child-relevant external downloads, voluntary email/system sharing and locally managed notes/backups.",
     "Review the optional creator-credit link to https://yahyazlab.com/, an external game-development portfolio rather than Quran content. Verify explicit user choice, destination content/data handling and age appropriateness; assess Google Families advertising/cross-promotion requirements before store declarations. A creator credit does not certify an ad-policy classification or a child-safe destination.",
     "Content rating, Families/child-data disclosures, owner terms, legal attestations and Data Safety/release declarations still require owner review for the verified artifact. This file does not certify COPPA, GDPR or Google policy compliance."

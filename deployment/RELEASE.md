@@ -63,8 +63,8 @@ Data Safety answers must match the release actually tested and submitted.
 
 - Approval of accurate technical-log/support-mail retention disclosures where
   those are not established by code; the public contact is now supplied.
-- Final Google Play audience choice, accurate Data Safety/service-practice
-  disclosures and release review; signing/legal setup and IARC are recorded
+- Final Google Play release review; the approved 13+ audience, saved Data
+  Safety/service-practice disclosures, signing/legal setup and IARC are recorded
   below, rather than assumed from a generated bundle.
 - Apple developer account and signing ownership.
 - macOS/Xcode and Apple team configuration for iOS signing and device testing.
@@ -87,18 +87,18 @@ ready to send for review, with the icon/feature graphic AI labels retained.
 The content questionnaire was completed using bundled and downloadable text,
 including textual references, not invented visual scenes. Its saved results
 are ClassInd All ages, ESRB Teen, PEGI 3, USK 12+, and Generic/Russia/South Korea
-3+. The owner was asked whether to target ages 13+ for this store release or
-defer submission for a child-oriented release review. No target-age change is
-authorized by the rating alone, and answers must not be altered to lower it.
+3+. The owner explicitly approved targeting ages 13+ for the current store
+release on 2026-10-15. The saved groups are 13–15, 16–17 and 18 and over;
+this supersedes the earlier all-age store intent. The rating answers were not
+changed to lower the result. Public website availability remains unchanged.
 
 The English, Arabic and Spanish listing texts and eight native phone captures
 per locale were saved together. In every locale the order starts with the
-reader, Home and the guide. The Dashboard confirms **9 of 11** initial setup
-tasks complete; only Target audience and Data Safety remain at this stage.
+reader, Home and the guide. Target audience and Data Safety have now also been
+saved; final Dashboard and production release checks remain in progress.
 No tablet/desktop/XR phone screenshots were misrepresented as device captures.
 
-Data Safety is saved as a draft, but Google disables final submission until
-Target audience is completed. The draft records optional collection of IP/
+Data Safety was saved after completing Target audience. It records optional collection of IP/
 client identifiers, public-resource request interactions and country inferred
 from IP. The domain's existing Cloudflare HTTP request dashboard visibly
 contains those statistics, independently of the website beacon. No native
@@ -112,8 +112,9 @@ service-provider exception. Local notes/bookmarks/search/reading progress are
 not added to these disclosures. No unverified ephemeral/90-day deletion or
 remote deletion mechanism is claimed.
 
-The public policy's three-language request-metadata clarification is prepared
-for deployment, without changing CDN settings or any old Cloud account data.
+The public policy's three-language request-metadata and current 13+ store
+audience clarification is prepared for deployment, without changing CDN
+settings, website access or any old Cloud account data.
 Final release review is still in progress.
 **The release has not been sent to Google for review.** The
 owner-requested forced shutdown is conditional on visible in-review status;

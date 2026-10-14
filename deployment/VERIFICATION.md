@@ -34,8 +34,10 @@
   retains the recording; confirmed deletion leaves the verified shell ready.
 - Published privacy disclosures pass three languages,320px/200% text and
   no-JavaScript anchors, without automatically requesting the portfolio site.
-  The owner-intended all-age audience is disclosed, not certified as Families
-  or legal compliance merely by these UI checks.
+  At that check the earlier owner-intended all-age audience was disclosed,
+  not certified as Families or legal compliance merely by these UI checks.
+  The owner has since approved 13+ for the current Google Play release; the
+  corresponding three-language policy update is being deployed below.
 - The exact published content manifest matches source. All44 complete hosted
   Tafsir/translation gzip-file bodies match their canonical sizes and SHA256.
   A HEAD-only check initially assumed Content-Length was present; some CDN
@@ -60,7 +62,7 @@
   bundle upload. The processed artifact15(1.0.0),mapping/native symbols and
   ar/en-US/es-ES release notes are saved in production draft1. No private key
   or signing password was uploaded. Store setup/review submission remains open.
-- The Google Play Dashboard now confirms9/11 initial setup tasks complete.
+- The Google Play Dashboard initially confirmed9/11 initial setup tasks complete.
   Privacy/access/no-ads/government/financial/health disclosures, IARC and
   category/contact are saved. Store text is saved in en-US/ar/es-ES with eight
   genuine1080×1920 final native captures per language. Each order begins with
@@ -71,16 +73,17 @@
   resources were disclosed, without claiming visual scenes. One downloaded
   Tafsir explicitly discusses prohibited intoxicating substances; raw keyword
   matches in other texts also refer to ordinary grass or seclusion and are not
-  indiscriminately classified as drug content. Target audience is not silently
-  changed to fit the results; an owner decision is pending. Data Safety and
-  actual Google review submission are still open. No forced shutdown occurred.
+  indiscriminately classified as drug content. The owner explicitly approved
+  13+ for the current store release on2026-10-15; groups13–15,16–17 and18+ are
+  saved without changing the IARC answers. Actual Google review submission is
+  still open. No forced shutdown occurred.
 - A read-only check of the project's existing Cloudflare HTTP request dashboard
   confirms IP/country/client-software and traffic statistics. No Cloudflare
-  setting was changed. Data Safety is saved as a draft for those optional
+  setting was changed. Data Safety is now saved for those optional
   request-data practices (IP identifiers/resource interactions and IP-derived
   approximate country), not falsely marked zero collection because personal
-  progress is local. Google blocks final submission until Target audience is
-  completed. No GPS, native analytics SDK, remote personal notes, automatic
+  progress is local. Final saving succeeded after completing Target audience.
+  No GPS, native analytics SDK, remote personal notes, automatic
   90-day deletion or unimplemented remote deletion mechanism is claimed.
 - The policy request-metadata clarification is available in all three source
   languages, dated2026-10-15. Local320px/200% and no-JavaScript audience/network
@@ -89,7 +92,9 @@
   1080×1920 dimensions and are below8MB;24 are used across the store locales.
   All18 offline/server tests pass after regenerating the756-file
   local shell (145231951bytes, identity prefix42a10e282f42). The new policy
-  deployment/public recheck is still pending at this entry.
+  deployment `e1gckpysqjdk6vtudaowhnbe` succeeded for source `b11f040`.
+  A subsequent three-language13+ store-audience clarification is being tested
+  and deployed; public website access and Android functionality are unchanged.
 
 ## Final candidate rechecks — 2026-10-15 (pre-publish history)
 
