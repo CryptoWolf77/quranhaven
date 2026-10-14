@@ -44,14 +44,15 @@
     }
   },
   "phoneScreenshotPlan": {
-    "status": "awaiting-final-android-captures",
+    "status": "24 genuine final Android captures saved in three store locales; 25 originals retained",
+    "appliedTreatment": "Unmodified 1080x1920 RGBA emulator screenshots from the final test APK15. The editorial composition proposal below was not applied; no captions, borders, fabricated hardware or repainted Quran text were added. See deployment/play-assets/README.md for actual filenames and saved ordering.",
     "outputDirectory": "deployment/play-assets",
     "canvas": {
       "width": 1080,
       "height": 1920,
       "format": "PNG",
-      "mode": "RGB",
-      "alpha": false,
+      "mode": "RGBA",
+      "alpha": true,
       "colorSpace": "sRGB"
     },
     "visualDirection": "Calm editorial parchment and emerald, with Cairo typography, generous but controlled spacing and a restrained gold accent. The actual app remains the main visual.",

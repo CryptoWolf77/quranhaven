@@ -104,8 +104,10 @@ See [PLAN.md](PLAN.md) for the current checklist. Phases 1–6 are implemented
 under the revised local-only scope. Phase 7 still needs wider physical-device,
 Safari/iOS and accessibility acceptance. An owner-authorized local Android
 upload key is configured. The production Android bundle is verified and uploaded
-to the new Quran Haven Google Play app as a draft; store setup and review
-submission are still in progress. iOS still requires macOS/Xcode and Apple
+to the new Quran Haven Google Play app. Production1.0.0(15), the three localized
+listings and the owner-approved13+ audience/Data Safety are now in Google review;
+automated submission checks completed. This is not store approval or a live
+listing. iOS still requires macOS/Xcode and Apple
 signing/device acceptance.
 
 Website build 13 was published and verified on 2026-10-12 with local-only storage,

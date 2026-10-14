@@ -13,12 +13,12 @@ Project folder: `C:\Users\ThaherTech\Documents\Quran Flutter`.
 | --- | --- | --- |
 | 1. Foundation | Android/web foundation and iOS configuration implemented | iOS build, signing and device checks need macOS/Xcode and Apple team access. |
 | 2. Reader | Surah/Juz/page navigation, Arabic search, bookmarks, last-read persistence and reader customization implemented | Wider physical-device/display acceptance. |
-| 3. Text/audio | 44 verified text resources, reciter selection/playback and local downloads; build15 adds verified browser Surah audio and fixes native download-only behavior | Final build15 public/native acceptance pending; audio uses external providers. |
+| 3. Text/audio | 44 verified text resources, reciter selection/playback and local downloads; build15 browser/native scoped acceptance passed | Wider physical-device acceptance; audio uses external providers. |
 | 4. Plans | Local Khatmah/memorization progress, targets, repetition, hide/reveal and revision markers implemented | Physical-device background audio acceptance. |
 | 5. Local preferences/reminders | Local language/theme, plans, bookmarks and optional device reminders; cloud client removed in build 6 | Physical-phone upgrade and reminder delivery acceptance. |
-| 6. Public content deployment | Local-only website build 13 published and verified over HTTPS on 2026-10-12; no personal-data API configuration | Old remote accounts are untouched; retirement requires a separate owner decision. |
+| 6. Public content deployment | Expanded local-only website build15 published and verified over HTTPS on 2026-10-15; no personal-data API configuration | Old remote accounts are untouched; retirement requires a separate owner decision. |
 | 7. Offline/accessibility | Browser preparation, verified caches, staged updates, keyboard/semantic controls and large-text layouts implemented | Physical phones, Safari/iOS, quota/eviction and full assistive-technology checks. |
-| 8. Store release | Owner-authorized private Android upload key created; public contact/privacy source and release identity prepared | Google Play agreements/declarations, final production bundle/public acceptance and iOS platform access. |
+| 8. Store release | Authorized signing, verified AAB15, three localized listings and accurate13+ audience/Data Safety declarations submitted; production is in Google review | Google decision/live-store acceptance; iOS platform access and device acceptance. |
 
 ## Local-only change
 
@@ -45,9 +45,11 @@ decision is needed for the previously deployed cloud service/data.
 - [x] Prepare disclosures covering local storage, content/audio providers and
   existing website CDN analytics; verify ar/en/es narrow/large-text layouts.
 - [x] Create an owner-authorized private Android upload key outside the repo.
-- [ ] Complete Google Play target audience, rating, Data Safety, listing and
-  production-review submission. The app and processed AAB15 now exist as drafts;
-  specific owner-approved policy/export and Google-signing steps are complete.
+- [x] Complete Google Play target audience, rating, Data Safety and three
+  localized listings; owner-approved policy/export and Google-signing steps.
+- [x] Complete production-review submission. AAB15 and the full worldwide
+  rollout are in Google review; the automated submission checks completed.
+- [ ] Receive Google's review decision and verify the live store release.
 - [ ] Provide macOS/Xcode, Apple team and physical iOS devices.
 - [ ] Complete install/upgrade, offline, interruption/background audio, denied
   permissions, reminders, large-text and screen-reader acceptance.
@@ -137,9 +139,9 @@ Final public build15 checks pass notes/collection CRUD and JSON safety-copy/
 replacement/reload in all three languages, actual Ayah PNG/text/link, last-Surah
 book search and cold-offline saved-Surah playback/seek. Native Android file
 restore/PNG tools passed actual emulator round trips. The owner-approved
-production AAB15 is uploaded to the new Quran Haven Play app as a draft.
-The owner-approved13+ current store audience and Data Safety are saved;
-physical-device/iOS/store-review gates remain open. Cloud storage is cancelled.
+production AAB15 and the owner-approved13+ audience/Data Safety are in Google
+review. Physical-device/iOS/Google-decision gates remain open. Cloud storage
+is cancelled.
 
 See [deployment/RELEASE.md](deployment/RELEASE.md) for publication gates,
 [deployment/OFFLINE.md](deployment/OFFLINE.md) for offline boundaries, and

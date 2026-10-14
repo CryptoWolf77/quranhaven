@@ -75,7 +75,7 @@ The owner approved the app-creation policy/export attestations, Google-managed
 Play App Signing, worldwide distribution (178 supported countries/regions),
 and the IARC terms at the corresponding actions. App
 `4972735598475155183` belongs to the YahyazLab developer account. Production
-release `1.0.0 (15)` is a draft with the upload-signed AAB processed by Google;
+release `1.0.0 (15)` has the upload-signed AAB processed by Google;
 private signing material was not uploaded.
 
 Privacy, unrestricted app access, no ads, no government affiliation, no
@@ -113,12 +113,16 @@ not added to these disclosures. No unverified ephemeral/90-day deletion or
 remote deletion mechanism is claimed.
 
 The public policy's three-language request-metadata and current 13+ store
-audience clarification is prepared for deployment, without changing CDN
-settings, website access or any old Cloud account data.
-Final release review is still in progress.
-**The release has not been sent to Google for review.** The
-owner-requested forced shutdown is conditional on visible in-review status;
-neither draft upload nor a completed IARC form satisfies that condition.
+audience clarification is live from source `75f7b2f`, deployed successfully in
+`5mp7pc8abcq5ar3mycxygvnk`. CDN settings, website access and old Cloud account
+data were unchanged. Public audience/layout/large-text checks pass.
+**Production1.0.0(15) and all13 publishing changes are now in Google review.**
+The automated checks completed and Publishing overview explicitly confirms
+"Your changes are now in review." This is not store approval or evidence of
+a live Play listing. Managed publishing remains off as originally configured.
+The owner's forced-shutdown condition is now satisfied; project documentation
+and evidence are saved before scheduling that shutdown. Physical-phone/iOS
+acceptance remains separate and is not implied by emulator/browser results.
 
 ## Acceptance before public store release
 

@@ -95,6 +95,51 @@
   deployment `e1gckpysqjdk6vtudaowhnbe` succeeded for source `b11f040`.
   A subsequent three-language13+ store-audience clarification is being tested
   and deployed; public website access and Android functionality are unchanged.
+- Current13+ policy source passes the four focused audience/network/no-JS rows,
+  all27 multi-engine/language/layout rows and21 narrow/200%-text rows. The
+  regenerated local shell is756files/145232391bytes, prefix9b2e1c95b125.
+  All18 offline/server tests pass again; the1161-file public-source audit
+  confirms114Surahs/6236Ayahs/604pages/44textresources with original hashes.
+- Actual native guide playback reaches00:30/00:30 in Spanish with Android
+  reporting `Active default network: none`; Arabic and English completion were
+  verified separately. This is three native sample lessons, not a claim that
+  all39 videos were played on Android. All39 browser videos were played above.
+  Wi-Fi and mobile data were restored on the owned test AVD afterward; Android
+  again reports an active default network. The owner's older AVD was untouched.
+- Advertising ID is declared No after checking source/dependencies and the
+  final merged release manifest for AD_ID/advertising-ID/ads SDK references.
+  The production preview shows Ready to release without the earlier errors;
+  the release is saved as13 pending publishing changes. Google quick checks
+  and the final public-policy deployment are still running before submission.
+
+### Final public policy and submission — 2026-10-15
+
+- Source `75f7b2f` was deployed through the website resource in Coolify
+  deployment `5mp7pc8abcq5ar3mycxygvnk`, which reports Success. The public
+  version remains1.0.0/build15; `/health` returns `ok`. Its756-file verified
+  shell is145232294bytes, identity
+  `1c7aaed48de5fff8a16dca98854b216c1be9f4ecaa97846be93d094ac3ded95d`.
+  The three-language current13+ store-audience statement is live. All39 video
+  entries retain the sizes/hashes of the previously played final media.
+- Actual public policy acceptance passes4 audience/network/no-JS checks,
+  27 language/engine/layout/navigation checks and21 narrow/large-text checks.
+  The production test records the existing disclosed Cloudflare script host;
+  other unexpected app dependencies remain rejected. Local-only assumptions
+  about zero external requests were corrected, not CDN/security settings.
+  Waiting for all network activity or page callbacks with JavaScript disabled
+  was replaced by bounded content/image readiness and the original no-JS load
+  event. No image/font/layout assertions were dropped. All261 Flutter tests
+  pass again, as do the18 offline/server tests and the public-source audit.
+- All13 saved publishing changes were sent to Google. Publishing overview
+  displays Changes in review for production1.0.0(15), worldwide rollout,
+  three localized listings and the matching content/privacy declarations.
+  The automated check then completed. The visible message is **Your changes
+  are now in review. We may find additional issues when reviewing your app.**
+  This is Google review submission, not approval or a live Play listing.
+  Final screenshot `play-quran-haven-in-review-final.jpg` is saved in the local
+  release evidence folder and was shown to the owner. The owner-requested
+  forced shutdown is now authorized by its explicit in-review condition;
+  the final command will be scheduled only after this documentation is pushed.
 
 ## Final candidate rechecks — 2026-10-15 (pre-publish history)
 
