@@ -124,6 +124,10 @@ class AyahMenuStyle {
   /// إن أردت إغلاق الـ Overlay بعد النقر، لفّ العنصر بـ GestureDetector ونفّذ إزالة الـ Overlay.
   final List<Widget>? customMenuItems;
 
+  /// Builds app-owned actions for the actual selected Ayah, preserving defaults.
+  final List<Widget> Function(BuildContext, AyahModel, VoidCallback)?
+      customMenuItemsBuilder;
+
   const AyahMenuStyle({
     this.backgroundColor,
     this.borderColor,
@@ -160,6 +164,7 @@ class AyahMenuStyle {
     this.copyLabel,
     this.bookmarkLabels,
     this.customMenuItems,
+    this.customMenuItemsBuilder,
     this.showPlayAllButton,
     this.showPlayButton,
     this.playIconData,
@@ -204,6 +209,8 @@ class AyahMenuStyle {
     String? copyLabel,
     Map<int, String>? bookmarkLabels,
     List<Widget>? customMenuItems,
+    List<Widget> Function(BuildContext, AyahModel, VoidCallback)?
+        customMenuItemsBuilder,
     bool? showPlayAllButton,
     bool? showPlayButton,
     IconData? playIconData,
@@ -248,6 +255,8 @@ class AyahMenuStyle {
       copyLabel: copyLabel ?? this.copyLabel,
       bookmarkLabels: bookmarkLabels ?? this.bookmarkLabels,
       customMenuItems: customMenuItems ?? this.customMenuItems,
+      customMenuItemsBuilder:
+          customMenuItemsBuilder ?? this.customMenuItemsBuilder,
       showPlayAllButton: showPlayAllButton ?? this.showPlayAllButton,
       showPlayButton: showPlayButton ?? this.showPlayButton,
       playIconData: playIconData ?? this.playIconData,

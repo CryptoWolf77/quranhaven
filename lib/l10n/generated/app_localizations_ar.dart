@@ -9,6 +9,550 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
+  String get corpusEmptyForm => 'لا توجد صيغة كتابية مستقلة في المصدر';
+
+  @override
+  String get corpusAcquisition => 'سجل الحصول على المصدر وتوثيقه';
+
+  @override
+  String get corpusLearning => 'تحليل الكلمات صرفياً';
+
+  @override
+  String get corpusLearningBody =>
+      'استكشف مقاطع الكلمات وتصنيفها وجذورها وصيغها المعجمية في Quranic Arabic Corpus الإصدار 0.4. هذا مصدر تعليمي وليس بديلاً عن نص مصحف مجمع الملك فهد.';
+
+  @override
+  String get corpusOffline => 'مضمّن للتعلّم دون إنترنت';
+
+  @override
+  String get corpusWord => 'الكلمة';
+
+  @override
+  String get corpusSegment => 'المقطع';
+
+  @override
+  String get corpusPartOfSpeech => 'نوع الكلمة';
+
+  @override
+  String get corpusRoot => 'الجذر';
+
+  @override
+  String get corpusLemma => 'الصيغة المعجمية';
+
+  @override
+  String get corpusOriginalForm => 'الصيغة الأصلية بترميز Buckwalter';
+
+  @override
+  String get corpusOriginalCodes => 'رموز الخصائص الأصلية';
+
+  @override
+  String get corpusSource => 'المصدر والترخيص';
+
+  @override
+  String get corpusSourceBody =>
+      'حُفظت البيانات الأصلية وإشعاراتها دون تعديل. يتبع ترقيم الكلمات وصيغها هنا المصدر الأصلي، مستقلاً عن عرض المصحف. تظهر الرموز كما سُجلت؛ لا تولّد هذه الصفحة تأويلات أو ترجمات.';
+
+  @override
+  String get corpusLoadFailed =>
+      'تعذر التحقق من المصدر التعليمي كاملاً أو تحميله. لا تُعرض بيانات تحليل جزئية. أعد المحاولة.';
+
+  @override
+  String get corpusPreviousAyah => 'الآية السابقة';
+
+  @override
+  String get corpusNextAyah => 'الآية التالية';
+
+  @override
+  String get corpusPrefix => 'بادئة';
+
+  @override
+  String get corpusStem => 'جذع الكلمة';
+
+  @override
+  String get corpusSuffix => 'لاحقة';
+
+  @override
+  String get corpusSourceDownload => 'المصدر الرسمي والتحديثات';
+
+  @override
+  String get corpusTagsetDocs => 'توثيق أنواع الكلمات الرسمي';
+
+  @override
+  String get corpusFeaturesDocs => 'توثيق الصرف الرسمي';
+
+  @override
+  String get corpusBuckwalterDocs => 'توثيق ترميز Buckwalter';
+
+  @override
+  String get corpusTanzilSource => 'مصدر نص Tanzil وتحديثاته';
+
+  @override
+  String get corpusLicense => 'نص ترخيص GNU GPL الكامل للبيانات';
+
+  @override
+  String get corpusIdentity => 'هوية البيانات الأصلية الثابتة';
+
+  @override
+  String get corpusLinkCopied => 'نُسخ رابط المصدر. افتحه في متصفحك.';
+
+  @override
+  String get corpusGuideStep1 =>
+      'المكتبة ← تحليل الكلمات صرفياً تفتح صفحة التعلّم المضمّنة. يمكنك أيضاً الضغط مطوّلاً على آية في القارئ واختيار تحليل الكلمات صرفياً.';
+
+  @override
+  String get corpusGuideStep2 =>
+      'اختر سورة وآية، أو استخدم الآية السابقة والتالية. تُعرض مقاطع كل كلمة كما سُجلت، مع نوعها وجذرها وصيغتها المعجمية إن وُجدت.';
+
+  @override
+  String get corpusGuideStep3 =>
+      'تبقى رموز الخصائص الأصلية ظاهرة. يفتح المصدر والترخيص إشعارات الحقوق المحفوظة ونص الترخيص وروابط التوثيق الرسمي. هذا تحليل صرفي، وليس تفسيراً آلياً أو إعراباً تركيبياً كاملاً.';
+
+  @override
+  String get shareArabicSource =>
+      'نص القرآن: مجمع الملك فهد لطباعة المصحف الشريف.';
+
+  @override
+  String get audioDownloadSelection => 'التسجيل المختار';
+
+  @override
+  String get corpusPosN => 'اسم';
+
+  @override
+  String get corpusPosPN => 'اسم علم';
+
+  @override
+  String get corpusPosADJ => 'صفة';
+
+  @override
+  String get corpusPosIMPN => 'اسم فعل أمر';
+
+  @override
+  String get corpusPosPRON => 'ضمير';
+
+  @override
+  String get corpusPosDEM => 'اسم إشارة';
+
+  @override
+  String get corpusPosREL => 'اسم موصول';
+
+  @override
+  String get corpusPosT => 'ظرف زمان';
+
+  @override
+  String get corpusPosLOC => 'ظرف مكان';
+
+  @override
+  String get corpusPosV => 'فعل';
+
+  @override
+  String get corpusPosP => 'حرف جر';
+
+  @override
+  String get corpusPosDET => 'بادئة التعريف';
+
+  @override
+  String get corpusPosEMPH => 'لام التوكيد';
+
+  @override
+  String get corpusPosIMPV => 'لام الأمر';
+
+  @override
+  String get corpusPosPRP => 'لام التعليل';
+
+  @override
+  String get corpusPosCONJ => 'حرف عطف';
+
+  @override
+  String get corpusPosSUB => 'حرف مصدري';
+
+  @override
+  String get corpusPosACC => 'حرف نصب';
+
+  @override
+  String get corpusPosAMD => 'حرف استدراك';
+
+  @override
+  String get corpusPosANS => 'حرف جواب';
+
+  @override
+  String get corpusPosAVR => 'حرف ردع';
+
+  @override
+  String get corpusPosCAUS => 'حرف سببية';
+
+  @override
+  String get corpusPosCERT => 'حرف تحقيق';
+
+  @override
+  String get corpusPosCIRC => 'حرف حال';
+
+  @override
+  String get corpusPosCOM => 'واو المعية';
+
+  @override
+  String get corpusPosCOND => 'حرف شرط';
+
+  @override
+  String get corpusPosEQ => 'حرف تسوية';
+
+  @override
+  String get corpusPosEXH => 'حرف تحضيض';
+
+  @override
+  String get corpusPosEXL => 'حرف تفصيل';
+
+  @override
+  String get corpusPosEXP => 'أداة استثناء';
+
+  @override
+  String get corpusPosFUT => 'حرف استقبال';
+
+  @override
+  String get corpusPosINC => 'حرف ابتداء';
+
+  @override
+  String get corpusPosINT => 'حرف تفسير';
+
+  @override
+  String get corpusPosINTG => 'حرف استفهام';
+
+  @override
+  String get corpusPosNEG => 'حرف نفي';
+
+  @override
+  String get corpusPosPREV => 'حرف كاف';
+
+  @override
+  String get corpusPosPRO => 'حرف نهي';
+
+  @override
+  String get corpusPosREM => 'حرف استئنافية';
+
+  @override
+  String get corpusPosRES => 'أداة حصر';
+
+  @override
+  String get corpusPosRET => 'حرف إضراب';
+
+  @override
+  String get corpusPosRSLT => 'حرف واقع في جواب الشرط';
+
+  @override
+  String get corpusPosSUP => 'حرف زائد';
+
+  @override
+  String get corpusPosSUR => 'حرف فجاءة';
+
+  @override
+  String get corpusPosVOC => 'حرف نداء';
+
+  @override
+  String get corpusPosINL => 'حروف مقطعة';
+
+  @override
+  String get backupNativeHint =>
+      'في نسخة الهاتف هذه ينسخ التصدير ملف JSON إلى الحافظة. استعادة الملفات وتنزيل PNG متاحان على الموقع؛ لم تُفعّل أدوات الملفات الأصلية بعد.';
+
+  @override
+  String get backupRecoveryFailed =>
+      'رفض التخزين الاستعادة والتراجع معاً. قد لا تكون الاستعادة مكتملة. احتفظ بنسخة الأمان ولا تمسح بيانات التطبيق أو الموقع.';
+
+  @override
+  String get guidePersonalTitle => 'الملاحظات والمجموعات';
+
+  @override
+  String get guidePersonalStep1 =>
+      'افتح المكتبة ← مساحتي القرآنية. أنشئ ملاحظة مرتبطة بسورة وآية، أو مجموعة باسم تختاره.';
+
+  @override
+  String get guidePersonalStep2 =>
+      'اضغط مطوّلاً على آية في القارئ، ثم اختر إضافة ملاحظة أو إضافة إلى مجموعة. تبقى العلامات الملونة متاحة.';
+
+  @override
+  String get guidePersonalStep3 =>
+      'استخدم التعديل لتغيير النص أو اسم المجموعة. يعيدك فتح الآية إلى القارئ، ويطلب الحذف تأكيدك.';
+
+  @override
+  String get guideBackupStep1 =>
+      'من الإعدادات ← نسخة احتياطية محلية، صدّر ملف JSON واحتفظ به خصوصياً في مكان آمن. يشمل بياناتك النصية لا الصوت أو الكتب المنزّلة.';
+
+  @override
+  String get guideBackupStep2 =>
+      'اختر ملف النسخة أو الصق محتواه. راجع تاريخها وعدد العناصر؛ تُرفض الملفات غير الصالحة أو الكبيرة دون تغيير البيانات.';
+
+  @override
+  String get guideBackupStep3 =>
+      'احفظ نسخة أمان، ثم أكّد الاستبدال صراحةً. تستبدل النسخة البيانات الحالية ولا تدمجها. على الموقع اختر إعادة التحميل؛ وفي تطبيق الهاتف أغلق رسالة التأكيد لتحديث الواجهة. تبقى التذكيرات معطّلة.';
+
+  @override
+  String get guideShareSearchTitle => 'مشاركة الآيات والبحث في الكتب';
+
+  @override
+  String get guideShareSearchStep1 =>
+      'اضغط مطوّلاً على آية ← مشاركة الآية. عاين النص العربي كاملاً، واختر ترجمة محفوظة اختيارياً، ثم احفظ صورة PNG أو انسخ النص أو الرابط.';
+
+  @override
+  String get guideShareSearchStep2 =>
+      'يفتح الرابط العام السورة والآية المحددتين. لا تُرفق ملاحظاتك أو مجموعاتك الخاصة بالرابط أو الصورة.';
+
+  @override
+  String get guideShareSearchStep3 =>
+      'المكتبة ← البحث في الكتب المحفوظة يبحث في كامل التفسير أو الترجمة المختارة، لا الصفحة الحالية فقط. أدخل حرفين على الأقل، ثم تصفح النتائج وافتح الآية.';
+
+  @override
+  String get guideSavedAudioStep1 =>
+      'من المكتبة ← التلاوات، اختر سورة. يحدد القارئ المختار في القارئ التسجيل المراد تنزيله.';
+
+  @override
+  String get guideSavedAudioStep2 =>
+      'اضغط تنزيل دون إنترنت، وتابع التقدم أو ألغِ التنزيل. تُحفظ التسجيلات الكاملة المتحقّق منها فقط؛ لا يبدأ التنزيل تشغيل الصوت.';
+
+  @override
+  String get guideSavedAudioStep3 =>
+      'تحت تسجيلات السور المحفوظة توجد إجراءات التشغيل والحذف. جهّز التطبيق دون إنترنت منفصلاً من الإعدادات ليُفتح الموقع دون اتصال.';
+
+  @override
+  String get browserAudioTitle => 'تسجيلات السور المحفوظة';
+
+  @override
+  String get browserAudioBody =>
+      'نزّل سورة كاملة بصوت القارئ المختار. هذا منفصل عن تجهيز التطبيق دون إنترنت وصوت الكلمات. يبدأ التشغيل فقط عند ضغط تشغيل. قد يُمسح تخزين المتصفح أو تُفرغ مساحته.';
+
+  @override
+  String get browserAudioEmpty => 'لم تُحفظ تسجيلات سور في هذا المتصفح بعد.';
+
+  @override
+  String get browserAudioUnavailable =>
+      'التخزين الدائم للصوت غير متاح في هذا المتصفح. لا يزال التشغيل عبر الإنترنت متاحاً.';
+
+  @override
+  String get browserAudioStorageFull =>
+      'مساحة المتصفح غير كافية. أزل تسجيلاً محفوظاً وأعد المحاولة.';
+
+  @override
+  String get browserAudioCancelled => 'أُلغي التنزيل. لم يُحفظ تسجيل جزئي.';
+
+  @override
+  String get browserAudioDelete =>
+      'هل تريد إزالة هذا التسجيل من هذا المتصفح؟ ستبقى التسجيلات الأخرى وبياناتك الشخصية محفوظة.';
+
+  @override
+  String get browserAudioBusy => 'يوجد تنزيل صوتي آخر قيد التنفيذ.';
+
+  @override
+  String get browserAudioTooLarge =>
+      'يتجاوز هذا التسجيل الحد الأقصى لكل ملف (٢٥٦ ميجابايت).';
+
+  @override
+  String get personalTools => 'مساحتي القرآنية';
+
+  @override
+  String get personalToolsBody =>
+      'ملاحظاتك ومجموعاتك المحفوظة تبقى على هذا الجهاز.';
+
+  @override
+  String get personalNotes => 'ملاحظات الآيات';
+
+  @override
+  String get personalCollections => 'المجموعات';
+
+  @override
+  String get addNote => 'إضافة ملاحظة';
+
+  @override
+  String get editNote => 'تعديل الملاحظة';
+
+  @override
+  String get noteTitle => 'العنوان (اختياري)';
+
+  @override
+  String get noteBody => 'تأملك في الآية';
+
+  @override
+  String get notesEmpty =>
+      'دوّن تأملك بجانب الآية. أضف ملاحظة هنا أو من قائمة الآية في القارئ.';
+
+  @override
+  String get createCollection => 'إنشاء مجموعة';
+
+  @override
+  String get editCollection => 'تغيير اسم المجموعة';
+
+  @override
+  String get collectionName => 'اسم المجموعة';
+
+  @override
+  String get collectionsEmpty =>
+      'نظّم الآيات في مجموعات بأسماء تختارها. تبقى العلامات الملونة الحالية كما هي.';
+
+  @override
+  String get collectionEmpty =>
+      'لا توجد آيات بعد. أضف آية من القارئ أو استخدم إضافة آية.';
+
+  @override
+  String get addAyah => 'إضافة آية';
+
+  @override
+  String get openAyah => 'فتح الآية';
+
+  @override
+  String get removeAyah => 'إزالة الآية';
+
+  @override
+  String get addToCollection => 'إضافة إلى مجموعة';
+
+  @override
+  String get deletePersonalConfirm =>
+      'هل تريد حذف هذا العنصر من هذا الجهاز؟ لا يمكن التراجع عن الحذف.';
+
+  @override
+  String get personalSaved => 'تم الحفظ على هذا الجهاز.';
+
+  @override
+  String get personalDuplicate => 'هذه الآية موجودة في المجموعة بالفعل.';
+
+  @override
+  String get personalLimit =>
+      'تم الوصول إلى الحد الأقصى المحلي للملاحظات أو المجموعات. صدّر نسخة احتياطية قبل إزالة العناصر القديمة.';
+
+  @override
+  String get requiredText => 'أدخل النص للمتابعة.';
+
+  @override
+  String get invalidAyahLink =>
+      'رابط الآية غير صالح. تم الاحتفاظ بموضع قراءتك الأخير.';
+
+  @override
+  String get backupTitle => 'نسخة احتياطية محلية';
+
+  @override
+  String get backupBody =>
+      'صدّر ملف JSON خاصاً بملاحظاتك ومجموعاتك وعلاماتك وخططك وإعدادات القراءة. لا يشمل الصوت أو الكتب المنزّلة. احتفظ به في مكان آمن؛ لا تُرسل نسخة إلى أي خادم.';
+
+  @override
+  String get exportBackup => 'تصدير نسخة احتياطية';
+
+  @override
+  String get chooseBackup => 'اختيار ملف النسخة';
+
+  @override
+  String get pasteBackup => 'لصق ملف JSON';
+
+  @override
+  String get previewBackup => 'معاينة النسخة';
+
+  @override
+  String get restoreBackup => 'استبدال البيانات بهذه النسخة';
+
+  @override
+  String get backupPreviewTitle => 'مراجعة قبل الاستعادة';
+
+  @override
+  String get backupReplaceWarning =>
+      'سيستبدل هذا ملاحظاتك ومجموعاتك وعلاماتك الملونة وخططك وإعدادات القراءة على هذا الجهاز؛ لن يتم دمجها. نزّل نسخة أمان أولاً. ستُعطّل التذكيرات حتى تفعّلها مجدداً.';
+
+  @override
+  String get backupSafetyCopy => 'تنزيل نسخة أمان';
+
+  @override
+  String get backupSafetyReady =>
+      'تم تجهيز نسخة الأمان. احتفظ بالملف المنزّل قبل التأكيد.';
+
+  @override
+  String get backupInvalid =>
+      'الملف غير صالح أو غير مدعوم أو أكبر من ٥ ميجابايت. لم تتغير أي بيانات.';
+
+  @override
+  String get backupFailed =>
+      'تعذرت العملية. تم الاحتفاظ ببياناتك السابقة أو إعادتها. احتفظ بنسخة الأمان وأعد المحاولة.';
+
+  @override
+  String get backupRestored =>
+      'تمت استعادة النسخة. أعد تحميل التطبيق لاستخدام الإعدادات والخطط المستعادة.';
+
+  @override
+  String get backupRestoredNative =>
+      'تمت استعادة النسخة. أغلق رسالة التأكيد هذه لتحميل البيانات المستعادة. تبقى التذكيرات معطّلة.';
+
+  @override
+  String get reloadApp => 'إعادة تحميل التطبيق';
+
+  @override
+  String get backupCopied => 'تم نسخ النسخة الخاصة. احفظها في ملف آمن.';
+
+  @override
+  String get backupCreated => 'تاريخ الإنشاء';
+
+  @override
+  String get shareAyah => 'مشاركة الآية';
+
+  @override
+  String get shareBody =>
+      'عاين الآية كاملة، ثم احفظ صورة أو انسخ النص أو الرابط العام.';
+
+  @override
+  String get includeTranslation => 'إرفاق ترجمة';
+
+  @override
+  String get withoutTranslation => 'العربية فقط';
+
+  @override
+  String get downloadAyahImage => 'حفظ صورة الآية';
+
+  @override
+  String get copyShareText => 'نسخ النص الكامل';
+
+  @override
+  String get copyAyahLink => 'نسخ رابط الآية';
+
+  @override
+  String get shareCopied => 'تم النسخ إلى الحافظة.';
+
+  @override
+  String get shareFailed =>
+      'تعذر تجهيز الصورة أو حفظها. لا يزال بإمكانك نسخ النص أو الرابط.';
+
+  @override
+  String get shareSource =>
+      'نص القرآن: مجمع الملك فهد لطباعة المصحف الشريف. مورد الترجمة محدد أعلاه.';
+
+  @override
+  String get savedTextSearch => 'البحث في الكتب المحفوظة';
+
+  @override
+  String get savedTextSearchBody =>
+      'ابحث في جميع آيات التفسير أو الترجمة المضمّنة أو المنزّلة. لا يُنزّل أي كتاب تلقائياً ولا يتغير اختيارك في القارئ.';
+
+  @override
+  String get searchBook => 'الكتاب المراد البحث فيه';
+
+  @override
+  String get searchPhrase => 'كلمة أو عبارة (حرفان على الأقل)';
+
+  @override
+  String get searchMinimum => 'أدخل حرفين على الأقل.';
+
+  @override
+  String get searchNoResults => 'لا توجد آيات مطابقة في هذا الكتاب.';
+
+  @override
+  String get searchSavedOnly =>
+      'تظهر هنا الكتب المضمّنة والمنزّلة فقط. نزّل المزيد من المكتبة.';
+
+  @override
+  String get searchResults => 'النتائج';
+
+  @override
+  String get previousResults => 'النتائج السابقة';
+
+  @override
+  String get nextResults => 'النتائج التالية';
+
+  @override
+  String get searchLoadFailed =>
+      'تعذرت قراءة هذا الكتاب المحفوظ. أعد المحاولة أو احذفه ونزّله مجدداً من المكتبة.';
+
+  @override
   String get quranTextTab => 'القرآن الكريم';
 
   @override
@@ -261,7 +805,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get webOfflineNote =>
-      'على الويب، يمكنك حفظ التفسير والترجمات المحددة في هذا المتصفح (حتى 160 MiB)، وقد يزيلها المتصفح عند انخفاض مساحة التخزين. الصوت يتطلب الإنترنت. جهّز التطبيق وصفحات القرآن بشكل منفصل من الإعدادات.';
+      'على الويب، يمكنك حفظ التفسير والترجمات في هذا المتصفح (حتى 160 MiB). احفظ صوت السور منفصلاً من التلاوات. قد يزيل المتصفح الملفات عند نقص المساحة. جهّز التطبيق وصفحات القرآن منفصلاً من الإعدادات.';
 
   @override
   String get webResourceStorageUnavailable =>
@@ -565,6 +1109,14 @@ class AppLocalizationsAr extends AppLocalizations {
   String get reminderEnabled => 'تم تفعيل تذكير القرآن اليومي.';
 
   @override
+  String get reminderUpdateFailed =>
+      'تعذر جدولة التذكير أو تحديثه. تحقق من إعدادات الإشعارات وحاول مجدداً.';
+
+  @override
+  String get reminderStateUncertain =>
+      'تعذر استعادة حالة التذكير بأمان. تحقق من إعدادات الإشعارات وأعد فتح التطبيق قبل الاعتماد عليه.';
+
+  @override
   String get notificationDenied => 'لم يتم منح إذن الإشعارات.';
 
   @override
@@ -646,6 +1198,90 @@ class AppLocalizationsAr extends AppLocalizations {
       'تُحفظ العلامات المرجعية وآخر قراءة والخطط والإعدادات والتنزيلات على هذا الجهاز أو في هذا المتصفح فقط. لا توجد حسابات أو نسخ سحابية أو مزامنة بين الأجهزة. قد يؤدي حذف التطبيق أو مسح بياناته أو بيانات الموقع إلى فقدان هذه العناصر المحفوظة.';
 
   @override
+  String get guideStartHere => 'ابدأ من هنا';
+
+  @override
+  String get guideChooseLesson => 'اختر درسك التالي';
+
+  @override
+  String guideLesson(int number, int total) {
+    return 'الدرس $number من $total';
+  }
+
+  @override
+  String get guideWrittenSteps => 'تابع خطوة بخطوة';
+
+  @override
+  String get guidePauseVideo => 'إيقاف الفيديو مؤقتاً';
+
+  @override
+  String get guideRestartVideo => 'إعادة الفيديو من البداية';
+
+  @override
+  String get guideFullScreen => 'عرض بملء الشاشة';
+
+  @override
+  String get guideSeekVideo => 'موضع الفيديو';
+
+  @override
+  String get guideVideoLoading => 'جارٍ تجهيز الدرس…';
+
+  @override
+  String get guideVideoRetry => 'إعادة محاولة الفيديو';
+
+  @override
+  String get guideVideoFinished => 'اكتمل الدرس. يمكنك إعادته متى احتجت.';
+
+  @override
+  String get guideVideoHint =>
+      'تابع المؤشر المميز والتعليمات المرقمة. لا يبدأ أي فيديو إلا عندما تختار تشغيله.';
+
+  @override
+  String get guideNativeFiles =>
+      'على أندرويد، اختر مكاناً خاصاً للحفظ من منتقي المستندات. على iOS، استخدم قائمة المشاركة لحفظ الملف أو مشاركته. استخدم منتقي المستندات لاسترجاع نسخة JSON.';
+
+  @override
+  String get guideNativeShareImage => 'حفظ صورة الآية أو مشاركتها';
+
+  @override
+  String get guideNativeSaveImage => 'حفظ صورة الآية';
+
+  @override
+  String get privacyTitle => 'الخصوصية والتواصل';
+
+  @override
+  String get privacyLocalSummary =>
+      'قرآن هيفن مجاني ولا يتضمن حسابات أو إعلانات. تبقى إشاراتك وملاحظاتك وخططك وموضع القراءة وتفضيلاتك على جهازك أو في متصفحك. قد يؤدي مسح بيانات التطبيق أو المتصفح إلى حذفها. لا يتم تصدير النسخ أو استرجاع الملفات أو المشاركة إلا باختيارك، وأنت تحدد الوجهة.';
+
+  @override
+  String get privacyNetworkSummary =>
+      'تتصل موارد القراءة والتلاوات عبر الإنترنت بمضيف المشروع ومزودي الصوت والمحتوى. تكشف هذه الطلبات معلومات الشبكة مثل عنوان IP والملفات المطلوبة؛ وقد يحتفظ المزودون بسجلات تقنية. يستخدم الموقع أيضاً أداة Cloudflare لقياس الأداء والاستخدام. لا تُرفع ملاحظاتك أو تقدمك الشخصي تلقائياً.';
+
+  @override
+  String get privacyOpen => 'اقرأ سياسة الخصوصية كاملة';
+
+  @override
+  String get contactProject => 'تواصل مع المشروع';
+
+  @override
+  String get copyContactEmail => 'نسخ بريد التواصل';
+
+  @override
+  String get privacyLinkCopied =>
+      'تم نسخ العنوان. افتحه في المتصفح أو تطبيق البريد.';
+
+  @override
+  String get privacyLinkFailed =>
+      'تعذر فتح العنوان أو نسخه. استخدم العنوان المعروض هنا.';
+
+  @override
+  String get backupSafetyConfirm => 'حفظت نسخة الأمان في مكان خاص.';
+
+  @override
+  String get backupRefreshFailed =>
+      'تم استرجاع النسخة. أغلق التطبيق وافتحه مجدداً لعرض البيانات المسترجعة.';
+
+  @override
   String get guideTitle => 'دليل استخدام قرآن هيفن';
 
   @override
@@ -681,7 +1317,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get guideReducedMotion =>
-      'العرض المتحرك معطّل لأن تقليل الحركة مفعّل على جهازك.';
+      'تقليل الحركة مفعّل. تبقى المعاينة ثابتة، ويمكنك اختيار التشغيل إذا رغبت.';
 
   @override
   String guideDemoDescription(String topic) {
@@ -701,7 +1337,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get guideReadingStep3 =>
-      'اسحب للتنقل بين الصفحات. يُحفظ موضع آخر قراءة تلقائياً على هذا الجهاز.';
+      'استخدم أسهم الصفحات على الموقع، أو اسحب على جهاز يعمل باللمس للتنقل بين الصفحات. يُحفظ موضع آخر قراءة تلقائياً على هذا الجهاز.';
 
   @override
   String get guideReadingTip =>
@@ -716,7 +1352,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get guideSearchStep2 =>
-      'اختر نتيجة البحث، ثم اضغط إغلاق أعلى اللوحة للعودة إلى المصحف عند الآية المختارة. اضغط مطولاً على آية لفتح خياراتها.';
+      'اختر نتيجة البحث. تُغلق اللوحة ويُفتح المصحف عند الآية المختارة تلقائياً. اضغط مطولاً على آية لفتح خياراتها.';
 
   @override
   String get guideSearchStep3 =>
@@ -761,7 +1397,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get guideAudioTip =>
-      'تحتاج التلاوات عبر الإنترنت إلى اتصال، وقد تأتي من مزودي تلاوات خارجيين. تنزيل الصوت للاستخدام دون اتصال غير متاح في المتصفح.';
+      'يأتي الصوت عبر الإنترنت من مزودي تلاوات خارجيين. نزّل تسجيلات السور الكاملة من التلاوات للاستماع دون اتصال؛ لا يزال صوت الكلمات يتطلب الإنترنت.';
 
   @override
   String get guideOfflineTitle => 'استعد قبل انقطاع الاتصال';
@@ -780,7 +1416,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get guideOfflineTip =>
-      'قد يحذف المتصفح الملفات المحفوظة عند نقص المساحة. التصفح الخاص لا يناسب الحفظ الدائم. يعمل تنزيل الصوت دون اتصال في تطبيق الهاتف، وليس الموقع.';
+      'قد يحذف المتصفح الملفات عند نقص المساحة. التصفح الخاص لا يناسب الحفظ الدائم. تجهيز التطبيق والكتب المنزّلة وتسجيلات السور تنزيلات منفصلة.';
 
   @override
   String get guidePlansTitle => 'نظّم الختمة والحفظ';
@@ -833,7 +1469,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get guideStorageTip =>
-      'قد تفقد العناصر المحفوظة عند حذف التطبيق أو مسح بيانات التطبيق أو الموقع أو فقدان الجهاز. لا تتوفر حالياً أداة لتصدير البيانات المحلية واستيرادها.';
+      'قد يمحو مسح بيانات التطبيق أو الموقع أو فقدان الجهاز العناصر المحفوظة. استخدم النسخة الاحتياطية المحلية من الإعدادات لتصدير بياناتك خصوصياً؛ لا تشمل الكتب أو الصوت المنزّلين.';
 
   @override
   String get playAyah => 'تشغيل الآية';
@@ -862,4 +1498,45 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get guideResetZoom => 'إعادة ضبط التكبير';
+
+  @override
+  String get guideRotateHint =>
+      'أدر الهاتف لعرض أوسع، أو كبّر واسحب لتفحص خطوات العرض.';
+
+  @override
+  String get guideZoomIn => 'تكبير';
+
+  @override
+  String get guideZoomOut => 'تصغير';
+
+  @override
+  String get creatorCreditTitle => 'من تطوير YahyazLab';
+
+  @override
+  String get quranBrandLabel => 'شعار Quran Haven: مصحف مفتوح';
+
+  @override
+  String get creatorCreditHint => 'موقع المطوّر الخارجي';
+
+  @override
+  String get creatorCreditSemantics =>
+      'من تطوير YahyazLab. فتح موقع المطوّر الخارجي بعد التأكيد.';
+
+  @override
+  String get creatorExternalTitle => 'أنت تغادر Quran Haven';
+
+  @override
+  String get creatorExternalBody =>
+      'هذا معرض أعمال مطوّر ألعاب، وليس موقعاً لمحتوى القرآن. سيتم فتحه في المتصفح.';
+
+  @override
+  String get creatorGuardianReminder =>
+      'للأطفال: استأذن أحد الوالدين أو ولي أمرك قبل المتابعة.';
+
+  @override
+  String get creatorContinue => 'متابعة إلى الموقع';
+
+  @override
+  String get creatorOpenFailed =>
+      'تعذّر فتح الموقع الخارجي. يمكنك متابعة استخدام Quran Haven.';
 }

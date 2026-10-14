@@ -5,6 +5,21 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:quran_library/quran_library.dart';
 
 void main() {
+  test('browser audio allowlist matches every approved Surah profile', () {
+    final source = File('web/quran_service_worker.js').readAsStringSync();
+    final block = RegExp(
+      r'const AUDIO_ROOTS = \[([\s\S]*?)\];',
+    ).firstMatch(source)!.group(1)!;
+    final roots = RegExp(
+      r'"(https://[^\"]+)"',
+    ).allMatches(block).map((match) => match.group(1)!).toSet();
+    expect(
+      roots,
+      ReadersConstants.surahReaderInfo
+          .map((reader) => reader.recordingRoot)
+          .toSet(),
+    );
+  });
   test('eight new reciters match the verified provider catalogue', () {
     final entries =
         jsonDecode(File('deployment/reciters.json').readAsStringSync())

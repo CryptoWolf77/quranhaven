@@ -9,6 +9,7 @@ abstract final class AppTheme {
   static const _fallbackFonts = [
     'packages/quran_library/naskh',
     'NotoSansBengali',
+    'NotoSansSymbols',
   ];
 
   static ThemeData light() {
@@ -75,6 +76,7 @@ abstract final class AppTheme {
         selectedIconTheme: IconThemeData(color: scheme.primary),
         selectedLabelTextStyle: TextStyle(
           fontFamily: _interfaceFont,
+          fontFamilyFallback: _fallbackFonts,
           color: scheme.primary,
           fontWeight: FontWeight.w700,
         ),

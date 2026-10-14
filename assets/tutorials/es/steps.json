@@ -1,0 +1,959 @@
+{
+  "schemaVersion": 1,
+  "language": "es",
+  "scope": "La navegación general está grabada en la web real. El segmento de recordatorios está grabado en la aplicación Android real. El diseño puede variar entre dispositivos; no se afirma haber grabado un dispositivo iOS.",
+  "clips": {
+    "reader": {
+      "title": "Lee y encuentra tu lugar",
+      "durationSeconds": 30.05,
+      "video": "reader.mp4",
+      "poster": "reader.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 5.5,
+          "instruction": "Abre el Mushaf desde Inicio",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 5.5,
+          "endSeconds": 8.6,
+          "instruction": "Abre la navegación rápida en la barra del lector",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 8.6,
+          "endSeconds": 11.85,
+          "instruction": "Abre el índice de Juz",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 11.85,
+          "endSeconds": 14.95,
+          "instruction": "Cambia al índice de suras",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 14.95,
+          "endSeconds": 20.15,
+          "instruction": "Elige la sura que quieres leer",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 20.15,
+          "endSeconds": 23.4,
+          "instruction": "Pulsa Ir a la página para abrir la página elegida",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 7,
+          "startSeconds": 23.4,
+          "endSeconds": 26.95,
+          "instruction": "Usa la flecha o desliza en el móvil",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 8,
+          "startSeconds": 26.95,
+          "endSeconds": 30.05,
+          "instruction": "Continúa desde la última lectura en Inicio",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "search": {
+      "title": "Busca y guarda marcadores",
+      "durationSeconds": 25.75,
+      "video": "search.mp4",
+      "poster": "search.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.7,
+          "instruction": "Busca en el texto árabe del Corán",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.7,
+          "endSeconds": 8.9,
+          "instruction": "Escribe la palabra o frase que buscas",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 8.9,
+          "endSeconds": 14.1,
+          "instruction": "Elige un resultado para abrirlo en el Mushaf",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 14.1,
+          "endSeconds": 19.35,
+          "instruction": "Mantén pulsada una aleya para abrir sus acciones",
+          "action": "hold",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 19.35,
+          "endSeconds": 22.55,
+          "instruction": "Elige un color de marcador",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 22.55,
+          "endSeconds": 25.75,
+          "instruction": "Abre Marcadores para volver a la aleya guardada",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "library": {
+      "title": "Elige tafsir y traducciones",
+      "durationSeconds": 28.7,
+      "video": "library.mp4",
+      "poster": "library.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.2,
+          "instruction": "Abre Traducciones desde Biblioteca",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.2,
+          "endSeconds": 8.0,
+          "instruction": "Descarga Español y espera a que esté listo",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 8.0,
+          "endSeconds": 11.45,
+          "instruction": "Abre Tafsir en las acciones para leer la traducción",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 11.45,
+          "endSeconds": 14.85,
+          "instruction": "La interfaz y la traducción tienen idiomas independientes",
+          "action": "observe",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 14.85,
+          "endSeconds": 18.05,
+          "instruction": "Abre Tafsir desde Biblioteca",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 18.05,
+          "endSeconds": 21.8,
+          "instruction": "Selecciona el Tafsir árabe de Saadi incluido",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 7,
+          "startSeconds": 21.8,
+          "endSeconds": 25.0,
+          "instruction": "Abre Tafsir de nuevo en las acciones de la aleya",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 8,
+          "startSeconds": 25.0,
+          "endSeconds": 28.7,
+          "instruction": "Lee el Tafsir árabe de la fuente guardada",
+          "action": "observe",
+          "platform": "website"
+        }
+      ]
+    },
+    "audio": {
+      "title": "Escucha recitaciones",
+      "durationSeconds": 29.8,
+      "video": "audio.mp4",
+      "poster": "audio.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.2,
+          "instruction": "Abre Controles del lector en Recitaciones",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.2,
+          "endSeconds": 6.55,
+          "instruction": "Abre la lista de recitadores de aleyas",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 6.55,
+          "endSeconds": 9.6,
+          "instruction": "Elige un recitador de la lista disponible",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 9.6,
+          "endSeconds": 12.8,
+          "instruction": "Vuelve a Biblioteca y abre Recitaciones",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 12.8,
+          "endSeconds": 15.95,
+          "instruction": "Abre la lista de suras para escuchar",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 15.95,
+          "endSeconds": 18.9,
+          "instruction": "Elige la sura que quieres escuchar",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 7,
+          "startSeconds": 18.9,
+          "endSeconds": 22.85,
+          "instruction": "Pulsa Reproducir para empezar a escuchar",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 8,
+          "startSeconds": 22.85,
+          "endSeconds": 26.1,
+          "instruction": "Pulsa Detener en los controles de audio",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 9,
+          "startSeconds": 26.1,
+          "endSeconds": 29.8,
+          "instruction": "Continúa desde la posición de escucha guardada",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "offline": {
+      "title": "Prepárate antes de desconectarte",
+      "durationSeconds": 17.1,
+      "video": "offline.mp4",
+      "poster": "offline.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 5.2,
+          "instruction": "Prepara la web sin conexión en Ajustes",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 5.2,
+          "endSeconds": 9.1,
+          "instruction": "Mantén la pestaña abierta hasta que esté lista",
+          "action": "observe",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 9.1,
+          "endSeconds": 13.9,
+          "instruction": "Abre el Mushaf sin conexión para comprobarlo",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 13.9,
+          "endSeconds": 17.1,
+          "instruction": "Los libros y el audio se descargan por separado",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "plans": {
+      "title": "Crea una rutina de lectura y memorización",
+      "durationSeconds": 43.5,
+      "video": "plans.mp4",
+      "poster": "plans.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.2,
+          "instruction": "Abre Crear plan de Khatmah",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.2,
+          "endSeconds": 8.4,
+          "instruction": "Elige la duración y pulsa Iniciar plan",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 8.4,
+          "endSeconds": 11.6,
+          "instruction": "Marca el objetivo tras completar la lectura",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 11.6,
+          "endSeconds": 14.8,
+          "instruction": "Cambia a Memorización",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 14.8,
+          "endSeconds": 18.0,
+          "instruction": "Abre Crear plan de memorización",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 18.0,
+          "endSeconds": 23.2,
+          "instruction": "Define el rango y pulsa Empezar a memorizar",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 7,
+          "startSeconds": 23.2,
+          "endSeconds": 27.25,
+          "instruction": "Repite la aleya actual para escuchar y repasar",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 8,
+          "startSeconds": 27.25,
+          "endSeconds": 30.6,
+          "instruction": "Oculta el texto para comprobar tu memoria",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 9,
+          "startSeconds": 30.6,
+          "endSeconds": 33.9,
+          "instruction": "Muestra el texto para comprobar lo memorizado",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 10,
+          "startSeconds": 33.9,
+          "endSeconds": 37.1,
+          "instruction": "Marca la aleya para repasar",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 11,
+          "startSeconds": 37.1,
+          "endSeconds": 40.3,
+          "instruction": "Marca la aleya memorizada cuando la domines",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 12,
+          "startSeconds": 40.3,
+          "endSeconds": 43.5,
+          "instruction": "Vuelve a la aleya anterior del rango",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "settings": {
+      "title": "Ajusta la experiencia a tu gusto",
+      "durationSeconds": 38.15,
+      "video": "settings.mp4",
+      "poster": "settings.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.45,
+          "instruction": "Cambia la interfaz con las opciones de idioma",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.45,
+          "endSeconds": 6.65,
+          "instruction": "Elige tu idioma; el texto coránico sigue en árabe",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 6.65,
+          "endSeconds": 9.85,
+          "instruction": "Prueba la apariencia Oscura",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 9.85,
+          "endSeconds": 13.05,
+          "instruction": "Elige Claro o la apariencia del sistema",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 13.05,
+          "endSeconds": 16.95,
+          "instruction": "En Android, activa el recordatorio diario de lectura",
+          "action": "tap",
+          "platform": "android"
+        },
+        {
+          "number": 6,
+          "startSeconds": 16.95,
+          "endSeconds": 20.45,
+          "instruction": "Abre Hora del recordatorio para cambiarla",
+          "action": "tap",
+          "platform": "android"
+        },
+        {
+          "number": 7,
+          "startSeconds": 20.45,
+          "endSeconds": 23.05,
+          "instruction": "Elige introducir la hora con el teclado",
+          "action": "tap",
+          "platform": "android"
+        },
+        {
+          "number": 8,
+          "startSeconds": 23.05,
+          "endSeconds": 25.05,
+          "instruction": "Pulsa Minuto para editarlo",
+          "action": "tap",
+          "platform": "android"
+        },
+        {
+          "number": 9,
+          "startSeconds": 25.05,
+          "endSeconds": 28.75,
+          "instruction": "Introduce los minutos; aquí usamos 15",
+          "action": "input",
+          "platform": "android"
+        },
+        {
+          "number": 10,
+          "startSeconds": 28.75,
+          "endSeconds": 32.15,
+          "instruction": "Pulsa ACEPTAR para guardar la hora",
+          "action": "tap",
+          "platform": "android"
+        },
+        {
+          "number": 11,
+          "startSeconds": 32.15,
+          "endSeconds": 35.35,
+          "instruction": "Comprueba la hora nueva con el recordatorio activo",
+          "action": "observe",
+          "platform": "android"
+        },
+        {
+          "number": 12,
+          "startSeconds": 35.35,
+          "endSeconds": 38.15,
+          "instruction": "Puedes desactivar el recordatorio cuando quieras",
+          "action": "tap",
+          "platform": "android"
+        }
+      ]
+    },
+    "storage": {
+      "title": "Entiende tus datos locales",
+      "durationSeconds": 12.8,
+      "video": "storage.mp4",
+      "poster": "storage.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 4.2,
+          "instruction": "Tus datos quedan en este dispositivo, sin cuenta en la nube",
+          "action": "observe",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 4.2,
+          "endSeconds": 8.45,
+          "instruction": "Usa el mismo perfil del navegador para conservar datos",
+          "action": "observe",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 8.45,
+          "endSeconds": 12.8,
+          "instruction": "Borrar datos puede eliminar lo guardado; exporta una copia",
+          "action": "observe",
+          "platform": "website"
+        }
+      ]
+    },
+    "personal": {
+      "title": "Notas y colecciones",
+      "durationSeconds": 51.45,
+      "video": "personal.mp4",
+      "poster": "personal.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.35,
+          "instruction": "Abre Biblioteca y Mi espacio del Corán",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.35,
+          "endSeconds": 6.55,
+          "instruction": "Abre Añadir nota y elige la sura y aleya",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 6.55,
+          "endSeconds": 11.2,
+          "instruction": "Escribe un título y tu reflexión",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 11.2,
+          "endSeconds": 14.5,
+          "instruction": "Guarda la nota en tu dispositivo",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 14.5,
+          "endSeconds": 17.7,
+          "instruction": "Abre Editar nota para actualizar tu reflexión",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 17.7,
+          "endSeconds": 21.0,
+          "instruction": "Guarda la nota modificada",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 7,
+          "startSeconds": 21.0,
+          "endSeconds": 24.15,
+          "instruction": "Cambia a Colecciones",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 8,
+          "startSeconds": 24.15,
+          "endSeconds": 27.35,
+          "instruction": "Abre Crear colección",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 9,
+          "startSeconds": 27.35,
+          "endSeconds": 30.5,
+          "instruction": "Pon nombre a la colección y guárdala",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 10,
+          "startSeconds": 30.5,
+          "endSeconds": 33.65,
+          "instruction": "Abre Añadir aleya en la colección",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 11,
+          "startSeconds": 33.65,
+          "endSeconds": 36.95,
+          "instruction": "Elige la sura y aleya y guarda la selección",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 12,
+          "startSeconds": 36.95,
+          "endSeconds": 39.85,
+          "instruction": "Pulsa la aleya guardada para abrirla en el lector",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 13,
+          "startSeconds": 39.85,
+          "endSeconds": 45.05,
+          "instruction": "Mantén pulsada la aleya para abrir sus acciones",
+          "action": "hold",
+          "platform": "website"
+        },
+        {
+          "number": 14,
+          "startSeconds": 45.05,
+          "endSeconds": 48.25,
+          "instruction": "Elige Añadir a colección en las acciones",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 15,
+          "startSeconds": 48.25,
+          "endSeconds": 51.45,
+          "instruction": "Elige la colección donde guardar la aleya",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "backup": {
+      "title": "Copia local",
+      "durationSeconds": 23.1,
+      "video": "backup.mp4",
+      "poster": "backup.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.3,
+          "instruction": "Exporta una copia privada y guarda el archivo",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.3,
+          "endSeconds": 6.6,
+          "instruction": "Elige un archivo de copia de tu dispositivo",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 6.6,
+          "endSeconds": 10.55,
+          "instruction": "Revisa la fecha y contenido antes de restaurar",
+          "action": "observe",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 10.55,
+          "endSeconds": 14.25,
+          "instruction": "Guarda primero una copia de tus datos actuales",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 14.25,
+          "endSeconds": 17.9,
+          "instruction": "Confirma la restauración; reemplaza, no combina",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 17.9,
+          "endSeconds": 23.1,
+          "instruction": "Recarga la aplicación para usar los datos restaurados",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "share-search": {
+      "title": "Compartir aleyas y buscar libros",
+      "durationSeconds": 39.55,
+      "video": "share-search.mp4",
+      "poster": "share-search.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 5.3,
+          "instruction": "Mantén pulsada una aleya para abrir sus acciones",
+          "action": "hold",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 5.3,
+          "endSeconds": 8.45,
+          "instruction": "Abre Compartir y revisa la aleya completa",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 8.45,
+          "endSeconds": 11.65,
+          "instruction": "Abre la opción de traducción guardada",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 11.65,
+          "endSeconds": 14.55,
+          "instruction": "Elige una traducción; aquí seleccionamos Español",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 14.55,
+          "endSeconds": 17.75,
+          "instruction": "Guarda la imagen de la aleya en tu dispositivo",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 17.75,
+          "endSeconds": 20.95,
+          "instruction": "Copia el texto de la aleya para compartir",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 7,
+          "startSeconds": 20.95,
+          "endSeconds": 24.15,
+          "instruction": "Copia el enlace; no incluye tus notas privadas",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 8,
+          "startSeconds": 24.15,
+          "endSeconds": 27.5,
+          "instruction": "Abre la búsqueda en libros guardados de Biblioteca",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 9,
+          "startSeconds": 27.5,
+          "endSeconds": 31.0,
+          "instruction": "Busca en todas las aleyas del recurso guardado",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 10,
+          "startSeconds": 31.0,
+          "endSeconds": 36.2,
+          "instruction": "Ve a la siguiente página de resultados",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 11,
+          "startSeconds": 36.2,
+          "endSeconds": 39.55,
+          "instruction": "Abre un resultado para leer su aleya en el Mushaf",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "saved-audio": {
+      "title": "Grabaciones de suras guardadas",
+      "durationSeconds": 23.05,
+      "video": "saved-audio.mp4",
+      "poster": "saved-audio.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.35,
+          "instruction": "Descarga la sura del recitador elegido",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.35,
+          "endSeconds": 6.55,
+          "instruction": "Espera a que se guarde; descargar no reproduce audio",
+          "action": "observe",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 6.55,
+          "endSeconds": 10.3,
+          "instruction": "Reproduce la sura desde Grabaciones guardadas",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 10.3,
+          "endSeconds": 13.6,
+          "instruction": "Abre Eliminar para esta grabación guardada",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 13.6,
+          "endSeconds": 16.8,
+          "instruction": "Cancela para conservar la grabación",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 16.8,
+          "endSeconds": 20.1,
+          "instruction": "Abre Eliminar de nuevo para borrar la grabación",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 7,
+          "startSeconds": 20.1,
+          "endSeconds": 23.05,
+          "instruction": "Confirma; solo se elimina esta grabación",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "morphology": {
+      "title": "Morfología de palabras",
+      "durationSeconds": 16.5,
+      "video": "morphology.mp4",
+      "poster": "morphology.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.2,
+          "instruction": "Abre Morfología de palabras en Biblioteca",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.2,
+          "endSeconds": 6.45,
+          "instruction": "Explora palabras, segmentos, raíces y lemas",
+          "action": "scroll",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 6.45,
+          "endSeconds": 9.8,
+          "instruction": "Ve a la siguiente aleya para explorar sus palabras",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 9.8,
+          "endSeconds": 13.05,
+          "instruction": "Abre la documentación de la fuente original",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 13.05,
+          "endSeconds": 16.5,
+          "instruction": "Lee la fuente y los avisos de licencia guardados",
+          "action": "observe",
+          "platform": "website"
+        }
+      ]
+    }
+  }
+}

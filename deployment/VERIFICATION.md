@@ -1,4 +1,236 @@
-# Connected/offline release verification — 2026-09-07
+# Quran Haven release verification
+
+## Final candidate rechecks — 2026-10-15 (not yet published)
+
+- All 39 original H264 videos (13 topics × ar/en/es) play, pause, seek and replay
+  in isolated official Chrome. All 39 also pass those operations in a new page
+  after complete verified preparation and forced offline mode. The strict
+  offline console gate found a remote Noto Sans Symbols fallback retry; that
+  font is being bundled before final acceptance, not ignored as a success.
+- The candidate `c8baa3a474f905fd837aa165b6dc05b891c6d4b3be0232189e6922b8ce0f2642`
+  contains 754 files / 144835713 bytes. Development-server HTTP response faults
+  were isolated using an independent loopback transport of these same files;
+  it completes full preparation. No worker integrity checks or budgets were
+  weakened. The final font/poster/policy/metadata rebuild will have a new identity.
+- Chromium/Firefox/WebKit each pass ar/en/es × desktop/tablet/phone main-screen
+  navigation on this candidate. These engine tests are not physical Safari/iOS.
+- Real notes/collections CRUD, JSON export, invalid-input rejection, cancelled
+  restore, safety copy and full replacement/reload pass again in all languages.
+  Reader bounds/search, all five display modes, saved translation removal,
+  Khatmah/memorization, complete Ayah PNG/link, late-Surah whole-book search,
+  Corpus navigation and actual Tafsir/translation text pass the final rechecks.
+- The saved Al-Fatihah browser recording retains its exact 669781-byte hash,
+  survives reload/cold offline playback and seeking, and removal leaves the
+  verified app shell intact. Downloading does not autoplay.
+- Independent design round 2 passes the inspected UI/media: all 39 posters and
+  318 caption states inspected, three-language real seeking, bounded zoom,
+  desktop→phone single-decoder reflow, 320px/200% privacy, genuine blocked-video
+  Retry recovery. This used a same-provider independent evaluator, not an
+  external-provider certification. Two optional poster/header polish changes
+  are being applied separately; offline/native/store gates are not implied.
+- All 254 Flutter tests pass before the final native-notification fix; its four
+  focused selection/metadata tests also pass. All 32 worker/audio Node tests
+  and 18 manifest/loopback-server Python tests pass. Analyzer has only the three
+  existing vendored cacheExtent informational deprecations (no errors/warnings).
+- New all-media test APK15 is 179.2MB, SHA256
+  `6927601c8765306d9e3b26cd50706c4f7738fde99d0530a728266af430d25fd2`,
+  signed by the same debug certificate as build6. It upgrades the separate AVD
+  without erasing page2 and its test records. Selected Al-Fatihah plays even
+  after a prior Al-Baqarah selection; background media pause/resume pass. The
+  stale notification title found during that real test is fixed in source and
+  must still pass on the rebuilt APK. Real Surah114 download completes without
+  autoplay and restores enabled controls; final cold-offline/native checks remain.
+
+Final pre-publish recheck after the fixes:
+
+- The original Noto Sans Symbols font/OFL is now local. All 39 finalized lessons
+  pass cold-offline play/pause/seek/replay with zero page/console errors and no
+  remote font failures. Final clean shell: 756 files / 145228106 bytes, identity
+  `9adec8673552db70a27af839660d83d27537a926cfa31039920bc3fe76a0cc89`.
+- An incremental local compiler cache omitted newly added web plugins from the
+  generated JavaScript despite a correct registrant. The cache was moved to a
+  recoverable task-specific backup on E:, and a clean build restored actual
+  video/file/url plugin code. This failure is not accepted as a successful build.
+  Fresh-source container builds and actual browser playback remain release gates.
+- The worker now makes at most one retry for a network/stream TypeError, under
+  the same total 60-second file deadline. Redirect/opaque/HTTP/size/hash/quota
+  failures and cancellation remain strict. Both transient recovery and a second
+  failure's bounded cleanup have tests; all 34 worker/audio tests pass.
+- All 261 final Flutter tests pass, plus 18 offline/server and 23 deployment/
+  content/Android-resource Python tests. Analysis still has only three existing
+  informational deprecations.
+- Corrected test APK SHA256:
+  `2e80be6bd0bfa723d6864ff7d91b8bf194c22956ba8e9b9496f5116f14bef9a2`.
+  After an actual cold start with Android reporting `Active default network:
+  none`, cached Al-Fatihah plays, the native metadata title is correct, and
+  background pause/resume advance actual positions. Page2 and prior test records
+  survive the update. A real bundled Arabic video completes 00:30/00:30 offline.
+  UI automation cannot capture an idle tree during its continuous animation;
+  that diagnostic failure is retained, not a claim of a playback failure.
+
+The website is still build13 below; no source/build/preparation above is a claim
+that Google Play, physical devices or iOS have been accepted or published.
+
+## Local release15 acceptance in progress — 2026-10-14
+
+This section records development candidates, not a published website or Google
+Play release. The live website remains build13 described below.
+
+- Original Corpus bytes/source notices retained. Actual morphology navigation,
+  indexed first/last Ayahs, raw feature text and source/license controls pass in
+  Arabic, English and Spanish after explicit selectable-text semantics were
+  added. Existing unaudited Qiraat/word-meaning data remains disabled.
+- Actual browser Surah download saved Al-Fatihah/Abdul Basit (669781bytes,
+  SHA-256 `7adec6166f88c6a8ade3b28e74764c8baa6a145365299ce28c0de4eb983c904f`)
+  without autoplay. Reload playback used a local Blob, advanced from2.086s to
+  3.692s, and a new offline page played to2.585s and sought to8.969s. Cancelled
+  removal preserved the recording; confirmed removal left the offline shell
+  ready. No personal-data API requests or page exceptions occurred.
+- A fresh locked web build includes the required video/file/url web-plugin
+  registrations. An earlier incremental candidate omitted those registrations;
+  its generic video failure is not accepted as a successful media test.
+- The fresh candidate shell contains681files/107098326bytes, identity
+  `f02ba20b9b804144a0a912438ccf9cddbdaf7d0f91bc282bc37194a4d3152b02`.
+  Real Arabic H264 lesson playback in isolated official Chrome reached1.771s,
+  paused, replayed, then worked in a new offline page after full preparation:
+  2.629s playback,13.498s seek and1.777s replay. One preparation attempt failed
+  with `download_failed`; the fresh rerun completed all681files. The UI reported
+  the failure honestly. Complete finalized39-lesson and public rechecks remain.
+- Strict worker tests validate full-file hash before MP4 Range slicing, reject
+  malformed/out-of-range/multiple ranges and preserve non-video behavior.
+  Privacy HTML has an exact binary transport like the app index so CDN markup
+  cannot break offline integrity. All32worker/audio Node tests and17manifest/
+  loopback-server Python tests pass.
+- Owner-approved `admin@yahyazlab.com` appears in source Settings/policy. The
+  static privacy document passes27isolated browser result rows, narrow320px,
+  language query/history, keyboard, print,200%zoom and no-JavaScript anchors.
+  Website Cloudflare beacon is disclosed; no privacy/security settings changed.
+- The new icon/feature master checks pass33PNGs,15unique iOS sizes and five
+  Android adaptive safe zones. Independent combined design review is pending.
+- Android test APK15 compiled successfully (143.2MB). Its debug certificate
+  matches the existing build6 certificate, not the new production upload key.
+  The old shared Pixel_10 AVD refused upgrade with insufficient storage; no
+  application/data was removed. A separate Quran_Haven_Test AVD was created for
+  clean installation and upgrade acceptance. Final media/store bundle checks
+  remain open.
+- Local production upload-key creation was explicitly authorized by the owner;
+  the private folder is outside the repository and `android/key.properties` is
+  ignored. See RELEASE.md for the public certificate fingerprint. No key/password
+  was sent to GitHub/Google, and no Play app has been created or uploaded yet.
+- The separate emulator passes the actual in-place6→15 upgrade: Spanish UI,
+  last-read page2 and a paused30-day Khatmah with21completed pages remain.
+  The shared old AVD is unchanged. Only the newly created test AVD was moved
+  recoverably to `E:\Quran Haven Test` after exporting its test records; the
+  project and private signing folder remain in Documents.
+- Android's real document chooser saved a627-byte JSON backup. Import preview
+  cancellation preserved a newer test note. Cancelling the safety-copy chooser
+  kept Replace disabled; saving the856-byte safety copy (including that note)
+  enabled replacement. Restoring the original copy refreshed native views and
+  retained page2/the paused21-page plan while removing the newer note. These
+  are isolated test records, not the owner's shared emulator data.
+- Android saved a real743×400PNG for2:1 through its document chooser,16441bytes,
+  SHA-256 `d742c16e946e0e3bb96ea25a97c73d0c94dc07e0b5e6c3c3343ddc8577f10de6`.
+  The complete Ayah/reference/source footer was visually checked. A native
+  collection also retained that Ayah without cloud requests.
+- Denied notification permission leaves reminders off. After owner-scoped test
+  permission, real Spanish19:00→19:15, English7:15PM→7:20PM and Arabic7:20م→7:25م
+  input transitions succeed. Android's scheduled alarms match19:15/19:25;
+  disabling removes the active app RTC alarm. This proves scheduling, not
+  physical-phone delivery. The Spanish12/24-hour dialog mismatch discovered
+  during recording was fixed; its failed raw clip is not included in lessons.
+- All205Flutter tests excluding unfinished media assets pass after reminder,
+  guide zoom/reflow and native restore-dialog fixes. Eleven new native audio
+  storage tests and six Library caller/cancellation tests pass separately.
+  The final combined suite remains to run after all39media files are installed.
+- Actual Android testing found the old Library download path could autoplay,
+  await playback completion and use the previous listening Surah. A separate
+  download-only API now captures the selected reader/Surah, validates bounded
+  MP3/length bytes, cleans only its own temporary file and never touches a
+  player. Cancellation cannot report success. Revised native runtime acceptance
+  is in progress; these source tests alone do not close that gate.
+
+## Current web acceptance — 2026-10-12, build 13
+
+The current application is local-only. Historical cloud sections below describe
+past releases, not active product requirements. This is acceptance of implemented
+web features; product backlog and physical/store gates are not declared complete.
+
+- Source `dc0df929a8a406445589d5bd7eb034658fa2434f` published through Coolify
+  **Quran Haven** resource `xt9b22auyjtr8m32snvgsxl3`. Deployment
+  `oeyjmjpunbx9d9ckfbcaqykn` succeeded in 3m 42s. No Cloud resource, server
+  records, DNS, CDN security/privacy settings or user browser data was changed.
+- Public version is **1.0.0+13**. HTTPS app/content checks and safe 404s pass.
+  Public shell: **691 files, 100,967,708 bytes**, identity
+  `e61c8189e9983d497568afe954ffed1e4d24d743d81fe729889c23a3fec32b18`.
+  Main JavaScript SHA-256:
+  `0029fdf6ca61818a6bc84b37c34da1ad58a65d0f4a3c703835262ed6211d0db9`.
+  Release-keyed bootstrap/main/version bytes, worker stamp and binary HTML hash
+  match the public manifest. Local/container content-derived identities differ
+  as expected.
+- **103 Flutter tests, 14 offline/server Python tests and 22 actual-worker/bridge
+  Node tests pass.** Analysis has no errors/warnings, with three existing
+  vendored `cacheExtent` deprecation information notices. Standard JavaScript
+  compilation succeeds; Wasm remains unsupported by existing `get_storage`.
+- Actual public browser matrix: Chromium/Firefox/WebKit × English/Arabic/Spanish
+  × 1440×900/768×1024/375×812. The five main screens and guide navigation pass;
+  no page exceptions, app console errors or personal-data API requests occurred.
+  Headless WebKit sometimes captured a white image after repeated viewport
+  resizing despite live semantics; cold 375px contexts rendered correctly in
+  all three languages and were inspected separately. This does not certify
+  real Safari/iOS or physical rotation/accessibility behavior.
+- Public reader checks pass page 0/605 rejection, last/first-page navigation,
+  empty and Arabic search (55 results for الرحمن), bookmark save/reload and
+  Escape/Close dismissal. All five display modes render without page errors.
+  The selected Arabic Tafsir opens with localized English Tafsir/Tajwid labels.
+  Build 13 adds three loading/error/content regression tests: waiting never
+  appears as an empty ready panel, and failed loads use localized feedback.
+- Downloaded Spanish text remains available after reload. Its Delete control
+  opens the confirmation dialog; Cancel keeps it, confirmation removes it and
+  makes Download available again. Resource semantics no longer merge deletion
+  with the selected-resource chip.
+- Public Khatmah flow passes 60-day creation, 11-page daily target, pause/resume,
+  invalid/123-page adjustments, target-date change, reload and deletion
+  cancellation/confirmation. Memorization passes actual Surah bounds, reversed
+  range validation, repetitions/delay settings, hide/reveal, revision marker,
+  mark memorized, range navigation bounds, Mushaf jump and persisted 50% progress.
+- Rejected plan writes do not create a false saved plan or a page exception.
+  Rejected preference writes display the warning in the newly selected language;
+  reload retains the last durable language. Read failures have a non-overwriting
+  retry path tested in Flutter. Fault injection was limited to isolated fixtures.
+- Real public Surah audio advances **2.003488 → 3.517631 seconds**, readyState 4,
+  paused=false, provider HTTP 206. Real word-by-word current/range playback and
+  Stop work; no stray playback remains after Stop/navigation. Audio was not
+  mocked. All **29 Surah / 20 Ayah profiles** pass bounded first/last MP3 samples
+  (98 checks); all **44 hosted text resources** pass exact byte/hash/JSON checks.
+  Eight added MP3Quran reciters now use current provider CDN roots while keeping
+  their IDs, indexes and local download directories unchanged.
+- Guide acceptance passes all three languages, eight topics, no autoplay,
+  play/stop, enlarged zoom/reset/Escape, reduced motion, mobile views and all
+  **24 GIF/poster hashes**. No support/donation/account controls are present.
+- A real isolated public Chromium profile upgrades **11 → 12**. Its old release
+  was fully cached; new release preparation retained the old active cache.
+  Activation returned `other_tabs_open` while both readers were open. After
+  closing the old tab, explicit activation/reload retained Spanish, page 49,
+  one yellow bookmark, paused 21/604 Khatmah progress and downloaded Spanish
+  text. With the entire browser context offline, the new app, Mushaf and guide
+  reopened successfully from the verified 691-file shell.
+- The user's existing Chrome tab was refreshed normally and shows the updated
+  website. No storage/cache clearing or browser/security setting changes were
+  performed. Test contexts were synthetic and separate from user data.
+
+### Remaining scope and limitations
+
+Personal notes, arbitrary named bookmark categories, Ayah-image/deep-link sharing,
+full Tafsir/translation search, local export/import, browser offline audio and
+grammar teaching remain product backlog, not completed features. Unaudited
+Qiraat/grammar download shortcuts are hidden; the agreed Hafs Mushaf and
+word-by-word memorization audio remain available. Physical Android/iOS/Safari,
+screen-reader/rotation/interruption checks, production signing/store accounts,
+macOS/Xcode and approved privacy contact/disclosures remain release gates.
+Browser storage can be denied/evicted and external audio providers can change;
+these checks are not a universal or permanent zero-defect guarantee. Existing
+remote cloud records/service remain untouched pending an owner retirement decision.
+
 
 ## Public deployment completed and Android audio repair — 2026-10-12
 

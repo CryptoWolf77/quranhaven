@@ -56,6 +56,7 @@ android {
                 storePassword = quranSigning.getProperty("storePassword")
                 keyAlias = quranSigning.getProperty("keyAlias")
                 keyPassword = quranSigning.getProperty("keyPassword")
+                storeType = quranSigning.getProperty("storeType", "JKS")
             }
         }
     }
@@ -63,8 +64,8 @@ android {
     buildTypes {
         release {
             signingConfig = when {
-                quranSigningFile.exists() -> signingConfigs.getByName("quranRelease")
                 quranTestSigning -> signingConfigs.getByName("debug")
+                quranSigningFile.exists() -> signingConfigs.getByName("quranRelease")
                 else -> null
             }
         }

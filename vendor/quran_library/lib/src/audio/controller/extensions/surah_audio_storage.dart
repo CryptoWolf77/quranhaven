@@ -10,8 +10,10 @@ extension SurahAudioStorage on AudioCtrl {
         state.box.read(StorageConstants.selectedSurahIndex) ?? 0;
     final int lastPosition = state.box.read(StorageConstants.lastPosition) ?? 0;
 
-    state.currentAudioListSurahNum.value = lastSurah;
-    state.selectedSurahIndex.value = selectedSurah;
+    final restored = lastSurah >= 1 && lastSurah <= 114
+        ? lastSurah
+        : (selectedSurah >= 0 && selectedSurah < 114 ? selectedSurah + 1 : 1);
+    state.selectSurahNumber(restored);
     state.lastPosition.value = lastPosition;
 
     log('Loaded last Surah index: ${state.selectedSurahIndex.value + 1}, last Surah ${state.currentAudioListSurahNum.value} position: ${state.lastPosition.value}');

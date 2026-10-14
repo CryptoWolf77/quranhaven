@@ -156,6 +156,29 @@ class TafsirCtrl extends GetxController {
     update(['tafsirs_menu_list']);
   }
 
+  /// Read a whole bundled/downloaded book without changing the reader selection
+  /// or fetching a missing resource. Used by app-owned search and Ayah sharing.
+  Future<String> readSavedResourceText(int index) async {
+    RangeError.checkValidIndex(index, tafsirAndTranslationsItems);
+    final resource = tafsirAndTranslationsItems[index];
+    if (resource.isCustom) throw UnsupportedError('Custom resource search');
+    if (resource.fileName == 'saadi' || resource.fileName == 'en') {
+      return _gzipJsonService.loadText(
+        'packages/quran_library/assets/${resource.fileName}.json.gz',
+      );
+    }
+    if (kIsWeb) {
+      return _webCache.readSavedText(_webResourceUrl(resource),
+          translation: resource.isTranslation);
+    }
+    final filename = resource.isTranslation
+        ? '${resource.fileName}.json'
+        : resource.databaseName;
+    final path = join(_appDir.path, filename);
+    if (!await File(path).exists()) throw StateError('Resource is not saved');
+    return _getLocalFileText(path);
+  }
+
   bool _looksLikeGzip(Uint8List bytes) {
     if (bytes.length < 2) return false;
     return bytes[0] == 0x1f && bytes[1] == 0x8b;

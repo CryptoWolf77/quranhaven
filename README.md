@@ -14,12 +14,17 @@ device, or in that browser's local storage. Downloaded content stays local too.
 Existing storage keys and the Android application ID are unchanged so an
 in-place update can retain existing local progress. Android automatic app backup
 is disabled. Uninstalling the app, clearing app/site data or browser eviction can
-erase local data; there is no remote recovery copy or local export/import tool.
+erase local data; there is no remote recovery copy. The website's Local backup
+tool exports/imports a private JSON file; downloaded books/audio are excluded.
+Keep the exported file yourself. Restore explicitly replaces current personal
+data after validation and confirmation; it is not a cloud backup or merge.
 
 Public Tafsir, translations and recitation downloads still need an internet
 connection. These requests do not upload personal reading progress. Network
-providers and existing website analytics still need accurate privacy disclosure;
-local-only personal storage does not mean the app makes no network requests.
+providers and existing website analytics are described in the multilingual
+`/privacy.html` policy; local-only personal storage does not mean the app makes
+no network requests. The owner-approved support/privacy address is
+`admin@yahyazlab.com`.
 
 ## Implemented experience
 
@@ -27,19 +32,43 @@ local-only personal storage does not mean the app makes no network requests.
 - Madinah Mushaf reader using the local `vendor/quran_library` foundation.
 - Surah/Juz/page navigation, Arabic Quran search, bookmarks and last-read resume.
 - 35 commentary resources and 9 translations; downloadable text resources.
-- Reciter selection, Surah/Ayah/word playback and native Surah audio downloads.
+- Reciter selection, Surah/Ayah playback, word-by-word memorization audio and
+  native and explicit browser Surah audio downloads.
 - Local Khatmah plans, daily targets, pause/resume and Ramadan options.
 - Local memorization ranges, repeats/delays, hide/reveal and revision markers.
 - Optional on-device reading reminders on Android and iOS.
 - Explicit browser offline preparation, verified text caches and staged updates.
 - Keyboard/semantic controls and large-text layout improvements.
-- A practical eight-topic guide in Settings, with Arabic/English/Spanish written
-  steps, twelve local GIF demonstrations, optional playback and a zoom viewer.
+- Personal Ayah notes, named collections, complete Ayah PNG/text/public-link
+  sharing and search across a whole bundled/downloaded Tafsir or translation.
+- Bundled, hash-verified Quranic Arabic Corpus v0.4 morphology: original word
+  segments, POS tags, roots/lemmas when present and raw feature codes.
+- A prominent Home usage-guide entry and 13 Arabic/English/Spanish lessons,
+  written numbered steps, real-screen H264 MP4 demonstrations and highlighted
+  pointer/click instructions, explicit playback/seek/replay and a full-screen
+  viewer. The 39 final videos use real website footage and verified Android
+  reminder footage; iOS footage is not claimed.
+- A shared open-Quran book identity for the site/app icons, plus the original
+  YahyazLab creator logo on Home/Settings. The optional creator link opens
+  `https://yahyazlab.com/` only after an external-site confirmation.
 
-Browser offline audio, personal notes, arbitrary named bookmark categories,
-Ayah-image/deep-link sharing, full Tafsir/translation search and grammar teaching
-remain backlog items. Cloud accounts and synchronization are cancelled, not
-pending features.
+The new personal/learning/browser-audio tools and guide are local build-15
+additions under acceptance; the public website remains build 13 until deployed
+and verified.
+Morphology is not a full syntactic treebank, generated Tafsir or word-meaning
+dictionary. Previously unaudited Qiraat/word-info resources remain disabled.
+Cloud accounts and synchronization are cancelled, not pending features.
+
+The original Corpus file and both copyright blocks are unchanged. Its GNU
+license, Tanzil terms, official documentation links and acquisition provenance
+are available in **Word morphology → Source and license** and
+[assets/learning/SOURCE.json](assets/learning/SOURCE.json). This separate data
+resource does not replace the canonical Mushaf or change the app's code license.
+Native file adapters are implemented: Android JSON/PNG saving uses the system
+document chooser without broad storage access, and iOS saving/sharing uses the
+system share sheet. Imports use the chosen-file picker and a validated preview.
+Actual Android emulator JSON export/preview/cancel/safety-copy/restore and PNG
+saving have passed. No physical iOS result is implied by shared Dart tests.
 
 ## Quran content independence
 
@@ -70,15 +99,20 @@ existing application ID `org.quranflutter.quran_flutter`.
 
 See [PLAN.md](PLAN.md) for the current checklist. Phases 1–6 are implemented
 under the revised local-only scope. Phase 7 still needs wider physical-device,
-Safari/iOS and accessibility acceptance. Phase 8 needs production signing,
-store setup, privacy disclosures and macOS/Xcode access for iOS.
+Safari/iOS and accessibility acceptance. An owner-authorized local Android
+upload key is configured; Phase 8 still needs production-artifact verification,
+store setup/legal declarations and macOS/Xcode access for iOS.
 
-Website build 7 was published and verified on 2026-10-12 with local-only storage,
-the multilingual usage guide, reader accessibility fixes and release-isolated
-offline downloads. Android test build 8 additionally fixes the audio-service
+Website build 13 was published and verified on 2026-10-12 with local-only storage,
+the multilingual guide, corrected page-field focus and keyboard dismissal,
+durable plan saves, accessible resource deletion, refreshed reciter endpoints
+and release-keyed online/offline entrypoints. Tafsir now shows loading and
+failure feedback rather than an empty panel. Unprepared Qiraat/grammar download
+panels are hidden; this release supports the agreed Hafs Mushaf.
+Android test build 8 additionally fixes the audio-service
 icons needed by background/media controls and passed in-place emulator upgrade
 and offline playback checks. It is test-signed, not store-ready. The website and
-APK have separate build numbers; the current public website remains build 7.
+APK have separate build numbers; the current public website is build 13.
 Preparing a build locally does not update the public website automatically.
 Historical cloud verification is retained as history in
 `backend/VERIFICATION.md`; it is not part of the current app. Retiring the old

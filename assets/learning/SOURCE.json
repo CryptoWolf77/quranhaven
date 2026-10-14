@@ -1,0 +1,18 @@
+{
+  "resource": "Quranic Arabic Corpus morphology",
+  "version": "0.4",
+  "copyright": "Copyright (C) 2011 Kais Dukes",
+  "officialSource": "https://corpus.quran.com/download/",
+  "documentation": "https://corpus.quran.com/documentation/",
+  "license": "GNU General Public License; original file terms and Tanzil notice retained verbatim",
+  "file": "quranic-corpus-morphology-0.4.txt",
+  "bytes": 6309503,
+  "sha256": "a1d12923815341face765083805d2148ed2d9f5cc3f7d6665219d887675d8c46",
+  "acquisition": "Unmodified public redistribution, independently compared against a second redistribution. Not downloaded directly through the publisher's email form.",
+  "matchingRedistributions": [
+    "https://raw.githubusercontent.com/bnjasim/quranic-corpus/master/quranic-corpus-morphology-0.4.txt",
+    "https://raw.githubusercontent.com/Itqan-community/quran-analysis-core-rust/main/data/quranic-corpus-morphology-0.4.txt"
+  ],
+  "verifiedUtcDate": "2026-10-12",
+  "use": "Separate educational morphology resource; does not replace the canonical King Fahd Hafs Mushaf text. No modified dataset is distributed. No full syntactic treebank or word-meaning coverage is claimed."
+}

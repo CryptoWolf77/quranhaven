@@ -31,6 +31,7 @@ class MockCaches {
 function manifest(version = VERSION) {
   const contents = new Map([
     ["/index.html", "<html>Quran Haven</html>"],
+    ["/privacy.html", "<html>Quran Haven Privacy</html>"],
     ["/flutter_bootstrap.js", "bootstrap"],
     ["/main.dart.js", "application"],
     ["/assets/AssetManifest.bin", "public-assets"],
@@ -73,7 +74,8 @@ function harness(options = {}) {
       if (pathname === "/offline-manifest.json") return new Response(JSON.stringify(fixture.data));
       if (blockAsset && pathname !== "/offline-manifest.json") await blockAsset(init.signal, pathname);
       if (pathname === "/offline-index.bin") return new Response(corrupt ? "corrupt" : fixture.contents.get("/index.html"), {headers: {"Content-Type": "application/octet-stream"}});
-      if (pathname === "/index.html" && injectedHTML) return new Response(fixture.contents.get(pathname) + '<script src="/injected-analytics.js"></script>', {headers: {"Content-Type": "text/html"}});
+      if (pathname === "/offline-privacy.bin") return new Response(corrupt ? "corrupt" : fixture.contents.get("/privacy.html"), {headers: {"Content-Type": "application/octet-stream"}});
+      if (["/index.html", "/privacy.html"].includes(pathname) && injectedHTML) return new Response(fixture.contents.get(pathname) + '<script src="/injected-analytics.js"></script>', {headers: {"Content-Type": "text/html"}});
       if (fixture.contents.has(pathname)) return new Response(corrupt ? "corrupt" : fixture.contents.get(pathname), {headers: {"Content-Type": pathname.endsWith(".js") ? "application/javascript" : "text/html"}});
       return new Response("not found", {status: 404});
     },
@@ -108,12 +110,48 @@ test("installation and status never download the bundle", async () => {
   assert.equal(app.requests.length, 0);
 });
 
+test("saved tutorial video supports bounded ranges only after full-file verification", async () => {
+  const app = harness();
+  const pathname = "/assets/assets/tutorials/ar/reader.mp4";
+  const body = "0123456789-video-fixture";
+  app.fixture.contents.set(pathname, body);
+  app.fixture.data.files.push({path: pathname, bytes: body.length, sha256: createHash("sha256").update(body).digest("hex")});
+  app.fixture.data.totalBytes += body.length;
+  assert.equal((await app.call("prepare")).state, "ready");
+  app.setOffline(true);
+  for (const [range, expected, contentRange] of [
+    ["bytes=2-5", "2345", `bytes 2-5/${body.length}`],
+    ["bytes=10-", body.slice(10), `bytes 10-${body.length - 1}/${body.length}`],
+    ["bytes=-7", body.slice(-7), `bytes ${body.length - 7}-${body.length - 1}/${body.length}`],
+    ["bytes=0-999", body, `bytes 0-${body.length - 1}/${body.length}`],
+  ]) {
+    const {response} = await app.fetch(pathname, {headers: {Range: range}});
+    assert.equal(response.status, 206);
+    assert.equal(response.headers.get("Content-Range"), contentRange);
+    assert.equal(response.headers.get("Accept-Ranges"), "bytes");
+    assert.equal(response.headers.get("Content-Type"), "video/mp4");
+    assert.equal(await response.text(), expected);
+  }
+  for (const range of ["bytes=100-", "bytes=8-2", "bytes=-0", "bytes=0-2,4-6", "bytes=-", "bytes=9007199254740992-"]) {
+    const {response} = await app.fetch(pathname, {headers: {Range: range}});
+    assert.equal(response.status, 416, range);
+    assert.equal(response.headers.get("Content-Range"), `bytes */${body.length}`);
+  }
+  const full = await app.fetch(pathname, {headers: {Range: "bytes=1-3", "If-Range": '"old-file"'}});
+  assert.equal(full.response.status, 200);
+  assert.equal(await full.response.text(), body);
+  const cache = await app.caches.open("quran-haven-shell-v1-" + VERSION);
+  await cache.put(ORIGIN + pathname, new Response("corrupt"));
+  await assert.rejects(app.fetch(pathname, {headers: {Range: "bytes=0-2"}}), /offline/);
+  assert.equal(await cache.match(ORIGIN + pathname), undefined);
+});
+
 test("explicit prepare verifies all files and survives a worker restart offline", async () => {
   const app = harness();
   const done = await app.call("prepare");
   assert.equal(done.state, "ready");
   assert.equal(done.completedBytes, app.fixture.data.totalBytes);
-  assert.equal(done.completedFiles, 4);
+  assert.equal(done.completedFiles, app.fixture.data.files.length);
   assert.equal(done.persisted, true);
   assert.ok(app.messages.some(message => message.status.state === "preparing"));
   assert.ok(app.requests.every(request => request.init.credentials === "omit" && request.init.redirect === "error"));
@@ -125,6 +163,38 @@ test("explicit prepare verifies all files and survives a worker restart offline"
   assert.equal(restarted.requests.length, 0);
 });
 
+test("one transient transport retry keeps the same release URL and strict verification", async () => {
+  const app = harness();
+  let attempts = 0;
+  app.setBlockAsset(async (_signal, pathname) => {
+    if (pathname === "/main.dart.js" && ++attempts === 1) throw new TypeError("temporary transport failure");
+  });
+  const result = await app.call("prepare");
+  assert.equal(result.state, "ready");
+  assert.equal(attempts, 2);
+  const requests = app.requests.filter(request => new URL(request.url).pathname === "/main.dart.js");
+  assert.equal(requests.length, 2);
+  assert.equal(requests[0].url, requests[1].url);
+  assert.ok(requests.every(request => request.init.redirect === "error" && request.init.credentials === "omit"));
+});
+
+test("a repeated transport failure stops after two attempts and never activates partial data", async () => {
+  const app = harness();
+  let attempts = 0;
+  app.setBlockAsset(async (_signal, pathname) => {
+    if (pathname === "/main.dart.js") {
+      attempts++;
+      throw new TypeError("unavailable transport");
+    }
+  });
+  const result = await app.call("prepare");
+  assert.equal(result.errorCode, "download_failed");
+  assert.equal(attempts, 2);
+  assert.equal(result.offlineReady, false);
+  assert.equal((await app.call("status")).state, "unprepared");
+  assert.deepEqual(await app.caches.keys(), []);
+});
+
 test("HTML edge injection is irrelevant to strict offline index integrity", async () => {
   const app = harness();
   app.setInjectedHTML(true);
@@ -133,14 +203,20 @@ test("HTML edge injection is irrelevant to strict offline index integrity", asyn
   assert.equal((await app.call("prepare")).state, "ready");
   const downloads = app.requests.slice(requestStart).map(request => new URL(request.url).pathname);
   assert.ok(downloads.includes("/offline-index.bin"));
+  assert.ok(downloads.includes("/offline-privacy.bin"));
   assert.ok(!downloads.includes("/index.html"));
+  assert.ok(!downloads.includes("/privacy.html"));
   app.setOffline(true);
   const loaded = await app.fetch("/", {mode: "navigate"});
   assert.equal(await loaded.response.text(), app.fixture.contents.get("/index.html"));
   assert.equal(loaded.response.headers.get("Content-Type"), "text/html; charset=utf-8");
   assert.equal((await app.fetch("/offline-index.bin")).intercepted, false);
+  const privacy = await app.fetch("/privacy.html?lang=ar", {mode: "navigate"});
+  assert.equal(await privacy.response.text(), app.fixture.contents.get("/privacy.html"));
+  assert.equal(privacy.response.headers.get("Content-Type"), "text/html; charset=utf-8");
+  assert.equal((await app.fetch("/offline-privacy.bin")).intercepted, false);
   const keys = await (await app.caches.open("quran-haven-shell-v1-" + VERSION)).keys();
-  assert.ok(!keys.some(request => new URL(request.url).pathname === "/offline-index.bin"));
+  assert.ok(!keys.some(request => ["/offline-index.bin", "/offline-privacy.bin"].includes(new URL(request.url).pathname)));
 });
 
 test("auth, API, Quran content, health, arbitrary navigation and queries are never intercepted", async () => {
@@ -149,6 +225,8 @@ test("auth, API, Quran content, health, arbitrary navigation and queries are nev
   for (const [pathname, options] of [
     ["/v1/tafsir/es.json.gz", {}], ["/api/login", {}], ["/health", {}],
     ["/account", {mode: "navigate"}], ["/index.html?token=private", {}],
+    ["/privacy.html?token=private", {}], ["/privacy.html?lang=fr", {}],
+    ["/privacy.html?lang=ar&token=private", {}],
     ["/main.dart.js", {headers: {Authorization: "Bearer private"}}],
     ["/main.dart.js", {headers: {Cookie: "private-session"}}],
     ["/main.dart.js", {method: "PUT"}], ["/main.dart.js", {origin: "https://api.quranhaven.org"}],
@@ -201,7 +279,7 @@ test("cancel removes partial work; removal touches only shell-owned caches", asy
 });
 
 test("invalid manifests cannot enroll sensitive paths or duplicate files", async () => {
-  for (const illegal of ["/v1/auth/login", "/v1/tafsir/es.json.gz", "/offline-index.bin", "/assets/.env", "//other.example/file", "/assets/%2e%2e/account"] ) {
+  for (const illegal of ["/v1/auth/login", "/v1/tafsir/es.json.gz", "/offline-index.bin", "/offline-privacy.bin", "/assets/.env", "//other.example/file", "/assets/%2e%2e/account"] ) {
     const app = harness();
     app.fixture.data.files[0].path = illegal;
     assert.equal((await app.call("prepare")).errorCode, "invalid_manifest");
@@ -249,7 +327,8 @@ test("large files are not downloaded together beyond the batch byte budget", asy
   let runningBytes = 0;
   let peakBytes = 0;
   app.setBlockAsset(async (_signal, pathname) => {
-    const entry = app.fixture.data.files.find(file => file.path === (pathname === "/offline-index.bin" ? "/index.html" : pathname));
+    const canonical = pathname === "/offline-index.bin" ? "/index.html" : pathname === "/offline-privacy.bin" ? "/privacy.html" : pathname;
+    const entry = app.fixture.data.files.find(file => file.path === canonical);
     runningBytes += entry.bytes;
     peakBytes = Math.max(peakBytes, runningBytes);
     await new Promise(resolve => setTimeout(resolve, 5));
@@ -433,4 +512,31 @@ test("release-keyed bootstrap and entrypoint reuse only the matching verified ca
   app.setOffline(false);
   await app.fetch("/main.dart.js?quran-release=" + NEXT);
   assert.equal(app.requests.at(-1).url, ORIGIN + "/main.dart.js?quran-release=" + NEXT);
+});
+
+test("preparation timeout follows inactivity, not total elapsed download time", async () => {
+  const bootstrap = fs.readFileSync(path.join(__dirname, "../web/flutter_bootstrap.js"), "utf8");
+  const events = new Map(), timers = new Map(); let clock = 0, id = 0, reply;
+  const timer = (fn, ms) => { const key = ++id; timers.set(key, {fn, due:clock + ms}); return key; };
+  const advance = ms => { clock += ms; for(const [key,t] of [...timers])if(t.due <= clock){timers.delete(key);t.fn();} };
+  const worker = {postMessage: (_data, ports) => { reply = ports[0]; }};
+  const registration = {active: worker};
+  const serviceWorker = {register:async()=>registration,ready:Promise.resolve(registration),addEventListener:(name,fn)=>events.set(name,fn)};
+  class Channel {constructor(){this.port1={close:()=>{},onmessage:null};this.port2={postMessage:data=>queueMicrotask(()=>this.port1.onmessage?.({data}))};}}
+  const window={isSecureContext:true,dispatchEvent:()=>{},location:{reload:()=>{}}};
+  const notice={style:{},setAttribute:()=>{},remove:()=>{}};
+  const context=vm.createContext({window,navigator:{serviceWorker},MessageChannel:Channel,
+    CustomEvent:class{constructor(type,options){this.type=type;this.detail=options.detail;}},
+    document:{createElement:()=>notice,body:{appendChild:()=>{}}},setTimeout:timer,clearTimeout:key=>timers.delete(key),
+    _flutter:{buildConfig:{builds:[{mainJsPath:'main.dart.js'}]},loader:{load:options=>options.onEntrypointLoaded({initializeEngine:async()=>({runApp:async()=>{}})})}}});
+  vm.runInContext(bootstrap.replace('{{flutter_js}}','').replace('{{flutter_build_config}}','').replace('__QURAN_OFFLINE_VERSION__',VERSION),context);
+  const preparation=window.quranOffline.prepare();await new Promise(resolve=>setImmediate(resolve));
+  for(let n=0;n<20;n++){
+    advance(150000);events.get('message')({data:{type:'quran-offline-status',status:{supported:true,state:'preparing',completedFiles:n}}});
+    assert.equal(window.quranOffline.lastStatus.state,'preparing');
+  }
+  reply.postMessage({state:'ready',supported:true});assert.equal((await preparation).state,'ready');
+  advance(300000);assert.equal(window.quranOffline.lastStatus.state,'ready');
+  const stalled=window.quranOffline.prepare();await new Promise(resolve=>setImmediate(resolve));advance(180001);
+  assert.equal((await stalled).errorCode,'timeout');
 });

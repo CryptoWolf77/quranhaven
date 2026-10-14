@@ -1,0 +1,959 @@
+{
+  "schemaVersion": 1,
+  "language": "en",
+  "scope": "General navigation is recorded from the real website. The reminder segment is recorded from the real Android app. Layout can differ between devices; no iOS device recording is claimed.",
+  "clips": {
+    "reader": {
+      "title": "Read and find your place",
+      "durationSeconds": 30.45,
+      "video": "reader.mp4",
+      "poster": "reader.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 5.5,
+          "instruction": "Open the Mushaf from Home",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 5.5,
+          "endSeconds": 8.75,
+          "instruction": "Open Quick navigation in the reader toolbar",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 8.75,
+          "endSeconds": 12.05,
+          "instruction": "Open the Juz index",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 12.05,
+          "endSeconds": 15.15,
+          "instruction": "Switch to the Surah index",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 15.15,
+          "endSeconds": 20.35,
+          "instruction": "Choose the Surah you want to read",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 20.35,
+          "endSeconds": 23.6,
+          "instruction": "Press Go to page to open the chosen page",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 7,
+          "startSeconds": 23.6,
+          "endSeconds": 27.15,
+          "instruction": "Use the page arrow, or swipe on a phone",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 8,
+          "startSeconds": 27.15,
+          "endSeconds": 30.45,
+          "instruction": "Continue from your last reading position on Home",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "search": {
+      "title": "Search and save bookmarks",
+      "durationSeconds": 25.75,
+      "video": "search.mp4",
+      "poster": "search.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.7,
+          "instruction": "Search the Arabic Quran text",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.7,
+          "endSeconds": 8.9,
+          "instruction": "Type the word or phrase you want",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 8.9,
+          "endSeconds": 14.1,
+          "instruction": "Choose a result to open its place in the Mushaf",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 14.1,
+          "endSeconds": 19.35,
+          "instruction": "Press and hold an Ayah to open its actions",
+          "action": "hold",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 19.35,
+          "endSeconds": 22.55,
+          "instruction": "Choose a bookmark color",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 22.55,
+          "endSeconds": 25.75,
+          "instruction": "Open Bookmarks to return to your saved Ayah",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "library": {
+      "title": "Choose Tafsir and translations",
+      "durationSeconds": 28.2,
+      "video": "library.mp4",
+      "poster": "library.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.35,
+          "instruction": "Open Translations from Library",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.35,
+          "endSeconds": 7.9,
+          "instruction": "Download Español and wait until it is ready",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 7.9,
+          "endSeconds": 11.1,
+          "instruction": "Open Tafsir in the Ayah actions to read the translation",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 11.1,
+          "endSeconds": 14.5,
+          "instruction": "Interface and translation languages are independent",
+          "action": "observe",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 14.5,
+          "endSeconds": 17.7,
+          "instruction": "Open Tafsir from Library",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 17.7,
+          "endSeconds": 21.3,
+          "instruction": "Select the bundled Arabic Saadi Tafsir",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 7,
+          "startSeconds": 21.3,
+          "endSeconds": 24.5,
+          "instruction": "Open Tafsir again from the Ayah actions",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 8,
+          "startSeconds": 24.5,
+          "endSeconds": 28.2,
+          "instruction": "Read the Arabic Tafsir from the saved source",
+          "action": "observe",
+          "platform": "website"
+        }
+      ]
+    },
+    "audio": {
+      "title": "Listen to recitations",
+      "durationSeconds": 29.75,
+      "video": "audio.mp4",
+      "poster": "audio.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.2,
+          "instruction": "Open Reader controls under Recitations",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.2,
+          "endSeconds": 6.4,
+          "instruction": "Open the Ayah reciter picker",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 6.4,
+          "endSeconds": 9.35,
+          "instruction": "Choose a reciter from the available list",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 9.35,
+          "endSeconds": 12.65,
+          "instruction": "Return to Library and open Recitations",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 12.65,
+          "endSeconds": 15.95,
+          "instruction": "Open the Surah selection menu",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 15.95,
+          "endSeconds": 18.9,
+          "instruction": "Choose the Surah you want to hear",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 7,
+          "startSeconds": 18.9,
+          "endSeconds": 22.85,
+          "instruction": "Press Play to begin listening",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 8,
+          "startSeconds": 22.85,
+          "endSeconds": 26.05,
+          "instruction": "Press Stop in the audio controls",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 9,
+          "startSeconds": 26.05,
+          "endSeconds": 29.75,
+          "instruction": "Resume from the saved listening position",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "offline": {
+      "title": "Prepare before going offline",
+      "durationSeconds": 15.9,
+      "video": "offline.mp4",
+      "poster": "offline.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.5,
+          "instruction": "Prepare the website for offline reading in Settings",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.5,
+          "endSeconds": 7.4,
+          "instruction": "Keep the tab open until the ready message appears",
+          "action": "observe",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 7.4,
+          "endSeconds": 12.65,
+          "instruction": "Reopen the Mushaf offline to check the saved app",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 12.65,
+          "endSeconds": 15.9,
+          "instruction": "Books and audio are separate from the offline app",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "plans": {
+      "title": "Build a reading and memorization routine",
+      "durationSeconds": 43.3,
+      "video": "plans.mp4",
+      "poster": "plans.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.2,
+          "instruction": "Open Create Khatmah plan",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.2,
+          "endSeconds": 8.4,
+          "instruction": "Choose a duration, then press Start plan",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 8.4,
+          "endSeconds": 11.6,
+          "instruction": "Mark today’s target after completing your reading",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 11.6,
+          "endSeconds": 14.8,
+          "instruction": "Switch to Memorization",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 14.8,
+          "endSeconds": 18.1,
+          "instruction": "Open Create memorization plan",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 18.1,
+          "endSeconds": 23.3,
+          "instruction": "Set the Ayah range, then press Start memorizing",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 7,
+          "startSeconds": 23.3,
+          "endSeconds": 27.3,
+          "instruction": "Repeat the current Ayah for listening and review",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 8,
+          "startSeconds": 27.3,
+          "endSeconds": 30.5,
+          "instruction": "Hide the Ayah text to test your memory",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 9,
+          "startSeconds": 30.5,
+          "endSeconds": 33.7,
+          "instruction": "Reveal the text to check what you remembered",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 10,
+          "startSeconds": 33.7,
+          "endSeconds": 36.9,
+          "instruction": "Mark the Ayah for revision",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 11,
+          "startSeconds": 36.9,
+          "endSeconds": 40.1,
+          "instruction": "Mark the Ayah memorized once you know it",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 12,
+          "startSeconds": 40.1,
+          "endSeconds": 43.3,
+          "instruction": "Return to the previous Ayah in your range",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "settings": {
+      "title": "Make the experience comfortable",
+      "durationSeconds": 35.5,
+      "video": "settings.mp4",
+      "poster": "settings.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.2,
+          "instruction": "Switch the interface using the language choices",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.2,
+          "endSeconds": 6.4,
+          "instruction": "Choose your language; Quran text remains Arabic",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 6.4,
+          "endSeconds": 9.6,
+          "instruction": "Try the Dark appearance",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 9.6,
+          "endSeconds": 12.8,
+          "instruction": "Choose Light or the system appearance",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 12.8,
+          "endSeconds": 16.6,
+          "instruction": "In the Android app, enable the daily reading reminder",
+          "action": "tap",
+          "platform": "android"
+        },
+        {
+          "number": 6,
+          "startSeconds": 16.6,
+          "endSeconds": 19.9,
+          "instruction": "Open Reminder time to change it",
+          "action": "tap",
+          "platform": "android"
+        },
+        {
+          "number": 7,
+          "startSeconds": 19.9,
+          "endSeconds": 22.75,
+          "instruction": "Choose keyboard time entry",
+          "action": "tap",
+          "platform": "android"
+        },
+        {
+          "number": 8,
+          "startSeconds": 22.75,
+          "endSeconds": 24.4,
+          "instruction": "Press the Minute field to edit it",
+          "action": "tap",
+          "platform": "android"
+        },
+        {
+          "number": 9,
+          "startSeconds": 24.4,
+          "endSeconds": 26.9,
+          "instruction": "Enter the minutes; here we use 20",
+          "action": "input",
+          "platform": "android"
+        },
+        {
+          "number": 10,
+          "startSeconds": 26.9,
+          "endSeconds": 30.1,
+          "instruction": "Press OK to save the time",
+          "action": "tap",
+          "platform": "android"
+        },
+        {
+          "number": 11,
+          "startSeconds": 30.1,
+          "endSeconds": 32.1,
+          "instruction": "Check the new time with the reminder still enabled",
+          "action": "observe",
+          "platform": "android"
+        },
+        {
+          "number": 12,
+          "startSeconds": 32.1,
+          "endSeconds": 35.5,
+          "instruction": "You can turn the reminder off at any time",
+          "action": "tap",
+          "platform": "android"
+        }
+      ]
+    },
+    "storage": {
+      "title": "Understand your local data",
+      "durationSeconds": 12.75,
+      "video": "storage.mp4",
+      "poster": "storage.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 4.2,
+          "instruction": "Your data stays on this device; there are no cloud accounts",
+          "action": "observe",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 4.2,
+          "endSeconds": 8.4,
+          "instruction": "Use the same browser profile to retain your data",
+          "action": "observe",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 8.4,
+          "endSeconds": 12.75,
+          "instruction": "Clearing app data can erase saved items; export a backup",
+          "action": "observe",
+          "platform": "website"
+        }
+      ]
+    },
+    "personal": {
+      "title": "Notes and collections",
+      "durationSeconds": 51.6,
+      "video": "personal.mp4",
+      "poster": "personal.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.2,
+          "instruction": "Open Library, then My Quran space",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.2,
+          "endSeconds": 6.4,
+          "instruction": "Open Add note and choose its Surah and Ayah",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 6.4,
+          "endSeconds": 11.0,
+          "instruction": "Enter a title and write your reflection",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 11.0,
+          "endSeconds": 14.2,
+          "instruction": "Save the note on your device",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 14.2,
+          "endSeconds": 17.4,
+          "instruction": "Open Edit note to update your reflection",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 17.4,
+          "endSeconds": 20.6,
+          "instruction": "Save your edited note",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 7,
+          "startSeconds": 20.6,
+          "endSeconds": 23.8,
+          "instruction": "Switch to Collections",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 8,
+          "startSeconds": 23.8,
+          "endSeconds": 27.0,
+          "instruction": "Open Create collection",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 9,
+          "startSeconds": 27.0,
+          "endSeconds": 30.25,
+          "instruction": "Name your collection, then save it",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 10,
+          "startSeconds": 30.25,
+          "endSeconds": 33.45,
+          "instruction": "Open Add Ayah in the collection",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 11,
+          "startSeconds": 33.45,
+          "endSeconds": 36.6,
+          "instruction": "Choose the Surah and Ayah, then save",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 12,
+          "startSeconds": 36.6,
+          "endSeconds": 39.8,
+          "instruction": "Press the saved Ayah to open it in the reader",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 13,
+          "startSeconds": 39.8,
+          "endSeconds": 45.0,
+          "instruction": "Press and hold the Ayah to open its actions",
+          "action": "hold",
+          "platform": "website"
+        },
+        {
+          "number": 14,
+          "startSeconds": 45.0,
+          "endSeconds": 48.4,
+          "instruction": "Choose Add to collection in the Ayah actions",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 15,
+          "startSeconds": 48.4,
+          "endSeconds": 51.6,
+          "instruction": "Choose the collection for this Ayah",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "backup": {
+      "title": "Local backup",
+      "durationSeconds": 22.8,
+      "video": "backup.mp4",
+      "poster": "backup.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.2,
+          "instruction": "Export a private backup and keep the file safe",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.2,
+          "endSeconds": 6.55,
+          "instruction": "Choose a backup file from your device",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 6.55,
+          "endSeconds": 10.45,
+          "instruction": "Review the backup date and contents before restoring",
+          "action": "observe",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 10.45,
+          "endSeconds": 14.05,
+          "instruction": "Save a safety copy of your current data first",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 14.05,
+          "endSeconds": 17.6,
+          "instruction": "Confirm restore; it replaces data rather than merging",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 17.6,
+          "endSeconds": 22.8,
+          "instruction": "Reload the app to use the restored data",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "share-search": {
+      "title": "Share an Ayah and search books",
+      "durationSeconds": 39.7,
+      "video": "share-search.mp4",
+      "poster": "share-search.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 5.25,
+          "instruction": "Press and hold an Ayah to open its actions",
+          "action": "hold",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 5.25,
+          "endSeconds": 8.45,
+          "instruction": "Open Share and preview the complete Ayah",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 8.45,
+          "endSeconds": 11.8,
+          "instruction": "Open the saved-translation option",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 11.8,
+          "endSeconds": 14.8,
+          "instruction": "Choose a translation; here we select Español",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 14.8,
+          "endSeconds": 18.0,
+          "instruction": "Save the Ayah image on your device",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 18.0,
+          "endSeconds": 21.15,
+          "instruction": "Copy the Ayah text for sharing",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 7,
+          "startSeconds": 21.15,
+          "endSeconds": 24.35,
+          "instruction": "Copy the Ayah link; private notes are not included",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 8,
+          "startSeconds": 24.35,
+          "endSeconds": 27.55,
+          "instruction": "Open saved-book search from Library",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 9,
+          "startSeconds": 27.55,
+          "endSeconds": 31.1,
+          "instruction": "Search every Ayah in the saved resource",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 10,
+          "startSeconds": 31.1,
+          "endSeconds": 36.3,
+          "instruction": "Go to the next page of results",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 11,
+          "startSeconds": 36.3,
+          "endSeconds": 39.7,
+          "instruction": "Open a result to read its Ayah in the Mushaf",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "saved-audio": {
+      "title": "Saved Surah recordings",
+      "durationSeconds": 25.65,
+      "video": "saved-audio.mp4",
+      "poster": "saved-audio.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.25,
+          "instruction": "Download the Surah for the selected reciter",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.25,
+          "endSeconds": 6.45,
+          "instruction": "Wait until saved; downloading never autoplays",
+          "action": "observe",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 6.45,
+          "endSeconds": 10.2,
+          "instruction": "Play the Surah from Saved recordings",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 10.2,
+          "endSeconds": 16.15,
+          "instruction": "Open Delete for this saved recording",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 16.15,
+          "endSeconds": 19.5,
+          "instruction": "Cancel deletion to keep the recording",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 19.5,
+          "endSeconds": 22.7,
+          "instruction": "Open Delete again to remove the recording",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 7,
+          "startSeconds": 22.7,
+          "endSeconds": 25.65,
+          "instruction": "Confirm deletion; only this recording is removed",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "morphology": {
+      "title": "Word morphology",
+      "durationSeconds": 16.6,
+      "video": "morphology.mp4",
+      "poster": "morphology.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.25,
+          "instruction": "Open Word morphology from Library",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.25,
+          "endSeconds": 6.5,
+          "instruction": "Explore words, their segments, roots and lemmas",
+          "action": "scroll",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 6.5,
+          "endSeconds": 9.7,
+          "instruction": "Go to the next Ayah to explore its words",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 9.7,
+          "endSeconds": 13.15,
+          "instruction": "Open the original source documentation",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 13.15,
+          "endSeconds": 16.6,
+          "instruction": "Read the source and license notices stored locally",
+          "action": "observe",
+          "platform": "website"
+        }
+      ]
+    }
+  }
+}

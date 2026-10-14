@@ -1,6 +1,65 @@
 part of '../audio.dart';
 
 class AudioCtrl extends GetxController {
+  /// Optional host-app resolver for a verified browser-local recording.
+  /// Return null on a cache miss; native file paths are never changed.
+  static Future<String?> Function(String remoteUrl)? webSurahAudioResolver;
+
+  CancelToken? _offlineSurahCancelToken;
+
+  Future<bool> downloadSurahForOffline({required int surahNumber}) async {
+    if (kIsWeb) throw UnsupportedError('Use the verified browser cache');
+    if (surahNumber < 1 || surahNumber > 114) {
+      throw RangeError.range(surahNumber, 1, 114);
+    }
+    if (_offlineSurahCancelToken != null || state.isDownloading.value) {
+      throw StateError('An audio download is already active');
+    }
+    final readerIndex = state.surahReaderIndex.value;
+    final reader = ReadersConstants.activeSurahReaders[readerIndex];
+    final token = CancelToken();
+    final downloadDio = Dio(
+      BaseOptions(connectTimeout: const Duration(seconds: 20)),
+    );
+    _offlineSurahCancelToken = token;
+    state.isDownloading.value = true;
+    try {
+      final directory = await state.dir;
+      final success = await NativeSurahDownloader.download(
+        directory: directory.path,
+        readerPath: reader.readerNamePath,
+        recordingRoot: reader.recordingRoot,
+        surahNumber: surahNumber,
+        dio: downloadDio,
+        cancelToken: token,
+        onProgress: (received, total) {
+          state.downloadProgress.value = received;
+          state.fileSize.value = total;
+          state.progress.value = total > 0 ? received / total : 0;
+          state.progressString.value =
+              total > 0 ? ((received / total) * 100).toStringAsFixed(0) : '0';
+          update(['surahDownloadManager_id']);
+        },
+      );
+      if (success) {
+        state.surahDownloadStatus.value = {
+          ...state.surahDownloadStatus.value,
+          '${readerIndex}_$surahNumber': true,
+        };
+      }
+      return success;
+    } finally {
+      downloadDio.close(force: true);
+      _offlineSurahCancelToken = null;
+      state.isDownloading.value = false;
+      update(['surahDownloadManager_id']);
+    }
+  }
+
+  void cancelOfflineSurahDownload() {
+    _offlineSurahCancelToken?.cancel('Request cancelled');
+  }
+
   // AudioCtrl._();
   static AudioCtrl get instance => Get.isRegistered<AudioCtrl>()
       ? Get.find<AudioCtrl>()

@@ -4,3 +4,9 @@
 # Preserve publisher data and verified resource hashes on every platform.
 content/public/** -text
 vendor/quran_library/assets/** -text
+assets/learning/** -text
+# Original annotation has CRLF throughout; audit it by the recorded byte hash,
+# not a normalized text diff. Preserve font notices and media provenance too.
+assets/learning/quranic-corpus-morphology-0.4.txt -diff
+assets/fonts/OFL-NotoSansSymbols.txt -text whitespace=-blank-at-eol
+assets/tutorials/** -text whitespace=cr-at-eol

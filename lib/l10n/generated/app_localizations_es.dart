@@ -9,6 +9,554 @@ class AppLocalizationsEs extends AppLocalizations {
   AppLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
+  String get corpusEmptyForm => 'Sin forma escrita independiente en la fuente';
+
+  @override
+  String get corpusAcquisition => 'Registro de obtención y procedencia';
+
+  @override
+  String get corpusLearning => 'Morfología de palabras';
+
+  @override
+  String get corpusLearningBody =>
+      'Explora los segmentos, etiquetas gramaticales, raíces y lemas del Quranic Arabic Corpus v0.4 original. Es un recurso de estudio, no un sustituto del texto del Mushaf del Rey Fahd.';
+
+  @override
+  String get corpusOffline => 'Incluido para estudiar sin conexión';
+
+  @override
+  String get corpusWord => 'Palabra';
+
+  @override
+  String get corpusSegment => 'Segmento';
+
+  @override
+  String get corpusPartOfSpeech => 'Categoría gramatical';
+
+  @override
+  String get corpusRoot => 'Raíz';
+
+  @override
+  String get corpusLemma => 'Lema';
+
+  @override
+  String get corpusOriginalForm => 'Forma original en Buckwalter';
+
+  @override
+  String get corpusOriginalCodes => 'Códigos originales';
+
+  @override
+  String get corpusSource => 'Fuente y licencia';
+
+  @override
+  String get corpusSourceBody =>
+      'Los datos originales y sus avisos se conservan sin cambios. La numeración y las formas siguen el Corpus, independientemente del lector. Se muestran los códigos originales, sin generar interpretaciones ni traducciones.';
+
+  @override
+  String get corpusLoadFailed =>
+      'No se pudo verificar o cargar el recurso completo. No se muestra un análisis parcial. Inténtalo de nuevo.';
+
+  @override
+  String get corpusPreviousAyah => 'Aleya anterior';
+
+  @override
+  String get corpusNextAyah => 'Aleya siguiente';
+
+  @override
+  String get corpusPrefix => 'Prefijo';
+
+  @override
+  String get corpusStem => 'Tema';
+
+  @override
+  String get corpusSuffix => 'Sufijo';
+
+  @override
+  String get corpusSourceDownload => 'Fuente oficial y actualizaciones';
+
+  @override
+  String get corpusTagsetDocs => 'Documentación gramatical oficial';
+
+  @override
+  String get corpusFeaturesDocs => 'Documentación morfológica oficial';
+
+  @override
+  String get corpusBuckwalterDocs => 'Correspondencia Buckwalter documentada';
+
+  @override
+  String get corpusTanzilSource => 'Fuente y actualizaciones de Tanzil';
+
+  @override
+  String get corpusLicense => 'Licencia GNU GPL completa de los datos';
+
+  @override
+  String get corpusIdentity => 'Identidad inmutable de los datos';
+
+  @override
+  String get corpusLinkCopied =>
+      'Enlace de fuente copiado. Ábrelo en el navegador.';
+
+  @override
+  String get corpusGuideStep1 =>
+      'Biblioteca → Morfología de palabras abre el recurso incluido. También puedes mantener pulsada una aleya en el lector y elegir Morfología de palabras.';
+
+  @override
+  String get corpusGuideStep2 =>
+      'Elige una sura y aleya o usa Anterior/Siguiente. Cada palabra muestra sus segmentos originales, etiquetas, raíces y lemas cuando existen.';
+
+  @override
+  String get corpusGuideStep3 =>
+      'Los códigos originales siguen visibles. Fuente y licencia abre los avisos intactos, la licencia y la documentación oficial. Es morfología, no tafsir automático ni un análisis sintáctico completo.';
+
+  @override
+  String get shareArabicSource =>
+      'Texto del Corán: Complejo del Rey Fahd para la impresión del Corán.';
+
+  @override
+  String get audioDownloadSelection => 'Grabación seleccionada';
+
+  @override
+  String get corpusPosN => 'Sustantivo';
+
+  @override
+  String get corpusPosPN => 'Nombre propio';
+
+  @override
+  String get corpusPosADJ => 'Adjetivo';
+
+  @override
+  String get corpusPosIMPN => 'Nombre verbal imperativo';
+
+  @override
+  String get corpusPosPRON => 'Pronombre personal';
+
+  @override
+  String get corpusPosDEM => 'Pronombre demostrativo';
+
+  @override
+  String get corpusPosREL => 'Pronombre relativo';
+
+  @override
+  String get corpusPosT => 'Adverbio de tiempo';
+
+  @override
+  String get corpusPosLOC => 'Adverbio de lugar';
+
+  @override
+  String get corpusPosV => 'Verbo';
+
+  @override
+  String get corpusPosP => 'Preposición';
+
+  @override
+  String get corpusPosDET => 'Prefijo determinante';
+
+  @override
+  String get corpusPosEMPH => 'Prefijo lām enfático';
+
+  @override
+  String get corpusPosIMPV => 'Prefijo lām imperativo';
+
+  @override
+  String get corpusPosPRP => 'Prefijo lām de finalidad';
+
+  @override
+  String get corpusPosCONJ => 'Conjunción coordinante';
+
+  @override
+  String get corpusPosSUB => 'Conjunción subordinante';
+
+  @override
+  String get corpusPosACC => 'Partícula acusativa';
+
+  @override
+  String get corpusPosAMD => 'Partícula de rectificación';
+
+  @override
+  String get corpusPosANS => 'Partícula de respuesta';
+
+  @override
+  String get corpusPosAVR => 'Partícula de rechazo';
+
+  @override
+  String get corpusPosCAUS => 'Partícula causal';
+
+  @override
+  String get corpusPosCERT => 'Partícula de certeza';
+
+  @override
+  String get corpusPosCIRC => 'Partícula circunstancial';
+
+  @override
+  String get corpusPosCOM => 'Partícula comitativa';
+
+  @override
+  String get corpusPosCOND => 'Partícula condicional';
+
+  @override
+  String get corpusPosEQ => 'Partícula de equiparación';
+
+  @override
+  String get corpusPosEXH => 'Partícula de exhortación';
+
+  @override
+  String get corpusPosEXL => 'Partícula explicativa';
+
+  @override
+  String get corpusPosEXP => 'Partícula exceptiva';
+
+  @override
+  String get corpusPosFUT => 'Partícula de futuro';
+
+  @override
+  String get corpusPosINC => 'Partícula de inicio';
+
+  @override
+  String get corpusPosINT => 'Partícula de interpretación';
+
+  @override
+  String get corpusPosINTG => 'Partícula interrogativa';
+
+  @override
+  String get corpusPosNEG => 'Partícula negativa';
+
+  @override
+  String get corpusPosPREV => 'Partícula preventiva';
+
+  @override
+  String get corpusPosPRO => 'Partícula prohibitiva';
+
+  @override
+  String get corpusPosREM => 'Partícula de reanudación';
+
+  @override
+  String get corpusPosRES => 'Partícula restrictiva';
+
+  @override
+  String get corpusPosRET => 'Partícula de rectificación';
+
+  @override
+  String get corpusPosRSLT => 'Partícula de resultado';
+
+  @override
+  String get corpusPosSUP => 'Partícula suplementaria';
+
+  @override
+  String get corpusPosSUR => 'Partícula de sorpresa';
+
+  @override
+  String get corpusPosVOC => 'Partícula vocativa';
+
+  @override
+  String get corpusPosINL => 'Letras iniciales coránicas';
+
+  @override
+  String get backupNativeHint =>
+      'En esta versión móvil, exportar copia JSON al portapapeles. Restaurar archivos y descargar PNG están disponibles en la web; las herramientas nativas aún no están activadas.';
+
+  @override
+  String get backupRecoveryFailed =>
+      'El almacenamiento rechazó restaurar y deshacer. La recuperación puede estar incompleta. Conserva la copia de seguridad y no borres los datos.';
+
+  @override
+  String get guidePersonalTitle => 'Notas y colecciones';
+
+  @override
+  String get guidePersonalStep1 =>
+      'Abre Biblioteca → Mi espacio del Corán. Crea una nota vinculada a una sura y aleya, o una colección con nombre.';
+
+  @override
+  String get guidePersonalStep2 =>
+      'Mantén pulsada una aleya y elige Añadir nota o Añadir a colección. Los marcadores de colores siguen disponibles.';
+
+  @override
+  String get guidePersonalStep3 =>
+      'Usa Editar para cambiar el texto o el nombre. Abrir aleya vuelve al lector; las eliminaciones requieren confirmación.';
+
+  @override
+  String get guideBackupStep1 =>
+      'En Ajustes → Copia local, exporta el JSON y guárdalo de forma privada y segura. Contiene tus textos, no audio ni libros descargados.';
+
+  @override
+  String get guideBackupStep2 =>
+      'Elige el archivo o pega su JSON. Revisa la fecha y los recuentos; los archivos inválidos o demasiado grandes no cambian nada.';
+
+  @override
+  String get guideBackupStep3 =>
+      'Guarda una copia de seguridad y confirma el reemplazo. La copia sustituye los datos, sin combinarlos. En el sitio web pulsa Recargar; en la app cierra la confirmación para actualizar la interfaz. Los recordatorios quedan desactivados.';
+
+  @override
+  String get guideShareSearchTitle => 'Compartir aleyas y buscar libros';
+
+  @override
+  String get guideShareSearchStep1 =>
+      'Mantén pulsada una aleya → Compartir aleya. Revisa el árabe completo, añade una traducción guardada y guarda PNG o copia texto/enlace.';
+
+  @override
+  String get guideShareSearchStep2 =>
+      'El enlace público abre la sura y aleya exactas. Tus notas y colecciones privadas nunca se incluyen en enlaces o imágenes.';
+
+  @override
+  String get guideShareSearchStep3 =>
+      'Biblioteca → Buscar en libros guardados busca en todo el libro, no solo la página actual. Escribe al menos dos caracteres, recorre los resultados y abre la aleya.';
+
+  @override
+  String get guideSavedAudioStep1 =>
+      'En Biblioteca → Recitaciones, elige una sura. Se descargará el recitador seleccionado en el lector.';
+
+  @override
+  String get guideSavedAudioStep2 =>
+      'Pulsa Descargar sin conexión, observa el progreso o cancela. Solo se guardan grabaciones completas verificadas; descargar no inicia la reproducción.';
+
+  @override
+  String get guideSavedAudioStep3 =>
+      'Grabaciones guardadas ofrece Reproducir y Eliminar. Prepara la app sin conexión por separado en Ajustes para abrir el sitio sin internet.';
+
+  @override
+  String get browserAudioTitle => 'Grabaciones de suras guardadas';
+
+  @override
+  String get browserAudioBody =>
+      'Descarga una sura completa del recitador elegido. Es distinto de la app sin conexión y del audio palabra por palabra. Solo se reproduce al pulsar Reproducir. El navegador puede borrar o liberar su almacenamiento.';
+
+  @override
+  String get browserAudioEmpty =>
+      'Aún no hay grabaciones guardadas en este navegador.';
+
+  @override
+  String get browserAudioUnavailable =>
+      'El almacenamiento de audio no está disponible en este navegador. Puedes reproducir en línea.';
+
+  @override
+  String get browserAudioStorageFull =>
+      'No hay suficiente espacio. Elimina una grabación e inténtalo de nuevo.';
+
+  @override
+  String get browserAudioCancelled =>
+      'Descarga cancelada. No se guardó una grabación parcial.';
+
+  @override
+  String get browserAudioDelete =>
+      '¿Eliminar esta grabación del navegador? Se conservan las demás grabaciones y tus datos personales.';
+
+  @override
+  String get browserAudioBusy => 'Hay otra descarga de audio en curso.';
+
+  @override
+  String get browserAudioTooLarge =>
+      'La grabación supera el límite de 256 MB por archivo.';
+
+  @override
+  String get personalTools => 'Mi espacio del Corán';
+
+  @override
+  String get personalToolsBody =>
+      'Tus notas y colecciones permanecen en este dispositivo.';
+
+  @override
+  String get personalNotes => 'Notas de aleyas';
+
+  @override
+  String get personalCollections => 'Colecciones';
+
+  @override
+  String get addNote => 'Añadir nota';
+
+  @override
+  String get editNote => 'Editar nota';
+
+  @override
+  String get noteTitle => 'Título (opcional)';
+
+  @override
+  String get noteBody => 'Tu reflexión';
+
+  @override
+  String get notesEmpty =>
+      'Guarda una reflexión junto a una aleya. Añade una nota aquí o en el menú del lector.';
+
+  @override
+  String get createCollection => 'Crear colección';
+
+  @override
+  String get editCollection => 'Renombrar colección';
+
+  @override
+  String get collectionName => 'Nombre de la colección';
+
+  @override
+  String get collectionsEmpty =>
+      'Organiza las aleyas en colecciones con nombres propios. Tus marcadores de colores no cambian.';
+
+  @override
+  String get collectionEmpty =>
+      'Aún no hay aleyas. Añade una desde el lector o usa Añadir aleya.';
+
+  @override
+  String get addAyah => 'Añadir aleya';
+
+  @override
+  String get openAyah => 'Abrir aleya';
+
+  @override
+  String get removeAyah => 'Quitar aleya';
+
+  @override
+  String get addToCollection => 'Añadir a colección';
+
+  @override
+  String get deletePersonalConfirm =>
+      '¿Eliminar este elemento de este dispositivo? No se puede deshacer.';
+
+  @override
+  String get personalSaved => 'Guardado en este dispositivo.';
+
+  @override
+  String get personalDuplicate => 'Esta aleya ya está en la colección.';
+
+  @override
+  String get personalLimit =>
+      'Se ha alcanzado el límite local de notas o colecciones. Exporta una copia antes de borrar elementos antiguos.';
+
+  @override
+  String get requiredText => 'Escribe un texto para continuar.';
+
+  @override
+  String get invalidAyahLink =>
+      'Este enlace no es válido. Se conserva tu última posición de lectura.';
+
+  @override
+  String get backupTitle => 'Copia local';
+
+  @override
+  String get backupBody =>
+      'Exporta un archivo JSON privado con notas, colecciones, marcadores, planes y ajustes. No incluye audio ni libros descargados. Guárdalo en un lugar seguro; no se envía al servidor.';
+
+  @override
+  String get exportBackup => 'Exportar copia';
+
+  @override
+  String get chooseBackup => 'Elegir archivo';
+
+  @override
+  String get pasteBackup => 'Pegar JSON';
+
+  @override
+  String get previewBackup => 'Vista previa';
+
+  @override
+  String get restoreBackup => 'Reemplazar con esta copia';
+
+  @override
+  String get backupPreviewTitle => 'Revisar antes de restaurar';
+
+  @override
+  String get backupReplaceWarning =>
+      'Se reemplazarán las notas, colecciones, marcadores, planes y ajustes de este dispositivo, sin combinarlos. Descarga primero una copia de seguridad. Los recordatorios quedarán desactivados hasta que los actives.';
+
+  @override
+  String get backupSafetyCopy => 'Descargar copia de seguridad';
+
+  @override
+  String get backupSafetyReady =>
+      'Copia de seguridad preparada. Conserva el archivo antes de confirmar.';
+
+  @override
+  String get backupInvalid =>
+      'El archivo no es válido, no es compatible o supera 5 MB. No se ha cambiado nada.';
+
+  @override
+  String get backupFailed =>
+      'La operación falló. Los datos anteriores se conservaron o restauraron. Conserva la copia de seguridad e inténtalo de nuevo.';
+
+  @override
+  String get backupRestored =>
+      'Copia restaurada. Recarga la aplicación para utilizar los ajustes y planes restaurados.';
+
+  @override
+  String get backupRestoredNative =>
+      'Copia restaurada. Cierra esta confirmación para cargar los datos restaurados. Los recordatorios siguen desactivados.';
+
+  @override
+  String get reloadApp => 'Recargar aplicación';
+
+  @override
+  String get backupCopied =>
+      'Copia privada copiada. Guárdala en un archivo seguro.';
+
+  @override
+  String get backupCreated => 'Creada';
+
+  @override
+  String get shareAyah => 'Compartir aleya';
+
+  @override
+  String get shareBody =>
+      'Revisa la aleya completa y guarda una imagen o copia el texto o el enlace público.';
+
+  @override
+  String get includeTranslation => 'Incluir traducción';
+
+  @override
+  String get withoutTranslation => 'Solo árabe';
+
+  @override
+  String get downloadAyahImage => 'Guardar imagen';
+
+  @override
+  String get copyShareText => 'Copiar texto completo';
+
+  @override
+  String get copyAyahLink => 'Copiar enlace';
+
+  @override
+  String get shareCopied => 'Copiado al portapapeles.';
+
+  @override
+  String get shareFailed =>
+      'No se pudo preparar o guardar la imagen. Puedes copiar el texto o el enlace.';
+
+  @override
+  String get shareSource =>
+      'Texto del Corán: Complejo del Rey Fahd. El recurso de traducción se identifica arriba.';
+
+  @override
+  String get savedTextSearch => 'Buscar en libros guardados';
+
+  @override
+  String get savedTextSearchBody =>
+      'Busca todas las aleyas de un tafsir o traducción incluido o descargado. No se descarga nada automáticamente ni cambia la selección del lector.';
+
+  @override
+  String get searchBook => 'Libro para buscar';
+
+  @override
+  String get searchPhrase => 'Palabra o frase (mínimo 2 caracteres)';
+
+  @override
+  String get searchMinimum => 'Escribe al menos dos caracteres.';
+
+  @override
+  String get searchNoResults => 'No se encontraron aleyas en este libro.';
+
+  @override
+  String get searchSavedOnly =>
+      'Aquí solo aparecen libros incluidos y descargados. Descarga más desde la biblioteca.';
+
+  @override
+  String get searchResults => 'Resultados';
+
+  @override
+  String get previousResults => 'Resultados anteriores';
+
+  @override
+  String get nextResults => 'Resultados siguientes';
+
+  @override
+  String get searchLoadFailed =>
+      'No se pudo leer el libro guardado. Inténtalo de nuevo o vuelve a descargarlo desde la biblioteca.';
+
+  @override
   String get quranTextTab => 'Texto del Corán';
 
   @override
@@ -266,7 +814,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get webOfflineNote =>
-      'En la web puedes guardar el Tafsir y las traducciones seleccionados en este navegador (hasta 160 MiB); el navegador puede eliminarlos si queda poco espacio. El audio necesita internet. Prepara la aplicación y las páginas del Corán por separado en Ajustes.';
+      'Puedes guardar Tafsir y traducciones en este navegador (hasta 160 MiB). Guarda el audio de suras por separado en Recitaciones. El navegador puede borrar archivos si falta espacio. Prepara la app y las páginas aparte en Ajustes.';
 
   @override
   String get webResourceStorageUnavailable =>
@@ -574,6 +1122,14 @@ class AppLocalizationsEs extends AppLocalizations {
   String get reminderEnabled => 'Tu recordatorio diario del Corán está activo.';
 
   @override
+  String get reminderUpdateFailed =>
+      'No se pudo programar o actualizar el recordatorio. Revisa los ajustes de notificaciones e inténtalo de nuevo.';
+
+  @override
+  String get reminderStateUncertain =>
+      'No se pudo recuperar el estado del recordatorio de forma segura. Revisa las notificaciones y vuelve a abrir la app antes de depender de él.';
+
+  @override
   String get notificationDenied =>
       'No se concedió permiso para las notificaciones.';
 
@@ -657,6 +1213,92 @@ class AppLocalizationsEs extends AppLocalizations {
       'Tus marcadores, última lectura, planes, ajustes y descargas se guardan solo en este dispositivo o navegador. No hay cuentas, copias en la nube ni sincronización entre dispositivos. Desinstalar la aplicación o borrar sus datos o los del sitio puede eliminar estos elementos guardados.';
 
   @override
+  String get guideStartHere => 'EMPIEZA AQUÍ';
+
+  @override
+  String get guideChooseLesson => 'Elige tu próxima lección';
+
+  @override
+  String guideLesson(int number, int total) {
+    return 'Lección $number de $total';
+  }
+
+  @override
+  String get guideWrittenSteps => 'Sigue las instrucciones paso a paso';
+
+  @override
+  String get guidePauseVideo => 'Pausar vídeo';
+
+  @override
+  String get guideRestartVideo => 'Reiniciar vídeo';
+
+  @override
+  String get guideFullScreen => 'Vista de pantalla completa';
+
+  @override
+  String get guideSeekVideo => 'Posición del vídeo';
+
+  @override
+  String get guideVideoLoading => 'Preparando tu lección…';
+
+  @override
+  String get guideVideoRetry => 'Reintentar vídeo';
+
+  @override
+  String get guideVideoFinished =>
+      'Lección completa. Puedes volver a verla cuando lo necesites.';
+
+  @override
+  String get guideVideoHint =>
+      'Sigue el puntero resaltado y las instrucciones numeradas. Los vídeos solo empiezan al pulsar Reproducir.';
+
+  @override
+  String get guideNativeFiles =>
+      'En Android, elige un destino privado en el selector de documentos. En iOS, usa el menú del sistema para guardar o compartir el archivo. Usa el selector de documentos para restaurar una copia JSON.';
+
+  @override
+  String get guideNativeShareImage => 'Guardar o compartir imagen de la aleya';
+
+  @override
+  String get guideNativeSaveImage => 'Guardar imagen de la aleya';
+
+  @override
+  String get privacyTitle => 'Privacidad y contacto';
+
+  @override
+  String get privacyLocalSummary =>
+      'Quran Haven es gratuito, sin cuentas ni publicidad. Tus marcadores, notas, planes, posición de lectura y preferencias permanecen en este dispositivo o navegador. Borrar los datos puede eliminarlos. Solo se exportan copias, restauran archivos o comparten contenidos cuando lo eliges; tú controlas el destino.';
+
+  @override
+  String get privacyNetworkSummary =>
+      'Los recursos de lectura y las recitaciones en línea contactan al alojamiento del proyecto y a los proveedores de audio y contenido. Estas solicitudes revelan datos de red, como tu dirección IP y los archivos solicitados; los proveedores pueden conservar registros técnicos. El sitio web también usa una baliza de Cloudflare para medir rendimiento y uso. Tus notas y avances personales no se suben automáticamente.';
+
+  @override
+  String get privacyOpen => 'Leer la política de privacidad completa';
+
+  @override
+  String get contactProject => 'Contactar con el proyecto';
+
+  @override
+  String get copyContactEmail => 'Copiar correo de contacto';
+
+  @override
+  String get privacyLinkCopied =>
+      'La dirección se ha copiado. Ábrela en tu navegador o aplicación de correo.';
+
+  @override
+  String get privacyLinkFailed =>
+      'No se pudo abrir ni copiar la dirección. Usa la dirección que se muestra aquí.';
+
+  @override
+  String get backupSafetyConfirm =>
+      'He guardado la copia de seguridad en un lugar privado.';
+
+  @override
+  String get backupRefreshFailed =>
+      'La copia se restauró. Cierra y vuelve a abrir la aplicación para cargar los datos restaurados.';
+
+  @override
   String get guideTitle => 'Guía de Quran Haven';
 
   @override
@@ -692,7 +1334,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get guideReducedMotion =>
-      'La animación está desactivada porque tu dispositivo tiene activada la reducción de movimiento.';
+      'La reducción de movimiento está activada. La vista previa permanece quieta; puedes elegir Reproducir si lo deseas.';
 
   @override
   String guideDemoDescription(String topic) {
@@ -712,7 +1354,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get guideReadingStep3 =>
-      'Desliza para cambiar de página. Tu última posición de lectura se guarda automáticamente en este dispositivo.';
+      'Usa las flechas de página en el sitio web, o desliza en un dispositivo táctil para cambiar de página. Tu última posición se guarda automáticamente en este dispositivo.';
 
   @override
   String get guideReadingTip =>
@@ -727,7 +1369,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get guideSearchStep2 =>
-      'Selecciona un resultado y pulsa Cerrar arriba del panel para volver al Mushaf en esa aleya. Mantén pulsada una aleya para abrir sus opciones.';
+      'Selecciona un resultado. El panel se cierra y abre el Mushaf en esa aleya automáticamente. Mantén pulsada una aleya para abrir sus opciones.';
 
   @override
   String get guideSearchStep3 =>
@@ -773,7 +1415,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get guideAudioTip =>
-      'El audio en línea necesita conexión y puede proceder de proveedores externos de recitaciones. No hay descargas de audio sin conexión en el navegador.';
+      'El audio en línea procede de proveedores externos. Descarga suras completas en Recitaciones para escuchar sin conexión; el audio palabra por palabra sigue necesitando internet.';
 
   @override
   String get guideOfflineTitle => 'Prepárate antes de desconectarte';
@@ -792,7 +1434,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get guideOfflineTip =>
-      'El navegador puede borrar archivos cuando queda poco espacio. La navegación privada no es adecuada para conservar datos. El audio sin conexión está disponible en la aplicación móvil, no en el sitio web.';
+      'El navegador puede borrar archivos si falta espacio. La navegación privada no sirve para conservarlos. La preparación de la app, los libros y las grabaciones son descargas distintas.';
 
   @override
   String get guidePlansTitle => 'Crea una rutina de lectura y memorización';
@@ -845,7 +1487,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get guideStorageTip =>
-      'Desinstalar la aplicación, borrar sus datos o los del sitio, o perder el dispositivo puede eliminar lo guardado. Actualmente no hay una herramienta de exportación e importación local.';
+      'Borrar datos o perder el dispositivo puede eliminar lo guardado. Usa Copia local en Ajustes para exportar tus datos de forma privada; no incluye libros ni audio descargados.';
 
   @override
   String get playAyah => 'Reproducir aleya';
@@ -874,4 +1516,45 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get guideResetZoom => 'Restablecer zoom';
+
+  @override
+  String get guideRotateHint =>
+      'Gira el teléfono para una vista más amplia, o amplía y arrastra para examinar la demostración.';
+
+  @override
+  String get guideZoomIn => 'Acercar';
+
+  @override
+  String get guideZoomOut => 'Alejar';
+
+  @override
+  String get creatorCreditTitle => 'Creado por YahyazLab';
+
+  @override
+  String get quranBrandLabel => 'Quran Haven: logotipo de un Corán abierto';
+
+  @override
+  String get creatorCreditHint => 'Sitio externo del creador';
+
+  @override
+  String get creatorCreditSemantics =>
+      'Creado por YahyazLab. Abrir el sitio externo del creador tras la confirmación.';
+
+  @override
+  String get creatorExternalTitle => 'Vas a salir de Quran Haven';
+
+  @override
+  String get creatorExternalBody =>
+      'Este sitio es el portafolio de desarrollo de videojuegos del creador, no un sitio de contenido coránico. Se abrirá en tu navegador.';
+
+  @override
+  String get creatorGuardianReminder =>
+      'Si eres menor, consulta a tu madre, padre o tutor antes de continuar.';
+
+  @override
+  String get creatorContinue => 'Continuar al sitio';
+
+  @override
+  String get creatorOpenFailed =>
+      'No se pudo abrir el sitio externo. Puedes seguir usando Quran Haven.';
 }

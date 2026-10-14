@@ -38,6 +38,16 @@ class OfflineManifestTests(unittest.TestCase):
         self.assertNotIn(offline.TOKEN, (self.root / "flutter_bootstrap.js").read_text())
         self.assertEqual(first, json.loads((self.root / "offline-manifest.json").read_text()))
 
+    def test_privacy_binary_alias_is_hashed_only_as_public_document(self):
+        privacy = "<!doctype html><html lang='ar' dir='rtl'>الخصوصية</html>\n".encode()
+        (self.root / "privacy.html").write_bytes(privacy)
+        result = offline.generate(self.root)
+        self.assertEqual((self.root / "offline-privacy.bin").read_bytes(), privacy)
+        entries = {entry["path"]: entry for entry in result["files"]}
+        self.assertEqual(entries["/privacy.html"]["sha256"], hashlib.sha256(privacy).hexdigest())
+        self.assertNotIn("/offline-privacy.bin", entries)
+        self.assertFalse(offline.allowed("offline-privacy.bin"))
+
     def test_index_binary_alias_preserves_exact_bytes_without_duplicate_entry(self):
         original = b"<!doctype html>\r\n<html><body>Quran Haven \xd8\xa7</body></html>\r\n"
         (self.root / "index.html").write_bytes(original)

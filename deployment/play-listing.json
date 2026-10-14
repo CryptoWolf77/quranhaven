@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "publicationStatus": "draft-unpublished",
+  "candidateVersion": "1.0.0+15",
+  "packageName": "org.quranflutter.quran_flutter",
+  "ownerAudienceIntent": "All ages, including children",
+  "contact": {
+    "supportEmail": "admin@yahyazlab.com",
+    "website": "https://quranhaven.org/",
+    "privacyPolicy": "https://quranhaven.org/privacy.html"
+  },
+  "fieldLimits": {
+    "title": 30,
+    "shortDescription": 80,
+    "fullDescription": 4000
+  },
+  "requirementsBeforePublication": [
+    "This file is draft source, not evidence of a published or store-approved release.",
+    "Publish feature claims only after the matching final Android artifact passes the release acceptance checks.",
+    "Verify all 13 guide topics and all 39 localized MP4 demonstrations, including native playback, before using the guide claims below.",
+    "Verify native JSON import/export, PNG saving/sharing, downloaded recording playback and persisted personal records in the final Android artifact.",
+    "The HTTPS website and privacy document, including all three language queries, must be live before store submission.",
+    "Use actual screenshots captured from that final Android artifact; none are supplied or fabricated by this source file.",
+    "The owner explicitly selected all ages, including children. Apply that intent accurately to the final store setup; this marker is not a legal or store-compliance declaration.",
+    "Verify the final artifact's account/date-of-birth, advertising-identifier, SDK, network and social-feature disclosures, including child-relevant external downloads, voluntary email/system sharing and locally managed notes/backups.",
+    "Review the optional creator-credit link to https://yahyazlab.com/, an external game-development portfolio rather than Quran content. Verify explicit user choice, destination content/data handling and age appropriateness; assess Google Families advertising/cross-promotion requirements before store declarations. A creator credit does not certify an ad-policy classification or a child-safe destination.",
+    "Content rating, Families/child-data disclosures, owner terms, legal attestations and Data Safety/release declarations still require owner review for the verified artifact. This file does not certify COPPA, GDPR or Google policy compliance."
+  ],
+  "locales": {
+    "en-US": {
+      "title": "Quran Haven",
+      "shortDescription": "Read, listen and learn the Quran with local notes, plans and offline downloads",
+      "fullDescription": "Quran Haven is a quiet place to read, listen to and learn the Quran. Offered as Sadakah Jariyah, every feature is free, with no advertisements, donations, subscriptions, paid features or user accounts.\n\nRead and reflect\nRead the complete Arabic Quran in a 604-page Madinah-style Hafs Mushaf. Navigate by Surah, Juz or page, search the Arabic Quran, save bookmarks and return to your last reading position. Choose light, dark or system appearance, with Arabic, English and Spanish interfaces.\n\nExplore 44 text resources: 35 Tafsir/commentary resources and 9 translations. Download the resources you choose and search across an entire bundled or saved book.\n\nListen and practice\nChoose from 29 Surah playback profiles and 20 Ayah playback profiles. These are recording profiles, not a count of unique reciters. Listen by Surah or Ayah, repeat passages and use word-by-word audio for practice. Word-by-word audio requires an internet connection. Explicitly download selected Surah recordings for later offline listening.\n\nBuild a daily practice\nCreate a Khatmah plan with daily reading targets and local progress. Practice a selected Ayah range with repeats, delays, hide/reveal controls and revision markers. Optional on-device reading reminders depend on notification permission and operating system behavior.\n\nKeep your personal space local\nSave Ayah notes, bookmarks and named collections on your device. Export a private JSON backup and import a file you choose, with validation, a preview and explicit replacement confirmation. Keep your backup file yourself; downloaded books and audio are not included in it.\n\nThere are no cloud accounts, cloud recovery or cross-device synchronization. App and browser storage are separate. Clearing data or uninstalling can erase local progress.\n\nShare and learn\nShare an Ayah as text, a public verse link or a locally generated PNG image through actions you choose. Explore original word segments, part-of-speech tags, roots and lemmas when present, and morphology feature codes from Quranic Arabic Corpus v0.4. Source and license notices are included. This is not full syntactic parsing or a word-meaning dictionary.\n\nA clear Home guide entry opens 13 step-by-step topics with written instructions and localized video demonstrations in Arabic, English and Spanish—39 videos across the three languages. Follow real app screens with numbered steps and highlighted pointer/click instructions, with playback, seeking, replay and an enlarged viewer.\n\nOffline expectations\nThe Quran text is provided locally. Additional public text resources and recordings need an internet connection for their first download; provider availability and device storage limits still apply. Personal records are not intentionally sent with these public-content requests. The website's delivery and analytics services are explained in the privacy policy; local personal storage does not mean there are no network requests.\n\nWebsite: https://quranhaven.org/\nPrivacy: https://quranhaven.org/privacy.html?lang=en\nSupport: admin@yahyazlab.com"
+    },
+    "ar": {
+      "title": "Quran Haven",
+      "shortDescription": "اقرأ القرآن واستمع إليه، مع التفسير وخطط الختمة والحفظ والتخزين المحلي",
+      "fullDescription": "Quran Haven مساحة هادئة لقراءة القرآن الكريم والاستماع إليه وتعلّمه، يُقدَّم صدقة جارية. جميع الخصائص مجانية، دون إعلانات أو تبرعات أو اشتراكات أو خصائص مدفوعة أو حسابات مستخدمين.\n\nاقرأ وتدبّر\nاقرأ القرآن العربي كاملاً في مصحف بأسلوب مصحف المدينة، برواية حفص، من 604 صفحات. تنقّل بحسب السورة أو الجزء أو الصفحة، وابحث في نص القرآن العربي، واحفظ العلامات المرجعية وارجع إلى آخر موضع قراءة. اختر المظهر الفاتح أو الداكن أو مظهر النظام، مع واجهات بالعربية والإنجليزية والإسبانية.\n\nاستكشف 44 مورداً نصياً: 35 مورداً للتفسير و9 ترجمات. نزّل ما تختاره من الموارد وابحث في كامل كتاب مضمّن أو محفوظ.\n\nاستمع وراجع\nاختر من 29 خياراً لتلاوة السور و20 خياراً لتلاوة الآيات. هذه خيارات لتسجيلات التلاوة، وليست عدداً للقراء المختلفين. استمع بحسب السورة أو الآية، وكرّر المقاطع، واستخدم الصوت كلمةً بكلمة للتدريب؛ ويتطلب هذا الصوت اتصالاً بالإنترنت. نزّل تسجيلات السور التي تختارها صراحةً للاستماع إليها لاحقاً دون اتصال.\n\nابنِ وردك اليومي\nأنشئ خطة ختمة بأهداف قراءة يومية وتقدّم محفوظ محلياً. تدرّب على نطاق آيات تختاره، مع التكرار والتأخير وإخفاء النص وإظهاره وعلامات المراجعة. تعتمد تذكيرات القراءة الاختيارية على إذن الإشعارات وسلوك نظام التشغيل.\n\nاحتفظ بمساحتك الشخصية على جهازك\nاحفظ ملاحظات الآيات والعلامات المرجعية والمجموعات المسمّاة محلياً. صدّر نسخة احتياطية خاصة بصيغة JSON واستورد ملفاً تختاره، مع التحقق والمعاينة وتأكيد استبدال البيانات صراحةً. احتفظ بنسختك بنفسك؛ لا تتضمن الكتب والصوت المنزّلين.\n\nلا توجد حسابات سحابية أو استعادة سحابية أو مزامنة بين الأجهزة. تخزين التطبيق منفصل عن تخزين المتصفح. قد يؤدي مسح البيانات أو إلغاء التثبيت إلى فقدان تقدّمك المحلي.\n\nشارك وتعلّم\nشارك الآية نصاً أو رابطاً عاماً أو صورة PNG مُنشأة محلياً، بإجراءات تختارها أنت. استكشف مقاطع الكلمات الأصلية وأقسامها الصرفية وجذورها وصيغها المعجمية عند توفرها ورموز خصائصها، من Quranic Arabic Corpus الإصدار 0.4، مع حفظ معلومات المصدر وإشعارات الترخيص. هذه الأدوات ليست تحليلاً نحوياً كاملاً أو معجماً لمعاني الكلمات.\n\nيفتح مدخل واضح في الرئيسية 13 موضوعاً إرشادياً بخطوات مكتوبة وفيديوهات بالعربية والإنجليزية والإسبانية؛ 39 فيديو موزعة على اللغات الثلاث. تابع شاشات التطبيق الفعلية، مع خطوات مرقّمة ومؤشر ومواضع نقر واضحة، وأدوات تشغيل وتنقّل وإعادة عرض ومشاهدة مكبّرة.\n\nما يعمل دون اتصال\nنص القرآن متوفر محلياً. تتطلب الموارد النصية العامة الإضافية والتسجيلات اتصالاً بالإنترنت عند تنزيلها أول مرة، وتبقى حدود مساحة الجهاز وتوفر الخدمة لدى مزوّد المحتوى سارية. لا تُرسل السجلات الشخصية عمداً مع طلبات هذا المحتوى العام. توضح سياسة الخصوصية خدمات توصيل الموقع وتحليلاته؛ ولا يعني التخزين المحلي عدم وجود طلبات شبكة.\n\nالموقع: https://quranhaven.org/\nالخصوصية: https://quranhaven.org/privacy.html?lang=ar\nالتواصل: admin@yahyazlab.com"
+    },
+    "es-ES": {
+      "title": "Quran Haven",
+      "shortDescription": "Lectura del Corán, recitaciones y planes con tus datos guardados localmente",
+      "fullDescription": "Quran Haven es un espacio tranquilo para leer, escuchar y aprender el Corán. Se ofrece como Sadakah Jariyah: todas las funciones son gratuitas, sin publicidad, donaciones, suscripciones, funciones de pago ni cuentas de usuario.\n\nLee y reflexiona\nLee el Corán árabe completo en un mushaf de 604 páginas, al estilo de Medina, según la narración Hafs. Navega por sura, juz o página, busca en el texto árabe, guarda marcadores y retoma tu última posición de lectura. Elige el aspecto claro, oscuro o del sistema, con interfaces en árabe, inglés y español.\n\nExplora 44 recursos de texto: 35 de tafsir/comentario y 9 traducciones. Descarga los recursos que elijas y busca en todo un libro incluido o guardado.\n\nEscucha y practica\nEl catálogo incluye 29 perfiles de reproducción de suras y 20 de aleyas. Son perfiles de grabaciones, no un número de recitadores distintos. Escucha por sura o aleya, repite pasajes y utiliza el audio palabra por palabra para practicar; este audio requiere internet. Descarga explícitamente las grabaciones de suras que elijas para escucharlas después sin conexión.\n\nOrganiza tu práctica diaria\nCrea un plan de jatma con objetivos diarios y progreso local. Practica un intervalo de aleyas con repeticiones, pausas, controles para ocultar y mostrar el texto y marcas de repaso. Los recordatorios opcionales dependen del permiso de notificaciones y del sistema operativo.\n\nGuarda tu espacio personal en tu dispositivo\nConserva notas de aleyas, marcadores y colecciones con nombre localmente. Exporta una copia privada en JSON e importa un archivo que elijas, con validación, vista previa y confirmación explícita de reemplazo. Conserva tú mismo el respaldo; no incluye los libros ni el audio descargados.\n\nNo hay cuentas en la nube, recuperación en la nube ni sincronización entre dispositivos. El almacenamiento de la aplicación y el del navegador son independientes. Borrar los datos o desinstalar puede eliminar tu progreso local.\n\nComparte y aprende\nComparte una aleya como texto, enlace público o imagen PNG generada localmente, mediante acciones que tú elijas. Explora segmentos originales, categorías gramaticales, raíces y lemas cuando estén presentes, y códigos morfológicos de Quranic Arabic Corpus v0.4. Se incluyen los avisos de fuente y licencia. No es un análisis sintáctico completo ni un diccionario de significados.\n\nUna entrada visible en Inicio abre 13 temas con instrucciones paso a paso y demostraciones en vídeo en árabe, inglés y español: 39 vídeos entre los tres idiomas. Sigue pantallas reales con pasos numerados y puntero/clic resaltado, con reproducción, desplazamiento, repetición y un visor ampliado.\n\nQué funciona sin conexión\nEl texto coránico se proporciona localmente. Los textos públicos adicionales y las grabaciones necesitan internet para su primera descarga; siguen aplicándose la disponibilidad del proveedor y los límites de almacenamiento. Los registros personales no se envían intencionadamente con esas solicitudes. La política de privacidad explica los servicios de distribución y analítica del sitio; el almacenamiento local no significa ausencia de solicitudes de red.\n\nSitio: https://quranhaven.org/\nPrivacidad: https://quranhaven.org/privacy.html?lang=es\nContacto: admin@yahyazlab.com"
+    }
+  },
+  "phoneScreenshotPlan": {
+    "status": "awaiting-final-android-captures",
+    "outputDirectory": "deployment/play-assets",
+    "canvas": {
+      "width": 1080,
+      "height": 1920,
+      "format": "PNG",
+      "mode": "RGB",
+      "alpha": false,
+      "colorSpace": "sRGB"
+    },
+    "visualDirection": "Calm editorial parchment and emerald, with Cairo typography, generous but controlled spacing and a restrained gold accent. The actual app remains the main visual.",
+    "palette": {
+      "parchment": "#f7f2e7",
+      "emerald": "#146e5c",
+      "ink": "#103f35",
+      "gold": "#d8c995"
+    },
+    "composition": {
+      "captionAreaMaximumHeight": 280,
+      "captionMaximumImagePercentage": 20,
+      "captionMaximumLines": 2,
+      "preferredCaptionFontSize": 56,
+      "captionLineHeight": 1.25,
+      "outerMargin": 64,
+      "captureRegion": { "x": 64, "y": 304, "width": 952, "height": 1552 },
+      "placement": "Fit the entire native screenshot uniformly inside the capture region, center it, and preserve its original aspect ratio. A 1080×2400 capture therefore appears approximately 698×1552px; do not crop the Quran or stretch it to fill the frame.",
+      "frame": "Only a subtle flat 1px emerald border if needed; no fake hardware, bezels, device photos, tilted screens or ornamental shadows.",
+      "captureQuality": "Require a clean final Android screenshot at native resolution. Capture a disposable test-data state with no user messages or private notes. Do not upscale low-resolution browser captures to masquerade as Android screenshots.",
+      "localization": "Use matching Arabic/English/Spanish app UI and captions. Shape Arabic with the existing Cairo font and align it RTL; retain Latin text and numbers correctly.",
+      "truthfulness": "No manufactured screens, fake progress, fabricated Quran lettering, generated Quran excerpts, changed app controls or pricing/ranking/award/CTA badges. Keep the actual rendered Quran and source notices intact."
+    },
+    "shots": [
+      {
+        "order": 1,
+        "id": "reader",
+        "captureState": "Actual final Android Hafs Mushaf, page 1, readable canonical text and the reader's real controls.",
+        "captions": { "en-US": "Read the Hafs Mushaf", "ar": "اقرأ المصحف برواية حفص", "es-ES": "Lee el Corán en la narración Hafs" },
+        "altText": { "en-US": "Quran Haven's Hafs Mushaf reader displaying Al-Fatihah with navigation controls", "ar": "قارئ المصحف في Quran Haven يعرض سورة الفاتحة مع أدوات التنقّل", "es-ES": "Lector Hafs de Quran Haven con Al-Fatiha y controles de navegación" }
+      },
+      {
+        "order": 2,
+        "id": "tafsir",
+        "captureState": "Actual opened Tafsir or saved translation for a real Ayah, with its resource name visible and no loading placeholder.",
+        "captions": { "en-US": "Reflect with Tafsir and translations", "ar": "تدبّر مع التفسير والترجمات", "es-ES": "Reflexiona con tafsir y traducciones" },
+        "altText": { "en-US": "A Quran Haven Ayah panel showing saved Tafsir or translation and its named source", "ar": "لوحة آية في Quran Haven تعرض تفسيراً أو ترجمة محفوظة مع اسم المصدر", "es-ES": "Panel de una aleya con tafsir o traducción guardada y su fuente identificada" }
+      },
+      {
+        "order": 3,
+        "id": "audio",
+        "captureState": "Actual named recitation profile and successfully downloaded Surah recording, with genuine playback controls. No fabricated download badge.",
+        "captions": { "en-US": "Listen to recordings you choose", "ar": "استمع إلى التلاوات التي تختارها", "es-ES": "Escucha las recitaciones que elijas" },
+        "altText": { "en-US": "Quran Haven recitations with a selected profile, saved Surah recording and playback controls", "ar": "تلاوات Quran Haven مع قارئ محدد وتسجيل سورة محفوظ وأدوات تشغيل", "es-ES": "Recitaciones con perfil seleccionado, una sura guardada y controles de audio" }
+      },
+      {
+        "order": 4,
+        "id": "plans",
+        "captureState": "A real local Khatmah plan created in the disposable test state, with actual targets and progress. Never paint over progress numbers.",
+        "captions": { "en-US": "Build a daily reading practice", "ar": "نظّم وردك اليومي", "es-ES": "Organiza tu lectura diaria" },
+        "altText": { "en-US": "Quran Haven local Khatmah plan with daily reading targets and progress", "ar": "خطة ختمة محلية في Quran Haven تعرض أهداف القراءة اليومية والتقدّم", "es-ES": "Plan local de jatma con objetivos diarios de lectura y progreso" }
+      },
+      {
+        "order": 5,
+        "id": "personal",
+        "captureState": "Local notes/collections containing only clearly non-sensitive test text created through the app. Use the final actual UI, not a synthetic note-card layout.",
+        "captions": { "en-US": "Keep notes and collections local", "ar": "احفظ ملاحظاتك ومجموعاتك محلياً", "es-ES": "Guarda notas y colecciones localmente" },
+        "altText": { "en-US": "Quran Haven personal space with local Ayah notes and a named collection", "ar": "المساحة الشخصية في Quran Haven تعرض ملاحظات آيات ومجموعة مسمّاة محلياً", "es-ES": "Espacio personal con notas locales de aleyas y una colección con nombre" }
+      },
+      {
+        "order": 6,
+        "id": "guide",
+        "captureState": "Actual final native guide with a current localized lesson and a clearly visible real video frame/pointer instruction; verify playback before capture.",
+        "captions": { "en-US": "Follow clear step-by-step guidance", "ar": "تعلّم بخطوات واضحة", "es-ES": "Aprende con instrucciones paso a paso" },
+        "altText": { "en-US": "Quran Haven usage guide with a real-screen video demonstration and numbered instructions", "ar": "دليل Quran Haven يعرض فيديو لشاشات التطبيق وخطوات استخدام مرقّمة", "es-ES": "Guía de uso con una demostración de pantallas reales e instrucciones numeradas" }
+      },
+      {
+        "order": 7,
+        "id": "morphology",
+        "captureState": "Actual Corpus morphology screen showing a real word's original segments/tags and the source/license affordance. Do not present it as full syntax or meanings.",
+        "captions": { "en-US": "Explore original word morphology", "ar": "استكشف البنية الصرفية للكلمات", "es-ES": "Explora la morfología de las palabras" },
+        "altText": { "en-US": "Quran Haven word morphology from Quranic Arabic Corpus with original tags and a source link", "ar": "صرف الكلمات من Quranic Arabic Corpus يعرض الوسوم الأصلية ورابط المصدر", "es-ES": "Morfología de Quranic Arabic Corpus con etiquetas originales y enlace a la fuente" }
+      },
+      {
+        "order": 8,
+        "id": "backup",
+        "captureState": "Actual local backup panel or validated native import preview with disposable test data only; hide no warnings and do not show private backup contents.",
+        "captions": { "en-US": "Manage your own local backup", "ar": "احتفظ بنسختك الاحتياطية بنفسك", "es-ES": "Gestiona tu propia copia local" },
+        "altText": { "en-US": "Quran Haven local JSON backup controls with export/import and explicit restore confirmation", "ar": "أدوات النسخ الاحتياطي المحلي بصيغة JSON مع التصدير والاستيراد وتأكيد الاستعادة", "es-ES": "Controles de copia JSON local con exportación, importación y confirmación de restauración" }
+      }
+    ]
+  },
+  "primaryReferences": [
+    "https://support.google.com/googleplay/android-developer/answer/9859152?hl=en",
+    "https://support.google.com/googleplay/android-developer/answer/9866151?hl=en"
+  ]
+}

@@ -16,12 +16,20 @@ extension SurahUi on AudioCtrl {
           ),
         );
       } else {
+        final browserUrl =
+            await cachedWebSurahUrl(state.currentAudioListSurahNum.value);
         await state.audioPlayer.setAudioSource(
           AudioSource.uri(
-            Uri.parse(urlSurahFilePath),
+            Uri.parse(browserUrl ?? urlSurahFilePath),
             tag: mediaItem,
           ),
         );
+      }
+      // A just_audio source tag does not republish audio_service metadata.
+      // Refresh the native notification after the source succeeds, so the
+      // previous Surah/reciter is not shown for a newly selected recording.
+      if (!kIsWeb && state.audioServiceInitialized.value) {
+        AudioHandler.instance.mediaItem.add(mediaItem);
       }
     } catch (e, s) {
       log('changeAudioSource failed: $e', name: 'SurahUi', stackTrace: s);
@@ -32,7 +40,11 @@ extension SurahUi on AudioCtrl {
   Future<void> selectSurahFromList(BuildContext context, int index,
       {bool autoPlay = false, SurahAudioStyle? style}) async {
     final isConnected = InternetConnectionController.instance.isConnected;
-    if (isConnected || state.isSurahDownloadedByNumber(index + 1).value) {
+    final browserUrl = await cachedWebSurahUrl(index + 1);
+    if (!context.mounted) return;
+    if (isConnected ||
+        state.isSurahDownloadedByNumber(index + 1).value ||
+        browserUrl != null) {
       // التحويل إلى وضع السور وتعطيل أي مستمعات قديمة
       state.isPlayingSurahsMode = true;
       disableSurahAutoNextListener();
@@ -97,7 +109,11 @@ extension SurahUi on AudioCtrl {
   Future<void> lastListenSurahOnTap(
       {required BuildContext context, SurahAudioStyle? style}) async {
     final isConnected = InternetConnectionController.instance.isConnected;
+    final browserUrl =
+        await cachedWebSurahUrl(state.currentAudioListSurahNum.value);
+    if (!context.mounted) return;
     if (isConnected ||
+        browserUrl != null ||
         state
             .isSurahDownloadedByNumber(state.currentAudioListSurahNum.value)
             .value) {

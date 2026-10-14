@@ -170,9 +170,13 @@ void main() {
       expect(find.byType(TextFormField), findsNothing);
       final targetLanguage = language == 'en' ? 'Español' : 'English';
       await tester.ensureVisible(find.text(targetLanguage));
+      // The backup card makes Settings taller; settle the scroll/layout before
+      // hit-testing a control below the original viewport.
+      await tester.pumpAndSettle();
       await tester.tap(find.text(targetLanguage));
       expect(selectedLocale, Locale(language == 'en' ? 'es' : 'en'));
       await tester.ensureVisible(find.text(l10n.dark));
+      await tester.pumpAndSettle();
       await tester.tap(find.text(l10n.dark));
       expect(selectedTheme, ThemeMode.dark);
       expect(tester.takeException(), isNull);

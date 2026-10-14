@@ -7,6 +7,16 @@
   const EVENT = "quran-offline-status";
   let registration;
   let currentStatus = {state: "unprepared", supported: false, version: SHELL_VERSION};
+  let audioStatus = {state: "idle", supported: false};
+  let audioBlobUrl = null;
+  let audioBlobSource = null;
+  const prepareHeartbeats = new Set();
+
+  function publishAudio(status) {
+    audioStatus = {...status};
+    window.dispatchEvent(new CustomEvent("quran-audio-status", {detail: audioStatus}));
+    return audioStatus;
+  }
 
   function publish(status) {
     currentStatus = {...status};
@@ -27,7 +37,11 @@
         scope: "./", updateViaCache: "none",
       });
       navigator.serviceWorker.addEventListener("message", event => {
-        if (event.data?.type === EVENT) publish(event.data.status);
+        if (event.data?.type === EVENT) {
+          publish(event.data.status);
+          if (event.data.status?.state === "preparing") for (const heartbeat of prepareHeartbeats) heartbeat();
+        }
+        if (event.data?.type === "quran-audio-status") publishAudio(event.data.status);
       });
       await navigator.serviceWorker.ready;
       return registration;
@@ -43,12 +57,20 @@
     if (!worker) return unsupported();
     return new Promise(resolve => {
       const channel = new MessageChannel();
-      const timer = setTimeout(() => {
+      let timer;
+      const resetTimer = () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          prepareHeartbeats.delete(resetTimer);
         channel.port1.close();
         resolve(publish({state: "error", supported: true, errorCode: "timeout", version: SHELL_VERSION}));
-      }, action === "prepare" ? 15 * 60 * 1000 : 15000);
+        }, action === "prepare" ? 3 * 60 * 1000 : 15000);
+      };
+      if (action === "prepare") prepareHeartbeats.add(resetTimer);
+      resetTimer();
       channel.port1.onmessage = event => {
         clearTimeout(timer);
+        prepareHeartbeats.delete(resetTimer);
         channel.port1.close();
         resolve(publish(event.data));
       };
@@ -106,6 +128,51 @@
       else return publish({...status, state: "error", errorCode: "activation_timeout"});
       return status;
     },
+  });
+
+  async function audioCommand(action, details = {}) {
+    const registered = await ready;
+    const worker = registered?.waiting || registered?.active;
+    if (!worker) return publishAudio({supported: false, state: "unsupported", errorCode: "unavailable"});
+    return new Promise(resolve => {
+      const channel = new MessageChannel();
+      const timer = setTimeout(() => {
+        channel.port1.close();
+        resolve(publishAudio({supported: true, state: "error", errorCode: "timeout"}));
+      }, action === "download" ? 15 * 60 * 1000 : 60000);
+      channel.port1.onmessage = event => {
+        clearTimeout(timer); channel.port1.close();
+        resolve(action === "list" || action === "has" ? event.data : publishAudio(event.data));
+      };
+      worker.postMessage({type: "quran-audio-command", action, ...details}, [channel.port2]);
+    });
+  }
+  window.quranAudio = Object.freeze({
+    list: () => audioCommand("list"),
+    download: details => audioCommand("download", details),
+    cancel: () => audioCommand("cancel"),
+    async remove(url) {
+      const result = await audioCommand("remove", {url});
+      if (result.state === "removed" && audioBlobSource === url) {
+        URL.revokeObjectURL(audioBlobUrl); audioBlobUrl = null; audioBlobSource = null;
+      }
+      return result;
+    },
+    async playableUrl(url) {
+      // Check the complete stored recording/hash before creating a local source.
+      // Blob playback supports seeking without another network request.
+      const result = await audioCommand("has", {url});
+      if (!result.entry) return null;
+      if (audioBlobSource === url && audioBlobUrl) return audioBlobUrl;
+      const cache = await caches.open("quran-haven-audio-v1");
+      const response = await cache.match(url);
+      if (!response) return null;
+      const blob = await response.blob();
+      if (audioBlobUrl) URL.revokeObjectURL(audioBlobUrl);
+      audioBlobUrl = URL.createObjectURL(blob); audioBlobSource = url;
+      return audioBlobUrl;
+    },
+    get lastStatus() { return audioStatus; },
   });
 
   // Startup must still work online if browser storage or service workers fail.

@@ -1,0 +1,5948 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-10-14T19:15:31.018115+00:00",
+  "topicCount": 13,
+  "languageCount": 3,
+  "videoCount": 39,
+  "posterCount": 39,
+  "mediaBytes": 38467766,
+  "mediaBudgetBytes": 41943040,
+  "perVideoBudgetBytes": 3145728,
+  "capturePolicy": {
+    "realApplicationFrames": true,
+    "quranTextRedrawn": false,
+    "placeholderMedia": false,
+    "silent": true,
+    "annotations": "Non-interactive pointer, click ripple, observed-target outline, numbered localized captions, progress strip and restrained crop/zoom. Long web waits may be cut between actual action and actual ready result.",
+    "iosCaptureClaimed": false
+  },
+  "sources": [
+    {
+      "id": "capture-1",
+      "sha256": "092f95bdaf65dd1f93c1d26cc504c4084cfe0f64c9a96e66251a436c3500ed32",
+      "platform": "website",
+      "source": "Actual local Quran Haven application capture",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "capture-2",
+      "sha256": "98615855a0fcc0703934520c3600ec7e4e97b4c191e203d6fc1ab6d39e3525a4",
+      "platform": "website",
+      "source": "Actual local Quran Haven application capture",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "capture-3",
+      "sha256": "359249fac7723c8ada3dda67d016bb6a943bca8dcf202d666381a3803ecc87ba",
+      "platform": "website",
+      "source": "Actual local Quran Haven application capture",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "capture-4",
+      "sha256": "abdff8f50b1bc04ecd0d2b33a214d799cea055e205688871eee87d7d8c634e10",
+      "platform": "website",
+      "source": "Actual local Quran Haven application capture",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "capture-5",
+      "sha256": "052ac7235aeaffd63d678d3e6cd96d878abcb63c781aea573fdd9a026db32e45",
+      "platform": "android",
+      "source": "Actual local Quran Haven application capture",
+      "viewport": {
+        "width": 720,
+        "height": 1616
+      }
+    },
+    {
+      "id": "capture-6",
+      "sha256": "5f63195953de0fa3c4a9f76e7c65213e93b1b65e4aa30cb3b123cd857e9d76e4",
+      "platform": "website",
+      "source": "Actual local Quran Haven application capture",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "capture-7",
+      "sha256": "dabc48603744757389eddaa28f392fa7c85ee0358d9a2610c81e5b12f64ecbec",
+      "platform": "website",
+      "source": "Actual local Quran Haven application capture",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "capture-8",
+      "sha256": "d3e2efce399172c4c8f537f7d926269c91a6958499eb96d7d4d6798548b6bc9a",
+      "platform": "website",
+      "source": "Actual local Quran Haven application capture",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "capture-9",
+      "sha256": "767b7d21cd93f180186e14b502176a903e1e077f6e67851a10ec8bb7602be2d1",
+      "platform": "website",
+      "source": "Actual local Quran Haven application capture",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "capture-10",
+      "sha256": "8dad355e7fbb33cf3fb8fd7c5a528414b6e6aa1e6c6af91a18c921a4a10d0f82",
+      "platform": "website",
+      "source": "Actual local Quran Haven application capture",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "capture-11",
+      "sha256": "a3cbe7ae6ef5acc3a56c95f88679ac32485512835c11267882998802e1f4fc5e",
+      "platform": "android",
+      "source": "Actual local Quran Haven application capture",
+      "viewport": {
+        "width": 720,
+        "height": 1616
+      }
+    },
+    {
+      "id": "capture-12",
+      "sha256": "9910f5a53a4a1d445f9dcf16cc3635930594264d8aa66bdae2b2893722356e40",
+      "platform": "website",
+      "source": "Actual local Quran Haven application capture",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "capture-13",
+      "sha256": "e743707803242caed2066f29e3c6b8d365df01962b7d287c4fe756b0f7fc6880",
+      "platform": "website",
+      "source": "Actual local Quran Haven application capture",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "capture-14",
+      "sha256": "5820b1e20d6d58b8cfddad1dd052742e47c48962ef25bae040fbbf26c20e28fe",
+      "platform": "website",
+      "source": "Actual local Quran Haven application capture",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "capture-15",
+      "sha256": "8a295e0a2b53bcfdd49473faa444001ba951b8db1559694809065d490c4d26ec",
+      "platform": "website",
+      "source": "Actual local Quran Haven application capture",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "capture-16",
+      "sha256": "07cbdf4287e34eb3a1501646fd29c3f1ef5b3b99ff2af17fecd128b61959ed20",
+      "platform": "android",
+      "source": "Actual local Quran Haven application capture",
+      "viewport": {
+        "width": 720,
+        "height": 1616
+      }
+    }
+  ],
+  "tutorials": [
+    {
+      "language": "ar",
+      "topic": "reader",
+      "video": "ar/reader.mp4",
+      "poster": "ar/reader.png",
+      "bytes": 1211771,
+      "posterBytes": 172663,
+      "sha256": "c2e36cc227496b84dffeb408a7cb47bcb817d191f8e20fbdac9e03075934ae0b",
+      "posterSha256": "b49d248f9e6f5941ac9c203e03c78b522f1eca6638be6ab45cd5b6a693fe8d18",
+      "durationSeconds": 30.1,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-1",
+          "sourceStartSeconds": 12.237,
+          "sourceEndSeconds": 17.744,
+          "target": {
+            "x": 849.5493774414062,
+            "y": 318,
+            "width": 157.4375,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "47150e311cdaed87b9963b457b759318bbb2dfdd782cb08958da307931306226"
+        },
+        {
+          "step": 2,
+          "capture": "capture-1",
+          "sourceStartSeconds": 18.555,
+          "sourceEndSeconds": 21.803,
+          "target": {
+            "x": 529.5,
+            "y": 7.5,
+            "width": 40,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "4d323bb24d1d82269add8f7a4c092c6d63906644ceae0952590d8cc6fde9ea2a"
+        },
+        {
+          "step": 3,
+          "capture": "capture-1",
+          "sourceStartSeconds": 21.823,
+          "sourceEndSeconds": 24.944,
+          "target": {
+            "x": 433.3333435058594,
+            "y": 267.3999938964844,
+            "width": 413.3281555175781,
+            "height": 48
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "6a9a70ba8c4d45fd4e8023461d003309e80c099e13a00c945402f8c79c5ef709"
+        },
+        {
+          "step": 4,
+          "capture": "capture-1",
+          "sourceStartSeconds": 24.971,
+          "sourceEndSeconds": 28.087,
+          "target": {
+            "x": 846.6666870117188,
+            "y": 267.3999938964844,
+            "width": 413.32818603515625,
+            "height": 48
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "5c89b452a817495587af894b4f495cb66896a998627e29063e6d9d5d07d02a4e"
+        },
+        {
+          "step": 5,
+          "capture": "capture-1",
+          "sourceStartSeconds": 28.108,
+          "sourceEndSeconds": 46.403,
+          "target": {
+            "x": 16,
+            "y": 439.3999938964844,
+            "width": 1248,
+            "height": 48
+          },
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "a63f270821fa917e49b3422281de90da340945598614229fa96920081d48790c"
+        },
+        {
+          "step": 6,
+          "capture": "capture-1",
+          "sourceStartSeconds": 48.055,
+          "sourceEndSeconds": 51.328,
+          "target": {
+            "x": 24,
+            "y": 501.3999938964844,
+            "width": 1232,
+            "height": 44.000030517578125
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "0e5d26873382fe9e0de6c16fac50f0ec8e8952ec92478b4a5c0fcd5d25e59b23"
+        },
+        {
+          "step": 7,
+          "capture": "capture-1",
+          "sourceStartSeconds": 51.362,
+          "sourceEndSeconds": 54.918,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "53bd2d8a02dd704c0272ae17d52ddc5a7340d498ca83c03d94243169a4597994"
+        },
+        {
+          "step": 8,
+          "capture": "capture-1",
+          "sourceStartSeconds": 55.399,
+          "sourceEndSeconds": 58.544,
+          "target": {
+            "x": 849.5493774414062,
+            "y": 318,
+            "width": 157.4375,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "2929f9657815da23a329e87be7025037d123934c548a406f42d362c11dceecff"
+        }
+      ]
+    },
+    {
+      "language": "ar",
+      "topic": "search",
+      "video": "ar/search.mp4",
+      "poster": "ar/search.png",
+      "bytes": 830927,
+      "posterBytes": 161918,
+      "sha256": "83855cec0b7f141780bb025923014fcd130a6c88809729db885d83b878ff40f6",
+      "posterSha256": "eb558dec969e1b6a8d8ccb630dad110314b491384f1b9b02e92061187b5e4e32",
+      "durationSeconds": 25.25,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-2",
+          "sourceStartSeconds": 13.394,
+          "sourceEndSeconds": 16.69,
+          "target": {
+            "x": 535.5,
+            "y": 434,
+            "width": 243.75,
+            "height": 112
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "1101d91814c7cd197bf4f1734c6a1db8770efb4719632edf2fec55e5b55d76fc"
+        },
+        {
+          "step": 2,
+          "capture": "capture-2",
+          "sourceStartSeconds": 16.727,
+          "sourceEndSeconds": 23.689,
+          "target": {
+            "x": 32,
+            "y": 172,
+            "width": 1224,
+            "height": 54
+          },
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "90e0ce87d499a8a32d0287d71532d44bbb2f9faf1e6f8d2f2a5b5a7e69778da1"
+        },
+        {
+          "step": 3,
+          "capture": "capture-2",
+          "sourceStartSeconds": 23.728,
+          "sourceEndSeconds": 44.078,
+          "target": {
+            "x": 1156.931640625,
+            "y": 230,
+            "width": 87.0625,
+            "height": 64
+          },
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "058d2045aeae7b0b6b5afc98bfbf55ed80f63d4cc4572aae7b76b8b381fc6b03"
+        },
+        {
+          "step": 4,
+          "capture": "capture-2",
+          "sourceStartSeconds": 50.565,
+          "sourceEndSeconds": 55.71,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "7d92beb48e0afc178c4642186a8d90991984cbe15db2953df081528c963255db"
+        },
+        {
+          "step": 5,
+          "capture": "capture-2",
+          "sourceStartSeconds": 55.75,
+          "sourceEndSeconds": 58.953,
+          "target": {
+            "x": 606,
+            "y": 121,
+            "width": 40,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "a4621f70d5dfb4812f9feb725e693a573cfb94e494892e4b2110a3b358f78627"
+        },
+        {
+          "step": 6,
+          "capture": "capture-2",
+          "sourceStartSeconds": 59.494,
+          "sourceEndSeconds": 62.675,
+          "target": {
+            "x": 279.75,
+            "y": 434,
+            "width": 243.75,
+            "height": 112
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "be08a6f276bfb7ec633550621f42939094b0952fb68014b896f9175a8ee7737e"
+        }
+      ]
+    },
+    {
+      "language": "ar",
+      "topic": "library",
+      "video": "ar/library.mp4",
+      "poster": "ar/library.png",
+      "bytes": 825458,
+      "posterBytes": 174754,
+      "sha256": "efc3e23a49a74ebdbdb368addfe6cc9bb9beb153a6b32582c1a1538a5768df91",
+      "posterSha256": "d60474e8d41c24cf3eb16a170bcf3fdaee80fe48ba9a9d49eb5d03614f2e90e6",
+      "durationSeconds": 29.4,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": {
+        "version": "b0ffc3b32e77f764d5864c4f1cb69f10409cc0ed2a01c763462c0ca4fe364c9b",
+        "totalBytes": 107093207
+      },
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-3",
+          "sourceStartSeconds": 13.46,
+          "sourceEndSeconds": 16.803,
+          "target": {
+            "x": 836.8491821289062,
+            "y": 216,
+            "width": 99.0625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "3b91fe472d5353b4653a1bc14d0a90f525c7a82224788dbbba642b5759e4d574"
+        },
+        {
+          "step": 2,
+          "capture": "capture-3",
+          "sourceStartSeconds": 16.845,
+          "sourceEndSeconds": 22.423,
+          "target": {
+            "x": 44,
+            "y": 499.5,
+            "width": 80.953125,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "fc05a92f1f5ca6361c90184a3e992a0ee81317bc38bb57ac215ab42c932d2334"
+        },
+        {
+          "step": 3,
+          "capture": "capture-3",
+          "sourceStartSeconds": 29.755,
+          "sourceEndSeconds": 32.932,
+          "target": {
+            "x": 702,
+            "y": 121,
+            "width": 40,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "f1e9f46775a72424399931a970f33c120252b3e025173c25aa0202e1060efd00"
+        },
+        {
+          "step": 4,
+          "capture": "capture-3",
+          "sourceStartSeconds": 32.959,
+          "sourceEndSeconds": 36.359,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "7f358a1b1ff8b2115f07f2f33ed469ed4c83fdbad517b0220541867fa18c1a75"
+        },
+        {
+          "step": 5,
+          "capture": "capture-3",
+          "sourceStartSeconds": 37.19,
+          "sourceEndSeconds": 40.385,
+          "target": {
+            "x": 935.924560546875,
+            "y": 216,
+            "width": 99.0625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "86186ee2d8148166a4fc113b0e31e51da4067642a3815766a8ebd39e716d6534"
+        },
+        {
+          "step": 6,
+          "capture": "capture-3",
+          "sourceStartSeconds": 40.72,
+          "sourceEndSeconds": 44.453,
+          "target": {
+            "x": 44,
+            "y": 305.5,
+            "width": 83.203125,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "055bad70c619f635085872f66fca137932866c389630bcefac66c877f33d7dcf"
+        },
+        {
+          "step": 7,
+          "capture": "capture-3",
+          "sourceStartSeconds": 51.709,
+          "sourceEndSeconds": 54.902,
+          "target": {
+            "x": 702,
+            "y": 121,
+            "width": 40,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "e1789f1fc076352537349086577e0ec91d5a5a1534ebbbcd0dd358467db3989d"
+        },
+        {
+          "step": 8,
+          "capture": "capture-3",
+          "sourceStartSeconds": 54.927,
+          "sourceEndSeconds": 58.615,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "31e87d0c61528aae78d8d875892281434b6d727225be5d9461d747f83bd8d9f3"
+        }
+      ]
+    },
+    {
+      "language": "ar",
+      "topic": "audio",
+      "video": "ar/audio.mp4",
+      "poster": "ar/audio.png",
+      "bytes": 814928,
+      "posterBytes": 161341,
+      "sha256": "597b26a7c7d53fb5d70faa1d90daeffedd328600b2801249ac55c6a89ffd1e83",
+      "posterSha256": "b125413ca2975ec6eb3baa29e998d2cb76344819a20ece833dca174f9f915476",
+      "durationSeconds": 30.5,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-2",
+          "sourceStartSeconds": 64.281,
+          "sourceEndSeconds": 67.748,
+          "target": {
+            "x": 727.5,
+            "y": 632,
+            "width": 247.5,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "3a031d4caeb8b8b50c63c08cfb044c821831d8b822f9c01f9b69082bb00360b7"
+        },
+        {
+          "step": 2,
+          "capture": "capture-2",
+          "sourceStartSeconds": 69.371,
+          "sourceEndSeconds": 72.599,
+          "target": {
+            "x": 274.81591796875,
+            "y": 562,
+            "width": 90.359375,
+            "height": 30
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "43cf0d8696c5eb144385856b4d32c8af14f66bea985c2834eaed39c7bdcbea25"
+        },
+        {
+          "step": 3,
+          "capture": "capture-2",
+          "sourceStartSeconds": 72.638,
+          "sourceEndSeconds": 75.564,
+          "target": {
+            "x": 40,
+            "y": 250,
+            "width": 1200,
+            "height": 46
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "a885a683877ab278aac48df49b928b325eb98a0dca7f7354e7375ec0ec063fd6"
+        },
+        {
+          "step": 4,
+          "capture": "capture-2",
+          "sourceStartSeconds": 76.494,
+          "sourceEndSeconds": 79.758,
+          "target": {
+            "x": 737.7738037109375,
+            "y": 216,
+            "width": 99.0625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "861abf76e7fbd7e0985eae1d1ffbf1f2c3c1a689e0c307794f9164fa74e4c741"
+        },
+        {
+          "step": 5,
+          "capture": "capture-2",
+          "sourceStartSeconds": 79.798,
+          "sourceEndSeconds": 83.016,
+          "target": {
+            "x": 48,
+            "y": 345,
+            "width": 963,
+            "height": 56
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "992bc9e3ffd1374b02e8c93755ceae17bd64788a704abb85b27862b662a4a546"
+        },
+        {
+          "step": 6,
+          "capture": "capture-2",
+          "sourceStartSeconds": 83.08,
+          "sourceEndSeconds": 86.231,
+          "target": {
+            "x": 24,
+            "y": 56,
+            "width": 1003,
+            "height": 48
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "d6dff9b96bb3f81b86fff6d9324b225b9a1f1178e63da8bb96170fc510c45451"
+        },
+        {
+          "step": 7,
+          "capture": "capture-2",
+          "sourceStartSeconds": 86.308,
+          "sourceEndSeconds": 90.42,
+          "target": {
+            "x": 894.0496826171875,
+            "y": 417,
+            "width": 116.9375,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "28881db138ac4696eb4bd64515c3081bd90987c9e10ea901253961593ed4b7a6"
+        },
+        {
+          "step": 8,
+          "capture": "capture-2",
+          "sourceStartSeconds": 90.527,
+          "sourceEndSeconds": 93.837,
+          "target": {
+            "x": 599.8643188476562,
+            "y": 417,
+            "width": 103.8125,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "29539cf151fb8e8a75f58052af3e5f3d7b57905e81af35e1b87caaf46337a3bd"
+        },
+        {
+          "step": 9,
+          "capture": "capture-2",
+          "sourceStartSeconds": 93.902,
+          "sourceEndSeconds": 97.75,
+          "target": {
+            "x": 713.686767578125,
+            "y": 417,
+            "width": 170.359375,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "a783c56e0e524a454d724379d5cf88b86a5fb88bc7329c686d316abcfb93f333"
+        }
+      ]
+    },
+    {
+      "language": "ar",
+      "topic": "offline",
+      "video": "ar/offline.mp4",
+      "poster": "ar/offline.png",
+      "bytes": 413825,
+      "posterBytes": 155751,
+      "sha256": "d538ae38b90830a99b62833e7d798a73985c59d49017e010ce134595ef45fd3f",
+      "posterSha256": "014556b07d43d658cc1f5340d057a627c8f849f9b30521d50208b6ddc8080d0c",
+      "durationSeconds": 15.9,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-4",
+          "sourceStartSeconds": 64.607,
+          "sourceEndSeconds": 68.091,
+          "target": {
+            "x": 781.9688720703125,
+            "y": 0,
+            "width": 229.015625,
+            "height": 12
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "51ab4bcc3fee6905d2334aa4b43987339fb283feb6ca33e115bfa7a849d511e5"
+        },
+        {
+          "step": 2,
+          "capture": "capture-4",
+          "sourceStartSeconds": 137.704,
+          "sourceEndSeconds": 141.609,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "38f6b40aab63712693ddc5aa68716d15848567576b29543b047a45688dce703b"
+        },
+        {
+          "step": 3,
+          "capture": "capture-4",
+          "sourceStartSeconds": 147.078,
+          "sourceEndSeconds": 152.281,
+          "target": {
+            "x": 849.5493774414062,
+            "y": 318,
+            "width": 157.4375,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "42d5aa8b1fe14da9412e69f526d1fa336bf1e74b8afd8694e466cb2069229742"
+        },
+        {
+          "step": 4,
+          "capture": "capture-4",
+          "sourceStartSeconds": 152.909,
+          "sourceEndSeconds": 156.227,
+          "target": {
+            "x": 836.8491821289062,
+            "y": 216,
+            "width": 99.0625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "36789f7ae7502da87ed728729e505697b67fffbca98b133d16671e6567471536"
+        }
+      ]
+    },
+    {
+      "language": "ar",
+      "topic": "plans",
+      "video": "ar/plans.mp4",
+      "poster": "ar/plans.png",
+      "bytes": 862368,
+      "posterBytes": 117894,
+      "sha256": "b2c65e3f55a61d02b9d1533415ee427fd86f7e86ccd157417b11ed51361f203d",
+      "posterSha256": "d4558ec0d267600e92c86281e6a3e1acfa6ae5cb37efabdc35b04704aaf74c63",
+      "durationSeconds": 43.45,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-4",
+          "sourceStartSeconds": 156.663,
+          "sourceEndSeconds": 159.867,
+          "target": {
+            "x": 719.728271484375,
+            "y": 440,
+            "width": 178.453125,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "491fc42a0fcd75d734c0c54c22730f651c5c601800698f2da6f480645092b4b6"
+        },
+        {
+          "step": 2,
+          "capture": "capture-4",
+          "sourceStartSeconds": 163.758,
+          "sourceEndSeconds": 171.05,
+          "target": {
+            "x": 24,
+            "y": 652,
+            "width": 1232,
+            "height": 44
+          },
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "9a737e774951fdea4ef0778444bbf93c922e39c34a8bce747d1583f71702bd57"
+        },
+        {
+          "step": 3,
+          "capture": "capture-4",
+          "sourceStartSeconds": 171.083,
+          "sourceEndSeconds": 174.34,
+          "target": {
+            "x": 820.7991333007812,
+            "y": 574,
+            "width": 188.1875,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "67a42719d203789bf083043442ce40d3357e49ae705950e157585807ab12e1f8"
+        },
+        {
+          "step": 4,
+          "capture": "capture-4",
+          "sourceStartSeconds": 174.431,
+          "sourceEndSeconds": 177.837,
+          "target": {
+            "x": 861.3893432617188,
+            "y": 172,
+            "width": 86.796875,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "ff8d082ff5d4597a959bed7f87479bae71c1654cfaa6d1c69c8a274b9e4152c5"
+        },
+        {
+          "step": 5,
+          "capture": "capture-4",
+          "sourceStartSeconds": 177.878,
+          "sourceEndSeconds": 181.09,
+          "target": {
+            "x": 703.0405883789062,
+            "y": 440,
+            "width": 175.09375,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "af389775f46428a587a7445c1553c36ee7b5f3a9e3626812869d8ce8e6614ef8"
+        },
+        {
+          "step": 6,
+          "capture": "capture-4",
+          "sourceStartSeconds": 185.902,
+          "sourceEndSeconds": 193.279,
+          "target": {
+            "x": 24,
+            "y": 652,
+            "width": 1232,
+            "height": 44
+          },
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "a58967e9d8988a9985db11657594f8e5efa61c9f7e617a7243c4d9172fb32b7b"
+        },
+        {
+          "step": 7,
+          "capture": "capture-4",
+          "sourceStartSeconds": 193.679,
+          "sourceEndSeconds": 197.674,
+          "target": {
+            "x": 829.59423828125,
+            "y": 484,
+            "width": 181.390625,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "ef5821dc55811bb06c9b1da453016e6075ddde8f1258d3327b8470e4136a7322"
+        },
+        {
+          "step": 8,
+          "capture": "capture-4",
+          "sourceStartSeconds": 198.095,
+          "sourceEndSeconds": 201.27,
+          "target": {
+            "x": 889.4159545898438,
+            "y": 438,
+            "width": 121.578125,
+            "height": 32
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "2ed61211ec9fb8881f4db6ebcb0574e22512816e81b8d5df21272f590e54f119"
+        },
+        {
+          "step": 9,
+          "capture": "capture-4",
+          "sourceStartSeconds": 201.304,
+          "sourceEndSeconds": 204.487,
+          "target": {
+            "x": 889.7759399414062,
+            "y": 438,
+            "width": 121.21875,
+            "height": 32
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "b1861bea8ca1f0fbe40131be0b4b1d3be60feeee01869e1dea5408fa036ee296"
+        },
+        {
+          "step": 10,
+          "capture": "capture-4",
+          "sourceStartSeconds": 204.516,
+          "sourceEndSeconds": 207.715,
+          "target": {
+            "x": 234.2057647705078,
+            "y": 548,
+            "width": 39.99998474121094,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "d8d34281cd7ce4956058e4b71fbcbc1930e94263c2aa23a083b26bb618b5d82b"
+        },
+        {
+          "step": 11,
+          "capture": "capture-4",
+          "sourceStartSeconds": 207.749,
+          "sourceEndSeconds": 210.94,
+          "target": {
+            "x": 48,
+            "y": 546,
+            "width": 180.203125,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "160736bde6f604cb731b42dd61b87420c39e746c97495836b57d93def8fa242d"
+        },
+        {
+          "step": 12,
+          "capture": "capture-4",
+          "sourceStartSeconds": 210.967,
+          "sourceEndSeconds": 214.169,
+          "target": {
+            "x": 971,
+            "y": 548,
+            "width": 40,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "70aaae46400ef1c192a75fb8998fcd47011551f7746b8a690b242af50abaff30"
+        }
+      ]
+    },
+    {
+      "language": "ar",
+      "topic": "settings",
+      "video": "ar/settings.mp4",
+      "poster": "ar/settings.png",
+      "bytes": 828217,
+      "posterBytes": 149229,
+      "sha256": "a68d8288992ade0de67ae60e86cc1712065d8489a7b959b44c1279b3b64b8123",
+      "posterSha256": "37754c643c8db84371c7a39e832022dfda9eb87ee403c43d57cf8f47ae27e04c",
+      "durationSeconds": 38.25,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-4",
+          "sourceStartSeconds": 215.141,
+          "sourceEndSeconds": 218.574,
+          "target": {
+            "x": 749.6840209960938,
+            "y": 498,
+            "width": 87.09375,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "76babceaa1e0d5c6af31590e54b812379bc4263865e2cd30173659e653b892f0"
+        },
+        {
+          "step": 2,
+          "capture": "capture-4",
+          "sourceStartSeconds": 218.611,
+          "sourceEndSeconds": 222.036,
+          "target": {
+            "x": 269,
+            "y": 460,
+            "width": 89.046875,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "fcd386a480c246fa0ff6e865e89c590ce4b028c1fa027c97d05bce38bab66aee"
+        },
+        {
+          "step": 3,
+          "capture": "capture-4",
+          "sourceStartSeconds": 222.069,
+          "sourceEndSeconds": 225.246,
+          "target": {
+            "x": 759.9890747070312,
+            "y": 634,
+            "width": 83.65625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "23e088e6f4e5229dd85f9fd42ebab300f0872568531cb123f81bc3d845bd2a31"
+        },
+        {
+          "step": 4,
+          "capture": "capture-4",
+          "sourceStartSeconds": 225.277,
+          "sourceEndSeconds": 228.469,
+          "target": {
+            "x": 843.659423828125,
+            "y": 634,
+            "width": 83.65625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "dd4c8ce5fe94feeb4f28443af7a71ba6bd40e4ae4c966ff8e7aa9e8a1f254c7b"
+        },
+        {
+          "step": 5,
+          "capture": "capture-5",
+          "sourceStartSeconds": 1.2,
+          "sourceEndSeconds": 5.0,
+          "target": {
+            "x": 84,
+            "y": 839.3333333333334,
+            "width": 552,
+            "height": 157.33333333333334
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "1351da24b807b1c76cef40f392ed6d63fbb5ca09e6e687ccf3e88d0b27df7020"
+        },
+        {
+          "step": 6,
+          "capture": "capture-5",
+          "sourceStartSeconds": 6,
+          "sourceEndSeconds": 9.5,
+          "target": {
+            "x": 301.3333333333333,
+            "y": 1002,
+            "width": 334.6666666666667,
+            "height": 84
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "626658129f793e54e59849cb73fc78240911ee51811977601b0efe34f8a45df0"
+        },
+        {
+          "step": 7,
+          "capture": "capture-5",
+          "sourceStartSeconds": 33.1,
+          "sourceEndSeconds": 36.05,
+          "target": {
+            "x": 558,
+            "y": 1160,
+            "width": 48,
+            "height": 48
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "6be8f7470e141071a4b6c4eb0e3a9030f6eeb5cf258296726193f323c13b7255"
+        },
+        {
+          "step": 8,
+          "capture": "capture-5",
+          "sourceStartSeconds": 39,
+          "sourceEndSeconds": 40.7,
+          "target": {
+            "x": 437.3333333333333,
+            "y": 706,
+            "width": 168,
+            "height": 122.66666666666667
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "66e47f6976084482d8c6bb21c49ded556d46a0c71ad87ec2d03926900cbd5dd9"
+        },
+        {
+          "step": 9,
+          "capture": "capture-5",
+          "sourceStartSeconds": 42.1,
+          "sourceEndSeconds": 45.2,
+          "target": {
+            "x": 437.3333333333333,
+            "y": 472,
+            "width": 168,
+            "height": 122.66666666666667
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "5594e0fcfd8f3d872f3b91b0cb98da6fec6113ac2e1e3c5c8de69e9f4875e0d1"
+        },
+        {
+          "step": 10,
+          "capture": "capture-5",
+          "sourceStartSeconds": 46.7,
+          "sourceEndSeconds": 50.0,
+          "target": {
+            "x": 87.33333333333333,
+            "y": 687.3333333333334,
+            "width": 112,
+            "height": 84
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "1b2dd4abe45125648acd47faf4ea635e5705d14b41d461f4541c7222a1d0b7f6"
+        },
+        {
+          "step": 11,
+          "capture": "capture-5",
+          "sourceStartSeconds": 50.1,
+          "sourceEndSeconds": 53.3,
+          "target": {
+            "x": 301.3333333333333,
+            "y": 1002,
+            "width": 334.6666666666667,
+            "height": 84
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "f5ed2a59dfdd90151c11eeaad421f09fa46270dfec7192a73087fc3125a6f55b"
+        },
+        {
+          "step": 12,
+          "capture": "capture-5",
+          "sourceStartSeconds": 61.8,
+          "sourceEndSeconds": 65.2,
+          "target": {
+            "x": 84,
+            "y": 839.3333333333334,
+            "width": 552,
+            "height": 157.33333333333334
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "ebd77dc47fc98bf64794d81ff9f49c1f4ceb03dc4317d767862b816b8ec88e50"
+        }
+      ]
+    },
+    {
+      "language": "ar",
+      "topic": "storage",
+      "video": "ar/storage.mp4",
+      "poster": "ar/storage.png",
+      "bytes": 348222,
+      "posterBytes": 176445,
+      "sha256": "d88563013f302568565c0592599405e86f2279287e42584f464392209a81a30f",
+      "posterSha256": "85d8b51128d39b8dae00447eaed38b408276333073c3d3e59258cd560c6bb8b9",
+      "durationSeconds": 12.75,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-4",
+          "sourceStartSeconds": 229.19,
+          "sourceEndSeconds": 233.411,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "7b05391f16edf1e2d6b03e909d1002ffa28995d0d438edeb98da4302c3348b30"
+        },
+        {
+          "step": 2,
+          "capture": "capture-4",
+          "sourceStartSeconds": 233.429,
+          "sourceEndSeconds": 237.64,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "7b05391f16edf1e2d6b03e909d1002ffa28995d0d438edeb98da4302c3348b30"
+        },
+        {
+          "step": 3,
+          "capture": "capture-4",
+          "sourceStartSeconds": 237.955,
+          "sourceEndSeconds": 242.305,
+          "target": {
+            "x": 800.8090209960938,
+            "y": 520,
+            "width": 210.1875,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "174aaeb885358a55e25c220a9b188713e322f0893b3f36d1633c87e71c646b7d"
+        }
+      ]
+    },
+    {
+      "language": "ar",
+      "topic": "personal",
+      "video": "ar/personal.mp4",
+      "poster": "ar/personal.png",
+      "bytes": 1176686,
+      "posterBytes": 180362,
+      "sha256": "3c81ec1fc48fcc366215b61fc8ced15d783c3f813fd20e5e0c70b103dac67b95",
+      "posterSha256": "0a358fcd8a61ffc2eaba8deb2e5f37ed39a558145e2b958d9d177442f661fb2d",
+      "durationSeconds": 53.0,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-6",
+          "sourceStartSeconds": 14.671,
+          "sourceEndSeconds": 17.923,
+          "target": {
+            "x": 863.0321044921875,
+            "y": 166,
+            "width": 171.953125,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "011dfbf35bc6327f47eed6ee187ac540a120bc14b9118a3e69fe747c7e3c443c"
+        },
+        {
+          "step": 2,
+          "capture": "capture-6",
+          "sourceStartSeconds": 17.972,
+          "sourceEndSeconds": 21.372,
+          "target": {
+            "x": 974.809326171875,
+            "y": 166,
+            "width": 165.1875,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "b262c222fc4e8ceae153a5958743a46e9ed39155ceac86b7e4f49437989ea052"
+        },
+        {
+          "step": 3,
+          "capture": "capture-6",
+          "sourceStartSeconds": 22.456,
+          "sourceEndSeconds": 27.092,
+          "target": {
+            "x": 380,
+            "y": 396.25,
+            "width": 526,
+            "height": 166.75
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "b28430c45339c61ff3313a3264a61b3362723d2332d69cf569370b636dd33c8e"
+        },
+        {
+          "step": 4,
+          "capture": "capture-6",
+          "sourceStartSeconds": 27.161,
+          "sourceEndSeconds": 30.619,
+          "target": {
+            "x": 364,
+            "y": 589,
+            "width": 75.296875,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "2a738b4b1574314c8b70226c76b81cca5286ee44811640dceed89395d86467c9"
+        },
+        {
+          "step": 5,
+          "capture": "capture-6",
+          "sourceStartSeconds": 30.694,
+          "sourceEndSeconds": 33.928,
+          "target": {
+            "x": 202,
+            "y": 250,
+            "width": 40,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "e73a9c3740d244d4684a101655240cf45c263fd9d2533821cc0610a20cee41aa"
+        },
+        {
+          "step": 6,
+          "capture": "capture-6",
+          "sourceStartSeconds": 36.185,
+          "sourceEndSeconds": 39.453,
+          "target": {
+            "x": 364,
+            "y": 589,
+            "width": 75.296875,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "e26c75a4089b798d5585be55751238a7594e39fd30f8551f81d94b2a98c1cb00"
+        },
+        {
+          "step": 7,
+          "capture": "capture-6",
+          "sourceStartSeconds": 39.561,
+          "sourceEndSeconds": 42.958,
+          "target": {
+            "x": 140,
+            "y": 118,
+            "width": 500,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "e81cae0484d8552e733bf869649e6817aa89a3c1541ed2a42a88cf6ead5d6f13"
+        },
+        {
+          "step": 8,
+          "capture": "capture-6",
+          "sourceStartSeconds": 43.015,
+          "sourceEndSeconds": 46.428,
+          "target": {
+            "x": 972.4843139648438,
+            "y": 166,
+            "width": 167.51568603515625,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "3a6135403600516fb433c4ac1861f80cf46ba048096b3a738dbb4095df3330a8"
+        },
+        {
+          "step": 9,
+          "capture": "capture-6",
+          "sourceStartSeconds": 47.557,
+          "sourceEndSeconds": 50.94,
+          "target": {
+            "x": 508,
+            "y": 439.875,
+            "width": 75.296875,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "741b742fd56ba20af5e41de467dabfcac8e6c3465c22599fb3defa752c5da7e2"
+        },
+        {
+          "step": 10,
+          "capture": "capture-6",
+          "sourceStartSeconds": 50.981,
+          "sourceEndSeconds": 54.373,
+          "target": {
+            "x": 1006.6709594726562,
+            "y": 318,
+            "width": 111.32806396484375,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "0f2b5210057452f9163f66eefb39f5b9cc90a5354220e74ea7f4d4137294ab13"
+        },
+        {
+          "step": 11,
+          "capture": "capture-6",
+          "sourceStartSeconds": 54.473,
+          "sourceEndSeconds": 57.774,
+          "target": {
+            "x": 508,
+            "y": 644,
+            "width": 75.296875,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "fea441b60f48f7eba2dec4e675ba5c89697287c020685a8d4dacd993a19adbda"
+        },
+        {
+          "step": 12,
+          "capture": "capture-6",
+          "sourceStartSeconds": 57.893,
+          "sourceEndSeconds": 60.89,
+          "target": {
+            "x": 162,
+            "y": 290,
+            "width": 956,
+            "height": 68
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "07fb3b4ace2a7eaa8fce6a0aa7b091eb1109d447b04e9d0876d91d390c1aa387"
+        },
+        {
+          "step": 13,
+          "capture": "capture-6",
+          "sourceStartSeconds": 62.804,
+          "sourceEndSeconds": 67.975,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "5776bca3c66c048eb6529180d439be7328018341247630051325ebe2336c2590"
+        },
+        {
+          "step": 14,
+          "capture": "capture-6",
+          "sourceStartSeconds": 68.024,
+          "sourceEndSeconds": 71.44,
+          "target": {
+            "x": 834,
+            "y": 123,
+            "width": 40,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "a884f49da145941ebbd6cc4c35bc9aeb4ee7fc9dc510c651ccb382f098bc4cc4"
+        },
+        {
+          "step": 15,
+          "capture": "capture-6",
+          "sourceStartSeconds": 71.488,
+          "sourceEndSeconds": 74.764,
+          "target": {
+            "x": 430,
+            "y": 329.5,
+            "width": 420,
+            "height": 48
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.3,
+          "screenshotSha256": "3906e20e752d626162e14f0b2c6d3857895f31de5675023aebd3e2b3701ea275"
+        }
+      ]
+    },
+    {
+      "language": "ar",
+      "topic": "backup",
+      "video": "ar/backup.mp4",
+      "poster": "ar/backup.png",
+      "bytes": 575965,
+      "posterBytes": 185455,
+      "sha256": "510320f163e3ecb696f106ad093a904f0afd68f3a7ba6693f458f844808156ee",
+      "posterSha256": "6a37102a71d9b8529e5a4ca7ba0b21cc2c275ca42d0c41a2c12cbceef65f6849",
+      "durationSeconds": 23.5,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-4",
+          "sourceStartSeconds": 285.326,
+          "sourceEndSeconds": 288.585,
+          "target": {
+            "x": 800.8090209960938,
+            "y": 520,
+            "width": 210.1875,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "3ce5b2ae702a2a1dfd0a840cb819becdd4e896c0a4eb8b5badd8a132670211d0"
+        },
+        {
+          "step": 2,
+          "capture": "capture-4",
+          "sourceStartSeconds": 288.659,
+          "sourceEndSeconds": 292.097,
+          "target": {
+            "x": 606.8710327148438,
+            "y": 520,
+            "width": 183.9375,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "e7b7fa3e0f0ec15eabd7097b9b72662f5a526af53505e23068baf454d53f062f"
+        },
+        {
+          "step": 3,
+          "capture": "capture-4",
+          "sourceStartSeconds": 292.729,
+          "sourceEndSeconds": 296.707,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "ec07cd0205f286f606d42a4a77768abf47ae1bbbffd8f5ca3158de57ecdb5611"
+        },
+        {
+          "step": 4,
+          "capture": "capture-4",
+          "sourceStartSeconds": 297.164,
+          "sourceEndSeconds": 300.933,
+          "target": {
+            "x": 749.4271240234375,
+            "y": 502.5,
+            "width": 170.5625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "cd03144f5cd9739c4b774200572e40c360995744fa1fbdae193d8c2e471d7009"
+        },
+        {
+          "step": 5,
+          "capture": "capture-4",
+          "sourceStartSeconds": 301.467,
+          "sourceEndSeconds": 305.295,
+          "target": {
+            "x": 344,
+            "y": 578.5,
+            "width": 235.28125,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "ce15589e11cd36f80fc2b7a506f9554d0137f8d30400b9d9d81db0d6e4b03235"
+        },
+        {
+          "step": 6,
+          "capture": "capture-4",
+          "sourceStartSeconds": 305.734,
+          "sourceEndSeconds": 312.928,
+          "target": {
+            "x": 346.01666259765625,
+            "y": 407.5,
+            "width": 181.734375,
+            "height": 44
+          },
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "5e40d9fdeb0b48bd1225fa8bc12deccc097eda647773be70baa82bb53960f5cd"
+        }
+      ]
+    },
+    {
+      "language": "ar",
+      "topic": "share-search",
+      "video": "ar/share-search.mp4",
+      "poster": "ar/share-search.png",
+      "bytes": 1311939,
+      "posterBytes": 215474,
+      "sha256": "a0a81899ba740e531eba3bdebf970ce727229911d60052d9454144fc0e1651c8",
+      "posterSha256": "e18e190de39633113628e41a93d0d40c8c951c03bb08473902c165977868d496",
+      "durationSeconds": 39.45,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": {
+        "version": "b0ffc3b32e77f764d5864c4f1cb69f10409cc0ed2a01c763462c0ca4fe364c9b",
+        "totalBytes": 107093207
+      },
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-3",
+          "sourceStartSeconds": 64.799,
+          "sourceEndSeconds": 69.94,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "5776bca3c66c048eb6529180d439be7328018341247630051325ebe2336c2590"
+        },
+        {
+          "step": 2,
+          "capture": "capture-3",
+          "sourceStartSeconds": 69.975,
+          "sourceEndSeconds": 73.158,
+          "target": {
+            "x": 790,
+            "y": 123,
+            "width": 40,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "eea3c9aa1dfe52d45b0ff5ed1332a74338c1cb4526f0bdf24b800a4b37b62b65"
+        },
+        {
+          "step": 3,
+          "capture": "capture-3",
+          "sourceStartSeconds": 73.196,
+          "sourceEndSeconds": 76.377,
+          "target": {
+            "x": 260,
+            "y": 118,
+            "width": 760,
+            "height": 56.75
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "abc7c54e570ca4aad647966dc468b3b6198bda2b4ad884beebaa3c67d5e5b7c6"
+        },
+        {
+          "step": 4,
+          "capture": "capture-3",
+          "sourceStartSeconds": 76.421,
+          "sourceEndSeconds": 79.46,
+          "target": {
+            "x": 236,
+            "y": 218.375,
+            "width": 800,
+            "height": 48
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "ccbf2150bd5ee99c2ee8c6f7df4901cac867108a91f78641193c5437ed259267"
+        },
+        {
+          "step": 5,
+          "capture": "capture-3",
+          "sourceStartSeconds": 79.497,
+          "sourceEndSeconds": 82.678,
+          "target": {
+            "x": 846.1092529296875,
+            "y": 508.75,
+            "width": 173.890625,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "0922963fe33326c6e9887db76cc3bbbe67c51c2f32f6376b7d156f6dba4a14a4"
+        },
+        {
+          "step": 6,
+          "capture": "capture-3",
+          "sourceStartSeconds": 82.726,
+          "sourceEndSeconds": 85.99,
+          "target": {
+            "x": 658.726318359375,
+            "y": 508.75,
+            "width": 177.375,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "8a6f761b92403fc05df63dc2f120dd8dcec37c40462dcf66dd7f421855ca3e8d"
+        },
+        {
+          "step": 7,
+          "capture": "capture-3",
+          "sourceStartSeconds": 86.025,
+          "sourceEndSeconds": 89.194,
+          "target": {
+            "x": 509.3620910644531,
+            "y": 508.75,
+            "width": 139.35934448242188,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "2e0fa6ab5c50558ec0ffff3bd51bbfa0c8f72aa222dc78840674c84ea2556105"
+        },
+        {
+          "step": 8,
+          "capture": "capture-3",
+          "sourceStartSeconds": 90.124,
+          "sourceEndSeconds": 93.303,
+          "target": {
+            "x": 614.013671875,
+            "y": 166,
+            "width": 239.015625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "c2662f13653b67d81432d3156ba4c857d711696ec2922d4edbc894b5f60b0603"
+        },
+        {
+          "step": 9,
+          "capture": "capture-3",
+          "sourceStartSeconds": 94.088,
+          "sourceEndSeconds": 97.598,
+          "target": {
+            "x": 992.7997436523438,
+            "y": 338.75,
+            "width": 107.18756103515625,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "79c64c90da094c2e9368f2a1a91469b93d83e9dd78ba52511b4b8704fe24fada"
+        },
+        {
+          "step": 10,
+          "capture": "capture-3",
+          "sourceStartSeconds": 103.386,
+          "sourceEndSeconds": 110.509,
+          "target": {
+            "x": 756.1138305664062,
+            "y": 672,
+            "width": 115.609375,
+            "height": 28
+          },
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "578efce29a9c72aabcd4ac9f2800808179d419a79d35699c12e7fae2f30eede4"
+        },
+        {
+          "step": 11,
+          "capture": "capture-3",
+          "sourceStartSeconds": 110.915,
+          "sourceEndSeconds": 114.261,
+          "target": {
+            "x": 935.0557861328125,
+            "y": 612.75,
+            "width": 144.9375,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "014e94cce9a02767857830b7e71c879293cb27d03ec4d789514a8c67d9b3e881"
+        }
+      ]
+    },
+    {
+      "language": "ar",
+      "topic": "saved-audio",
+      "video": "ar/saved-audio.mp4",
+      "poster": "ar/saved-audio.png",
+      "bytes": 611269,
+      "posterBytes": 172928,
+      "sha256": "4c683bdb731afdde497a9ea7c4887df6a5fe746725a8a538cf8f725f01a7b610",
+      "posterSha256": "1182d1716d16872067ada0b24d7e5d5866eecb7cfb2b264191daab4dabb5d92f",
+      "durationSeconds": 23.7,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-4",
+          "sourceStartSeconds": 355.052,
+          "sourceEndSeconds": 358.384,
+          "target": {
+            "x": 772.4888305664062,
+            "y": 412,
+            "width": 238.5,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "96910663921d4289ed187539127e868fa3c2da4790029948a522d2418731a74d"
+        },
+        {
+          "step": 2,
+          "capture": "capture-4",
+          "sourceStartSeconds": 358.411,
+          "sourceEndSeconds": 361.676,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "cf20ade9b1274cb94aa190a23ed909ee0717c869a5eb64bc508620bef72cd9ed"
+        },
+        {
+          "step": 3,
+          "capture": "capture-4",
+          "sourceStartSeconds": 362.521,
+          "sourceEndSeconds": 366.93,
+          "target": {
+            "x": 901.1925659179688,
+            "y": 528,
+            "width": 109.796875,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "4d4371f8e75e11a8f06cac6b0a042209cd2aea2c55949b1486e35fda05b82d74"
+        },
+        {
+          "step": 4,
+          "capture": "capture-4",
+          "sourceStartSeconds": 367.394,
+          "sourceEndSeconds": 370.621,
+          "target": {
+            "x": 853.1925659179688,
+            "y": 528,
+            "width": 40,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "ae21a0c6dd25cdff11a907f1fe83f10a9be2a423167b8b493082470613afd177"
+        },
+        {
+          "step": 5,
+          "capture": "capture-4",
+          "sourceStartSeconds": 370.67,
+          "sourceEndSeconds": 373.906,
+          "target": {
+            "x": 349.61590576171875,
+            "y": 415.5,
+            "width": 56,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "b13a11f4d2d2e23498c7eaaf281b0c1aabdd5e8fc8b9e93439d231bfa8233a76"
+        },
+        {
+          "step": 6,
+          "capture": "capture-4",
+          "sourceStartSeconds": 373.967,
+          "sourceEndSeconds": 377.166,
+          "target": {
+            "x": 853.1925659179688,
+            "y": 528,
+            "width": 40,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "ae21a0c6dd25cdff11a907f1fe83f10a9be2a423167b8b493082470613afd177"
+        },
+        {
+          "step": 7,
+          "capture": "capture-4",
+          "sourceStartSeconds": 377.204,
+          "sourceEndSeconds": 380.228,
+          "target": {
+            "x": 285.61590576171875,
+            "y": 415.5,
+            "width": 56,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "a379a82547d1e2ca26bafaee7ec3b703bd07d485d65aed5fc88c321d154bbd26"
+        }
+      ]
+    },
+    {
+      "language": "ar",
+      "topic": "morphology",
+      "video": "ar/morphology.mp4",
+      "poster": "ar/morphology.png",
+      "bytes": 418936,
+      "posterBytes": 168821,
+      "sha256": "f9d1e1c60ff4a3c3f1205b541d7cbe1224a32e57eb977f8fb537bd4af5aa8577",
+      "posterSha256": "5b1691bac842d91403453355156d0f206211a3a34b81ba983f134a003693e6b1",
+      "durationSeconds": 16.2,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-4",
+          "sourceStartSeconds": 380.915,
+          "sourceEndSeconds": 384.113,
+          "target": {
+            "x": 405.405517578125,
+            "y": 166,
+            "width": 198.59375,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "07f825495399dbecc2fdea3d70a9dec30ee201c54870f611504e1dc535213b90"
+        },
+        {
+          "step": 2,
+          "capture": "capture-4",
+          "sourceStartSeconds": 384.132,
+          "sourceEndSeconds": 387.346,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "5547b9e46832edb0a4f00e08c7ef16c66cb102b51a5c9a4a66c654360371634c"
+        },
+        {
+          "step": 3,
+          "capture": "capture-4",
+          "sourceStartSeconds": 387.742,
+          "sourceEndSeconds": 390.919,
+          "target": {
+            "x": 844.4295654296875,
+            "y": 391.5,
+            "width": 137,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "a0732f7f37b65e5fa640c86fffbd4ee0edc7251f5c77965b3311a8967562d173"
+        },
+        {
+          "step": 4,
+          "capture": "capture-4",
+          "sourceStartSeconds": 390.947,
+          "sourceEndSeconds": 394.139,
+          "target": {
+            "x": 0,
+            "y": 0,
+            "width": 40,
+            "height": 56
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "471f7910b64abf45583fbf9ea42e16d04a4e14ab9b6608d7b62f9875dd0db7a3"
+        },
+        {
+          "step": 5,
+          "capture": "capture-4",
+          "sourceStartSeconds": 394.173,
+          "sourceEndSeconds": 397.573,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "f54b4ddcce8fc3642ee7e81f3b3c61c41e35a39a26e28c0b64da5213a505e91f"
+        }
+      ],
+      "posterFrameSeconds": 2.0,
+      "posterSourceVideoSha256": "f9d1e1c60ff4a3c3f1205b541d7cbe1224a32e57eb977f8fb537bd4af5aa8577"
+    },
+    {
+      "language": "en",
+      "topic": "reader",
+      "video": "en/reader.mp4",
+      "poster": "en/reader.png",
+      "bytes": 1213132,
+      "posterBytes": 172827,
+      "sha256": "9fd249ac5af71d19e3baca280eac07d55298c4d5bfa9bda1dacdd36677719bd8",
+      "posterSha256": "becca7536ba09803968d98d0b7a91edb3f8df67df78596fbd50046bfe271e800",
+      "durationSeconds": 30.45,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-7",
+          "sourceStartSeconds": 9.581,
+          "sourceEndSeconds": 15.086,
+          "target": {
+            "x": 273,
+            "y": 313,
+            "width": 172.09375,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "a349ae01a7c2e1964d8aba857b4fb01df1244479b32c6b60cf9d0ca5b01d9ead"
+        },
+        {
+          "step": 2,
+          "capture": "capture-7",
+          "sourceStartSeconds": 15.907,
+          "sourceEndSeconds": 19.176,
+          "target": {
+            "x": 710.5,
+            "y": 7.5,
+            "width": 40,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "41501c6dc72854b46fae7e2b3e14d7b0777114e29302bc94009f6e48371829db"
+        },
+        {
+          "step": 3,
+          "capture": "capture-7",
+          "sourceStartSeconds": 19.202,
+          "sourceEndSeconds": 22.496,
+          "target": {
+            "x": 433.3333435058594,
+            "y": 266.3999938964844,
+            "width": 413.3281555175781,
+            "height": 48
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "2e3164b50e9af6af41a24cd15159cc8f06ceecb9201ecfddee861c71fa59ec81"
+        },
+        {
+          "step": 4,
+          "capture": "capture-7",
+          "sourceStartSeconds": 22.518,
+          "sourceEndSeconds": 25.626,
+          "target": {
+            "x": 20,
+            "y": 266.3999938964844,
+            "width": 413.328125,
+            "height": 48
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "4f49e41625d88f0fe5cde8474591d1e70a4b1a98e544849c72f3952d590e8d54"
+        },
+        {
+          "step": 5,
+          "capture": "capture-7",
+          "sourceStartSeconds": 25.647,
+          "sourceEndSeconds": 41.758,
+          "target": {
+            "x": 16,
+            "y": 438.3999938964844,
+            "width": 1248,
+            "height": 48
+          },
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "c1957cb89703e2212d849843caa3a88c645a45dacbe3439958aa5a9f90c39d89"
+        },
+        {
+          "step": 6,
+          "capture": "capture-7",
+          "sourceStartSeconds": 43.353,
+          "sourceEndSeconds": 46.586,
+          "target": {
+            "x": 24,
+            "y": 498.3999938964844,
+            "width": 1232,
+            "height": 42.000030517578125
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "c08829a9b029e78c9936b45af0188713aab58a0fcd7ee51b5a37c7453c95033e"
+        },
+        {
+          "step": 7,
+          "capture": "capture-7",
+          "sourceStartSeconds": 46.615,
+          "sourceEndSeconds": 50.166,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "bcaac6e30b2fbb0d16dc2b446d4ae52af415a39408ab68eba2b0ca371c7cf07e"
+        },
+        {
+          "step": 8,
+          "capture": "capture-7",
+          "sourceStartSeconds": 50.625,
+          "sourceEndSeconds": 53.924,
+          "target": {
+            "x": 273,
+            "y": 313,
+            "width": 172.09375,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "03fb70d19e4b16d7e2481e8fcdae04088489718f4ac6a7c7730aea1cdc5c937e"
+        }
+      ]
+    },
+    {
+      "language": "en",
+      "topic": "search",
+      "video": "en/search.mp4",
+      "poster": "en/search.png",
+      "bytes": 854412,
+      "posterBytes": 161616,
+      "sha256": "5696c0f10ffb2a84c743034643d77965149e7811cf022065009d0a014029feb4",
+      "posterSha256": "416652510d119a4a56c0cc00a9d10d012e7f45591c56ca063b63586f95a14fd9",
+      "durationSeconds": 25.75,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-8",
+          "sourceStartSeconds": 9.122,
+          "sourceEndSeconds": 12.801,
+          "target": {
+            "x": 500.75,
+            "y": 438,
+            "width": 243.75,
+            "height": 112
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "4ed7b858ec0feb370d8729787846fbf0534121d2df6d7ab2973f4d433e6de8dc"
+        },
+        {
+          "step": 2,
+          "capture": "capture-8",
+          "sourceStartSeconds": 12.834,
+          "sourceEndSeconds": 19.044,
+          "target": {
+            "x": 32,
+            "y": 172,
+            "width": 1224,
+            "height": 54
+          },
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "e776a478651824152e73c56c03464cae8fd3dc130b07049922a5754941270b37"
+        },
+        {
+          "step": 3,
+          "capture": "capture-8",
+          "sourceStartSeconds": 19.086,
+          "sourceEndSeconds": 38.817,
+          "target": {
+            "x": 1156.931640625,
+            "y": 230,
+            "width": 87.0625,
+            "height": 64
+          },
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "ee8baf4840bad49ee804fec6a820ea09b0576a7262f5e391b3e6238ecdb24f3f"
+        },
+        {
+          "step": 4,
+          "capture": "capture-8",
+          "sourceStartSeconds": 44.998,
+          "sourceEndSeconds": 50.265,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "23b4d10f4c8cc7f1b40dd2fd24d695c09ffc3f9c1196009e452914acf4ebc285"
+        },
+        {
+          "step": 5,
+          "capture": "capture-8",
+          "sourceStartSeconds": 50.3,
+          "sourceEndSeconds": 53.495,
+          "target": {
+            "x": 1134,
+            "y": 121,
+            "width": 40,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "d88246d5c5e3dcf2f63d16d4dd313a4086b8786ee20d68b6633b2449173b1953"
+        },
+        {
+          "step": 6,
+          "capture": "capture-8",
+          "sourceStartSeconds": 54.002,
+          "sourceEndSeconds": 57.193,
+          "target": {
+            "x": 756.5,
+            "y": 438,
+            "width": 243.75,
+            "height": 112
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "f3ae96cfaf1833a6e2301aff5176d5a9fe6da0ba46bc554f20e1136f63d4bbe1"
+        }
+      ]
+    },
+    {
+      "language": "en",
+      "topic": "library",
+      "video": "en/library.mp4",
+      "poster": "en/library.png",
+      "bytes": 860095,
+      "posterBytes": 175902,
+      "sha256": "dc2fd4bcc38357f4c653be563c4be726793f0c1954c1eeef2a81ac6fe43b5617",
+      "posterSha256": "824b69d6a0b6960db3db709429197d9afc162cfa6b2904de4955d48206ede1a4",
+      "durationSeconds": 28.2,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": {
+        "version": "b0ffc3b32e77f764d5864c4f1cb69f10409cc0ed2a01c763462c0ca4fe364c9b",
+        "totalBytes": 107093207
+      },
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-9",
+          "sourceStartSeconds": 9.218,
+          "sourceEndSeconds": 12.565,
+          "target": {
+            "x": 359.12774658203125,
+            "y": 214,
+            "width": 114.125,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "2c23fa9c8b829b0457c81b480a76a6a97afc109bfd4be7008a08b6570465ea7f"
+        },
+        {
+          "step": 2,
+          "capture": "capture-9",
+          "sourceStartSeconds": 12.602,
+          "sourceEndSeconds": 17.167,
+          "target": {
+            "x": 1128.108154296875,
+            "y": 490.5,
+            "width": 107.890625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "9990263067520c1a3727384c025088c21ff798b3114698585f20833d33485c60"
+        },
+        {
+          "step": 3,
+          "capture": "capture-9",
+          "sourceStartSeconds": 24.636,
+          "sourceEndSeconds": 27.821,
+          "target": {
+            "x": 1038,
+            "y": 121,
+            "width": 40,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "432e308dd9bd7bae7dfb544ed80de271bcac3132aa0a302533623e5907e0dc77"
+        },
+        {
+          "step": 4,
+          "capture": "capture-9",
+          "sourceStartSeconds": 27.849,
+          "sourceEndSeconds": 31.241,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "186d836abc200ca9445c7b66b2c53bab2aae484b379c6398e28dc63b4eb072a7"
+        },
+        {
+          "step": 5,
+          "capture": "capture-9",
+          "sourceStartSeconds": 32.125,
+          "sourceEndSeconds": 35.325,
+          "target": {
+            "x": 245,
+            "y": 214,
+            "width": 114.125,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "f0f474aa6688d25759c530954f2c98e758dc292e2e639bb47259887f8f7b5898"
+        },
+        {
+          "step": 6,
+          "capture": "capture-9",
+          "sourceStartSeconds": 35.663,
+          "sourceEndSeconds": 39.258,
+          "target": {
+            "x": 1151.838134765625,
+            "y": 292.5,
+            "width": 84.15625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "8f2d6caf8c4049cf910945d72ef6a92aaa733739bc5db43e82fcc280f002030b"
+        },
+        {
+          "step": 7,
+          "capture": "capture-9",
+          "sourceStartSeconds": 46.582,
+          "sourceEndSeconds": 49.778,
+          "target": {
+            "x": 1038,
+            "y": 121,
+            "width": 40,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "e9072431cfbfe381e6b470fa4c454db60a9c0c2e5a49b0ea18285ab9fd675ffe"
+        },
+        {
+          "step": 8,
+          "capture": "capture-9",
+          "sourceStartSeconds": 49.808,
+          "sourceEndSeconds": 53.511,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "eca154813b26f2ab6cd100b3bef17a3fec4e499e229674da6e76da602988551a"
+        }
+      ]
+    },
+    {
+      "language": "en",
+      "topic": "audio",
+      "video": "en/audio.mp4",
+      "poster": "en/audio.png",
+      "bytes": 811847,
+      "posterBytes": 156549,
+      "sha256": "cbac4664a71463be31ae3de356017c1652af32da89e1806d424e91bad8511af1",
+      "posterSha256": "df27ba84b4cd6abc2e4badcf1248230d468acb6deea4bbc73c6f171cba42d2e1",
+      "durationSeconds": 29.75,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-8",
+          "sourceStartSeconds": 58.721,
+          "sourceEndSeconds": 61.943,
+          "target": {
+            "x": 305,
+            "y": 632,
+            "width": 207.375,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "d4d175c34847132b3087d5ee49d7629348979d2ee0503e2015067b09e1dfba56"
+        },
+        {
+          "step": 2,
+          "capture": "capture-8",
+          "sourceStartSeconds": 63.525,
+          "sourceEndSeconds": 66.726,
+          "target": {
+            "x": 495.81591796875,
+            "y": 562,
+            "width": 90.359375,
+            "height": 30
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "406f87ad2c2730903e199c04bc114ecc220ebb27ffdc99db18088250266e6fc6"
+        },
+        {
+          "step": 3,
+          "capture": "capture-8",
+          "sourceStartSeconds": 66.775,
+          "sourceEndSeconds": 69.721,
+          "target": {
+            "x": 40,
+            "y": 250,
+            "width": 1200,
+            "height": 46
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "b44f7adcef2cd4a9c22a7e3bbd0d18900e62c2eacd517a08f5f5ebd3e9645cf5"
+        },
+        {
+          "step": 4,
+          "capture": "capture-8",
+          "sourceStartSeconds": 70.505,
+          "sourceEndSeconds": 73.812,
+          "target": {
+            "x": 473.2554626464844,
+            "y": 214,
+            "width": 114.12503051757812,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "6020272f180f484e1ceacb2b466285bfbf466e113fcb98e3bf1f68e64a03e8ee"
+        },
+        {
+          "step": 5,
+          "capture": "capture-8",
+          "sourceStartSeconds": 73.859,
+          "sourceEndSeconds": 77.156,
+          "target": {
+            "x": 269,
+            "y": 341,
+            "width": 963,
+            "height": 56
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "595745210f3c9702ded5f231527acf14092d307f630449eda1b118ea7f152ae8"
+        },
+        {
+          "step": 6,
+          "capture": "capture-8",
+          "sourceStartSeconds": 77.265,
+          "sourceEndSeconds": 80.211,
+          "target": {
+            "x": 253,
+            "y": 56,
+            "width": 1003,
+            "height": 48
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "e4843fbf141fcdf21f1ceacfd03289b5b5f1584bb6fc050b7d345c07a162797a"
+        },
+        {
+          "step": 7,
+          "capture": "capture-8",
+          "sourceStartSeconds": 80.25,
+          "sourceEndSeconds": 84.194,
+          "target": {
+            "x": 269,
+            "y": 413,
+            "width": 95.296875,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "9b14be82f3d4c5bf2e11ba77cb1730eaf7b1a554f975f6c5523c2f3e7f79584d"
+        },
+        {
+          "step": 8,
+          "capture": "capture-8",
+          "sourceStartSeconds": 84.252,
+          "sourceEndSeconds": 87.462,
+          "target": {
+            "x": 550.343505859375,
+            "y": 413,
+            "width": 91.28125,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "8a5238f6cb6296a81740034f12d3d766c7b0154ffc3a16df9d4f3b452cc82d12"
+        },
+        {
+          "step": 9,
+          "capture": "capture-8",
+          "sourceStartSeconds": 87.495,
+          "sourceEndSeconds": 91.22,
+          "target": {
+            "x": 374.29791259765625,
+            "y": 413,
+            "width": 166.03125,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "8462b09b639af055a6d66036f1adb91f0635eafa2f5f814a14972f207247d8e4"
+        }
+      ]
+    },
+    {
+      "language": "en",
+      "topic": "offline",
+      "video": "en/offline.mp4",
+      "poster": "en/offline.png",
+      "bytes": 487363,
+      "posterBytes": 197803,
+      "sha256": "804cf54f7ce0e45fa843c53ba30cb6b8d09ffb6fff63e89685657d8d92b7a330",
+      "posterSha256": "acf700ebfcf6e5f70e838f25423aa4c52b0a8fd4befee478c59758dcf0c02d87",
+      "durationSeconds": 15.9,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-10",
+          "sourceStartSeconds": 63.125,
+          "sourceEndSeconds": 66.644,
+          "target": {
+            "x": 269,
+            "y": 272,
+            "width": 204.71875,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "655c966272c91243d754e0de62e4db4a576d3c142ff9a0249492b1dfd842d3f1"
+        },
+        {
+          "step": 2,
+          "capture": "capture-10",
+          "sourceStartSeconds": 136.853,
+          "sourceEndSeconds": 140.76,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "5fd7b46dafd575e6cbd3469dfe3f59aafc76bdb1aed4ddde6cd752fb67e7f923"
+        },
+        {
+          "step": 3,
+          "capture": "capture-10",
+          "sourceStartSeconds": 146.27,
+          "sourceEndSeconds": 151.534,
+          "target": {
+            "x": 273,
+            "y": 313,
+            "width": 172.09375,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "899b9c8d6fb48fd6d7c77915bb257078a2a5c75ab5af9b93843ff79da62f7971"
+        },
+        {
+          "step": 4,
+          "capture": "capture-10",
+          "sourceStartSeconds": 152.054,
+          "sourceEndSeconds": 155.282,
+          "target": {
+            "x": 359.12774658203125,
+            "y": 214,
+            "width": 114.125,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "ab4153a0da1e99da5df16667b76dfa0eb9a8e2a35941f7616a91393cde2d670e"
+        }
+      ]
+    },
+    {
+      "language": "en",
+      "topic": "plans",
+      "video": "en/plans.mp4",
+      "poster": "en/plans.png",
+      "bytes": 998281,
+      "posterBytes": 135088,
+      "sha256": "38c5159b61d83e8b3d908dab3455e209f2056633167aaf4246a07271265c6a15",
+      "posterSha256": "ddde93fa1724c960e333086f6573fb6049216899c5e3643625cc7bdac8a88144",
+      "durationSeconds": 43.3,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-10",
+          "sourceStartSeconds": 155.734,
+          "sourceEndSeconds": 158.918,
+          "target": {
+            "x": 441.6372375488281,
+            "y": 434,
+            "width": 193.71871948242188,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "db4e8120fb6bca18dc8b868b1ef7bfe78fdbff6950add88d4c26dfac10b9ea91"
+        },
+        {
+          "step": 2,
+          "capture": "capture-10",
+          "sourceStartSeconds": 162.761,
+          "sourceEndSeconds": 169.963,
+          "target": {
+            "x": 24,
+            "y": 654,
+            "width": 1232,
+            "height": 42
+          },
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "9ed428dfe89e94c58c6ac6cea3a61f64903819a90b9a899c334d66fa4833fa9b"
+        },
+        {
+          "step": 3,
+          "capture": "capture-10",
+          "sourceStartSeconds": 169.991,
+          "sourceEndSeconds": 173.182,
+          "target": {
+            "x": 271,
+            "y": 568,
+            "width": 211.34375,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "eb4299be9d74be09980fbf5efa1d2f6d06e2b082742e06f16828065b2a9aa3dc"
+        },
+        {
+          "step": 4,
+          "capture": "capture-10",
+          "sourceStartSeconds": 173.212,
+          "sourceEndSeconds": 176.407,
+          "target": {
+            "x": 369.41766357421875,
+            "y": 170,
+            "width": 124.40625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "b9f05f26d512ad41ad9079118eea58e5b30db27955ca5ca5cba48060d6fb55ff"
+        },
+        {
+          "step": 5,
+          "capture": "capture-10",
+          "sourceStartSeconds": 176.439,
+          "sourceEndSeconds": 179.762,
+          "target": {
+            "x": 427.84027099609375,
+            "y": 460,
+            "width": 222.3125,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "d496384a84c0e48140c0385030dbc075ce70725287610cab44eeb7f997e70710"
+        },
+        {
+          "step": 6,
+          "capture": "capture-10",
+          "sourceStartSeconds": 184.383,
+          "sourceEndSeconds": 191.648,
+          "target": {
+            "x": 24,
+            "y": 654,
+            "width": 1232,
+            "height": 42
+          },
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "bd018f48373c9ffd8cc1f6cd7d8df9f1483c1da3a9f17ada30bbd479e093dc4f"
+        },
+        {
+          "step": 7,
+          "capture": "capture-10",
+          "sourceStartSeconds": 191.68,
+          "sourceEndSeconds": 195.683,
+          "target": {
+            "x": 269,
+            "y": 644,
+            "width": 190.484375,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "39470e52de8ebae8fe288675bf73b370fd88278ba90dcc80646d9226ca4d29d2"
+        },
+        {
+          "step": 8,
+          "capture": "capture-10",
+          "sourceStartSeconds": 196.092,
+          "sourceEndSeconds": 199.282,
+          "target": {
+            "x": 269,
+            "y": 600,
+            "width": 109.671875,
+            "height": 30
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "f8c4c16bb6ea8e66f6ee2078180234e0604bd2335d8cd1c6929b936160e105ec"
+        },
+        {
+          "step": 9,
+          "capture": "capture-10",
+          "sourceStartSeconds": 199.313,
+          "sourceEndSeconds": 202.517,
+          "target": {
+            "x": 269,
+            "y": 600,
+            "width": 122.265625,
+            "height": 30
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "cc59d273eb904d954d4defebe714fa2e62a152d76192d56e62e8e822ed2cc009"
+        },
+        {
+          "step": 10,
+          "capture": "capture-10",
+          "sourceStartSeconds": 202.819,
+          "sourceEndSeconds": 206.018,
+          "target": {
+            "x": 1015.5223999023438,
+            "y": 551,
+            "width": 40.00006103515625,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "d51d8c63d1a6575fd363ede1650bc6d3ac0bceb192c3d1585ce727e92c717d0c"
+        },
+        {
+          "step": 11,
+          "capture": "capture-10",
+          "sourceStartSeconds": 206.053,
+          "sourceEndSeconds": 209.257,
+          "target": {
+            "x": 1061.5224609375,
+            "y": 550,
+            "width": 170.46875,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "7495f7e2a069b1264572b043d286802a513028cf0725e03d30cad6d4847c8cbb"
+        },
+        {
+          "step": 12,
+          "capture": "capture-10",
+          "sourceStartSeconds": 209.287,
+          "sourceEndSeconds": 212.474,
+          "target": {
+            "x": 269,
+            "y": 551,
+            "width": 40,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "9af8965bc3dc8f3ff23dab44488f89c8aec2f2912c4c57882f08bc5ab1688ddb"
+        }
+      ]
+    },
+    {
+      "language": "en",
+      "topic": "settings",
+      "video": "en/settings.mp4",
+      "poster": "en/settings.png",
+      "bytes": 798627,
+      "posterBytes": 169956,
+      "sha256": "5b18f57bf13bb703ef441c1b8c3e0dc6ca799651245cd7e2c13a560e44221a1c",
+      "posterSha256": "dd5d56cdd51dee458470d5d18e38c17b77f672db5a74841ffb6e6168bb8f71ed",
+      "durationSeconds": 35.5,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-10",
+          "sourceStartSeconds": 213.374,
+          "sourceEndSeconds": 216.554,
+          "target": {
+            "x": 439.127685546875,
+            "y": 434,
+            "width": 85.0625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "9180e4505716bca5884f78ee8be8bab9e05d86827dd7f73268c6371e6221144b"
+        },
+        {
+          "step": 2,
+          "capture": "capture-10",
+          "sourceStartSeconds": 216.587,
+          "sourceEndSeconds": 219.784,
+          "target": {
+            "x": 358.0538330078125,
+            "y": 460,
+            "width": 89.046875,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "6c65882e0d7e4a856b4a6d96d0e352c4d9aae6137c38876929a5bd6bb1c2df19"
+        },
+        {
+          "step": 3,
+          "capture": "capture-10",
+          "sourceStartSeconds": 219.818,
+          "sourceEndSeconds": 223.018,
+          "target": {
+            "x": 442.01165771484375,
+            "y": 568,
+            "width": 86.5,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "fd1348679175137bd34d6c871e8b53fd2ccdec365541c353c127a099bb6fe828"
+        },
+        {
+          "step": 4,
+          "capture": "capture-10",
+          "sourceStartSeconds": 223.061,
+          "sourceEndSeconds": 226.257,
+          "target": {
+            "x": 355.5058288574219,
+            "y": 568,
+            "width": 86.5,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "e8868b2dabfa800d37ca7d0da6ca80bfd2b41ea0eee2a426c60e092e843d6e40"
+        },
+        {
+          "step": 5,
+          "capture": "capture-11",
+          "sourceStartSeconds": 24,
+          "sourceEndSeconds": 27.8,
+          "target": {
+            "x": 84,
+            "y": 736,
+            "width": 552,
+            "height": 157.33333333333334
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "8b0a7c5c06e02fb4967917f130b4347885528fd27273ecd243e1587d11bbb5e2"
+        },
+        {
+          "step": 6,
+          "capture": "capture-11",
+          "sourceStartSeconds": 29,
+          "sourceEndSeconds": 32.3,
+          "target": {
+            "x": 84,
+            "y": 893.3333333333334,
+            "width": 362.6666666666667,
+            "height": 84
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "d38bac6448044c05a7a4de6bba996e1c657f0e10079ab919864896782ad60ed0"
+        },
+        {
+          "step": 7,
+          "capture": "capture-11",
+          "sourceStartSeconds": 32.3,
+          "sourceEndSeconds": 35.15,
+          "target": {
+            "x": 114,
+            "y": 1160,
+            "width": 48,
+            "height": 48
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "a1b12cac2355d186ec331b2f2fe6cff5bfbd3c6a597a9953110ea9b9ee0cf27a"
+        },
+        {
+          "step": 8,
+          "capture": "capture-11",
+          "sourceStartSeconds": 52.7,
+          "sourceEndSeconds": 54.35,
+          "target": {
+            "x": 324.6666666666667,
+            "y": 702.6666666666666,
+            "width": 168,
+            "height": 122
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "6e9c3c99b3a1f2d798c903f1a9370fc9b7e7bf7510dda48206902e3ff88c6623"
+        },
+        {
+          "step": 9,
+          "capture": "capture-11",
+          "sourceStartSeconds": 55.9,
+          "sourceEndSeconds": 58.4,
+          "target": {
+            "x": 324.6666666666667,
+            "y": 468.6666666666667,
+            "width": 168,
+            "height": 122
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "2df777e61d5c7c9f474d989bf10b3318759f1ed60c1b09352803b744ed3fc06e"
+        },
+        {
+          "step": 10,
+          "capture": "capture-11",
+          "sourceStartSeconds": 58.5,
+          "sourceEndSeconds": 61.7,
+          "target": {
+            "x": 520.6666666666666,
+            "y": 687.3333333333334,
+            "width": 112.66666666666667,
+            "height": 84
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "d2e953a472163cce5b20f49e7f02550e9220a26bd528f697252f677f154359e7"
+        },
+        {
+          "step": 11,
+          "capture": "capture-11",
+          "sourceStartSeconds": 62,
+          "sourceEndSeconds": 64,
+          "target": {
+            "x": 84,
+            "y": 893.3333333333334,
+            "width": 362.6666666666667,
+            "height": 84
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "993ac6d8b7e7b24654b5f4a60cd3af41d012d1e4b61d693b89ff01c9b5492315"
+        },
+        {
+          "step": 12,
+          "capture": "capture-11",
+          "sourceStartSeconds": 63.8,
+          "sourceEndSeconds": 67.2,
+          "target": {
+            "x": 84,
+            "y": 736,
+            "width": 552,
+            "height": 157.33333333333334
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "e5f067ab7b899e0bc04b31c2c851b76c1da1915331359704a699f0a59fb0226e"
+        }
+      ]
+    },
+    {
+      "language": "en",
+      "topic": "storage",
+      "video": "en/storage.mp4",
+      "poster": "en/storage.png",
+      "bytes": 347088,
+      "posterBytes": 181872,
+      "sha256": "c435ccc260fbd247a9b39e68ec40cd6c175c3df621bd3c393e7710b887de1c74",
+      "posterSha256": "871f8bc3ed6686f3dd907ffcce46558008fb40e3e93bbe1be3128ded5c57017f",
+      "durationSeconds": 12.75,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-10",
+          "sourceStartSeconds": 226.983,
+          "sourceEndSeconds": 231.196,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "24ed7fe94e9f2985f42b0f2150b4b1f062c068a71b54541892237d9e2d887794"
+        },
+        {
+          "step": 2,
+          "capture": "capture-10",
+          "sourceStartSeconds": 231.211,
+          "sourceEndSeconds": 235.415,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "24ed7fe94e9f2985f42b0f2150b4b1f062c068a71b54541892237d9e2d887794"
+        },
+        {
+          "step": 3,
+          "capture": "capture-10",
+          "sourceStartSeconds": 235.701,
+          "sourceEndSeconds": 240.029,
+          "target": {
+            "x": 269,
+            "y": 466,
+            "width": 154.15625,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "cf18aae25ab06e57d448c4ccea2b391b25221efe4eedf8fd7f4aa71fc4cd3213"
+        }
+      ]
+    },
+    {
+      "language": "en",
+      "topic": "personal",
+      "video": "en/personal.mp4",
+      "poster": "en/personal.png",
+      "bytes": 1220709,
+      "posterBytes": 181040,
+      "sha256": "46f65b4a66df7f39b829dcf8132fff765585fe673452532d59f4c73467375519",
+      "posterSha256": "5d116eafbb3560852a996a555c8b3538220aafce8fdde547d49a07708600c7a0",
+      "durationSeconds": 51.6,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-8",
+          "sourceStartSeconds": 91.948,
+          "sourceEndSeconds": 95.139,
+          "target": {
+            "x": 245,
+            "y": 164,
+            "width": 159.15625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "e95cc39d8dcbca9bb01f468e99a1bbfcee16ad09b79b54759f728fe9f9343a7e"
+        },
+        {
+          "step": 2,
+          "capture": "capture-8",
+          "sourceStartSeconds": 95.172,
+          "sourceEndSeconds": 98.381,
+          "target": {
+            "x": 140,
+            "y": 165,
+            "width": 133.375,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "cac7832079c86a3a46ef63a57383bfb69949ca7bf9082ea14cff1c703c3b8839"
+        },
+        {
+          "step": 3,
+          "capture": "capture-8",
+          "sourceStartSeconds": 99.489,
+          "sourceEndSeconds": 104.102,
+          "target": {
+            "x": 380,
+            "y": 397.5,
+            "width": 526,
+            "height": 158
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "e350ad22b415dc982b3af6b521c4ca0df319cd34a7a55a5cdc07c0e146ba7b2c"
+        },
+        {
+          "step": 4,
+          "capture": "capture-8",
+          "sourceStartSeconds": 104.132,
+          "sourceEndSeconds": 107.312,
+          "target": {
+            "x": 843.7061157226562,
+            "y": 581.5,
+            "width": 72.28125,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "9b8a62c222a3fb8036860393b8097e78eb76252b2f353787d4e6825a9bcb8b09"
+        },
+        {
+          "step": 5,
+          "capture": "capture-8",
+          "sourceStartSeconds": 107.346,
+          "sourceEndSeconds": 110.524,
+          "target": {
+            "x": 1038,
+            "y": 247,
+            "width": 40,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "c53c3cbc960c1aa7a8887a0d82e7c9eda6785b85a71725acf5d5ad8bf36d1827"
+        },
+        {
+          "step": 6,
+          "capture": "capture-8",
+          "sourceStartSeconds": 112.504,
+          "sourceEndSeconds": 115.705,
+          "target": {
+            "x": 843.7061157226562,
+            "y": 581.5,
+            "width": 72.28125,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "444d173a9d8289ea0666ed352b7faa10011364ae8cb1fafd4d96f07875cbd83d"
+        },
+        {
+          "step": 7,
+          "capture": "capture-8",
+          "sourceStartSeconds": 115.743,
+          "sourceEndSeconds": 118.928,
+          "target": {
+            "x": 640,
+            "y": 117,
+            "width": 500,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "14791b612f423fc182ae539710bf011b23e86a2d7035580fe4fe9945b84e9753"
+        },
+        {
+          "step": 8,
+          "capture": "capture-8",
+          "sourceStartSeconds": 118.96,
+          "sourceEndSeconds": 122.173,
+          "target": {
+            "x": 140,
+            "y": 165,
+            "width": 167.859375,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "c2bbae93b26f823b0a2e689d58ba410ada9b5bbf632e9d18a7c6fbcabc907d7c"
+        },
+        {
+          "step": 9,
+          "capture": "capture-8",
+          "sourceStartSeconds": 123.301,
+          "sourceEndSeconds": 126.529,
+          "target": {
+            "x": 699.7061157226562,
+            "y": 437.5,
+            "width": 72.28125,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "60b6cc564d44681fbdd640bfb511b559ea561328187d8d5db843fe2ee4a51e13"
+        },
+        {
+          "step": 10,
+          "capture": "capture-8",
+          "sourceStartSeconds": 126.561,
+          "sourceEndSeconds": 129.745,
+          "target": {
+            "x": 162,
+            "y": 313,
+            "width": 103.71875,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "299060e8d09423b5b13a0dae046711904663e14066d826743764cd766d41d08b"
+        },
+        {
+          "step": 11,
+          "capture": "capture-8",
+          "sourceStartSeconds": 129.804,
+          "sourceEndSeconds": 132.976,
+          "target": {
+            "x": 699.7061157226562,
+            "y": 646,
+            "width": 72.28125,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "3b82a60be52f34812e6cebedc4e7e6a0724940359fb7530c53f556606fadfa4d"
+        },
+        {
+          "step": 12,
+          "capture": "capture-8",
+          "sourceStartSeconds": 133.012,
+          "sourceEndSeconds": 136.223,
+          "target": {
+            "x": 162,
+            "y": 287,
+            "width": 956,
+            "height": 64
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "8c57621ca718013a92bc4279d0520abdfd2278face064094ce1299b1673046fa"
+        },
+        {
+          "step": 13,
+          "capture": "capture-8",
+          "sourceStartSeconds": 138.091,
+          "sourceEndSeconds": 145.719,
+          "target": null,
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "e9c4e48afd3773e643be6cff1e5e54794a3f22953a55c4e1b20f6285c04a4379"
+        },
+        {
+          "step": 14,
+          "capture": "capture-8",
+          "sourceStartSeconds": 145.754,
+          "sourceEndSeconds": 149.135,
+          "target": {
+            "x": 896,
+            "y": 168,
+            "width": 40,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "b599ea67015e190a5df690f57d179d42efcec214baec206378d0021801995bba"
+        },
+        {
+          "step": 15,
+          "capture": "capture-8",
+          "sourceStartSeconds": 149.169,
+          "sourceEndSeconds": 152.373,
+          "target": {
+            "x": 430,
+            "y": 328.5,
+            "width": 420,
+            "height": 48
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.25,
+          "screenshotSha256": "bbd7a447a3d3c369b04a1d9236d4b600578111c16d533d0d71c5468f7431e4e9"
+        }
+      ]
+    },
+    {
+      "language": "en",
+      "topic": "backup",
+      "video": "en/backup.mp4",
+      "poster": "en/backup.png",
+      "bytes": 560878,
+      "posterBytes": 172465,
+      "sha256": "b0d7134c1b296a89bcde37e2582c74499ed3f004cc248e082102a3e186d49349",
+      "posterSha256": "10fa8df25c9f31b3c2b48815be5ac263597d273c56e20795147f102693a70ee6",
+      "durationSeconds": 22.8,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-10",
+          "sourceStartSeconds": 282.075,
+          "sourceEndSeconds": 285.265,
+          "target": {
+            "x": 269,
+            "y": 466,
+            "width": 154.15625,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "5f09a40d1905b23fc4e8d0d383d3c4b2a3cd74e0c2ac038c5098c27104b3de1b"
+        },
+        {
+          "step": 2,
+          "capture": "capture-10",
+          "sourceStartSeconds": 285.306,
+          "sourceEndSeconds": 288.668,
+          "target": {
+            "x": 433.16766357421875,
+            "y": 466,
+            "width": 174.296875,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "44cd66ee1ba8f03793e4f44579e920376508d5dd5f65c83f7f3a6fe752118e41"
+        },
+        {
+          "step": 3,
+          "capture": "capture-10",
+          "sourceStartSeconds": 288.99,
+          "sourceEndSeconds": 292.901,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "d863211972a3d948db35c7c9e9c2d6674146f6e51064b0fe45cb8d63b9c88c8e"
+        },
+        {
+          "step": 4,
+          "capture": "capture-10",
+          "sourceStartSeconds": 293.285,
+          "sourceEndSeconds": 296.887,
+          "target": {
+            "x": 360,
+            "y": 494.5,
+            "width": 194.640625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "296b69607eb216008a6a0d1a267fd144e4f756f77c26f103bc08fcfb5f4f1a7e"
+        },
+        {
+          "step": 5,
+          "capture": "capture-10",
+          "sourceStartSeconds": 297.267,
+          "sourceEndSeconds": 300.817,
+          "target": {
+            "x": 745.392578125,
+            "y": 569.5,
+            "width": 190.59375,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "043a36458a66c83f90c06e6a7bfb89abcc557fc9e706409416fb50c6ce8c9a0c"
+        },
+        {
+          "step": 6,
+          "capture": "capture-10",
+          "sourceStartSeconds": 301.049,
+          "sourceEndSeconds": 307.232,
+          "target": {
+            "x": 785.7647094726562,
+            "y": 406.5,
+            "width": 109.875,
+            "height": 42
+          },
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "59178ae82c072c91a9035d51e2f33c1f4fbbf2629858c2f7fe69a6f6313ecac5"
+        }
+      ]
+    },
+    {
+      "language": "en",
+      "topic": "share-search",
+      "video": "en/share-search.mp4",
+      "poster": "en/share-search.png",
+      "bytes": 1354251,
+      "posterBytes": 220021,
+      "sha256": "7a2fc64655e816e2cf932d1b7acbd8b432dfe9989ee65fe5d7732bfdec9569d0",
+      "posterSha256": "840068244e9e711f6d6a0afb0bfb8e626c73e6924b9842558d290086b4c4867d",
+      "durationSeconds": 39.7,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": {
+        "version": "b0ffc3b32e77f764d5864c4f1cb69f10409cc0ed2a01c763462c0ca4fe364c9b",
+        "totalBytes": 107093207
+      },
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-9",
+          "sourceStartSeconds": 59.621,
+          "sourceEndSeconds": 64.877,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "9233f7c8b96a917c959181fc017cc1e2451cb9a40b89f87f3720974773596475"
+        },
+        {
+          "step": 2,
+          "capture": "capture-9",
+          "sourceStartSeconds": 64.912,
+          "sourceEndSeconds": 68.099,
+          "target": {
+            "x": 950,
+            "y": 123,
+            "width": 40,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "3d43ccb4e3c2c732e7002a884f4ec27c988f2d43ba5a78ee1ee09f2bf4cc18df"
+        },
+        {
+          "step": 3,
+          "capture": "capture-9",
+          "sourceStartSeconds": 68.14,
+          "sourceEndSeconds": 71.491,
+          "target": {
+            "x": 260,
+            "y": 117,
+            "width": 760,
+            "height": 56
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "1a0ad1dc36f1e04b9161b18a0d515cedddc9e9d6829c95bc10c208be55a45160"
+        },
+        {
+          "step": 4,
+          "capture": "capture-9",
+          "sourceStartSeconds": 71.526,
+          "sourceEndSeconds": 74.531,
+          "target": {
+            "x": 244,
+            "y": 217,
+            "width": 800,
+            "height": 48
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "5567cda68a14b3afb532aae371736942af0e81feb9ee79f771de4fdff4b6af5c"
+        },
+        {
+          "step": 5,
+          "capture": "capture-9",
+          "sourceStartSeconds": 74.563,
+          "sourceEndSeconds": 77.744,
+          "target": {
+            "x": 260,
+            "y": 507,
+            "width": 170.015625,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "f9045e078ee040aed7d7879e17d3baf7dddf48ec8e3994b41a6c487593220b3b"
+        },
+        {
+          "step": 6,
+          "capture": "capture-9",
+          "sourceStartSeconds": 77.787,
+          "sourceEndSeconds": 80.961,
+          "target": {
+            "x": 440.015625,
+            "y": 507,
+            "width": 141.1875,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "ac5687e879b4bf9dcbb066df258835cc8742cad40df1a9bb7bb7003b1bdc717f"
+        },
+        {
+          "step": 7,
+          "capture": "capture-9",
+          "sourceStartSeconds": 80.997,
+          "sourceEndSeconds": 84.2,
+          "target": {
+            "x": 591.2113037109375,
+            "y": 507,
+            "width": 133.453125,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "5bc4d0c6cafabe840451fe6d19acbbeba596a69c4fc3b80bb0e21993fe6b34db"
+        },
+        {
+          "step": 8,
+          "capture": "capture-9",
+          "sourceStartSeconds": 85.09,
+          "sourceEndSeconds": 88.29,
+          "target": {
+            "x": 414.1576232910156,
+            "y": 164,
+            "width": 180.56246948242188,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "a0d3739fc24d17eb56234142d8ca9b331d1a7ecf8afcf5a5e9e12283bb796a11"
+        },
+        {
+          "step": 9,
+          "capture": "capture-9",
+          "sourceStartSeconds": 89.084,
+          "sourceEndSeconds": 92.609,
+          "target": {
+            "x": 180,
+            "y": 331,
+            "width": 110.21875,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "47f6a92a9e5e98a68844062889b503be1676b9f505501ec7b999f10175dee413"
+        },
+        {
+          "step": 10,
+          "capture": "capture-9",
+          "sourceStartSeconds": 94.776,
+          "sourceEndSeconds": 101.991,
+          "target": {
+            "x": 402.79931640625,
+            "y": 662.02392578125,
+            "width": 103.46875,
+            "height": 28
+          },
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "307b6e5558c37387703edd1a69b9b5a70ce57734aad76db92b72c03e46000b10"
+        },
+        {
+          "step": 11,
+          "capture": "capture-9",
+          "sourceStartSeconds": 102.409,
+          "sourceEndSeconds": 105.801,
+          "target": {
+            "x": 200,
+            "y": 594,
+            "width": 147.75,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "4af0623501d9054ad4f3fe1999360fc1bdf97abddb4f169f1551239c5a4a1de8"
+        }
+      ]
+    },
+    {
+      "language": "en",
+      "topic": "saved-audio",
+      "video": "en/saved-audio.mp4",
+      "poster": "en/saved-audio.png",
+      "bytes": 663004,
+      "posterBytes": 162925,
+      "sha256": "ed6f71c422253fdfb092085c50bde7fb4c886bb3e6eea7067adca5d97e3aa1f7",
+      "posterSha256": "60297d1eef4c95da1f948c29289d9853542dd88bc9c7ffc76955ff9e545e5ca6",
+      "durationSeconds": 25.65,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-10",
+          "sourceStartSeconds": 344.066,
+          "sourceEndSeconds": 347.296,
+          "target": {
+            "x": 269,
+            "y": 420,
+            "width": 190.671875,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "656cc941138d84d6276379fa1639b0c2306579d10c38024007a3c49ee61172a3"
+        },
+        {
+          "step": 2,
+          "capture": "capture-10",
+          "sourceStartSeconds": 347.328,
+          "sourceEndSeconds": 350.533,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "e6323115a686f8daa5dbac23b668d0ebdf69cdf13137927a895faf0442661022"
+        },
+        {
+          "step": 3,
+          "capture": "capture-10",
+          "sourceStartSeconds": 350.583,
+          "sourceEndSeconds": 354.351,
+          "target": {
+            "x": 269,
+            "y": 530,
+            "width": 89.296875,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "e0874c6254d256034280a04820d705249b19321e16b217e563b4914153d4bc31"
+        },
+        {
+          "step": 4,
+          "capture": "capture-10",
+          "sourceStartSeconds": 354.857,
+          "sourceEndSeconds": 360.793,
+          "target": {
+            "x": 366.29791259765625,
+            "y": 530,
+            "width": 40,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "670e1bc643dfb4d91812c17f9af37f5fd7d9a7b12553930e4517fcb5c2aa4b29"
+        },
+        {
+          "step": 5,
+          "capture": "capture-10",
+          "sourceStartSeconds": 362.337,
+          "sourceEndSeconds": 365.703,
+          "target": {
+            "x": 844.3926391601562,
+            "y": 413.5,
+            "width": 56,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "a8f0c17ed4dbce6221716b89d5f11ee70f3656958713dd313dcf11c5c2d49e57"
+        },
+        {
+          "step": 6,
+          "capture": "capture-10",
+          "sourceStartSeconds": 365.835,
+          "sourceEndSeconds": 369.029,
+          "target": {
+            "x": 366.29791259765625,
+            "y": 530,
+            "width": 40,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "670e1bc643dfb4d91812c17f9af37f5fd7d9a7b12553930e4517fcb5c2aa4b29"
+        },
+        {
+          "step": 7,
+          "capture": "capture-10",
+          "sourceStartSeconds": 369.067,
+          "sourceEndSeconds": 372.012,
+          "target": {
+            "x": 908.3926391601562,
+            "y": 413.5,
+            "width": 56,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "70377c5ce837bf0fe2c5ff90dd60e31900c6c26ace666d7cb76c3c7b7af3e452"
+        }
+      ]
+    },
+    {
+      "language": "en",
+      "topic": "morphology",
+      "video": "en/morphology.mp4",
+      "poster": "en/morphology.png",
+      "bytes": 456756,
+      "posterBytes": 168711,
+      "sha256": "fcb660f11dcd0abfbfddcbd75c2bf08935eb2b5bff23412dcde2fe7afd021e06",
+      "posterSha256": "99548b1bb4a017a5a2530c6d71334a9dd223439e021228399aa227afb3a38c34",
+      "durationSeconds": 16.6,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-10",
+          "sourceStartSeconds": 372.854,
+          "sourceEndSeconds": 376.113,
+          "target": {
+            "x": 604.72119140625,
+            "y": 164,
+            "width": 170.140625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "31166e8cd9a05e838a3fb4e4c8f8acb47e9845ea5a4659410335ed1d101f3364"
+        },
+        {
+          "step": 2,
+          "capture": "capture-10",
+          "sourceStartSeconds": 376.143,
+          "sourceEndSeconds": 379.384,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "93e7aa5baf339586553d165bf055bd060e9cb09bdf3e1abdbcd856f72f771aae"
+        },
+        {
+          "step": 3,
+          "capture": "capture-10",
+          "sourceStartSeconds": 380.014,
+          "sourceEndSeconds": 383.215,
+          "target": {
+            "x": 297.99969482421875,
+            "y": 384,
+            "width": 124.328125,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "46a6e7199104545acf5f18f634f721d4323715a1f44fe89b8f8ffe97319695c0"
+        },
+        {
+          "step": 4,
+          "capture": "capture-10",
+          "sourceStartSeconds": 383.27,
+          "sourceEndSeconds": 386.707,
+          "target": {
+            "x": 1240,
+            "y": 0,
+            "width": 40,
+            "height": 56
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "0d1e759e9e9eca1dff030a914225fdbd7d98c18ac50a416129dce0c1ca5dc276"
+        },
+        {
+          "step": 5,
+          "capture": "capture-10",
+          "sourceStartSeconds": 386.772,
+          "sourceEndSeconds": 390.209,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "2333127688e8e0c609fefa3d71d6244b8f05f7287b510f0c0100c8ee3dbea46c"
+        }
+      ]
+    },
+    {
+      "language": "es",
+      "topic": "reader",
+      "video": "es/reader.mp4",
+      "poster": "es/reader.png",
+      "bytes": 1217473,
+      "posterBytes": 176016,
+      "sha256": "33c580bee062c1e10e18bbb4bba532256eb9aa571f5ab27dfbea63af415affa2",
+      "posterSha256": "dc21837e5269c068d5541ae23e03278bebf8e216a9f4f8bb6ef01076750ae92d",
+      "durationSeconds": 30.05,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-12",
+          "sourceStartSeconds": 10.065,
+          "sourceEndSeconds": 15.577,
+          "target": {
+            "x": 273,
+            "y": 313,
+            "width": 160.21875,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "91052f09e142f8f01745ef079516a97c7d04651fee9ce02984a262c187533d3b"
+        },
+        {
+          "step": 2,
+          "capture": "capture-12",
+          "sourceStartSeconds": 16.39,
+          "sourceEndSeconds": 19.506,
+          "target": {
+            "x": 710.5,
+            "y": 7.5,
+            "width": 40,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "c762e5d8b4d11ac49b47602244c01de71dd7f26de728fe4daa0fd86f8d296361"
+        },
+        {
+          "step": 3,
+          "capture": "capture-12",
+          "sourceStartSeconds": 19.524,
+          "sourceEndSeconds": 22.79,
+          "target": {
+            "x": 433.3333435058594,
+            "y": 266.3999938964844,
+            "width": 413.3281555175781,
+            "height": 48
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "2e7fda9c6be567ae28841ad3293a5482202056a7cf1b12447cbf3cfe3493bc73"
+        },
+        {
+          "step": 4,
+          "capture": "capture-12",
+          "sourceStartSeconds": 22.808,
+          "sourceEndSeconds": 25.904,
+          "target": {
+            "x": 20,
+            "y": 266.3999938964844,
+            "width": 413.328125,
+            "height": 48
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "caf40ff46182493e9e2d9b1ddb355cabd45f5abfa4cb194dc7501ad381250f51"
+        },
+        {
+          "step": 5,
+          "capture": "capture-12",
+          "sourceStartSeconds": 25.923,
+          "sourceEndSeconds": 41.955,
+          "target": {
+            "x": 16,
+            "y": 438.3999938964844,
+            "width": 1248,
+            "height": 48
+          },
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "fc0c85fc2333f3381c600ddd93fa5816d60606a1476a3c5e1bca5869fc4fa9e3"
+        },
+        {
+          "step": 6,
+          "capture": "capture-12",
+          "sourceStartSeconds": 43.494,
+          "sourceEndSeconds": 46.761,
+          "target": {
+            "x": 24,
+            "y": 498.3999938964844,
+            "width": 1232,
+            "height": 42.000030517578125
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "8eb74a0f814f508261e743f88573c947efb64c6d7b1cfa27f601336400eed5db"
+        },
+        {
+          "step": 7,
+          "capture": "capture-12",
+          "sourceStartSeconds": 46.796,
+          "sourceEndSeconds": 50.355,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "51d1f587b514ee75db3a9dd3995f6410f5063110bf2fe02fce7528fa6a789cca"
+        },
+        {
+          "step": 8,
+          "capture": "capture-12",
+          "sourceStartSeconds": 50.845,
+          "sourceEndSeconds": 53.965,
+          "target": {
+            "x": 273,
+            "y": 313,
+            "width": 160.21875,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "886305a836531c8ae26fe1b6bf58b0ba257317d7827c623670a421627a65884d"
+        }
+      ]
+    },
+    {
+      "language": "es",
+      "topic": "search",
+      "video": "es/search.mp4",
+      "poster": "es/search.png",
+      "bytes": 871322,
+      "posterBytes": 167065,
+      "sha256": "1043000dc90631fa23cd1e3081d95653f6d0e119323a36d4a0d9c4739b850b4e",
+      "posterSha256": "e522bc4a985c6a4509722efc8e4513f9feb0d2553fab7168e2069856e239a222",
+      "durationSeconds": 25.75,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-13",
+          "sourceStartSeconds": 10.785,
+          "sourceEndSeconds": 14.507,
+          "target": {
+            "x": 500.75,
+            "y": 438,
+            "width": 243.75,
+            "height": 112
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "c56f71720b04390fb99806f73974c96783c6c2dfd04a58cfd413525d3caf3792"
+        },
+        {
+          "step": 2,
+          "capture": "capture-13",
+          "sourceStartSeconds": 14.578,
+          "sourceEndSeconds": 21.588,
+          "target": {
+            "x": 32,
+            "y": 172,
+            "width": 1224,
+            "height": 54
+          },
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "a4261d645d4bc978ee62c04d26e73bb0284406335bbd80f7e0410954b69d8bfd"
+        },
+        {
+          "step": 3,
+          "capture": "capture-13",
+          "sourceStartSeconds": 21.628,
+          "sourceEndSeconds": 40.081,
+          "target": {
+            "x": 1156.931640625,
+            "y": 230,
+            "width": 87.0625,
+            "height": 64
+          },
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "bfd1b7d55d90638e09894c07fa26c50078fbeaddbfdec8e01ba9773b5b714988"
+        },
+        {
+          "step": 4,
+          "capture": "capture-13",
+          "sourceStartSeconds": 46.08,
+          "sourceEndSeconds": 51.332,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "0f5fe0835df6243a7c3f25bbdaaee7c76d8270e2b283899e5ed8bcbbb49bb4aa"
+        },
+        {
+          "step": 5,
+          "capture": "capture-13",
+          "sourceStartSeconds": 51.365,
+          "sourceEndSeconds": 54.564,
+          "target": {
+            "x": 1134,
+            "y": 121,
+            "width": 40,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "9dacdef4a9567a72efcc3a4a235fec4de77dd3e3d8feb8322aeae3fc7c377e73"
+        },
+        {
+          "step": 6,
+          "capture": "capture-13",
+          "sourceStartSeconds": 55.055,
+          "sourceEndSeconds": 58.237,
+          "target": {
+            "x": 756.5,
+            "y": 438,
+            "width": 243.75,
+            "height": 112
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "46f913c834118db3ec252843ea012355c3710f3508987af1ea8f233ceda04285"
+        }
+      ]
+    },
+    {
+      "language": "es",
+      "topic": "library",
+      "video": "es/library.mp4",
+      "poster": "es/library.png",
+      "bytes": 852545,
+      "posterBytes": 185269,
+      "sha256": "fe51b58ea7205834a24839973d15ca85e0b1adf6cd0b65bde8448aeb94bd9875",
+      "posterSha256": "90f8605ef39ce14e58a047d5abf5c575439ff7d326ba4c7395f35e701ec89bdd",
+      "durationSeconds": 28.7,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": {
+        "version": "b0ffc3b32e77f764d5864c4f1cb69f10409cc0ed2a01c763462c0ca4fe364c9b",
+        "totalBytes": 107093207
+      },
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-14",
+          "sourceStartSeconds": 10.952,
+          "sourceEndSeconds": 14.154,
+          "target": {
+            "x": 364.0277099609375,
+            "y": 214,
+            "width": 119.015625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "188906203b18a9ed5b76e12528503b49dae509e9ae9940ae97e37c9410ef0669"
+        },
+        {
+          "step": 2,
+          "capture": "capture-14",
+          "sourceStartSeconds": 14.197,
+          "sourceEndSeconds": 18.99,
+          "target": {
+            "x": 1128.1641845703125,
+            "y": 490.5,
+            "width": 107.828125,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "0cfc56c369f423aaea4480b4c802e70de875212756fb7cb6edd0e1d33ff51ada"
+        },
+        {
+          "step": 3,
+          "capture": "capture-14",
+          "sourceStartSeconds": 26.494,
+          "sourceEndSeconds": 29.936,
+          "target": {
+            "x": 1038,
+            "y": 121,
+            "width": 40,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "a9a123275a9b2c649cef43f101fbc9e85a59ba5b4bde2cf84969dbd9bd3bec27"
+        },
+        {
+          "step": 4,
+          "capture": "capture-14",
+          "sourceStartSeconds": 29.965,
+          "sourceEndSeconds": 33.357,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "d219112e531e49a64c3a51d44edd449488de80ba8a2fe7376f0e501223642987"
+        },
+        {
+          "step": 5,
+          "capture": "capture-14",
+          "sourceStartSeconds": 34.114,
+          "sourceEndSeconds": 37.32,
+          "target": {
+            "x": 245,
+            "y": 214,
+            "width": 119.015625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "09ae06dac85f0a72661879289d107159bda4db734cbe7fd998af81361267ddb2"
+        },
+        {
+          "step": 6,
+          "capture": "capture-14",
+          "sourceStartSeconds": 37.687,
+          "sourceEndSeconds": 41.414,
+          "target": {
+            "x": 1120.646240234375,
+            "y": 292.5,
+            "width": 115.34375,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "eb5e23e28fe3e93565f778a724bed9fd76b889cfcaf5a0644617ed084f884ead"
+        },
+        {
+          "step": 7,
+          "capture": "capture-14",
+          "sourceStartSeconds": 48.747,
+          "sourceEndSeconds": 51.951,
+          "target": {
+            "x": 1038,
+            "y": 121,
+            "width": 40,
+            "height": 44
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "7851040c42b5d30698c88822eef364792bef0ea5c9ec2cf7436422274efca124"
+        },
+        {
+          "step": 8,
+          "capture": "capture-14",
+          "sourceStartSeconds": 51.976,
+          "sourceEndSeconds": 55.679,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "34d6ed2fa5393ad3a3d8e4cf1d90adfafa3724c7c9f45de3b029eb8be94d08b1"
+        }
+      ]
+    },
+    {
+      "language": "es",
+      "topic": "audio",
+      "video": "es/audio.mp4",
+      "poster": "es/audio.png",
+      "bytes": 826067,
+      "posterBytes": 167145,
+      "sha256": "1e58c1806b0f51215a256aae0b0922127f405cd62392f18853499409b375efcd",
+      "posterSha256": "321156242a173ee626fd9393793f8ffda244be2108c5373aee7774d090a6fec0",
+      "durationSeconds": 29.8,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-13",
+          "sourceStartSeconds": 59.7,
+          "sourceEndSeconds": 62.897,
+          "target": {
+            "x": 305,
+            "y": 632,
+            "width": 188,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "52527a98874b97708bb93aaad1734c8e5bb447011cf3a51f48e6b291a5abfac3"
+        },
+        {
+          "step": 2,
+          "capture": "capture-13",
+          "sourceStartSeconds": 64.499,
+          "sourceEndSeconds": 67.849,
+          "target": {
+            "x": 495.81591796875,
+            "y": 562,
+            "width": 90.359375,
+            "height": 30
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "0b116b129d83d42605ff78da1946f02b2f7066576a40105e9f1f6a4e75904eb7"
+        },
+        {
+          "step": 3,
+          "capture": "capture-13",
+          "sourceStartSeconds": 67.89,
+          "sourceEndSeconds": 70.953,
+          "target": {
+            "x": 40,
+            "y": 250,
+            "width": 1200,
+            "height": 46
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "fb0888ee1ac218c7735ff09e745a4d8240adb65e17d0bca6c9fbbab9275d0593"
+        },
+        {
+          "step": 4,
+          "capture": "capture-13",
+          "sourceStartSeconds": 71.696,
+          "sourceEndSeconds": 74.916,
+          "target": {
+            "x": 483.0553894042969,
+            "y": 214,
+            "width": 119.01565551757812,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "443909b15e876157e5ff4169d41785eadd0a76330b09f0a2058e55b78bb7b971"
+        },
+        {
+          "step": 5,
+          "capture": "capture-13",
+          "sourceStartSeconds": 74.951,
+          "sourceEndSeconds": 78.124,
+          "target": {
+            "x": 269,
+            "y": 341,
+            "width": 963,
+            "height": 56
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "fd81d067720d76d65b9f070e93fcd3da053b635cb966fef4edc26f83e540135d"
+        },
+        {
+          "step": 6,
+          "capture": "capture-13",
+          "sourceStartSeconds": 78.159,
+          "sourceEndSeconds": 81.101,
+          "target": {
+            "x": 253,
+            "y": 56,
+            "width": 1003,
+            "height": 48
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "cefeaa15edfa5d50f6119b1b6ecf316cb608a9a6d0b24c888c62d166f35fc16e"
+        },
+        {
+          "step": 7,
+          "capture": "capture-13",
+          "sourceStartSeconds": 81.136,
+          "sourceEndSeconds": 85.072,
+          "target": {
+            "x": 269,
+            "y": 413,
+            "width": 134.3125,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "62cd5c09fed9c2bdf0455a98a95f0661570ac176c710aa920dbd5100aa2640c8"
+        },
+        {
+          "step": 8,
+          "capture": "capture-13",
+          "sourceStartSeconds": 85.172,
+          "sourceEndSeconds": 88.429,
+          "target": {
+            "x": 618.2991943359375,
+            "y": 413,
+            "width": 111.640625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "0c9e8ed778631e2dc540c92cca6eba10dc32972db8cc4441a58a54096498925b"
+        },
+        {
+          "step": 9,
+          "capture": "capture-13",
+          "sourceStartSeconds": 88.463,
+          "sourceEndSeconds": 92.176,
+          "target": {
+            "x": 413.31573486328125,
+            "y": 413,
+            "width": 194.96875,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "528e532de90bf18569dd1dbb086576d7462de09c984fe00f891961df89fa290a"
+        }
+      ]
+    },
+    {
+      "language": "es",
+      "topic": "offline",
+      "video": "es/offline.mp4",
+      "poster": "es/offline.png",
+      "bytes": 510920,
+      "posterBytes": 200996,
+      "sha256": "f56937c13ee762addcf4f05909579fd13f7e93994177918d0cb3100e378c0cdb",
+      "posterSha256": "5e713ad282887ec72dcb70df2d4c32c321afda9d7b4f65a5a6f9708416e1fd07",
+      "durationSeconds": 17.1,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-15",
+          "sourceStartSeconds": 71.157,
+          "sourceEndSeconds": 102.467,
+          "target": {
+            "x": 269,
+            "y": 298,
+            "width": 241.40625,
+            "height": 42
+          },
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "2ac20c78e14fc357552084596adcc26e166ef3a4901ff046d3f850ec0d3eeffe"
+        },
+        {
+          "step": 2,
+          "capture": "capture-15",
+          "sourceStartSeconds": 176.627,
+          "sourceEndSeconds": 180.538,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "f5ab3c280c474211be6d68394c5ee49fecaeb9b250aabcfb8d288dd7f908fa5e"
+        },
+        {
+          "step": 3,
+          "capture": "capture-15",
+          "sourceStartSeconds": 187.275,
+          "sourceEndSeconds": 192.082,
+          "target": {
+            "x": 273,
+            "y": 313,
+            "width": 160.21875,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "d053e50f94f0fde9d3df9faa90963c9574717e9400520d62a520394c550d9470"
+        },
+        {
+          "step": 4,
+          "capture": "capture-15",
+          "sourceStartSeconds": 192.651,
+          "sourceEndSeconds": 195.871,
+          "target": {
+            "x": 364.0277099609375,
+            "y": 214,
+            "width": 119.015625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "596578ae83c11022d77e69f9d3f24a0e6d512014897c5fb538426a89723d7bbc"
+        }
+      ]
+    },
+    {
+      "language": "es",
+      "topic": "plans",
+      "video": "es/plans.mp4",
+      "poster": "es/plans.png",
+      "bytes": 1004710,
+      "posterBytes": 135589,
+      "sha256": "b662cee39a7be56a3ecab68a81256f90654ec4c66e2b668b9429e98c5642a97c",
+      "posterSha256": "297f9dc360697ccc1fbea39791880f6ef4d9fd42cfe0a83e6cbeb65b4bd919e6",
+      "durationSeconds": 43.5,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-15",
+          "sourceStartSeconds": 196.301,
+          "sourceEndSeconds": 199.519,
+          "target": {
+            "x": 414.7223205566406,
+            "y": 434,
+            "width": 185.21871948242188,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "5c3561ce27cdeb58952b42cf7658e35dbfa0ba0a2d8c7f761aa52a592279bb47"
+        },
+        {
+          "step": 2,
+          "capture": "capture-15",
+          "sourceStartSeconds": 203.402,
+          "sourceEndSeconds": 210.665,
+          "target": {
+            "x": 24,
+            "y": 654,
+            "width": 1232,
+            "height": 42
+          },
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "2ccfd35fd8600624d2e99b4ab29e0e56f404a73066249a1a51a9dbd6724f6a28"
+        },
+        {
+          "step": 3,
+          "capture": "capture-15",
+          "sourceStartSeconds": 210.777,
+          "sourceEndSeconds": 213.993,
+          "target": {
+            "x": 271,
+            "y": 568,
+            "width": 220.9375,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "66a7411b6049f58d139eb59ee9af1627245d04c4f17a5c4ec2f9dfb97ce9861d"
+        },
+        {
+          "step": 4,
+          "capture": "capture-15",
+          "sourceStartSeconds": 214.033,
+          "sourceEndSeconds": 217.234,
+          "target": {
+            "x": 370.7056884765625,
+            "y": 170,
+            "width": 125.703125,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "8ceb99042dcde2fcbecf53117d7a62f50381b996bc2c11a275f5028efd589c62"
+        },
+        {
+          "step": 5,
+          "capture": "capture-15",
+          "sourceStartSeconds": 217.271,
+          "sourceEndSeconds": 220.464,
+          "target": {
+            "x": 421.9183044433594,
+            "y": 460,
+            "width": 234.15628051757812,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "5317a36c7376c43266fa5e0a6aa2de91bd964003f0cda88dd18f10b6f8b03164"
+        },
+        {
+          "step": 6,
+          "capture": "capture-15",
+          "sourceStartSeconds": 225.311,
+          "sourceEndSeconds": 232.642,
+          "target": {
+            "x": 24,
+            "y": 654,
+            "width": 1232,
+            "height": 42
+          },
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "e023b49f0fc911c351709b2224bbd2f9382836c5cf99c20ce655e73f3b5aa3c3"
+        },
+        {
+          "step": 7,
+          "capture": "capture-15",
+          "sourceStartSeconds": 232.696,
+          "sourceEndSeconds": 236.729,
+          "target": {
+            "x": 269,
+            "y": 644,
+            "width": 177.109375,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "dd033afe1aff3dc6f42c2c3aa1cb12699f85a6dfc8890fc1a7741a948f4797ae"
+        },
+        {
+          "step": 8,
+          "capture": "capture-15",
+          "sourceStartSeconds": 237.181,
+          "sourceEndSeconds": 240.525,
+          "target": {
+            "x": 269,
+            "y": 600,
+            "width": 118.015625,
+            "height": 30
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "a09d0b4c5c27e95b65742fe0f8fb3365e89d2b51222dba9914dc0c18c26e4d75"
+        },
+        {
+          "step": 9,
+          "capture": "capture-15",
+          "sourceStartSeconds": 240.565,
+          "sourceEndSeconds": 243.889,
+          "target": {
+            "x": 269,
+            "y": 600,
+            "width": 122.421875,
+            "height": 30
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "e71602a84bc9b421d0d3eba5c12db2e22269e6749d1de481109bf1638be2a24e"
+        },
+        {
+          "step": 10,
+          "capture": "capture-15",
+          "sourceStartSeconds": 244.323,
+          "sourceEndSeconds": 247.52,
+          "target": {
+            "x": 997.2804565429688,
+            "y": 551,
+            "width": 40.00006103515625,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "6021e25955fa956a1240d7f2e8199f86d877ceda0a5f6a96379ca45a1b859a74"
+        },
+        {
+          "step": 11,
+          "capture": "capture-15",
+          "sourceStartSeconds": 247.567,
+          "sourceEndSeconds": 250.765,
+          "target": {
+            "x": 1043.280517578125,
+            "y": 550,
+            "width": 188.71875,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "a4866cb5cb88905e9d95d07ea639c6475df3509eb179d21078398d859b28cc63"
+        },
+        {
+          "step": 12,
+          "capture": "capture-15",
+          "sourceStartSeconds": 250.807,
+          "sourceEndSeconds": 254.008,
+          "target": {
+            "x": 269,
+            "y": 551,
+            "width": 40,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "e1cd69762d946774263a72d9089d9cd8c3f3c8df31a8ca0d0cd6a4b190269420"
+        }
+      ]
+    },
+    {
+      "language": "es",
+      "topic": "settings",
+      "video": "es/settings.mp4",
+      "poster": "es/settings.png",
+      "bytes": 860170,
+      "posterBytes": 155576,
+      "sha256": "ea1cdebec40c1a478720e36e4dcbb4aa178f765844e0470e792ecd60b8ee71cd",
+      "posterSha256": "735e79d64b35fb1a97a76f9e8778ed01e28d2571567afc520b6a144ce3419b48",
+      "durationSeconds": 38.15,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-15",
+          "sourceStartSeconds": 255.052,
+          "sourceEndSeconds": 258.501,
+          "target": {
+            "x": 358.0538330078125,
+            "y": 460,
+            "width": 89.046875,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "6c65882e0d7e4a856b4a6d96d0e352c4d9aae6137c38876929a5bd6bb1c2df19"
+        },
+        {
+          "step": 2,
+          "capture": "capture-15",
+          "sourceStartSeconds": 258.543,
+          "sourceEndSeconds": 261.74,
+          "target": {
+            "x": 439.127685546875,
+            "y": 434,
+            "width": 85.0625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "9180e4505716bca5884f78ee8be8bab9e05d86827dd7f73268c6371e6221144b"
+        },
+        {
+          "step": 3,
+          "capture": "capture-15",
+          "sourceStartSeconds": 261.782,
+          "sourceEndSeconds": 264.986,
+          "target": {
+            "x": 449.2076416015625,
+            "y": 594,
+            "width": 90.09375,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "fda3a1f9b7971290d6c515bc551679fd5842b1663f5b2f94af4f3ea545f36be8"
+        },
+        {
+          "step": 4,
+          "capture": "capture-15",
+          "sourceStartSeconds": 265.027,
+          "sourceEndSeconds": 268.222,
+          "target": {
+            "x": 359.10382080078125,
+            "y": 594,
+            "width": 90.09375,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "2630f6e4a9183a013e16b9f99eede77981836a4c6c1e91742a675673751a24be"
+        },
+        {
+          "step": 5,
+          "capture": "capture-16",
+          "sourceStartSeconds": 1.2,
+          "sourceEndSeconds": 5.1,
+          "target": {
+            "x": 84,
+            "y": 781.3333333333334,
+            "width": 552,
+            "height": 157.33333333333334
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "262fb076648739b3c1b6a70e0ecd6b327066f10edd11015c9d9dc4dccc3da7ff"
+        },
+        {
+          "step": 6,
+          "capture": "capture-16",
+          "sourceStartSeconds": 6.4,
+          "sourceEndSeconds": 9.9,
+          "target": {
+            "x": 84,
+            "y": 938.6666666666666,
+            "width": 402,
+            "height": 84
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "214eede27cbcd844fe302cab99e5833fd2286eb5c302409819dbaaf10e23d254"
+        },
+        {
+          "step": 7,
+          "capture": "capture-16",
+          "sourceStartSeconds": 9.9,
+          "sourceEndSeconds": 12.5,
+          "target": {
+            "x": 114,
+            "y": 1160,
+            "width": 48,
+            "height": 48
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "cdee913086d6987027a5e01db324638da270441809bfffa528b19c0b3775b606"
+        },
+        {
+          "step": 8,
+          "capture": "capture-16",
+          "sourceStartSeconds": 28.1,
+          "sourceEndSeconds": 30.1,
+          "target": {
+            "x": 381.3333333333333,
+            "y": 702.6666666666666,
+            "width": 182,
+            "height": 122
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "497af0d4ae1e86cb6f81059fc0c00762ca887012c47d45bbf8f7cf9fb3a271d5"
+        },
+        {
+          "step": 9,
+          "capture": "capture-16",
+          "sourceStartSeconds": 32.1,
+          "sourceEndSeconds": 35.8,
+          "target": {
+            "x": 381.3333333333333,
+            "y": 468.6666666666667,
+            "width": 182,
+            "height": 122
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "e4baab7758ed24219a322a3786fc86b4a1db7650f9604971e78822b02f62c730"
+        },
+        {
+          "step": 10,
+          "capture": "capture-16",
+          "sourceStartSeconds": 36.8,
+          "sourceEndSeconds": 40.2,
+          "target": {
+            "x": 466.6666666666667,
+            "y": 687.3333333333334,
+            "width": 124.66666666666667,
+            "height": 84
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "990c29f17a0c824c4c41b3a1341a8d8304a1242bdfef0b5556463001c3eecd6d"
+        },
+        {
+          "step": 11,
+          "capture": "capture-16",
+          "sourceStartSeconds": 40.8,
+          "sourceEndSeconds": 44.0,
+          "target": {
+            "x": 84,
+            "y": 938.6666666666666,
+            "width": 402,
+            "height": 84
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "bc085a78f845f8e0d063dca59b343e8ff57a9e1d57319b4f11d2c02ff85de349"
+        },
+        {
+          "step": 12,
+          "capture": "capture-16",
+          "sourceStartSeconds": 52.5,
+          "sourceEndSeconds": 55.3,
+          "target": {
+            "x": 84,
+            "y": 781.3333333333334,
+            "width": 552,
+            "height": 157.33333333333334
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0,
+          "screenshotSha256": "ac7c7ed38fbef45d3934bf3fbb0f8230c91a36f96575b99ce33e9aa70b7d910f"
+        }
+      ]
+    },
+    {
+      "language": "es",
+      "topic": "storage",
+      "video": "es/storage.mp4",
+      "poster": "es/storage.png",
+      "bytes": 375123,
+      "posterBytes": 190217,
+      "sha256": "126433980e5dfc2cc07d3d9b60cc4290f4cf4c707dcfd8dd1bdb4e988769b176",
+      "posterSha256": "c7b408541a1940a6234a0fce7ef92abd28c75b9f0606eeb0d9fad177b5f0c0f8",
+      "durationSeconds": 12.8,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-15",
+          "sourceStartSeconds": 268.994,
+          "sourceEndSeconds": 273.197,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "163d11e0c893f4d40f100f44d3a39eae05afd4730f6a1bd2aa1b6b78024860a3"
+        },
+        {
+          "step": 2,
+          "capture": "capture-15",
+          "sourceStartSeconds": 273.221,
+          "sourceEndSeconds": 277.451,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "163d11e0c893f4d40f100f44d3a39eae05afd4730f6a1bd2aa1b6b78024860a3"
+        },
+        {
+          "step": 3,
+          "capture": "capture-15",
+          "sourceStartSeconds": 277.844,
+          "sourceEndSeconds": 282.176,
+          "target": {
+            "x": 269,
+            "y": 492,
+            "width": 154.9375,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "cefc78b30627483d592d74eb995f5b02c418b86c018103bc93d803b764e9122e"
+        }
+      ]
+    },
+    {
+      "language": "es",
+      "topic": "personal",
+      "video": "es/personal.mp4",
+      "poster": "es/personal.png",
+      "bytes": 1225040,
+      "posterBytes": 183816,
+      "sha256": "3642a55a82dc935d677cb3c5978a1b6b83dd6e1cb2703c35e3ea17a0c27f9eb4",
+      "posterSha256": "73f016d558d185a6b8c213902153c3d8f6932e58e97f9afb64de7c4cb735c32e",
+      "durationSeconds": 51.45,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-13",
+          "sourceStartSeconds": 92.815,
+          "sourceEndSeconds": 96.158,
+          "target": {
+            "x": 245,
+            "y": 164,
+            "width": 185.21875,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "c155038bfe8ca6e91dd21a1d9d6958598a784cb5c1301b7888cb85b8898b6a5f"
+        },
+        {
+          "step": 2,
+          "capture": "capture-13",
+          "sourceStartSeconds": 96.195,
+          "sourceEndSeconds": 99.385,
+          "target": {
+            "x": 140,
+            "y": 165,
+            "width": 138.484375,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "e29d4e9a2dbd1f1a369b8f52ec4d560bbda72e69cb6a215aadb47461eb980cb3"
+        },
+        {
+          "step": 3,
+          "capture": "capture-13",
+          "sourceStartSeconds": 100.425,
+          "sourceEndSeconds": 105.093,
+          "target": {
+            "x": 380,
+            "y": 397.5,
+            "width": 526,
+            "height": 158
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "a85cb1ab0db3acacfe7e7b2b68ff78137f90026c8130b7c84803c019a70690fb"
+        },
+        {
+          "step": 4,
+          "capture": "capture-13",
+          "sourceStartSeconds": 105.123,
+          "sourceEndSeconds": 108.403,
+          "target": {
+            "x": 824.72216796875,
+            "y": 581.5,
+            "width": 91.265625,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "fd86f1ffe5dba46c7d8fffdacb637e414de201961507443594c8803f0883046a"
+        },
+        {
+          "step": 5,
+          "capture": "capture-13",
+          "sourceStartSeconds": 108.436,
+          "sourceEndSeconds": 111.621,
+          "target": {
+            "x": 1038,
+            "y": 247,
+            "width": 40,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "70dd7d076acbd7b0eeb5d8e55b5bf1b8e87785bf30bcb88338581148e1d28831"
+        },
+        {
+          "step": 6,
+          "capture": "capture-13",
+          "sourceStartSeconds": 113.282,
+          "sourceEndSeconds": 116.56,
+          "target": {
+            "x": 824.72216796875,
+            "y": 581.5,
+            "width": 91.265625,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "2a0e0e69a3cf26b6c21dc5f9e941917b31db4e2d1785788546593c9ad234a967"
+        },
+        {
+          "step": 7,
+          "capture": "capture-13",
+          "sourceStartSeconds": 116.595,
+          "sourceEndSeconds": 119.751,
+          "target": {
+            "x": 640,
+            "y": 117,
+            "width": 500,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "c216f144e5273af744a353add56941a4c3ce84098e7c733710619a41c6ec34e2"
+        },
+        {
+          "step": 8,
+          "capture": "capture-13",
+          "sourceStartSeconds": 119.782,
+          "sourceEndSeconds": 122.997,
+          "target": {
+            "x": 140,
+            "y": 165,
+            "width": 158.609375,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "6d2f36abec3a8557654ebe74bded524ccafa341afe1c9e9cfdcbc3de10f05819"
+        },
+        {
+          "step": 9,
+          "capture": "capture-13",
+          "sourceStartSeconds": 124.157,
+          "sourceEndSeconds": 127.328,
+          "target": {
+            "x": 680.72216796875,
+            "y": 437.5,
+            "width": 91.265625,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "e87c568df7b7413a00edd7ad8463e75568290e8bf44458c75edbd2a8499c5f50"
+        },
+        {
+          "step": 10,
+          "capture": "capture-13",
+          "sourceStartSeconds": 127.362,
+          "sourceEndSeconds": 130.529,
+          "target": {
+            "x": 162,
+            "y": 313,
+            "width": 120.734375,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "21c0f7cd7c4bd447b3b7c5d7a7685fc074b66c5514c28d4d9300ab9139aa5314"
+        },
+        {
+          "step": 11,
+          "capture": "capture-13",
+          "sourceStartSeconds": 130.561,
+          "sourceEndSeconds": 133.845,
+          "target": {
+            "x": 680.72216796875,
+            "y": 646,
+            "width": 91.265625,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "49dcc99ae6ee90461a938c5cb2445ad8d90c270a604de40f185afc61fb74496b"
+        },
+        {
+          "step": 12,
+          "capture": "capture-13",
+          "sourceStartSeconds": 133.879,
+          "sourceEndSeconds": 136.796,
+          "target": {
+            "x": 162,
+            "y": 287,
+            "width": 956,
+            "height": 64
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "729f2be60385f562d6d5aed6141134f3717b89293872621b6a2167a8d27ce08e"
+        },
+        {
+          "step": 13,
+          "capture": "capture-13",
+          "sourceStartSeconds": 138.654,
+          "sourceEndSeconds": 146.284,
+          "target": null,
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "e8b5892fbcb356bfe7952da6b8886940ecb1e9c36628c1aa1eda5350858dbc2c"
+        },
+        {
+          "step": 14,
+          "capture": "capture-13",
+          "sourceStartSeconds": 146.316,
+          "sourceEndSeconds": 149.51,
+          "target": {
+            "x": 896,
+            "y": 168,
+            "width": 40,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "8596f1ad07648ea71e147d2bfa5e0893564fac004d0f3353c9060aee0ca82fb1"
+        },
+        {
+          "step": 15,
+          "capture": "capture-13",
+          "sourceStartSeconds": 149.543,
+          "sourceEndSeconds": 152.748,
+          "target": {
+            "x": 430,
+            "y": 328.5,
+            "width": 420,
+            "height": 48
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.4,
+          "screenshotSha256": "d1a545d7262d6211194d7ded5e166a576f51302c780d00735877d812dfee0da3"
+        }
+      ]
+    },
+    {
+      "language": "es",
+      "topic": "backup",
+      "video": "es/backup.mp4",
+      "poster": "es/backup.png",
+      "bytes": 589284,
+      "posterBytes": 172316,
+      "sha256": "edd506ac36bd2f8435d546975aae95056bdb8868c02b869bef1ed34b431fd418",
+      "posterSha256": "fc4d22f80f40a0d75885fd03fcdd4441925a240aa0d938b2fb5f4b0aa36fb019",
+      "durationSeconds": 23.1,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-15",
+          "sourceStartSeconds": 324.413,
+          "sourceEndSeconds": 327.714,
+          "target": {
+            "x": 269,
+            "y": 492,
+            "width": 154.9375,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "8235607fd107189c3489dc53e7feac6df126519bf4d2d5cfbd648c16cb4b584c"
+        },
+        {
+          "step": 2,
+          "capture": "capture-15",
+          "sourceStartSeconds": 327.768,
+          "sourceEndSeconds": 331.086,
+          "target": {
+            "x": 433.95166015625,
+            "y": 492,
+            "width": 143.203125,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "9a63c321e834fc4007665d9c210635c89f16da42d97c78e60b64e6aa0dcf9e89"
+        },
+        {
+          "step": 3,
+          "capture": "capture-15",
+          "sourceStartSeconds": 331.508,
+          "sourceEndSeconds": 335.454,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "6fa670ec6dec4e8c857bc2eeba8a9d1ff21b952f1ab37505f713907a1ba4bce0"
+        },
+        {
+          "step": 4,
+          "capture": "capture-15",
+          "sourceStartSeconds": 335.882,
+          "sourceEndSeconds": 339.562,
+          "target": {
+            "x": 360,
+            "y": 494.5,
+            "width": 237.078125,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "d924b70129bebc84981753fb61c821a5395e96476264b599a52fed4451f6c852"
+        },
+        {
+          "step": 5,
+          "capture": "capture-15",
+          "sourceStartSeconds": 340.011,
+          "sourceEndSeconds": 343.656,
+          "target": {
+            "x": 734.3325805664062,
+            "y": 569.5,
+            "width": 201.65625,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "54bba128d30f970e3592fbdcb9603b6dc2f1bae00db876e70b488479bfc0de19"
+        },
+        {
+          "step": 6,
+          "capture": "capture-15",
+          "sourceStartSeconds": 344.12,
+          "sourceEndSeconds": 350.549,
+          "target": {
+            "x": 780.6310424804688,
+            "y": 406.5,
+            "width": 158.28125,
+            "height": 42
+          },
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "e777eedc0b0b549ed15a99f9b7a378060a0a91b14b26202c7188ef0cc0b7582e"
+        }
+      ]
+    },
+    {
+      "language": "es",
+      "topic": "share-search",
+      "video": "es/share-search.mp4",
+      "poster": "es/share-search.png",
+      "bytes": 1366655,
+      "posterBytes": 224261,
+      "sha256": "797db1b31ec4a606fbebb03899917ac3bc5fad09935d4fcba13ff2a143811f0b",
+      "posterSha256": "fa54fe9d44145cea1fead608f1f31bcc53724e8d2c9054829068a26ba194f77b",
+      "durationSeconds": 39.55,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": {
+        "version": "b0ffc3b32e77f764d5864c4f1cb69f10409cc0ed2a01c763462c0ca4fe364c9b",
+        "totalBytes": 107093207
+      },
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-14",
+          "sourceStartSeconds": 61.845,
+          "sourceEndSeconds": 67.126,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "564f484fe8ec21b08ef14a7c9c31ff5f4c63656f980f5a9b3e98f7a5b398d2a0"
+        },
+        {
+          "step": 2,
+          "capture": "capture-14",
+          "sourceStartSeconds": 67.169,
+          "sourceEndSeconds": 70.343,
+          "target": {
+            "x": 950,
+            "y": 123,
+            "width": 40,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "5247ec9f63e4325b32d16ec69a3f7fe40ce6665ab98f326e6820e47c4f64981b"
+        },
+        {
+          "step": 3,
+          "capture": "capture-14",
+          "sourceStartSeconds": 70.391,
+          "sourceEndSeconds": 73.575,
+          "target": {
+            "x": 260,
+            "y": 117,
+            "width": 760,
+            "height": 56
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "880847f7c03105a179badbd8dc1655f20c896288dbc69443a53eb5eedc3c2a0a"
+        },
+        {
+          "step": 4,
+          "capture": "capture-14",
+          "sourceStartSeconds": 73.608,
+          "sourceEndSeconds": 76.523,
+          "target": {
+            "x": 244,
+            "y": 217,
+            "width": 800,
+            "height": 48
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "583b2e7a8c015fb35c2a85d784d8d8a0b1c1977edad1b69cd5162b8488414126"
+        },
+        {
+          "step": 5,
+          "capture": "capture-14",
+          "sourceStartSeconds": 76.557,
+          "sourceEndSeconds": 79.743,
+          "target": {
+            "x": 260,
+            "y": 507,
+            "width": 163.984375,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "3323d71839d5c81967a232e7b4d51c3d1dfcbc9805004137649ce51c628aa30e"
+        },
+        {
+          "step": 6,
+          "capture": "capture-14",
+          "sourceStartSeconds": 79.786,
+          "sourceEndSeconds": 82.977,
+          "target": {
+            "x": 433.99560546875,
+            "y": 507,
+            "width": 193.625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "19887ab8279ef4fa2d634b87f84a4a35bda5a0ba42e2d0884378247a40cd664a"
+        },
+        {
+          "step": 7,
+          "capture": "capture-14",
+          "sourceStartSeconds": 83.012,
+          "sourceEndSeconds": 86.209,
+          "target": {
+            "x": 637.62109375,
+            "y": 507,
+            "width": 126.625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "56e240425f6006c81772303c2f74aca39639d76a5ad160847d21d0c265e630e8"
+        },
+        {
+          "step": 8,
+          "capture": "capture-14",
+          "sourceStartSeconds": 87.189,
+          "sourceEndSeconds": 90.561,
+          "target": {
+            "x": 440.22552490234375,
+            "y": 164,
+            "width": 223.578125,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "859d4b4d602146eaff68daf708648e6493d12b9cee9cbeaeb9f186d8baae8daf"
+        },
+        {
+          "step": 9,
+          "capture": "capture-14",
+          "sourceStartSeconds": 91.249,
+          "sourceEndSeconds": 94.76,
+          "target": {
+            "x": 180,
+            "y": 331,
+            "width": 110.6875,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "4b9e71014b9fc73ee958fd886939d174d9a45325d2fd9d4a19244f34805534de"
+        },
+        {
+          "step": 10,
+          "capture": "capture-14",
+          "sourceStartSeconds": 96.922,
+          "sourceEndSeconds": 104.199,
+          "target": {
+            "x": 437.5611572265625,
+            "y": 663.4208984375,
+            "width": 162.15625,
+            "height": 28
+          },
+          "waitingCompressed": true,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "04fddc712ca9f53d3c50e0652669798bbca8ec4b07718fb81a2cc80cafbbb066"
+        },
+        {
+          "step": 11,
+          "capture": "capture-14",
+          "sourceStartSeconds": 104.612,
+          "sourceEndSeconds": 107.98,
+          "target": {
+            "x": 200,
+            "y": 594,
+            "width": 146.796875,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 0.45,
+          "screenshotSha256": "b33ee8fbd10c296eeaac22a0d7179041143071f6678ae48711ece2e198c59313"
+        }
+      ]
+    },
+    {
+      "language": "es",
+      "topic": "saved-audio",
+      "video": "es/saved-audio.mp4",
+      "poster": "es/saved-audio.png",
+      "bytes": 681762,
+      "posterBytes": 169332,
+      "sha256": "888df466e8675d2418e6b59aaa93377b7555393dc090092002f9782da4c07e7b",
+      "posterSha256": "1f8507c15ea8fed3ffe297e331854f5635e5597fee403886793500c1f5c4d8ad",
+      "durationSeconds": 23.05,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-15",
+          "sourceStartSeconds": 388.627,
+          "sourceEndSeconds": 391.96,
+          "target": {
+            "x": 269,
+            "y": 420,
+            "width": 205.84375,
+            "height": 42
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "014a5288a6d744912f412ed1bde8316372776fa16b95d50ee0b6cb4d80cd037f"
+        },
+        {
+          "step": 2,
+          "capture": "capture-15",
+          "sourceStartSeconds": 392.006,
+          "sourceEndSeconds": 395.207,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "a8c556a642a1463849409160d7d4aec777ef86e1f708219a338fa0881370ef83"
+        },
+        {
+          "step": 3,
+          "capture": "capture-15",
+          "sourceStartSeconds": 395.252,
+          "sourceEndSeconds": 398.987,
+          "target": {
+            "x": 269,
+            "y": 530,
+            "width": 128.3125,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "883c6d696b3f55df502c450e3588bc5402c86a2c7a61a6235872a23aaed53284"
+        },
+        {
+          "step": 4,
+          "capture": "capture-15",
+          "sourceStartSeconds": 399.47,
+          "sourceEndSeconds": 402.78,
+          "target": {
+            "x": 405.31573486328125,
+            "y": 530,
+            "width": 40,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "31573a4a066bad2257f20a73c40ad872cd59487f1e18e904618bf41ea5bee2d1"
+        },
+        {
+          "step": 5,
+          "capture": "capture-15",
+          "sourceStartSeconds": 402.817,
+          "sourceEndSeconds": 406.011,
+          "target": {
+            "x": 855.7470703125,
+            "y": 413.5,
+            "width": 66.609375,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "a0c49cd5ae7cfa4e5d6f6516e41383964384a4cbdf9641385fcaceb01bd045cd"
+        },
+        {
+          "step": 6,
+          "capture": "capture-15",
+          "sourceStartSeconds": 406.054,
+          "sourceEndSeconds": 409.357,
+          "target": {
+            "x": 405.31573486328125,
+            "y": 530,
+            "width": 40,
+            "height": 40
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "31573a4a066bad2257f20a73c40ad872cd59487f1e18e904618bf41ea5bee2d1"
+        },
+        {
+          "step": 7,
+          "capture": "capture-15",
+          "sourceStartSeconds": 409.406,
+          "sourceEndSeconds": 412.343,
+          "target": {
+            "x": 930.35693359375,
+            "y": 413.5,
+            "width": 64.515625,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "d8873a44144f942d93df521a40d3ef571521dcfd132af3f29b0e2f47a8cab6c4"
+        }
+      ]
+    },
+    {
+      "language": "es",
+      "topic": "morphology",
+      "video": "es/morphology.mp4",
+      "poster": "es/morphology.png",
+      "bytes": 467981,
+      "posterBytes": 184352,
+      "sha256": "ec53379b185c89796acc7c37d2c35828ff4b9f81c73aa024b5b2a69aa91acf2a",
+      "posterSha256": "72b1a9a2ac5a946b2fc506eeb3cd5121c72c7b0302b6c0810cf9a0b7b4959ebe",
+      "durationSeconds": 16.5,
+      "streams": [
+        {
+          "codec": "h264",
+          "type": "video",
+          "width": 1280,
+          "height": 720,
+          "pixelFormat": "yuv420p",
+          "frameRate": "20/1"
+        }
+      ],
+      "sourceBuild": {
+        "app_name": "quran_flutter",
+        "version": "1.0.0",
+        "build_number": "15",
+        "package_name": "quran_flutter"
+      },
+      "webShellIdentity": null,
+      "evidence": [
+        {
+          "step": 1,
+          "capture": "capture-15",
+          "sourceStartSeconds": 413.127,
+          "sourceEndSeconds": 416.337,
+          "target": {
+            "x": 673.8109130859375,
+            "y": 164,
+            "width": 199.671875,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "a7c2b961db5b673900cb2a13ccab679990ac0e8f37c66caba423d386ca8b72cd"
+        },
+        {
+          "step": 2,
+          "capture": "capture-15",
+          "sourceStartSeconds": 416.369,
+          "sourceEndSeconds": 419.604,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "66ffd23bb4a7349b199786b8bc7f04d6cf24f54421b887e3cce25a785a2f8e81"
+        },
+        {
+          "step": 3,
+          "capture": "capture-15",
+          "sourceStartSeconds": 420.009,
+          "sourceEndSeconds": 423.336,
+          "target": {
+            "x": 296.51568603515625,
+            "y": 384,
+            "width": 153.75,
+            "height": 28
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "18cf39854cdf9ff0a28ff32d6e1de1e8c29c0bf6aad187970d67ea6fd24531fe"
+        },
+        {
+          "step": 4,
+          "capture": "capture-15",
+          "sourceStartSeconds": 423.384,
+          "sourceEndSeconds": 426.626,
+          "target": {
+            "x": 1240,
+            "y": 0,
+            "width": 40,
+            "height": 56
+          },
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "d523fed843d004cc1eb2e05b08a039eb77adb712c8d6aafcd88e36401f062bb5"
+        },
+        {
+          "step": 5,
+          "capture": "capture-15",
+          "sourceStartSeconds": 426.67,
+          "sourceEndSeconds": 430.127,
+          "target": null,
+          "waitingCompressed": false,
+          "clockOffsetSeconds": 1.2,
+          "screenshotSha256": "65db0005ac089cb137e9b4261539b91625861a4224416535b85c7e1f1732a19d"
+        }
+      ]
+    }
+  ]
+}

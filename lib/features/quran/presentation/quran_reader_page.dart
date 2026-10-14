@@ -4,6 +4,9 @@ import 'package:quran_library/quran_library.dart';
 
 import '../../../l10n/generated/app_localizations.dart';
 import 'reader_navigation.dart';
+import '../../personal/presentation/personal_tools_page.dart';
+import '../../personal/presentation/share_ayah_page.dart';
+import '../../learning/presentation/corpus_learning_page.dart';
 
 class QuranReaderPage extends StatelessWidget {
   const QuranReaderPage({required this.onPageChanged, super.key});
@@ -109,6 +112,50 @@ class QuranReaderPage extends StatelessWidget {
             tafsirIconColor: scheme.primary,
             playIconColor: scheme.primary,
             playAllIconColor: scheme.primary,
+            customMenuItemsBuilder: (root, ayah, close) => [
+              IconButton(
+                tooltip: l10n.corpusLearning,
+                icon: const Icon(Icons.school_outlined),
+                onPressed: () {
+                  close();
+                  Navigator.of(root).push<void>(
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          CorpusLearningPage(reference: referenceForAyah(ayah)),
+                    ),
+                  );
+                },
+              ),
+              IconButton(
+                tooltip: l10n.addNote,
+                icon: const Icon(Icons.edit_note),
+                onPressed: () {
+                  close();
+                  addPersonalNote(root, referenceForAyah(ayah));
+                },
+              ),
+              IconButton(
+                tooltip: l10n.addToCollection,
+                icon: const Icon(Icons.folder_outlined),
+                onPressed: () {
+                  close();
+                  addPersonalCollectionAyah(root, referenceForAyah(ayah));
+                },
+              ),
+              IconButton(
+                tooltip: l10n.shareAyah,
+                icon: const Icon(Icons.ios_share),
+                onPressed: () {
+                  close();
+                  Navigator.of(root).push<void>(
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          ShareAyahPage(reference: referenceForAyah(ayah)),
+                    ),
+                  );
+                },
+              ),
+            ],
           ),
       tafsirStyle: TafsirStyle.defaults(isDark: isDark, context: context)
           .copyWith(

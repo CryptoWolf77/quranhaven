@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quran_library/quran_library.dart';
 
+import '../../../core/widgets/quran_brand_mark.dart';
 import '../../../l10n/generated/app_localizations.dart';
 import '../../home/presentation/home_page.dart';
 import '../../library/presentation/library_page.dart';
@@ -8,6 +9,7 @@ import '../../plans/presentation/plans_page.dart';
 import '../../quran/presentation/quran_reader_page.dart';
 import '../../quran/presentation/reader_navigation.dart';
 import '../../settings/presentation/settings_page.dart';
+import '../../personal/domain/personal_models.dart';
 
 class AppShell extends StatefulWidget {
   const AppShell({
@@ -35,9 +37,33 @@ class _AppShellState extends State<AppShell> {
   void initState() {
     super.initState();
     _currentPage = QuranLibrary().currentPageNumber.clamp(1, 604);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      try {
+        final reference = AyahReference.fromUri(Uri.base);
+        if (reference != null) _openAyah(reference);
+      } on FormatException {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(AppLocalizations.of(context).invalidAyahLink)),
+        );
+      }
+    });
   }
 
   void _selectPage(int index) => setState(() => _selectedIndex = index);
+  void _openAyah(AyahReference reference) {
+    final ctrl = QuranCtrl.instance;
+    final id = ctrl.resolveAyahUq(
+      surahNumber: reference.surah,
+      ayahNumber: reference.ayah,
+    );
+    if (id == 0) return;
+    final ayah = ctrl.getAyahByUq(id);
+    _selectPage(1);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) QuranLibrary().jumpToAyah(ayah.page, id);
+    });
+  }
 
   void _openReaderTab(QuranNavigationTab tab) {
     _selectPage(1);
@@ -82,6 +108,7 @@ class _AppShellState extends State<AppShell> {
       LibraryPage(
         currentPage: _currentPage,
         onOpenReader: () => _selectPage(1),
+        onOpenAyah: _openAyah,
       ),
       PlansPage(currentPage: _currentPage, onOpenReader: () => _selectPage(1)),
       SettingsPage(
@@ -165,23 +192,7 @@ class _DesktopNavigation extends StatelessWidget {
         onDestinationSelected: onDestinationSelected,
         leading: Padding(
           padding: const EdgeInsets.only(top: 12, bottom: 24),
-          child: Container(
-            width: 46,
-            height: 46,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: scheme.primary,
-              borderRadius: BorderRadius.circular(15),
-            ),
-            child: Text(
-              'ق',
-              style: TextStyle(
-                color: scheme.onPrimary,
-                fontSize: 24,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-          ),
+          child: const QuranBrandMark(size: 46),
         ),
         destinations: [
           for (final destination in destinations)

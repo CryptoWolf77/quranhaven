@@ -12,6 +12,9 @@ Future<void> main() async {
     yield LicenseEntryWithLineBreaks(const [
       'Noto Sans Bengali',
     ], await rootBundle.loadString('assets/fonts/OFL-NotoSansBengali.txt'));
+    yield LicenseEntryWithLineBreaks(const [
+      'Noto Sans Symbols',
+    ], await rootBundle.loadString('assets/fonts/OFL-NotoSansSymbols.txt'));
   });
   QuranContentConfig.configure(
     baseUrl: AppConfig.contentBaseUri?.toString(),

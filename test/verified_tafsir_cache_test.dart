@@ -40,6 +40,36 @@ void main() {
       expect(store.requests.length, 2);
     },
   );
+  test('saved-book search never downloads a missing book', () async {
+    final cache = VerifiedTafsirCache(store: store);
+    await expectLater(
+      cache.readSavedText(url, translation: true),
+      throwsStateError,
+    );
+    expect(store.requests, isEmpty);
+    expect(store.saved, isEmpty);
+  });
+  test(
+    'read-only saved-book search validates bytes without network calls',
+    () async {
+      store.metadata[url] = entry;
+      store.saved[url] = bytes;
+      store.offline = true;
+      final cache = VerifiedTafsirCache(store: store);
+      expect(
+        await cache.readSavedText(url, translation: true),
+        contains('114:6'),
+      );
+      expect(store.requests, isEmpty);
+      store.saved[url] = Uint8List.fromList(bytes)..[10] ^= 1;
+      await expectLater(
+        cache.readSavedText(url, translation: true),
+        throwsFormatException,
+      );
+      expect(await cache.available(), isEmpty);
+      expect(store.requests, isEmpty);
+    },
+  );
 
   test('corrupt network bytes are never published', () async {
     store.resource = Uint8List.fromList(bytes)..[10] ^= 1;

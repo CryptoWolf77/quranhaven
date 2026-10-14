@@ -1,10 +1,10 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:quran_flutter/app/theme/app_theme.dart';
 import 'package:quran_flutter/features/guide/presentation/user_guide_page.dart';
+import 'package:quran_flutter/features/guide/presentation/tutorial_video_controller.dart';
+import 'package:quran_flutter/features/home/presentation/home_page.dart';
 import 'package:quran_flutter/features/quran/presentation/reader_navigation.dart';
 import 'package:quran_flutter/features/settings/presentation/settings_page.dart';
 import 'package:quran_flutter/l10n/generated/app_localizations.dart';
@@ -15,168 +15,549 @@ Widget _host({
   String locale = 'en',
   double textScale = 1,
   bool reducedMotion = false,
-  bool mediaMissing = false,
   Widget? home,
-}) {
-  final bundle = _GuideBundle(missing: mediaMissing);
-  return MaterialApp(
-    theme: AppTheme.light(),
-    locale: Locale(locale),
-    localizationsDelegates: AppLocalizations.localizationsDelegates,
-    supportedLocales: AppLocalizations.supportedLocales,
-    builder: (context, child) => DefaultAssetBundle(
-      bundle: bundle,
-      child: MediaQuery(
-        data: MediaQuery.of(context).copyWith(
-          textScaler: TextScaler.linear(textScale),
-          disableAnimations: reducedMotion,
-        ),
-        child: child!,
-      ),
+  TutorialVideoFactory? factory,
+}) => MaterialApp(
+  theme: AppTheme.light(),
+  locale: Locale(locale),
+  localizationsDelegates: AppLocalizations.localizationsDelegates,
+  supportedLocales: AppLocalizations.supportedLocales,
+  builder: (context, child) => MediaQuery(
+    data: MediaQuery.of(context).copyWith(
+      textScaler: TextScaler.linear(textScale),
+      disableAnimations: reducedMotion,
     ),
-    home: home ?? const UserGuidePage(),
+    child: child!,
+  ),
+  home: home ?? UserGuidePage(videoFactory: factory ?? (_) => _FakeVideo()),
+);
+
+class _FakeVideo extends TutorialVideoController {
+  @override
+  bool initialized = false;
+  @override
+  bool playing = false;
+  @override
+  bool hasError = false;
+  bool released = false, rejectInitialize = false;
+  @override
+  Duration position = Duration.zero;
+  @override
+  Duration duration = const Duration(seconds: 30);
+  @override
+  bool get ended => position >= duration;
+  @override
+  Future<void> initialize() async {
+    if (rejectInitialize) throw StateError('decoder');
+    initialized = true;
+    notifyListeners();
+  }
+
+  @override
+  Future<void> play() async {
+    playing = true;
+    notifyListeners();
+  }
+
+  @override
+  Future<void> pause() async {
+    playing = false;
+    notifyListeners();
+  }
+
+  @override
+  Future<void> seek(Duration v) async {
+    position = v;
+    notifyListeners();
+  }
+
+  @override
+  Widget video() => const ColoredBox(
+    key: ValueKey('test-video-surface'),
+    color: Colors.black,
   );
+  @override
+  Future<void> release() async {
+    playing = false;
+    released = true;
+    dispose();
+  }
 }
 
-String _mediaAsset(WidgetTester tester, String demo) =>
-    (tester.widget<Image>(find.byKey(ValueKey('guide-media-$demo'))).image
+String _poster(WidgetTester t, String topic) =>
+    (t.widget<Image>(find.byKey(ValueKey('guide-media-$topic'))).image
             as AssetImage)
         .assetName;
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
-
   for (final locale in ['ar', 'en', 'es']) {
-    testWidgets('$locale guide fits a narrow screen at 2x text', (
-      tester,
+    testWidgets(
+      '$locale all13 lessons fit 360px at2x text with localized posters',
+      (t) async {
+        await t.binding.setSurfaceSize(const Size(360, 760));
+        addTearDown(() => t.binding.setSurfaceSize(null));
+        var created = 0;
+        await t.pumpWidget(
+          _host(
+            locale: locale,
+            textScale: 2,
+            factory: (_) {
+              created++;
+              return _FakeVideo();
+            },
+          ),
+        );
+        await t.pumpAndSettle();
+        expect(
+          Directionality.of(t.element(find.byType(UserGuidePage))),
+          locale == 'ar' ? TextDirection.rtl : TextDirection.ltr,
+        );
+        for (final topic in tutorialTopicIds) {
+          final tile = find.byKey(ValueKey('guide-topic-$topic'));
+          expect(tile, findsOneWidget);
+          await t.ensureVisible(tile);
+          await t.pumpAndSettle();
+          await _tap(t, tile);
+          await t.pumpAndSettle();
+          expect(_poster(t, topic), 'assets/tutorials/$locale/$topic.png');
+          expect(t.takeException(), isNull);
+        }
+        expect(created, 0);
+      },
+    );
+    testWidgets('$locale Home tutorial entry is clear and opens local guide', (
+      t,
     ) async {
-      await tester.binding.setSurfaceSize(const Size(360, 760));
-      addTearDown(() => tester.binding.setSurfaceSize(null));
-      await tester.pumpWidget(_host(locale: locale, textScale: 2));
-      await tester.pumpAndSettle();
-      final context = tester.element(find.byType(UserGuidePage));
-      final l10n = AppLocalizations.of(context);
-      expect(
-        Directionality.of(context),
-        locale == 'ar' ? TextDirection.rtl : TextDirection.ltr,
-      );
-      expect(find.text(l10n.guideTitle), findsOneWidget);
-      for (final topic in [
-        'reader',
-        'search',
-        'library',
-        'audio',
-        'offline',
-        'plans',
-        'settings',
-        'storage',
-      ]) {
-        expect(find.byKey(ValueKey('guide-topic-$topic')), findsOneWidget);
-      }
-      for (final demo in ['reader', 'library', 'plans', 'offline']) {
-        expect(_mediaAsset(tester, demo), 'assets/guides/$locale/$demo.png');
-      }
-      await tester.ensureVisible(find.text(l10n.guideStorageTip));
-      await tester.pumpAndSettle();
-      expect(tester.takeException(), isNull);
-    });
-  }
-
-  testWidgets('the desktop guide has two spacious columns', (tester) async {
-    await tester.binding.setSurfaceSize(const Size(1240, 900));
-    addTearDown(() => tester.binding.setSurfaceSize(null));
-    await tester.pumpWidget(_host());
-    await tester.pumpAndSettle();
-    final reader = tester.getTopLeft(
-      find.byKey(const ValueKey('guide-topic-reader')),
-    );
-    final search = tester.getTopLeft(
-      find.byKey(const ValueKey('guide-topic-search')),
-    );
-    expect(reader.dy, search.dy);
-    expect(search.dx, greaterThan(reader.dx));
-    expect(tester.takeException(), isNull);
-  });
-
-  testWidgets(
-    'GIF playback requires an explicit click and Stop restores the poster',
-    (tester) async {
-      await tester.binding.setSurfaceSize(const Size(1120, 900));
-      addTearDown(() => tester.binding.setSurfaceSize(null));
-      await tester.pumpWidget(_host());
-      await tester.pumpAndSettle();
-      expect(_mediaAsset(tester, 'reader'), endsWith('.png'));
-      final play = find.byKey(const ValueKey('guide-play-reader'));
-      await tester.ensureVisible(play);
-      await tester.tap(play);
-      await tester.pumpAndSettle();
-      expect(_mediaAsset(tester, 'reader'), 'assets/guides/en/reader.gif');
-      expect(find.text('Stop demonstration'), findsOneWidget);
-      await tester.tap(play);
-      await tester.pumpAndSettle();
-      expect(_mediaAsset(tester, 'reader'), 'assets/guides/en/reader.png');
-      expect(tester.takeException(), isNull);
-    },
-  );
-
-  testWidgets('reduced motion keeps all posters and disables animation', (
-    tester,
-  ) async {
-    await tester.pumpWidget(_host(reducedMotion: true));
-    await tester.pumpAndSettle();
-    for (final demo in ['reader', 'library', 'plans', 'offline']) {
-      expect(_mediaAsset(tester, demo), endsWith('.png'));
-      final play = tester.widget<OutlinedButton>(
-        find.byKey(ValueKey('guide-play-$demo')),
-      );
-      expect(play.onPressed, isNull);
-    }
-    expect(find.textContaining('reduced motion'), findsWidgets);
-    expect(tester.takeException(), isNull);
-  });
-
-  testWidgets('missing media falls back to readable steps without crashing', (
-    tester,
-  ) async {
-    await tester.pumpWidget(_host(mediaMissing: true));
-    await tester.pumpAndSettle();
-    expect(find.textContaining('Follow the written steps'), findsWidgets);
-    expect(find.textContaining('Swipe between pages'), findsOneWidget);
-    expect(tester.takeException(), isNull);
-  });
-
-  testWidgets(
-    'Settings opens a local guide route and Back returns to Settings',
-    (tester) async {
-      SharedPreferences.setMockInitialValues({});
-      final previous = SharedPreferencesAsyncPlatform.instance;
-      SharedPreferencesAsyncPlatform.instance = _ReminderPreferences();
-      addTearDown(() => SharedPreferencesAsyncPlatform.instance = previous);
-      await tester.pumpWidget(
+      await t.binding.setSurfaceSize(const Size(375, 812));
+      addTearDown(() => t.binding.setSurfaceSize(null));
+      await t.pumpWidget(
         _host(
+          locale: locale,
           home: Scaffold(
-            body: SettingsPage(
-              locale: const Locale('en'),
-              themeMode: ThemeMode.system,
-              onLocaleChanged: (_) {},
-              onThemeModeChanged: (_) {},
+            body: HomePage(
+              currentPage: 42,
+              onOpenReader: () {},
+              onOpenLibrary: () {},
+              onBrowseSurahs: () {},
+              onSearch: () {},
+              onBookmarks: () {},
             ),
           ),
         ),
       );
-      await tester.pumpAndSettle();
-      await tester.tap(find.text('Open the guide'));
-      await tester.pumpAndSettle();
+      await t.pumpAndSettle();
+      final entry = find.byKey(const ValueKey('home-guide-open'));
+      await t.ensureVisible(entry);
+      await t.pumpAndSettle();
+      await _tap(t, entry);
+      await t.pumpAndSettle();
       expect(find.byType(UserGuidePage), findsOneWidget);
-      expect(find.byType(BackButton), findsOneWidget);
-      await tester.tap(find.byType(BackButton));
-      await tester.pumpAndSettle();
-      expect(find.byType(UserGuidePage), findsNothing);
-      expect(find.byType(SettingsPage), findsOneWidget);
-      expect(tester.takeException(), isNull);
+      expect(_poster(t, 'reader'), 'assets/tutorials/$locale/reader.png');
+      await _tap(t, find.byType(BackButton));
+      await t.pumpAndSettle();
+      expect(find.byType(HomePage), findsOneWidget);
+      expect(t.takeException(), isNull);
+    });
+    testWidgets(
+      '$locale full-screen lesson fits2x text and closes explicitly',
+      (t) async {
+        await t.binding.setSurfaceSize(const Size(360, 760));
+        addTearDown(() => t.binding.setSurfaceSize(null));
+        await t.pumpWidget(_host(locale: locale, textScale: 2));
+        await t.pumpAndSettle();
+        final larger = find.byKey(const ValueKey('guide-larger-reader'));
+        await t.ensureVisible(larger);
+        await t.pumpAndSettle();
+        await _tap(t, larger);
+        await t.pumpAndSettle();
+        expect(find.byType(Dialog), findsOneWidget);
+        final close = find.byKey(const ValueKey('guide-larger-close'));
+        expect(
+          t.widget<IconButton>(close).tooltip,
+          MaterialLocalizations.of(t.element(close)).closeButtonLabel,
+        );
+        expect(t.takeException(), isNull);
+        await _tap(t, close);
+        await t.pumpAndSettle();
+        expect(find.byType(Dialog), findsNothing);
+        expect(t.takeException(), isNull);
+      },
+    );
+  }
+  testWidgets('desktop uses scholarly lesson rail beside video', (t) async {
+    await t.binding.setSurfaceSize(const Size(1280, 900));
+    addTearDown(() => t.binding.setSurfaceSize(null));
+    await t.pumpWidget(_host());
+    await t.pumpAndSettle();
+    expect(
+      t.getTopLeft(find.byKey(const ValueKey('guide-media-reader'))).dx,
+      greaterThan(
+        t.getTopLeft(find.byKey(const ValueKey('guide-topic-reader'))).dx,
+      ),
+    );
+    expect(t.takeException(), isNull);
+  });
+  testWidgets(
+    'video is lazy, explicit play/pause/seek/restart and ended replay',
+    (t) async {
+      final videos = <_FakeVideo>[], assets = <String>[];
+      await t.pumpWidget(
+        _host(
+          factory: (asset) {
+            assets.add(asset);
+            final v = _FakeVideo();
+            videos.add(v);
+            return v;
+          },
+        ),
+      );
+      await t.pumpAndSettle();
+      expect(videos, isEmpty);
+      final play = find.byKey(const ValueKey('guide-play-reader'));
+      await t.ensureVisible(play);
+      await _tap(t, play);
+      await t.pumpAndSettle();
+      expect(assets.single, 'assets/tutorials/en/reader.mp4');
+      final v = videos.single;
+      expect(v.playing, true);
+      await _tap(t, play);
+      await t.pumpAndSettle();
+      expect(v.playing, false);
+      final slider = t.widget<Slider>(find.byType(Slider));
+      slider.onChanged!(18000);
+      await t.pump();
+      expect(v.position.inSeconds, 18);
+      await _tap(t, find.text('Restart video'));
+      await t.pumpAndSettle();
+      expect(v.position, Duration.zero);
+      expect(v.playing, true);
+      v.position = v.duration;
+      v.playing = false;
+      v.notifyListeners();
+      await t.pumpAndSettle();
+      expect(find.textContaining('Lesson complete'), findsOneWidget);
+      await _tap(t, play);
+      await t.pumpAndSettle();
+      expect(v.position, Duration.zero);
+      expect(v.playing, true);
+      await t.pumpWidget(const SizedBox());
+      await t.pump();
+      expect(v.released, true);
     },
   );
+  testWidgets(
+    'topic switch releases prior video and never autoplays next lesson',
+    (t) async {
+      final videos = <_FakeVideo>[];
+      await t.pumpWidget(
+        _host(
+          factory: (_) {
+            final v = _FakeVideo();
+            videos.add(v);
+            return v;
+          },
+        ),
+      );
+      await t.pumpAndSettle();
+      final play = find.byKey(const ValueKey('guide-play-reader'));
+      await t.ensureVisible(play);
+      await _tap(t, play);
+      await t.pumpAndSettle();
+      final next = find.byKey(const ValueKey('guide-topic-library'));
+      await t.ensureVisible(next);
+      await t.pumpAndSettle();
+      await _tap(t, next);
+      await t.pumpAndSettle();
+      expect(videos.single.released, true);
+      expect(videos.length, 1);
+      expect(_poster(t, 'library'), endsWith('/en/library.png'));
+    },
+  );
+  testWidgets(
+    'locale switch releases old decoder and chooses correct localized video',
+    (t) async {
+      final videos = <_FakeVideo>[], assets = <String>[];
+      TutorialVideoController factory(String asset) {
+        assets.add(asset);
+        final v = _FakeVideo();
+        videos.add(v);
+        return v;
+      }
 
+      await t.pumpWidget(_host(factory: factory));
+      await t.pumpAndSettle();
+      await _tap(t, find.byKey(const ValueKey('guide-play-reader')));
+      await t.pumpAndSettle();
+      await t.pumpWidget(_host(locale: 'es', factory: factory));
+      await t.pumpAndSettle();
+      expect(videos.first.released, true);
+      expect(videos.length, 1);
+      await _tap(t, find.byKey(const ValueKey('guide-play-reader')));
+      await t.pumpAndSettle();
+      expect(assets.last, 'assets/tutorials/es/reader.mp4');
+    },
+  );
+  testWidgets(
+    'decoder failure preserves written steps and allows fresh retry',
+    (t) async {
+      final videos = <_FakeVideo>[];
+      await t.pumpWidget(
+        _host(
+          factory: (_) {
+            final v = _FakeVideo()..rejectInitialize = videos.isEmpty;
+            videos.add(v);
+            return v;
+          },
+        ),
+      );
+      await t.pumpAndSettle();
+      await _tap(t, find.byKey(const ValueKey('guide-play-reader')));
+      await t.pumpAndSettle();
+      expect(find.text('Retry video'), findsOneWidget);
+      expect(find.textContaining('Use page arrows'), findsOneWidget);
+      await _tap(t, find.text('Retry video'));
+      await t.pumpAndSettle();
+      expect(videos.length, 2);
+      expect(videos.first.released, true);
+      expect(videos.last.playing, true);
+    },
+  );
+  testWidgets('lifecycle pause stops video, resume does not autoplay', (
+    t,
+  ) async {
+    final v = _FakeVideo();
+    await t.pumpWidget(_host(factory: (_) => v));
+    await t.pumpAndSettle();
+    await _tap(t, find.byKey(const ValueKey('guide-play-reader')));
+    await t.pumpAndSettle();
+    t.binding.handleAppLifecycleStateChanged(AppLifecycleState.paused);
+    await t.pump();
+    expect(v.playing, false);
+    t.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
+    await t.pump();
+    expect(v.playing, false);
+  });
+  testWidgets('runtime decoder error retries with a fresh controller', (
+    t,
+  ) async {
+    final videos = <_FakeVideo>[];
+    await t.pumpWidget(
+      _host(
+        factory: (_) {
+          final v = _FakeVideo();
+          videos.add(v);
+          return v;
+        },
+      ),
+    );
+    await t.pumpAndSettle();
+    await _tap(t, find.byKey(const ValueKey('guide-play-reader')));
+    videos.first.hasError = true;
+    videos.first.notifyListeners();
+    await t.pumpAndSettle();
+    await _tap(t, find.text('Retry video'));
+    expect(videos.length, 2);
+    expect(videos.first.released, true);
+    expect(videos.last.playing, true);
+  });
+  testWidgets(
+    'reduced motion stays still and permits an explicit user choice',
+    (t) async {
+      var created = 0;
+      final v = _FakeVideo();
+      await t.pumpWidget(
+        _host(
+          reducedMotion: true,
+          factory: (_) {
+            created++;
+            return v;
+          },
+        ),
+      );
+      await t.pumpAndSettle();
+      expect(created, 0);
+      expect(_poster(t, 'reader'), endsWith('.png'));
+      expect(find.textContaining('Reduced motion'), findsOneWidget);
+      await _tap(t, find.byKey(const ValueKey('guide-play-reader')));
+      await t.pumpAndSettle();
+      expect(v.playing, true);
+    },
+  );
+  testWidgets(
+    'enlargement pauses inline video and shares one decoder, Escape pauses',
+    (t) async {
+      final v = _FakeVideo();
+      var created = 0;
+      await t.pumpWidget(
+        _host(
+          factory: (_) {
+            created++;
+            return v;
+          },
+        ),
+      );
+      await t.pumpAndSettle();
+      await _tap(t, find.byKey(const ValueKey('guide-play-reader')));
+      await t.pumpAndSettle();
+      await _tap(t, find.byKey(const ValueKey('guide-larger-reader')));
+      await t.pumpAndSettle();
+      expect(v.playing, false);
+      expect(created, 1);
+      expect(find.byKey(const ValueKey('test-video-surface')), findsOneWidget);
+      await _tap(t, find.byKey(const ValueKey('guide-larger-play')));
+      await t.pumpAndSettle();
+      expect(v.playing, true);
+      expect(created, 1);
+      await t.sendKeyEvent(LogicalKeyboardKey.escape);
+      await t.pumpAndSettle();
+      expect(find.byType(Dialog), findsNothing);
+      expect(v.playing, false);
+    },
+  );
+  for (final locale in ['ar', 'en', 'es']) {
+    testWidgets(
+      '$locale portrait full-screen zoom bounds, pan and reset keep controls outside',
+      (t) async {
+        await t.binding.setSurfaceSize(const Size(375, 812));
+        addTearDown(() => t.binding.setSurfaceSize(null));
+        final v = _FakeVideo();
+        await t.pumpWidget(
+          _host(locale: locale, textScale: 2, factory: (_) => v),
+        );
+        await t.pumpAndSettle();
+        await _tap(t, find.byKey(const ValueKey('guide-larger-reader')));
+        final viewer = t.widget<InteractiveViewer>(
+          find.byKey(const ValueKey('guide-video-zoom')),
+        );
+        expect(viewer.minScale, 1);
+        expect(viewer.maxScale, 4);
+        final scale = viewer.transformationController!;
+        expect(scale.value.getMaxScaleOnAxis(), 1);
+        final zoomIn = find.byKey(const ValueKey('guide-zoom-in'));
+        for (var i = 0; i < 6; i++) {
+          await _tap(t, zoomIn);
+        }
+        expect(scale.value.getMaxScaleOnAxis(), 4);
+        expect(t.widget<OutlinedButton>(zoomIn).onPressed, isNull);
+        await t.ensureVisible(find.byKey(const ValueKey('guide-video-zoom')));
+        await t.pumpAndSettle();
+        await t.drag(
+          find.byKey(const ValueKey('guide-video-zoom')),
+          const Offset(35, 20),
+        );
+        await t.pumpAndSettle();
+        expect(scale.value.storage[12], isNot(0));
+        await _tap(t, find.byKey(const ValueKey('guide-reset-zoom')));
+        expect(scale.value, Matrix4.identity());
+        expect(
+          find.ancestor(
+            of: find.byKey(const ValueKey('guide-larger-play')),
+            matching: find.byType(InteractiveViewer),
+          ),
+          findsNothing,
+        );
+        expect(t.takeException(), null);
+        await t.sendKeyEvent(LogicalKeyboardKey.escape);
+        await t.pumpAndSettle();
+        expect(find.byType(Dialog), findsNothing);
+      },
+    );
+  }
+  for (final initial in [const Size(375, 812), const Size(1440, 1000)]) {
+    testWidgets(
+      'playing enlarged lesson survives ${initial.width}px to812x375 reflow with one decoder',
+      (t) async {
+        await t.binding.setSurfaceSize(initial);
+        addTearDown(() => t.binding.setSurfaceSize(null));
+        final v = _FakeVideo();
+        var created = 0;
+        await t.pumpWidget(
+          _host(
+            factory: (_) {
+              created++;
+              return v;
+            },
+          ),
+        );
+        await t.pumpAndSettle();
+        await _tap(t, find.byKey(const ValueKey('guide-play-reader')));
+        await _tap(t, find.byKey(const ValueKey('guide-larger-reader')));
+        await _tap(t, find.byKey(const ValueKey('guide-larger-play')));
+        await t.binding.setSurfaceSize(const Size(812, 375));
+        await t.pumpAndSettle();
+        expect(created, 1);
+        expect(v.released, false);
+        expect(v.playing, true);
+        expect(
+          find.byKey(const ValueKey('test-video-surface')),
+          findsOneWidget,
+        );
+        final pane = t.getSize(find.byKey(const ValueKey('guide-video-zoom')));
+        expect(pane.width, greaterThan(500));
+        expect(pane.height, greaterThan(230));
+        expect(
+          find.byKey(const ValueKey('guide-larger-close')),
+          findsOneWidget,
+        );
+        expect(t.takeException(), null);
+        await t.sendKeyEvent(LogicalKeyboardKey.escape);
+        await t.pumpAndSettle();
+        expect(v.playing, false);
+      },
+    );
+  }
+  testWidgets(
+    'large-text missing poster explanation is outside the clipped video surface',
+    (t) async {
+      await t.binding.setSurfaceSize(const Size(320, 812));
+      addTearDown(() => t.binding.setSurfaceSize(null));
+      await t.pumpWidget(
+        DefaultAssetBundle(
+          bundle: _MissingTutorialBundle(),
+          child: _host(locale: 'es', textScale: 2),
+        ),
+      );
+      await t.pumpAndSettle();
+      final l = await AppLocalizations.delegate.load(const Locale('es'));
+      final message = find.text(l.guideMediaUnavailable);
+      expect(message, findsOneWidget);
+      expect(
+        find.ancestor(of: message, matching: find.byType(ClipRRect)),
+        findsNothing,
+      );
+      expect(find.text(l.guideWrittenSteps), findsOneWidget);
+      expect(t.takeException(), null);
+    },
+  );
+  testWidgets('Settings guide opens locally and Back restores Settings', (
+    t,
+  ) async {
+    SharedPreferences.setMockInitialValues({});
+    final previous = SharedPreferencesAsyncPlatform.instance;
+    SharedPreferencesAsyncPlatform.instance = _ReminderPreferences();
+    addTearDown(() => SharedPreferencesAsyncPlatform.instance = previous);
+    await t.pumpWidget(
+      _host(
+        home: Scaffold(
+          body: SettingsPage(
+            locale: const Locale('en'),
+            themeMode: ThemeMode.system,
+            onLocaleChanged: (_) {},
+            onThemeModeChanged: (_) {},
+          ),
+        ),
+      ),
+    );
+    await t.pumpAndSettle();
+    await _tap(t, find.text('Open the guide'));
+    await t.pumpAndSettle();
+    expect(find.byType(UserGuidePage), findsOneWidget);
+    await _tap(t, find.byType(BackButton));
+    await t.pumpAndSettle();
+    expect(find.byType(SettingsPage), findsOneWidget);
+    expect(t.takeException(), isNull);
+  });
   for (final locale in ['ar', 'en', 'es']) {
     testWidgets('$locale navigation sheet has a translated Close control', (
       tester,
@@ -255,107 +636,6 @@ void main() {
     expect(find.byType(ReaderNavigationFrame), findsNothing);
     expect(tester.takeException(), isNull);
   });
-
-  for (final locale in ['ar', 'en', 'es']) {
-    testWidgets('$locale enlarged demo fits at 2x text and closes explicitly', (
-      tester,
-    ) async {
-      await tester.binding.setSurfaceSize(const Size(360, 760));
-      addTearDown(() => tester.binding.setSurfaceSize(null));
-      await tester.pumpWidget(_host(locale: locale, textScale: 2));
-      await tester.pumpAndSettle();
-      final larger = find.byKey(const ValueKey('guide-larger-reader'));
-      await tester.ensureVisible(larger);
-      await tester.tap(larger);
-      await tester.pumpAndSettle();
-      expect(find.byType(Dialog), findsOneWidget);
-      final image = tester.widget<Image>(
-        find.byKey(const ValueKey('guide-larger-media-reader')),
-      );
-      expect(
-        (image.image as AssetImage).assetName,
-        'assets/guides/$locale/reader.png',
-      );
-      expect(find.byType(InteractiveViewer), findsOneWidget);
-      expect(find.byKey(const ValueKey('guide-reset-zoom')), findsOneWidget);
-      final close = find.byKey(const ValueKey('guide-larger-close'));
-      expect(
-        tester.widget<IconButton>(close).tooltip,
-        MaterialLocalizations.of(tester.element(close)).closeButtonLabel,
-      );
-      expect(tester.takeException(), isNull);
-      await tester.tap(close);
-      await tester.pumpAndSettle();
-      expect(find.byType(Dialog), findsNothing);
-      expect(find.byType(UserGuidePage), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
-  }
-
-  testWidgets(
-    'enlarging stops the small GIF and never starts the large one automatically',
-    (tester) async {
-      await tester.binding.setSurfaceSize(const Size(1120, 900));
-      addTearDown(() => tester.binding.setSurfaceSize(null));
-      await tester.pumpWidget(_host());
-      await tester.pumpAndSettle();
-      final smallPlay = find.byKey(const ValueKey('guide-play-reader'));
-      await tester.ensureVisible(smallPlay);
-      await tester.tap(smallPlay);
-      await tester.pumpAndSettle();
-      expect(_mediaAsset(tester, 'reader'), endsWith('.gif'));
-      await tester.tap(find.byKey(const ValueKey('guide-larger-reader')));
-      await tester.pumpAndSettle();
-      final largeImage = find.byKey(
-        const ValueKey('guide-larger-media-reader'),
-      );
-      String asset() =>
-          (tester.widget<Image>(largeImage).image as AssetImage).assetName;
-      expect(asset(), endsWith('.png'));
-      final play = find.byKey(const ValueKey('guide-larger-play'));
-      await tester.ensureVisible(play);
-      await tester.tap(play);
-      await tester.pumpAndSettle();
-      expect(asset(), endsWith('.gif'));
-      await tester.tap(play);
-      await tester.pumpAndSettle();
-      expect(asset(), endsWith('.png'));
-      await tester.sendKeyEvent(LogicalKeyboardKey.escape);
-      await tester.pumpAndSettle();
-      expect(find.byType(Dialog), findsNothing);
-      expect(_mediaAsset(tester, 'reader'), endsWith('.png'));
-    },
-  );
-
-  testWidgets('enlarged demo zoom resets and respects reduced motion', (
-    tester,
-  ) async {
-    await tester.pumpWidget(_host(reducedMotion: true));
-    await tester.pumpAndSettle();
-    final larger = find.byKey(const ValueKey('guide-larger-reader'));
-    await tester.ensureVisible(larger);
-    await tester.tap(larger);
-    await tester.pumpAndSettle();
-    expect(
-      tester
-          .widget<OutlinedButton>(
-            find.byKey(const ValueKey('guide-larger-play')),
-          )
-          .onPressed,
-      isNull,
-    );
-    final viewer = tester.widget<InteractiveViewer>(
-      find.byType(InteractiveViewer),
-    );
-    expect(viewer.maxScale, greaterThan(1));
-    viewer.transformationController!.value = Matrix4.diagonal3Values(2, 2, 1);
-    final reset = find.byKey(const ValueKey('guide-reset-zoom'));
-    await tester.ensureVisible(reset);
-    await tester.tap(reset);
-    await tester.pumpAndSettle();
-    expect(viewer.transformationController!.value, Matrix4.identity());
-    expect(tester.takeException(), isNull);
-  });
 }
 
 class _NavigationHost extends StatelessWidget {
@@ -407,24 +687,6 @@ class _NavigationTestContent extends StatelessWidget {
   );
 }
 
-class _GuideBundle extends CachingAssetBundle {
-  _GuideBundle({required this.missing});
-  final bool missing;
-
-  @override
-  Future<ByteData> load(String key) async {
-    if (key.startsWith('assets/guides/')) {
-      if (missing) throw FlutterError('Demo not available in test bundle');
-      // A real one-frame GIF is sufficient to test asset selection without timers.
-      final bytes = base64Decode(
-        'R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
-      );
-      return ByteData.sublistView(bytes);
-    }
-    return rootBundle.load(key);
-  }
-}
-
 final class _ReminderPreferences extends SharedPreferencesAsyncPlatform {
   @override
   Future<bool?> getBool(String key, SharedPreferencesOptions options) async =>
@@ -434,4 +696,21 @@ final class _ReminderPreferences extends SharedPreferencesAsyncPlatform {
       null;
   @override
   dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
+}
+
+Future<void> _tap(WidgetTester t, Finder control) async {
+  await t.ensureVisible(control);
+  await t.pumpAndSettle();
+  await t.tap(control);
+  await t.pumpAndSettle();
+}
+
+class _MissingTutorialBundle extends CachingAssetBundle {
+  @override
+  Future<ByteData> load(String key) {
+    if (key.startsWith('assets/tutorials/')) {
+      throw FlutterError('Missing poster in fault test');
+    }
+    return rootBundle.load(key);
+  }
 }

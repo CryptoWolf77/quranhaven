@@ -1,0 +1,959 @@
+{
+  "schemaVersion": 1,
+  "language": "ar",
+  "scope": "التنقّل العام مسجّل من الموقع الفعلي. مقطع التذكير مسجّل من تطبيق أندرويد الفعلي؛ قد يختلف ترتيب الواجهة بين الأجهزة. لا يتضمن الدليل تسجيل جهاز iOS.",
+  "clips": {
+    "reader": {
+      "title": "القراءة والتنقّل",
+      "durationSeconds": 30.1,
+      "video": "reader.mp4",
+      "poster": "reader.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 5.5,
+          "instruction": "افتح المصحف من الصفحة الرئيسية",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 5.5,
+          "endSeconds": 8.75,
+          "instruction": "افتح التنقّل السريع من شريط المصحف",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 8.75,
+          "endSeconds": 11.85,
+          "instruction": "افتح فهرس الأجزاء",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 11.85,
+          "endSeconds": 14.95,
+          "instruction": "انتقل إلى فهرس السور",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 14.95,
+          "endSeconds": 20.15,
+          "instruction": "اختر السورة المطلوبة من القائمة",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 20.15,
+          "endSeconds": 23.4,
+          "instruction": "اضغط الانتقال لفتح رقم الصفحة المحدّد",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 7,
+          "startSeconds": 23.4,
+          "endSeconds": 26.95,
+          "instruction": "استخدم سهم الصفحة، أو اسحب على الهاتف",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 8,
+          "startSeconds": 26.95,
+          "endSeconds": 30.1,
+          "instruction": "تابع من آخر موضع قرأته عبر الصفحة الرئيسية",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "search": {
+      "title": "ابحث واحفظ العلامات المرجعية",
+      "durationSeconds": 25.25,
+      "video": "search.mp4",
+      "poster": "search.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.3,
+          "instruction": "ابحث في النص القرآني العربي",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.3,
+          "endSeconds": 8.5,
+          "instruction": "اكتب الكلمة أو العبارة المطلوبة",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 8.5,
+          "endSeconds": 13.7,
+          "instruction": "اختر النتيجة لفتح موضعها في المصحف",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 13.7,
+          "endSeconds": 18.85,
+          "instruction": "اضغط مطولاً على الآية لفتح أدواتها",
+          "action": "hold",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 18.85,
+          "endSeconds": 22.05,
+          "instruction": "اختر لون العلامة المرجعية",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 22.05,
+          "endSeconds": 25.25,
+          "instruction": "افتح العلامات للعودة إلى الآية المحفوظة",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "library": {
+      "title": "اختر التفسير والترجمة",
+      "durationSeconds": 29.4,
+      "video": "library.mp4",
+      "poster": "library.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.35,
+          "instruction": "افتح الترجمات من المكتبة",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.35,
+          "endSeconds": 8.95,
+          "instruction": "نزّل الإسبانية وانتظر رسالة الجاهزية",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 8.95,
+          "endSeconds": 12.15,
+          "instruction": "افتح التفسير من أدوات الآية لقراءة الترجمة",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 12.15,
+          "endSeconds": 15.55,
+          "instruction": "لغة الواجهة مستقلة عن لغة الترجمة",
+          "action": "observe",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 15.55,
+          "endSeconds": 18.75,
+          "instruction": "افتح قسم التفسير من المكتبة",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 18.75,
+          "endSeconds": 22.5,
+          "instruction": "اختر تفسير السعدي العربي المتاح مع التطبيق",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 7,
+          "startSeconds": 22.5,
+          "endSeconds": 25.7,
+          "instruction": "افتح التفسير مجدداً من أدوات الآية",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 8,
+          "startSeconds": 25.7,
+          "endSeconds": 29.4,
+          "instruction": "اقرأ التفسير العربي من المصدر المحفوظ",
+          "action": "observe",
+          "platform": "website"
+        }
+      ]
+    },
+    "audio": {
+      "title": "استمع إلى التلاوات",
+      "durationSeconds": 30.5,
+      "video": "audio.mp4",
+      "poster": "audio.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.45,
+          "instruction": "افتح أدوات القارئ من قسم التلاوات",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.45,
+          "endSeconds": 6.7,
+          "instruction": "افتح قائمة اختيار قارئ الآيات",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 6.7,
+          "endSeconds": 9.65,
+          "instruction": "اختر القارئ من القائمة المتاحة",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 9.65,
+          "endSeconds": 12.9,
+          "instruction": "عُد إلى المكتبة وافتح التلاوات",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 12.9,
+          "endSeconds": 16.1,
+          "instruction": "افتح قائمة السور للاستماع",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 16.1,
+          "endSeconds": 19.25,
+          "instruction": "اختر السورة التي تريد الاستماع إليها",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 7,
+          "startSeconds": 19.25,
+          "endSeconds": 23.35,
+          "instruction": "اضغط تشغيل لبدء الاستماع",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 8,
+          "startSeconds": 23.35,
+          "endSeconds": 26.65,
+          "instruction": "اضغط إيقاف من عناصر تحكم الصوت",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 9,
+          "startSeconds": 26.65,
+          "endSeconds": 30.5,
+          "instruction": "استأنف من موضع الاستماع المحفوظ",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "offline": {
+      "title": "استعد قبل انقطاع الاتصال",
+      "durationSeconds": 15.9,
+      "video": "offline.mp4",
+      "poster": "offline.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.5,
+          "instruction": "جهّز قراءة الموقع دون اتصال من الإعدادات",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.5,
+          "endSeconds": 7.4,
+          "instruction": "ابقَ في الصفحة حتى تظهر رسالة الجاهزية",
+          "action": "observe",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 7.4,
+          "endSeconds": 12.6,
+          "instruction": "افتح المصحف بعد قطع الاتصال للتأكد من حفظه",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 12.6,
+          "endSeconds": 15.9,
+          "instruction": "الكتب والصوت تنزيلات مستقلة عن التطبيق",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "plans": {
+      "title": "نظّم الختمة والحفظ",
+      "durationSeconds": 43.45,
+      "video": "plans.mp4",
+      "poster": "plans.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.2,
+          "instruction": "افتح إنشاء خطة ختمة",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.2,
+          "endSeconds": 8.4,
+          "instruction": "اختر المدة ثم اضغط بدء الخطة",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 8.4,
+          "endSeconds": 11.65,
+          "instruction": "سجّل هدف اليوم فقط بعد الانتهاء من قراءته",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 11.65,
+          "endSeconds": 15.05,
+          "instruction": "انتقل إلى قسم الحفظ",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 15.05,
+          "endSeconds": 18.25,
+          "instruction": "افتح إنشاء خطة حفظ",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 18.25,
+          "endSeconds": 23.45,
+          "instruction": "حدّد نطاق الآيات ثم اضغط بدء الحفظ",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 7,
+          "startSeconds": 23.45,
+          "endSeconds": 27.45,
+          "instruction": "كرّر الآية للاستماع والمراجعة",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 8,
+          "startSeconds": 27.45,
+          "endSeconds": 30.65,
+          "instruction": "أخفِ نص الآية لاختبار الحفظ",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 9,
+          "startSeconds": 30.65,
+          "endSeconds": 33.85,
+          "instruction": "أظهر النص للتحقّق مما حفظته",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 10,
+          "startSeconds": 33.85,
+          "endSeconds": 37.05,
+          "instruction": "علّم الآية للمراجعة",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 11,
+          "startSeconds": 37.05,
+          "endSeconds": 40.25,
+          "instruction": "علّم الآية كمحفوظة عند إتقانها",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 12,
+          "startSeconds": 40.25,
+          "endSeconds": 43.45,
+          "instruction": "ارجع إلى الآية السابقة داخل النطاق",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "settings": {
+      "title": "اضبط التجربة بما يناسبك",
+      "durationSeconds": 38.25,
+      "video": "settings.mp4",
+      "poster": "settings.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.45,
+          "instruction": "بدّل لغة الواجهة من خيارات اللغة",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.45,
+          "endSeconds": 6.9,
+          "instruction": "اختر لغتك المفضّلة؛ النص القرآني يبقى عربياً",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 6.9,
+          "endSeconds": 10.1,
+          "instruction": "جرّب المظهر الداكن",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 10.1,
+          "endSeconds": 13.3,
+          "instruction": "اختر المظهر الفاتح أو مظهر النظام",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 13.3,
+          "endSeconds": 17.1,
+          "instruction": "في تطبيق أندرويد، فعّل تذكير القراءة اليومي",
+          "action": "tap",
+          "platform": "android"
+        },
+        {
+          "number": 6,
+          "startSeconds": 17.1,
+          "endSeconds": 20.6,
+          "instruction": "افتح وقت التذكير لتغييره",
+          "action": "tap",
+          "platform": "android"
+        },
+        {
+          "number": 7,
+          "startSeconds": 20.6,
+          "endSeconds": 23.55,
+          "instruction": "اختر إدخال الوقت عبر لوحة المفاتيح",
+          "action": "tap",
+          "platform": "android"
+        },
+        {
+          "number": 8,
+          "startSeconds": 23.55,
+          "endSeconds": 25.25,
+          "instruction": "اضغط حقل الدقائق لتعديله",
+          "action": "tap",
+          "platform": "android"
+        },
+        {
+          "number": 9,
+          "startSeconds": 25.25,
+          "endSeconds": 28.35,
+          "instruction": "أدخل الدقائق؛ اخترنا 25 في هذا المثال",
+          "action": "input",
+          "platform": "android"
+        },
+        {
+          "number": 10,
+          "startSeconds": 28.35,
+          "endSeconds": 31.65,
+          "instruction": "اضغط حسنًا لحفظ الوقت",
+          "action": "tap",
+          "platform": "android"
+        },
+        {
+          "number": 11,
+          "startSeconds": 31.65,
+          "endSeconds": 34.85,
+          "instruction": "تحقّق من ظهور الوقت الجديد مع تفعيل التذكير",
+          "action": "observe",
+          "platform": "android"
+        },
+        {
+          "number": 12,
+          "startSeconds": 34.85,
+          "endSeconds": 38.25,
+          "instruction": "يمكنك إيقاف التذكير في أي وقت",
+          "action": "tap",
+          "platform": "android"
+        }
+      ]
+    },
+    "storage": {
+      "title": "تعرّف على بياناتك المحلية",
+      "durationSeconds": 12.75,
+      "video": "storage.mp4",
+      "poster": "storage.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 4.2,
+          "instruction": "بياناتك خاصة بهذا الجهاز؛ لا توجد حسابات سحابية",
+          "action": "observe",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 4.2,
+          "endSeconds": 8.4,
+          "instruction": "استخدم ملف المتصفح نفسه للاحتفاظ ببياناتك",
+          "action": "observe",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 8.4,
+          "endSeconds": 12.75,
+          "instruction": "مسح بيانات التطبيق قد يفقد المحفوظات؛ صدّر نسخة",
+          "action": "observe",
+          "platform": "website"
+        }
+      ]
+    },
+    "personal": {
+      "title": "الملاحظات والمجموعات",
+      "durationSeconds": 53.0,
+      "video": "personal.mp4",
+      "poster": "personal.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.25,
+          "instruction": "افتح المكتبة ثم مساحتي القرآنية",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.25,
+          "endSeconds": 6.65,
+          "instruction": "افتح إضافة ملاحظة وحدّد السورة والآية",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 6.65,
+          "endSeconds": 11.3,
+          "instruction": "اكتب عنوان الملاحظة ونص تدبّرك",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 11.3,
+          "endSeconds": 14.75,
+          "instruction": "احفظ الملاحظة على جهازك",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 14.75,
+          "endSeconds": 18.0,
+          "instruction": "افتح تحرير الملاحظة لتحديثها",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 18.0,
+          "endSeconds": 21.25,
+          "instruction": "احفظ النص المعدّل",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 7,
+          "startSeconds": 21.25,
+          "endSeconds": 24.65,
+          "instruction": "انتقل إلى المجموعات",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 8,
+          "startSeconds": 24.65,
+          "endSeconds": 28.05,
+          "instruction": "افتح إنشاء مجموعة",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 9,
+          "startSeconds": 28.05,
+          "endSeconds": 31.45,
+          "instruction": "سمِّ المجموعة ثم احفظها",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 10,
+          "startSeconds": 31.45,
+          "endSeconds": 34.85,
+          "instruction": "افتح إضافة آية إلى المجموعة",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 11,
+          "startSeconds": 34.85,
+          "endSeconds": 38.15,
+          "instruction": "حدّد السورة والآية ثم احفظ الإضافة",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 12,
+          "startSeconds": 38.15,
+          "endSeconds": 41.15,
+          "instruction": "اضغط الآية المحفوظة لفتحها في المصحف",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 13,
+          "startSeconds": 41.15,
+          "endSeconds": 46.3,
+          "instruction": "اضغط مطولاً على الآية لفتح أدواتها",
+          "action": "hold",
+          "platform": "website"
+        },
+        {
+          "number": 14,
+          "startSeconds": 46.3,
+          "endSeconds": 49.7,
+          "instruction": "اختر إضافة إلى مجموعة من أدوات الآية",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 15,
+          "startSeconds": 49.7,
+          "endSeconds": 53.0,
+          "instruction": "اختر المجموعة التي ستحفظ الآية فيها",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "backup": {
+      "title": "نسخة احتياطية محلية",
+      "durationSeconds": 23.5,
+      "video": "backup.mp4",
+      "poster": "backup.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.25,
+          "instruction": "صدّر نسخة خاصة واحفظ ملفها بأمان",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.25,
+          "endSeconds": 6.7,
+          "instruction": "اختر ملف النسخة الاحتياطية من جهازك",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 6.7,
+          "endSeconds": 10.7,
+          "instruction": "راجع تاريخ النسخة ومحتوياتها قبل الاستعادة",
+          "action": "observe",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 10.7,
+          "endSeconds": 14.45,
+          "instruction": "احفظ نسخة أمان لبياناتك الحالية أولاً",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 14.45,
+          "endSeconds": 18.3,
+          "instruction": "أكّد الاستعادة؛ ستستبدل البيانات ولن تدمجها",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 18.3,
+          "endSeconds": 23.5,
+          "instruction": "أعد فتح التطبيق لتفعيل البيانات المستعادة",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "share-search": {
+      "title": "مشاركة الآيات والبحث في الكتب",
+      "durationSeconds": 39.45,
+      "video": "share-search.mp4",
+      "poster": "share-search.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 5.15,
+          "instruction": "اضغط مطولاً على الآية لفتح أدواتها",
+          "action": "hold",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 5.15,
+          "endSeconds": 8.35,
+          "instruction": "افتح المشاركة وعاين نص الآية كاملاً",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 8.35,
+          "endSeconds": 11.55,
+          "instruction": "افتح خيار إرفاق ترجمة محفوظة",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 11.55,
+          "endSeconds": 14.6,
+          "instruction": "اختر الترجمة المطلوبة؛ هنا اخترنا الإسبانية",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 14.6,
+          "endSeconds": 17.8,
+          "instruction": "احفظ صورة الآية على جهازك",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 17.8,
+          "endSeconds": 21.05,
+          "instruction": "انسخ نص الآية للمشاركة",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 7,
+          "startSeconds": 21.05,
+          "endSeconds": 24.2,
+          "instruction": "انسخ رابط الآية؛ ملاحظاتك الخاصة لا تُرفق",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 8,
+          "startSeconds": 24.2,
+          "endSeconds": 27.4,
+          "instruction": "افتح البحث في الكتب المحفوظة من المكتبة",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 9,
+          "startSeconds": 27.4,
+          "endSeconds": 30.9,
+          "instruction": "ابحث في جميع آيات المورد المحفوظ",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 10,
+          "startSeconds": 30.9,
+          "endSeconds": 36.1,
+          "instruction": "انتقل إلى الصفحة التالية من النتائج",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 11,
+          "startSeconds": 36.1,
+          "endSeconds": 39.45,
+          "instruction": "افتح النتيجة للانتقال إلى آيتها في المصحف",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "saved-audio": {
+      "title": "تسجيلات السور المحفوظة",
+      "durationSeconds": 23.7,
+      "video": "saved-audio.mp4",
+      "poster": "saved-audio.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.35,
+          "instruction": "نزّل تسجيل السورة للقارئ المحدّد",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.35,
+          "endSeconds": 6.6,
+          "instruction": "انتظر اكتمال الحفظ؛ التنزيل لا يشغّل الصوت",
+          "action": "observe",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 6.6,
+          "endSeconds": 11.0,
+          "instruction": "شغّل السورة من التسجيلات المحفوظة",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 11.0,
+          "endSeconds": 14.25,
+          "instruction": "افتح حذف هذا التسجيل المحفوظ",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 14.25,
+          "endSeconds": 17.5,
+          "instruction": "إلغاء الحذف يحافظ على التسجيل",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 6,
+          "startSeconds": 17.5,
+          "endSeconds": 20.7,
+          "instruction": "افتح الحذف مجدداً إذا أردت إزالة التسجيل",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 7,
+          "startSeconds": 20.7,
+          "endSeconds": 23.7,
+          "instruction": "أكّد الحذف؛ يزال هذا التسجيل فقط",
+          "action": "click",
+          "platform": "website"
+        }
+      ]
+    },
+    "morphology": {
+      "title": "تحليل الكلمات صرفياً",
+      "durationSeconds": 16.2,
+      "video": "morphology.mp4",
+      "poster": "morphology.png",
+      "steps": [
+        {
+          "number": 1,
+          "startSeconds": 0.0,
+          "endSeconds": 3.2,
+          "instruction": "افتح صرف الكلمات من المكتبة",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 2,
+          "startSeconds": 3.2,
+          "endSeconds": 6.4,
+          "instruction": "استكشف الكلمات وأجزاءها والجذر واللّمة",
+          "action": "scroll",
+          "platform": "website"
+        },
+        {
+          "number": 3,
+          "startSeconds": 6.4,
+          "endSeconds": 9.6,
+          "instruction": "انتقل إلى الآية التالية لاستكشاف كلماتها",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 4,
+          "startSeconds": 9.6,
+          "endSeconds": 12.8,
+          "instruction": "افتح توثيق المصدر الأصلي",
+          "action": "click",
+          "platform": "website"
+        },
+        {
+          "number": 5,
+          "startSeconds": 12.8,
+          "endSeconds": 16.2,
+          "instruction": "اقرأ بيانات المصدر والترخيص المحفوظة محلياً",
+          "action": "observe",
+          "platform": "website"
+        }
+      ]
+    }
+  }
+}

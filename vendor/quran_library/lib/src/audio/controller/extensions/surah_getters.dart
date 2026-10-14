@@ -19,6 +19,20 @@ extension SurahGetters on AudioCtrl {
     return '${reader.recordingRoot}${state.currentAudioListSurahNum.value.toString().padLeft(3, "0")}.mp3';
   }
 
+  Future<String?> cachedWebSurahUrl(int surahNumber) async {
+    if (!kIsWeb || AudioCtrl.webSurahAudioResolver == null) return null;
+    if (surahNumber < 1 || surahNumber > 114) return null;
+    final reader =
+        ReadersConstants.activeSurahReaders[state.surahReaderIndex.value];
+    try {
+      return await AudioCtrl.webSurahAudioResolver!(
+          '${reader.recordingRoot}${surahNumber.toString().padLeft(3, "0")}.mp3');
+    } catch (_) {
+      // Storage denial/eviction must not block ordinary online playback.
+      return null;
+    }
+  }
+
   /// single verse
   /// الحصول على الآية الحالية - Get current ayah
   AyahModel get currentAyah {
@@ -71,7 +85,11 @@ extension SurahGetters on AudioCtrl {
         .isSurahDownloadedByNumber(state.currentAudioListSurahNum.value)
         .value;
     // إذا لم تكن السورة محمّلة وتبين عدم وجود اتصال، لا نحاول تحميل الشبكة
-    if (!isDownloaded && !InternetConnectionController.instance.isConnected) {
+    final browserUrl =
+        await cachedWebSurahUrl(state.currentAudioListSurahNum.value);
+    if (!isDownloaded &&
+        browserUrl == null &&
+        !InternetConnectionController.instance.isConnected) {
       log('Skipped setting audio source: offline and file not downloaded',
           name: 'AudioCtrl');
       return;
@@ -83,7 +101,7 @@ extension SurahGetters on AudioCtrl {
               tag: newMediaItem,
             )
           : AudioSource.uri(
-              Uri.parse(urlSurahFilePath),
+              Uri.parse(browserUrl ?? urlSurahFilePath),
               tag: newMediaItem,
             );
       await state.audioPlayer.setAudioSource(audioSource);

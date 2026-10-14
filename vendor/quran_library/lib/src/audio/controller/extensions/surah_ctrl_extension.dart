@@ -2,11 +2,20 @@ part of '../../audio.dart';
 
 extension SurahCtrlExtension on AudioCtrl {
   Future<void> playPreviousSurah() async {
+    final previous = state.currentAudioListSurahNum.value - 1;
+    final cached = previous >= 1 ? await cachedWebSurahUrl(previous) : null;
+    if (previous < 1 ||
+        (!InternetConnectionController.instance.isConnected &&
+            !state.isSurahDownloadedByNumber(previous).value &&
+            cached == null)) {
+      state.isPlaying.value = false;
+      await state.audioPlayer.pause();
+      return;
+    }
     state.isPlayingSurahsMode = true;
     enableSurahAutoNextListener();
     enableSurahPositionSaving();
     if (state.currentAudioListSurahNum.value > 1) {
-      state.currentAudioListSurahNum.value -= 1;
       state.selectedSurahIndex.value -= 1;
       state.isPlaying.value = true;
       saveLastSurahListen(state.currentAudioListSurahNum.value);
@@ -19,11 +28,20 @@ extension SurahCtrlExtension on AudioCtrl {
   }
 
   Future<void> playNextSurah() async {
+    final next = state.currentAudioListSurahNum.value + 1;
+    final cached = next <= 114 ? await cachedWebSurahUrl(next) : null;
+    if (next > 114 ||
+        (!InternetConnectionController.instance.isConnected &&
+            !state.isSurahDownloadedByNumber(next).value &&
+            cached == null)) {
+      state.isPlaying.value = false;
+      await state.audioPlayer.pause();
+      return;
+    }
     state.isPlayingSurahsMode = true;
     enableSurahAutoNextListener();
     enableSurahPositionSaving();
     if (state.currentAudioListSurahNum.value < 114) {
-      state.currentAudioListSurahNum.value += 1;
       state.selectedSurahIndex.value += 1;
       state.isPlaying.value = true;
       saveLastSurahListen(state.currentAudioListSurahNum.value);
@@ -39,7 +57,12 @@ extension SurahCtrlExtension on AudioCtrl {
       {required BuildContext context,
       required int surahNumber,
       SurahAudioStyle? style}) async {
+    if (surahNumber < 1 || surahNumber > 114) {
+      throw RangeError.range(surahNumber, 1, 114);
+    }
     final isConnected = InternetConnectionController.instance.isConnected;
+    final browserUrl = await cachedWebSurahUrl(surahNumber);
+    if (!context.mounted) return;
 
     // إذا كانت نفس السورة محمّلة والمشغّل جاهز (إيقاف مؤقت)، استأنف فقط
     if (state.isPlayingSurahsMode &&
@@ -53,9 +76,12 @@ extension SurahCtrlExtension on AudioCtrl {
       return;
     }
 
-    if (!isConnected && state.isSurahDownloadedByNumber(surahNumber).value) {
+    if (!isConnected &&
+        (state.isSurahDownloadedByNumber(surahNumber).value ||
+            browserUrl != null)) {
       state.isPlayingSurahsMode = true;
-      state.currentAudioListSurahNum.value = surahNumber;
+      disableSurahAutoNextListener();
+      state.selectSurahNumber(surahNumber);
       await changeAudioSource();
       enableSurahAutoNextListener();
       enableSurahPositionSaving();
@@ -71,7 +97,8 @@ extension SurahCtrlExtension on AudioCtrl {
       }
 
       state.isPlayingSurahsMode = true;
-      state.currentAudioListSurahNum.value = surahNumber;
+      disableSurahAutoNextListener();
+      state.selectSurahNumber(surahNumber);
       cancelDownload();
       // تعيين مصدر الصوت: محلي إذا محمّل، أو بث مباشر من الرابط
       await changeAudioSource();

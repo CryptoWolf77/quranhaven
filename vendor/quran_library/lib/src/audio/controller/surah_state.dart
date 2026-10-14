@@ -56,7 +56,8 @@ class SurahState {
   // كاش لقوائم AudioSource الخاصة بآيات كل سورة لكل قارئ
   final Map<String, List<AudioSource>> ayahPlaylistsCache = {};
   RxInt seekNextSeconds = 5.obs;
-  final box = GetStorage();
+  // GetStorage is a cached factory; defer IO until storage is actually used.
+  GetStorage get box => GetStorage();
   RxInt fileSize = 0.obs;
   RxInt downloadProgress = 0.obs;
   RxBool audioServiceInitialized = false.obs;
@@ -94,6 +95,12 @@ class SurahState {
           .obs;
   RxBool isSheetOpen = false.obs;
   RxInt get currentAudioListSurahNum => (selectedSurahIndex.value + 1).obs;
+
+  /// This is a derived value, not a writable Rx. Select through the actual index.
+  void selectSurahNumber(int number) {
+    if (number < 1 || number > 114) throw RangeError.range(number, 1, 114);
+    selectedSurahIndex.value = number - 1;
+  }
 
   /// إيقاف جميع الاشتراكات / Cancel all subscriptions
   void cancelAllSubscriptions() {

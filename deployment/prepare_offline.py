@@ -15,14 +15,14 @@ MAX_TOTAL_BYTES = 160 * 1024 * 1024
 MAX_FILE_BYTES = 64 * 1024 * 1024
 ROOT_FILES = {
     "index.html", "flutter_bootstrap.js", "main.dart.js", "flutter.js",
-    "manifest.json", "favicon.png", "version.json",
+    "manifest.json", "favicon.png", "version.json", "privacy.html",
 }
 CANVASKIT_FILES = {
     "canvaskit/canvaskit.js", "canvaskit/canvaskit.wasm",
     "canvaskit/chromium/canvaskit.js", "canvaskit/chromium/canvaskit.wasm",
 }
 REQUIRED_FILES = {
-    "index.html", "flutter_bootstrap.js", "main.dart.js", "manifest.json",
+    "index.html", "flutter_bootstrap.js", "main.dart.js", "manifest.json", "privacy.html",
     "canvaskit/canvaskit.js", "canvaskit/canvaskit.wasm",
     "assets/AssetManifest.bin", "assets/FontManifest.json",
     "assets/packages/quran_library/assets/jsons/surahs_name.json.gz",
@@ -79,7 +79,8 @@ def generate(web_root: Path) -> dict:
     bootstrap_path = root / "flutter_bootstrap.js"
     worker_path = root / "quran_service_worker.js"
     offline_index_path = root / "offline-index.bin"
-    if worker_path.is_symlink() or offline_index_path.is_symlink():
+    offline_privacy_path = root / "offline-privacy.bin"
+    if worker_path.is_symlink() or offline_index_path.is_symlink() or offline_privacy_path.is_symlink():
         raise ValueError("Generated offline files must not be symlinks")
     bootstrap = normalize_version(bootstrap_path.read_text(encoding="utf-8"), "SHELL_VERSION")
     worker = normalize_version(worker_path.read_text(encoding="utf-8"), "BUILD_VERSION")
@@ -118,6 +119,9 @@ def generate(web_root: Path) -> dict:
     # original index and the worker stores these verified bytes under that key.
     # This transport alias is deliberately not a separate offline cache entry.
     offline_index_path.write_bytes((root / "index.html").read_bytes())
+    # The public privacy document can receive the same HTML-aware CDN changes.
+    # Its verified transport copy is not a separate offline cache entry.
+    offline_privacy_path.write_bytes((root / "privacy.html").read_bytes())
     (root / "offline-manifest.json").write_text(
         json.dumps(result, ensure_ascii=True, separators=(",", ":")) + "\n", encoding="utf-8", newline="\n")
     return result

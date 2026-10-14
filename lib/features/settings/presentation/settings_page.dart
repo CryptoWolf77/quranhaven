@@ -1,11 +1,14 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/widgets/creator_credit.dart';
 import '../../../l10n/generated/app_localizations.dart';
 import '../../guide/presentation/user_guide_page.dart';
 import '../../offline/presentation/offline_card.dart';
 import '../../reminders/data/reminder_repository.dart';
 import '../../reminders/data/reminder_service.dart';
+import '../../personal/presentation/backup_card.dart';
+import 'privacy_contact_card.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({
@@ -13,6 +16,8 @@ class SettingsPage extends StatefulWidget {
     required this.themeMode,
     required this.onLocaleChanged,
     required this.onThemeModeChanged,
+    this.reminderRepository,
+    this.reminderService,
     super.key,
   });
 
@@ -20,14 +25,18 @@ class SettingsPage extends StatefulWidget {
   final ThemeMode themeMode;
   final ValueChanged<Locale> onLocaleChanged;
   final ValueChanged<ThemeMode> onThemeModeChanged;
+  final ReminderRepository? reminderRepository;
+  final ReminderService? reminderService;
 
   @override
   State<SettingsPage> createState() => _SettingsPageState();
 }
 
 class _SettingsPageState extends State<SettingsPage> {
-  final ReminderRepository _reminderRepository = ReminderRepository();
-  final ReminderService _reminderService = ReminderService();
+  late final ReminderRepository _reminderRepository =
+      widget.reminderRepository ?? ReminderRepository();
+  late final ReminderService _reminderService =
+      widget.reminderService ?? ReminderService();
 
   ReminderSettings _reminder = const ReminderSettings(
     enabled: false,
@@ -35,6 +44,7 @@ class _SettingsPageState extends State<SettingsPage> {
     minute: 0,
   );
   bool _reminderLoading = true;
+  bool _reminderLoadFailed = false;
 
   @override
   void initState() {
@@ -43,73 +53,116 @@ class _SettingsPageState extends State<SettingsPage> {
   }
 
   Future<void> _loadReminder() async {
-    final reminder = await _reminderRepository.load();
-    if (!mounted) return;
-    setState(() {
-      _reminder = reminder;
-      _reminderLoading = false;
-    });
+    if (mounted) {
+      setState(() {
+        _reminderLoading = true;
+        _reminderLoadFailed = false;
+      });
+    }
+    try {
+      final reminder = await _reminderRepository.load();
+      if (reminder.hour < 0 ||
+          reminder.hour > 23 ||
+          reminder.minute < 0 ||
+          reminder.minute > 59) {
+        throw const FormatException('Invalid reminder time');
+      }
+      if (mounted) setState(() => _reminder = reminder);
+    } catch (_) {
+      if (mounted) setState(() => _reminderLoadFailed = true);
+    } finally {
+      if (mounted) setState(() => _reminderLoading = false);
+    }
   }
 
   Future<void> _toggleReminder(bool enabled) async {
-    final l10n = AppLocalizations.of(context);
-    setState(() => _reminderLoading = true);
-    if (!enabled) {
-      await _reminderService.cancelDaily();
-      final updated = _reminder.copyWith(enabled: false);
-      await _reminderRepository.save(updated);
-      if (mounted) {
-        setState(() {
-          _reminder = updated;
-          _reminderLoading = false;
-        });
-      }
-      return;
-    }
-
-    final scheduled = await _reminderService.scheduleDaily(
-      hour: _reminder.hour,
-      minute: _reminder.minute,
-      title: l10n.dailyReminderTitle,
-      body: l10n.dailyReminderBody,
-    );
-    if (!mounted) return;
-    final updated = _reminder.copyWith(enabled: scheduled);
-    await _reminderRepository.save(updated);
-    if (!mounted) return;
-    setState(() {
-      _reminder = updated;
-      _reminderLoading = false;
-    });
-    _message(scheduled ? l10n.reminderEnabled : l10n.notificationDenied);
+    if (_reminderLoading || _reminderLoadFailed) return;
+    await _applyReminder(_reminder.copyWith(enabled: enabled));
   }
 
   Future<void> _chooseReminderTime() async {
+    if (_reminderLoading || _reminderLoadFailed) return;
+    final device24 = MediaQuery.alwaysUse24HourFormatOf(context);
+    final display24 =
+        hourFormat(
+          of: MaterialLocalizations.of(
+            context,
+          ).timeOfDayFormat(alwaysUse24HourFormat: device24),
+        ) !=
+        HourFormat.h;
     final selected = await showTimePicker(
       context: context,
       initialTime: TimeOfDay(hour: _reminder.hour, minute: _reminder.minute),
+      // Match the locale's displayed hour, without changing device preferences.
+      builder: (context, child) => MediaQuery(
+        data: MediaQuery.of(
+          context,
+        ).copyWith(alwaysUse24HourFormat: device24 || display24),
+        child: child!,
+      ),
     );
     if (selected == null || !mounted) return;
-    final updated = _reminder.copyWith(
-      hour: selected.hour,
-      minute: selected.minute,
+    await _applyReminder(
+      _reminder.copyWith(hour: selected.hour, minute: selected.minute),
     );
-    setState(() {
-      _reminder = updated;
-      _reminderLoading = true;
-    });
-    await _reminderRepository.save(updated);
-    if (!mounted) return;
-    if (updated.enabled) {
-      final l10n = AppLocalizations.of(context);
-      await _reminderService.scheduleDaily(
-        hour: updated.hour,
-        minute: updated.minute,
-        title: l10n.dailyReminderTitle,
-        body: l10n.dailyReminderBody,
+  }
+
+  Future<void> _applyReminder(ReminderSettings desired) async {
+    final l = AppLocalizations.of(context), previous = _reminder;
+    setState(() => _reminderLoading = true);
+    var cancelled = false, scheduling = false;
+    try {
+      // Do not claim a replacement until the old notification is cancelled.
+      await _reminderService.cancelDaily();
+      cancelled = true;
+      final off = desired.copyWith(enabled: false);
+      await _reminderRepository.save(off);
+      if (mounted) setState(() => _reminder = off);
+      if (!desired.enabled) return;
+      scheduling = true;
+      final scheduled = await _reminderService.scheduleDaily(
+        hour: desired.hour,
+        minute: desired.minute,
+        title: l.dailyReminderTitle,
+        body: l.dailyReminderBody,
       );
+      if (!scheduled) {
+        _message(l.notificationDenied);
+        return;
+      }
+      scheduling = false;
+      await _reminderRepository.save(desired);
+      if (mounted) setState(() => _reminder = desired);
+      _message(l.reminderEnabled);
+    } catch (_) {
+      if (!cancelled) {
+        _message(l.reminderUpdateFailed);
+        return;
+      }
+      // Stop a new notification when its enabled preference failed to persist.
+      var recovered = true;
+      try {
+        await _reminderService.cancelDaily();
+      } catch (_) {
+        recovered = false;
+      }
+      final safe = previous.copyWith(enabled: false);
+      try {
+        await _reminderRepository.save(safe);
+      } catch (_) {
+        recovered = false;
+      }
+      if (mounted) setState(() => _reminder = safe);
+      _message(
+        !recovered
+            ? l.reminderStateUncertain
+            : scheduling
+            ? l.reminderUpdateFailed
+            : l.localSaveFailed,
+      );
+    } finally {
+      if (mounted) setState(() => _reminderLoading = false);
     }
-    if (mounted) setState(() => _reminderLoading = false);
   }
 
   void _message(String message) {
@@ -169,16 +222,29 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
               const SizedBox(height: 14),
               if (kIsWeb) ...[const OfflineCard(), const SizedBox(height: 14)],
+              const BackupCard(),
+              const SizedBox(height: 14),
               _SettingsCard(
                 title: l10n.dailyReminder,
                 icon: Icons.notifications_none_rounded,
-                child: _ReminderControls(
-                  settings: _reminder,
-                  supported: _reminderService.isSupported,
-                  loading: _reminderLoading,
-                  onToggle: _toggleReminder,
-                  onChooseTime: _chooseReminderTime,
-                ),
+                child: _reminderLoadFailed
+                    ? Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(l10n.localLoadFailed),
+                          TextButton(
+                            onPressed: _loadReminder,
+                            child: Text(l10n.retry),
+                          ),
+                        ],
+                      )
+                    : _ReminderControls(
+                        settings: _reminder,
+                        supported: _reminderService.isSupported,
+                        loading: _reminderLoading,
+                        onToggle: _toggleReminder,
+                        onChooseTime: _chooseReminderTime,
+                      ),
               ),
               const SizedBox(height: 14),
               _SettingsCard(
@@ -254,6 +320,10 @@ class _SettingsPageState extends State<SettingsPage> {
                   ],
                 ),
               ),
+              const SizedBox(height: 14),
+              const PrivacyContactCard(),
+              const SizedBox(height: 14),
+              const CreatorCredit(),
             ],
           ),
         ),

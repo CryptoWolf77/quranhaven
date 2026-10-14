@@ -1182,6 +1182,14 @@ class QuranLibrary {
       await AudioCtrl.instance
           .startDownloadOrPlayExistsSurah(surahNumber: surahNumber);
 
+  /// Stores the selected whole-Surah recording without starting playback.
+  /// Returns false only on cancellation; a failed download throws.
+  Future<bool> downloadSurahForOffline({required int surahNumber}) =>
+      AudioCtrl.instance.downloadSurahForOffline(surahNumber: surahNumber);
+
+  void cancelOfflineSurahDownload() =>
+      AudioCtrl.instance.cancelOfflineSurahDownload();
+
   /// يلغي عملية تحميل الملفات الصوتية الجارية حالياً.
   /// هذه الدالة مفيدة عندما يريد المستخدم إيقاف التحميل لتوفير البيانات أو تحرير مساحة التخزين.
   /// يمكن استخدامها لإلغاء تحميل أي سورة قيد التحميل حالياً.

@@ -4,9 +4,13 @@ import argparse
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+import re
 
 
 class WebHandler(SimpleHTTPRequestHandler):
+    # Reuse well-framed connections during the hundreds of shell downloads.
+    # Every static/ranged response supplies its exact Content-Length.
+    protocol_version = "HTTP/1.1"
     # Windows registry associations can otherwise label JS as text/plain,
     # which browsers correctly reject for CanvasKit dynamic module imports.
     extensions_map = {
@@ -17,6 +21,7 @@ class WebHandler(SimpleHTTPRequestHandler):
         ".json": "application/json",
         ".bin": "application/octet-stream",
         ".gz": "application/gzip",
+        ".mp4": "video/mp4",
     }
 
     def send_head(self):
@@ -24,7 +29,63 @@ class WebHandler(SimpleHTTPRequestHandler):
         # failures or preserve a MIME type from a different local server.
         if "If-Modified-Since" in self.headers:
             del self.headers["If-Modified-Since"]
+        self._quran_remaining = None
+        path = Path(self.translate_path(self.path)).resolve()
+        root = Path(self.directory).resolve()
+        if path.suffix.lower() == ".mp4" and path.is_file() and root in path.parents:
+            size = path.stat().st_size
+            start, end = 0, size - 1
+            ranged = self.headers.get("Range")
+            # One bounded byte range only, matching the app's offline worker.
+            # If-Range is not supported by this no-store development server.
+            if self.headers.get("If-Range"):
+                ranged = None
+            if ranged:
+                match = re.fullmatch(r"bytes=(\d*)-(\d*)", ranged)
+                invalid = not match or not any(match.groups())
+                if not invalid:
+                    try:
+                        left, right = match.groups()
+                        if left:
+                            start = int(left)
+                            end = int(right) if right else size - 1
+                        else:
+                            suffix = int(right)
+                            start = max(0, size - suffix)
+                            invalid = suffix <= 0
+                        invalid = invalid or start < 0 or start >= size or end < start
+                    except ValueError:
+                        invalid = True
+                if invalid:
+                    self.send_response(416)
+                    self.send_header("Content-Range", f"bytes */{size}")
+                    self.send_header("Content-Length", "0")
+                    self.end_headers()
+                    return None
+                end = min(end, size - 1)
+            source = path.open("rb")
+            source.seek(start)
+            self._quran_remaining = end - start + 1
+            self.send_response(206 if ranged else 200)
+            self.send_header("Content-type", "video/mp4")
+            self.send_header("Accept-Ranges", "bytes")
+            self.send_header("Content-Length", str(self._quran_remaining))
+            if ranged:
+                self.send_header("Content-Range", f"bytes {start}-{end}/{size}")
+            self.end_headers()
+            return source
         return super().send_head()
+
+    def copyfile(self, source, outputfile):
+        if self._quran_remaining is None:
+            return super().copyfile(source, outputfile)
+        remaining = self._quran_remaining
+        while remaining:
+            chunk = source.read(min(64 * 1024, remaining))
+            if not chunk:
+                break
+            outputfile.write(chunk)
+            remaining -= len(chunk)
 
     def end_headers(self):
         self.send_header("Cache-Control", "no-store")

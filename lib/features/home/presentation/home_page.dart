@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/widgets/creator_credit.dart';
+import '../../../core/widgets/quran_brand_mark.dart';
 import '../../../l10n/generated/app_localizations.dart';
+import '../../guide/presentation/user_guide_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
@@ -54,12 +57,7 @@ class HomePage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      CircleAvatar(
-                        radius: 24,
-                        backgroundColor: scheme.primary.withValues(alpha: 0.12),
-                        foregroundColor: scheme.primary,
-                        child: const Icon(Icons.nights_stay_outlined),
-                      ),
+                      const QuranBrandMark(),
                     ],
                   ),
                   const SizedBox(height: 28),
@@ -67,6 +65,8 @@ class HomePage extends StatelessWidget {
                     currentPage: currentPage,
                     onOpenReader: onOpenReader,
                   ),
+                  const SizedBox(height: 18),
+                  _GuideEntry(),
                   const SizedBox(height: 30),
                   Text(
                     l10n.quickAccess,
@@ -105,9 +105,16 @@ class HomePage extends StatelessWidget {
                 onTap: onOpenLibrary,
               ),
             ]),
-            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 270,
-              mainAxisExtent: 112,
+            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent:
+                  MediaQuery.textScalerOf(context).scale(14) > 20 ? 470 : 270,
+              mainAxisExtent:
+                  140 +
+                  (MediaQuery.textScalerOf(context).scale(14) - 14).clamp(
+                        0,
+                        28,
+                      ) *
+                      4,
               mainAxisSpacing: 12,
               crossAxisSpacing: 12,
             ),
@@ -147,7 +154,86 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ),
+        SliverPadding(
+          padding: const EdgeInsets.fromLTRB(24, 0, 24, 32),
+          sliver: SliverToBoxAdapter(
+            child: Align(
+              alignment: AlignmentDirectional.centerStart,
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 1120),
+                child: const CreatorCredit(),
+              ),
+            ),
+          ),
+        ),
       ],
+    );
+  }
+}
+
+class _GuideEntry extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context), s = Theme.of(context).colorScheme;
+    return Material(
+      color: s.surfaceContainer,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+        side: BorderSide(color: s.primary.withValues(alpha: 0.3)),
+      ),
+      child: InkWell(
+        key: const ValueKey('home-guide-open'),
+        borderRadius: BorderRadius.circular(20),
+        onTap: () => Navigator.of(
+          context,
+        ).push(MaterialPageRoute<void>(builder: (_) => const UserGuidePage())),
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: s.primary,
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: Icon(
+                  Icons.play_lesson_outlined,
+                  color: s.onPrimary,
+                  size: 30,
+                ),
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      l.guideStartHere,
+                      style: TextStyle(
+                        color: s.primary,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      l.guideTitle,
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                    const SizedBox(height: 6),
+                    Text(l.guideEntryBody, style: const TextStyle(height: 1.5)),
+                  ],
+                ),
+              ),
+              const SizedBox(width: 8),
+              Icon(Icons.arrow_forward_rounded, color: s.primary),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
@@ -291,28 +377,52 @@ class _QuickAction extends StatelessWidget {
                 ),
               );
             },
-        child: Padding(
-          padding: const EdgeInsets.all(18),
-          child: Row(
-            children: [
-              Container(
-                width: 48,
-                height: 48,
-                decoration: BoxDecoration(
-                  color: scheme.primary.withValues(alpha: 0.12),
-                  borderRadius: BorderRadius.circular(16),
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            if (constraints.maxWidth < 210) {
+              return Padding(
+                padding: const EdgeInsets.all(14),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(icon, color: scheme.primary, size: 30),
+                    const SizedBox(height: 8),
+                    Text(
+                      label,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w700,
+                        height: 1.3,
+                      ),
+                    ),
+                  ],
                 ),
-                child: Icon(icon, color: scheme.primary),
+              );
+            }
+            return Padding(
+              padding: const EdgeInsets.all(18),
+              child: Row(
+                children: [
+                  Container(
+                    width: 48,
+                    height: 48,
+                    decoration: BoxDecoration(
+                      color: scheme.primary.withValues(alpha: 0.12),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: Icon(icon, color: scheme.primary),
+                  ),
+                  const SizedBox(width: 14),
+                  Expanded(
+                    child: Text(
+                      label,
+                      style: const TextStyle(fontWeight: FontWeight.w700),
+                    ),
+                  ),
+                ],
               ),
-              const SizedBox(width: 14),
-              Expanded(
-                child: Text(
-                  label,
-                  style: const TextStyle(fontWeight: FontWeight.w700),
-                ),
-              ),
-            ],
-          ),
+            );
+          },
         ),
       ),
     );

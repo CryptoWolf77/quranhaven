@@ -50,6 +50,21 @@ class VerifiedTafsirCache {
       ? {}
       : (await _store.entries()).map((entry) => entry.url).toSet();
 
+  /// Strict read-only access for search/sharing; never downloads a missing book.
+  Future<String> readSavedText(Uri url, {required bool translation}) async {
+    validateUrl(url);
+    final entry = (await _store.entries()).where((e) => e.url == url).firstOrNull;
+    if (entry == null) throw StateError('Resource is not saved');
+    final bytes = await _store.read(url);
+    if (bytes == null) throw StateError('Resource was removed');
+    try {
+      return verifyAndDecode(bytes, entry, translation: translation);
+    } catch (_) {
+      _invalid.add(url);
+      rethrow;
+    }
+  }
+
   Future<String> loadText(Uri url,
       {required bool translation, void Function(double)? onProgress}) async {
     validateUrl(url);

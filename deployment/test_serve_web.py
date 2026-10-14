@@ -26,7 +26,7 @@ class WebServerTests(unittest.TestCase):
         self.root = Path(directory.name)
         self.content = b"public test asset\x00\xff"
         for name in ("index.html", "main.js", "module.mjs", "module.JS",
-                     "renderer.wasm", "offline-index.bin", "manifest.json", "text.gz"):
+                     "renderer.wasm", "offline-index.bin", "manifest.json", "text.gz", "lesson.mp4"):
             (self.root / name).write_bytes(self.content)
         logging = mock.patch.object(web.WebHandler, "log_message")
         logging.start()
@@ -109,6 +109,34 @@ class WebServerTests(unittest.TestCase):
         self.assertEqual(handler.keywords, {"directory": str(self.root.resolve())})
         factory.return_value.__enter__.return_value.serve_forever.assert_called_once_with()
 
+    def test_video_full_and_byte_ranges_have_exact_bounded_bodies(self):
+        status, headers, body = self.request("/lesson.mp4")
+        self.assertEqual((status, body), (200, self.content))
+        self.assertEqual(headers["Content-type"], "video/mp4")
+        self.assertEqual(headers["Accept-Ranges"], "bytes")
+        for value, start, end in (("bytes=0-3", 0, 3), ("bytes=4-", 4, len(self.content)-1),
+                                  ("bytes=-3", len(self.content)-3, len(self.content)-1),
+                                  ("bytes=0-999", 0, len(self.content)-1)):
+            with self.subTest(value=value):
+                status, headers, body = self.request("/lesson.mp4", headers={"Range": value})
+                self.assertEqual(status, 206)
+                self.assertEqual(body, self.content[start:end+1])
+                self.assertEqual(headers["Content-Range"], f"bytes {start}-{end}/{len(self.content)}")
+                self.assertEqual(headers["Content-Length"], str(len(body)))
+                self.assertEqual(headers["Cache-Control"], "no-store")
+
+    def test_video_invalid_ranges_and_head_do_not_send_extra_data(self):
+        for value in ("bytes=99-", "bytes=5-2", "bytes=-0", "bytes=", "bytes=0-1,4-6", "bad"):
+            with self.subTest(value=value):
+                status, headers, body = self.request("/lesson.mp4", headers={"Range": value})
+                self.assertEqual((status, body), (416, b""))
+                self.assertEqual(headers["Content-Range"], f"bytes */{len(self.content)}")
+        status, headers, body = self.request("/lesson.mp4", method="HEAD", headers={"Range": "bytes=0-3"})
+        self.assertEqual((status, body), (206, b""))
+        self.assertEqual(headers["Content-Length"], "4")
+        status, headers, body = self.request("/lesson.mp4", headers={"Range": "bytes=0-3", "If-Range": "old"})
+        self.assertEqual((status, body), (200, self.content))
+
     def test_main_rejects_invalid_ports_without_opening_a_server(self):
         for port in ("0", "65536"):
             with self.subTest(port=port), \
@@ -120,6 +148,24 @@ class WebServerTests(unittest.TestCase):
                     web.main()
                 self.assertEqual(stopped.exception.code, 2)
                 factory.assert_not_called()
+
+    def test_persistent_connection_keeps_video_and_static_response_boundaries(self):
+        connection = http.client.HTTPConnection(
+            "127.0.0.1", self.server.server_port, timeout=2
+        )
+        self.addCleanup(connection.close)
+        for path, headers, expected in (
+            ("/lesson.mp4", {}, self.content),
+            ("/lesson.mp4", {"Range": "bytes=0-3"}, self.content[:4]),
+            ("/manifest.json", {}, self.content),
+            ("/lesson.mp4", {"Range": "bytes=-3"}, self.content[-3:]),
+        ):
+            with self.subTest(path=path, headers=headers):
+                connection.request("GET", path, headers=headers)
+                response = connection.getresponse()
+                self.assertEqual(response.version, 11)
+                self.assertEqual(response.read(), expected)
+                self.assertEqual(int(response.getheader("Content-Length")), len(expected))
 
 
 if __name__ == "__main__":

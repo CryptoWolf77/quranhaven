@@ -27,14 +27,61 @@ configuration, omit `-TestSigning` and use `-AppBundle` with the same content ro
 Verify the certificate before uploading. See the official
 [Flutter Android release guide](https://docs.flutter.dev/deployment/android).
 
+### Owner-authorized upload key — 2026-10-14
+
+The owner explicitly authorized creation of a new local upload key. It is stored
+outside the repository in `C:\Users\ThaherTech\Documents\Quran Haven Signing`.
+The RSA-3072 PKCS12 key and its password configuration are private; the PEM
+certificate is public. The owner should keep a separate private/offline backup
+of the complete signing folder. Neither the key nor its passwords may be
+committed, included in a container or uploaded with the app bundle.
+
+Certificate SHA-256:
+`52:E9:B3:5A:EB:F9:60:10:2F:EC:DD:F7:52:80:2C:84:4D:F6:A2:40:3A:BC:89:4E:E7:B5:C1:CF:C9:84:4D:19`.
+
+`deployment/create_upload_key.ps1` refuses to overwrite an existing signing
+folder/configuration, restricts the private folder to the current Windows user
+and SYSTEM, and supplies password input to the signing tool through a temporary
+private file rather than command arguments or logs. The temporary input is
+removed after creation. Ignored `android/key.properties` remains local.
+
+Explicit `-TestSigning` takes precedence for emulator upgrade checks so existing
+debug-signed installations can retain their data. The helper rejects the
+`-AppBundle -TestSigning` combination. Production bundle acceptance must still
+check the certificate on the actual artifact before uploading.
+
+## Public privacy contact
+
+The owner approved `admin@yahyazlab.com` for public support/privacy contact on
+2026-10-14. The public policy route is `/privacy.html` with Arabic, English and
+Spanish display options. Personal records remain local; public-content requests,
+third-party audio hosting and the existing website-only Cloudflare analytics
+must not be described as having zero network logging. The policy and store
+Data Safety answers must match the release actually tested and submitted.
+
 ## Still required from the owner
 
-- Public privacy-contact email and approval of accurate data/retention disclosures,
-  including existing CDN analytics and third-party recitation services.
-- Google Play/Apple developer accounts, signing ownership, store artwork/listings.
+- Approval of accurate technical-log/support-mail retention disclosures where
+  those are not established by code; the public contact is now supplied.
+- Google Play legal declarations, audience/content-rating choices, final store
+  listing and release review; local upload signing is now configured.
+- Apple developer account and signing ownership.
 - macOS/Xcode and Apple team configuration for iOS signing and device testing.
 
 ## Acceptance before public store release
+
+Do not infer web-plugin readiness from a successful incremental compilation.
+The pinned local toolchain has previously retained stale compiler output after
+adding plugins. Use a clean, reproducible web build and verify actual video,
+file-picker and external-link behavior. Move only a validated project compiler
+cache to a recoverable task-specific backup when a clean rebuild is necessary;
+never clear user browser/app data or private signing material to repair a build.
+
+Audit the exact Android APK/AAB's packaged 64-bit native libraries with
+`python deployment/audit_android_native.py path/to/artifact`. The read-only
+checker verifies ELF load-segment alignment for 16KB pages; it does not replace
+APK ZIP alignment, signature/certificate, install or device/runtime checks.
+Never pass a private signing key to this checker or to any upload flow.
 
 - Physical Android/iOS: fresh install, upgrade preserving bookmarks/plans, fully
   offline reading, optional downloads, audio interruption/background controls,
@@ -44,8 +91,10 @@ Verify the certificate before uploading. See the official
 - Local storage: existing bookmarks/plans/preferences survive an in-place update;
   uninstall/clear-data warnings accurately explain that no remote recovery exists.
 
-No store enrollment, signing-key creation or CDN
-cache purge is implied by this checklist. Those must use the owner's setup.
+No store enrollment or CDN cache purge is implied by this checklist. Store
+agreements and security-sensitive signing enrollment require action-time owner
+confirmation; the explicitly authorized local upload-key creation is recorded
+above. A submitted release is not live until Google approves and publishes it.
 
 Cloud account recovery and user-database backup gates were cancelled on
 2026-10-01. Public content hosting remains; personal progress is local-only.

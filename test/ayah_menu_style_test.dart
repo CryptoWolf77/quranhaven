@@ -4,6 +4,16 @@ import 'package:quran_flutter/l10n/generated/app_localizations.dart';
 import 'package:quran_library/quran_library.dart';
 
 void main() {
+  test('copyWith preserves optional selected-Ayah item builder', () {
+    List<Widget> builder(BuildContext c, AyahModel a, VoidCallback close) => [
+      const Icon(Icons.edit_note),
+    ];
+    final style = AyahMenuStyle(customMenuItemsBuilder: builder);
+    expect(
+      style.copyWith(playIconColor: Colors.green).customMenuItemsBuilder,
+      same(builder),
+    );
+  });
   test('copyWith preserves localized menu labels when changing colors', () {
     const style = AyahMenuStyle(
       playLabel: 'Play ayah',

@@ -1,0 +1,43 @@
+{
+  "name": "Quran Haven book identity v2",
+  "source": {
+    "tool": "image_gen.imagegen",
+    "mode": "built-in",
+    "intent": "New original logo-brand raster; one generated base and one targeted refinement.",
+    "initialGeneratedFile": "C:/Users/ThaherTech/.codex/generated_images/01a13b6a-ee1d-70f3-be84-722d1f8b186c/exec-b15170fc-abf3-4eb2-b247-cbe1da4c95b9.png",
+    "selectedGeneratedFile": "C:/Users/ThaherTech/.codex/generated_images/01a13b6a-ee1d-70f3-be84-722d1f8b186c/exec-4a1a2a55-070f-42dc-a214-41f166e3b176.png",
+    "inputs": "No external reference or publisher/creator logo. The refinement uses only the first original generated image.",
+    "generationCalls": 2
+  },
+  "requestedPalette": {
+    "emerald": "#146e5c",
+    "ivory": "#f7f2e7",
+    "gold": "#d8c995"
+  },
+  "output": {
+    "workspacePath": "assets/brand/quran-haven-book-v2.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "format": "PNG",
+    "mode": "RGB",
+    "opaque": true,
+    "sha256": "01c29aafee831d03d79682a4aae67afd541a5323e0983ce3125f2df9b9152821"
+  },
+  "visualInspection": {
+    "subject": "Centered bold open book with blank ivory pages and restrained gold cover/spine; no text, Arabic, verse-like marks, other brand or watermark visible.",
+    "actualCornerRGB": [
+      21,
+      106,
+      94
+    ],
+    "observedStyle": "Crisp broad silhouette with slight residual color texture in the tool's returned image. The requested flat colors were not programmatically repainted.",
+    "meaningfulGeometryMeasurement": "Inspection-only threshold R>80 separates ivory/gold geometry from emerald background; maximum radial extent 358.79px is within the 383.17px Android 66/108dp safe radius on the 1254px master.",
+    "approval": "Visual source inspected; independent design/store approval remains pending."
+  },
+  "platformOperations": "Uniform resizing, output-format/sRGB metadata, and ordinary store-feature typography/compositing only. No hand redraw, semantic image edit or background removal.",
+  "preservedPriorMaster": "assets/brand/app-icon-1024.png",
+  "initialPrompt": "Use case: logo-brand.\nAsset type: original Quran Haven app, website, PWA and store icon master.\nPrimary request: a calm, premium, unmistakable open Mushaf/book symbol, designed as a professional small-size app identity, separate from any creator or publisher logo.\nScene/backdrop: full-bleed square, truly opaque, perfectly solid deep emerald background (#146e5c). No rounded corners or border on the master.\nSubject: one centered, bold open-book silhouette with broad warm ivory pages (#f7f2e7), a restrained warm-gold structural spine/cover accent (#d8c995), and graceful arch-like negative space in its book geometry suggesting sanctuary. No separate mosque, arch scene, crescent, stars or extra objects.\nStyle/medium: original flat vector-like raster mark, crisp clean curves, broad filled forms, high contrast, balanced symmetrical proportions, precise antialiasing. Not a photograph, 3D object or mockup.\nComposition/framing: square master, centered; all meaningful book geometry must fit inside a centered circular safe zone whose DIAMETER is about 60% of the canvas (roughly 614 pixels in a 1024-pixel square). This is a circular adaptive-icon safe zone, not a square bounding box. Preserve ample plain emerald around every edge. The book must remain recognizable at 24–48px through its broad silhouette, not fine lines.\nText: none whatsoever. Pages must be blank with no writing, no Arabic characters, no invented verse-like marks, no letters, no numbers, no title, no watermark.\nConstraints: no gradients, texture, grain, lighting, drop shadow, tiny page lines, decorative filigree, hands, device frame, baked icon corner mask, trademarks, publisher marks or another brand. Deliver one polished original square icon.",
+  "refinementPrompt": "Use case: logo-brand / precise-object-edit.\nInput image: the original generated Quran Haven open-book icon; this is the edit target.\nMake one precise refinement only: retain the existing book silhouette, symmetry, two blank pages, gold cover/spine shapes and overall identity, but render it as strictly flat, solid-color logo artwork and fit it comfortably within the adaptive-icon circular safe zone.\nUse a perfectly uniform, opaque full-bleed emerald background (#146e5c), flat warm ivory page fills (#f7f2e7), and flat restrained gold (#d8c995). Remove all visible texture, grain, mottling, shading and gradients from these three color areas. No programmatic-looking page lines or added details.\nKeep the book centered and reduce its total scale slightly, about 15%, so all meaningful colored book geometry including the lower outside cover corners fits inside a central circle whose diameter is about60% of the square. Keep ample plain emerald around it.\nDo not change the book design, add a separate arch/mosque/crescent/star, introduce text, Arabic characters, letters, verses, numbers, watermark, frame, baked rounded corners, shadows, 3D perspective or another brand. Blank pages are mandatory. Output one crisp opaque square master icon."
+}

@@ -6,6 +6,9 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
+if ($AppBundle -and $TestSigning) {
+    throw 'A Google Play app bundle must use the production upload key, not test signing.'
+}
 $quranProjectRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..')).Path
 $quranPreviousLocation = Get-Location
 $quranPreviousJavaOptions = $env:JAVA_TOOL_OPTIONS
