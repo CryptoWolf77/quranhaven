@@ -52,9 +52,12 @@ no network requests. The owner-approved support/privacy address is
   YahyazLab creator logo on Home/Settings. The optional creator link opens
   `https://yahyazlab.com/` only after an external-site confirmation.
 
-The new personal/learning/browser-audio tools and guide are local build-15
-additions under acceptance; the public website remains build 13 until deployed
-and verified.
+The expanded personal/learning/browser-audio tools and guide are published in
+website build 15, deployed from `11baca8` and verified on 2026-10-15. Actual
+notes/collections/backup workflows pass in all three languages; all 39 videos
+pass online and after complete preparation in a new offline page. The five main
+screens also pass 27 language/engine/viewport combinations. See the dated
+evidence and remaining device/store limitations in deployment/VERIFICATION.md.
 Morphology is not a full syntactic treebank, generated Tafsir or word-meaning
 dictionary. Previously unaudited Qiraat/word-info resources remain disabled.
 Cloud accounts and synchronization are cancelled, not pending features.
@@ -100,8 +103,10 @@ existing application ID `org.quranflutter.quran_flutter`.
 See [PLAN.md](PLAN.md) for the current checklist. Phases 1–6 are implemented
 under the revised local-only scope. Phase 7 still needs wider physical-device,
 Safari/iOS and accessibility acceptance. An owner-authorized local Android
-upload key is configured; Phase 8 still needs production-artifact verification,
-store setup/legal declarations and macOS/Xcode access for iOS.
+upload key is configured. The production Android bundle is verified and uploaded
+to the new Quran Haven Google Play app as a draft; store setup and review
+submission are still in progress. iOS still requires macOS/Xcode and Apple
+signing/device acceptance.
 
 Website build 13 was published and verified on 2026-10-12 with local-only storage,
 the multilingual guide, corrected page-field focus and keyboard dismissal,
@@ -112,7 +117,11 @@ panels are hidden; this release supports the agreed Hafs Mushaf.
 Android test build 8 additionally fixes the audio-service
 icons needed by background/media controls and passed in-place emulator upgrade
 and offline playback checks. It is test-signed, not store-ready. The website and
-APK have separate build numbers; the current public website is build 13.
+APK have separate build numbers. Build 13 above is historical; the current
+public website is build 15. The final test APK15 passed an in-place emulator
+upgrade, cold offline playback with correct native media metadata and local
+backup/PNG workflows. The production AAB15 uses the separate authorized upload
+certificate, not the test APK's debug signature.
 Preparing a build locally does not update the public website automatically.
 Historical cloud verification is retained as history in
 `backend/VERIFICATION.md`; it is not part of the current app. Retiring the old

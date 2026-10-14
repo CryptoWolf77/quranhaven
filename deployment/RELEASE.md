@@ -63,10 +63,61 @@ Data Safety answers must match the release actually tested and submitted.
 
 - Approval of accurate technical-log/support-mail retention disclosures where
   those are not established by code; the public contact is now supplied.
-- Google Play legal declarations, audience/content-rating choices, final store
-  listing and release review; local upload signing is now configured.
+- Final Google Play audience choice, accurate Data Safety/service-practice
+  disclosures and release review; signing/legal setup and IARC are recorded
+  below, rather than assumed from a generated bundle.
 - Apple developer account and signing ownership.
 - macOS/Xcode and Apple team configuration for iOS signing and device testing.
+
+### Google Play setup progress — 2026-10-15
+
+The owner approved the app-creation policy/export attestations, Google-managed
+Play App Signing, worldwide distribution (178 supported countries/regions),
+and the IARC terms at the corresponding actions. App
+`4972735598475155183` belongs to the YahyazLab developer account. Production
+release `1.0.0 (15)` is a draft with the upload-signed AAB processed by Google;
+private signing material was not uploaded.
+
+Privacy, unrestricted app access, no ads, no government affiliation, no
+financial features and no health features were saved. Books & Reference and
+the approved support email/official website were saved. The English store
+listing, icon, feature graphic and eight actual native phone captures are
+ready to send for review, with the icon/feature graphic AI labels retained.
+
+The content questionnaire was completed using bundled and downloadable text,
+including textual references, not invented visual scenes. Its saved results
+are ClassInd All ages, ESRB Teen, PEGI 3, USK 12+, and Generic/Russia/South Korea
+3+. The owner was asked whether to target ages 13+ for this store release or
+defer submission for a child-oriented release review. No target-age change is
+authorized by the rating alone, and answers must not be altered to lower it.
+
+The English, Arabic and Spanish listing texts and eight native phone captures
+per locale were saved together. In every locale the order starts with the
+reader, Home and the guide. The Dashboard confirms **9 of 11** initial setup
+tasks complete; only Target audience and Data Safety remain at this stage.
+No tablet/desktop/XR phone screenshots were misrepresented as device captures.
+
+Data Safety is saved as a draft, but Google disables final submission until
+Target audience is completed. The draft records optional collection of IP/
+client identifiers, public-resource request interactions and country inferred
+from IP. The domain's existing Cloudflare HTTP request dashboard visibly
+contains those statistics, independently of the website beacon. No native
+analytics SDK or GPS permission is inferred from that delivery-service data.
+Collection purposes reflect resource functionality, technical traffic
+analytics and security; inferred country is limited to analytics/security.
+The direct requests to external recording hosts are disclosed as sharing
+network identifiers/resource interactions for audio functionality. Country
+processing by our delivery provider is not declared as sharing under the
+service-provider exception. Local notes/bookmarks/search/reading progress are
+not added to these disclosures. No unverified ephemeral/90-day deletion or
+remote deletion mechanism is claimed.
+
+The public policy's three-language request-metadata clarification is prepared
+for deployment, without changing CDN settings or any old Cloud account data.
+Final release review is still in progress.
+**The release has not been sent to Google for review.** The
+owner-requested forced shutdown is conditional on visible in-review status;
+neither draft upload nor a completed IARC form satisfies that condition.
 
 ## Acceptance before public store release
 

@@ -1,6 +1,97 @@
 # Quran Haven release verification
 
-## Final candidate rechecks — 2026-10-15 (not yet published)
+## Public build15 and Android bundle — 2026-10-15
+
+- Deployed source `11baca87d3b55c085963bae622f2e4ac4c2fbc80` through only the
+  Quran Haven website resource `xt9b22auyjtr8m32snvgsxl3`. Coolify deployment
+  `vsbhk46bltstzwsh3pdoicld` reports Success (15m58s); the replacement container
+  passed its health check. The old Cloud resource/data, DNS/CDN settings and
+  unrelated applications were not modified. Existing unsaved General settings
+  were not saved/reset while using the persisted Redeploy configuration.
+- The actual public `/version.json` reports 1.0.0/build15. Its complete verified
+  offline shell is 756 files / 145228009 bytes, release identity
+  `86802ceb10d4634e2f82c83ca4ce0aad0df075f2b212bcb038ab06279400b17c`.
+  The Linux-generated identity differs from the local clean build below.
+- Public Chromium/Firefox/WebKit pass ar/en/es × desktop/tablet/phone navigation
+  for all five main screens (27 combinations). No page exceptions or requests
+  to the cancelled personal-data API were observed. Headless WebKit is not a
+  physical Safari/iOS acceptance result.
+- Public reader bounds/first/last spreads/Arabic search, all five display modes,
+  downloaded Spanish translation/reload/deletion, Khatmah/memorization controls
+  and persistence, complete Ayah1:5 PNG/text/link, late-Surah whole-book search,
+  validated exact114:6 links, Corpus first/last navigation and actual Arabic/
+  Spanish text content pass. Personal notes/collections and real JSON export/
+  invalid input/cancel/safety-copy/replacement/reload pass in all three languages.
+- All 39 public H264 videos pass actual play/pause/seek/replay online, then all
+  39 pass those operations in a new forced-offline page after full preparation.
+  This strict run has zero page/console errors, remote font failures or account
+  API requests. Video decoding was tested in official Chrome, not asserted for
+  every browser codec implementation.
+- Public Al-Fatihah/Abdul Basit download is 669781 bytes, SHA256
+  `7adec6166f88c6a8ade3b28e74764c8baa6a145365299ce28c0de4eb983c904f`.
+  It does not autoplay; reload playback advances2.022→3.628s from a local Blob.
+  A cold offline page plays to2.718s and seeks to8.962s. Cancelled deletion
+  retains the recording; confirmed deletion leaves the verified shell ready.
+- Published privacy disclosures pass three languages,320px/200% text and
+  no-JavaScript anchors, without automatically requesting the portfolio site.
+  The owner-intended all-age audience is disclosed, not certified as Families
+  or legal compliance merely by these UI checks.
+- The exact published content manifest matches source. All44 complete hosted
+  Tafsir/translation gzip-file bodies match their canonical sizes and SHA256.
+  A HEAD-only check initially assumed Content-Length was present; some CDN
+  responses omit it. The full-body audit resolves that test assumption without
+  changing CDN/security settings or weakening integrity checks.
+- Actual Home/Settings creator credits pass in all three public interfaces:
+  no automatic portfolio request, cancellation/Escape closure and a confirmed
+  popup reaching exactly HTTPS yahyazlab.com. Lazy off-screen Settings controls
+  and dialog exit animations are handled by the test, not changed in the app.
+- Production AAB15:185218071 bytes, SHA256
+  `6832d13c35ac3b53455e2c8c346ffe77d623d2911f865b77c2478310a34cc4dd`.
+  Its actual public certificate fingerprint matches the authorized RSA3072
+  upload certificate documented in RELEASE.md. All12 native libraries pass
+  ELF alignment checks; the bundle config requests PAGE_ALIGNMENT_16K.
+  Google's official bundletool1.18.3 validation passes, package is
+  org.quranflutter.quran_flutter, minSDK24/targetSDK36. JAR verification passes
+  with a self-signed/no-timestamp and archive-order diagnostic; these are
+  retained rather than silently hidden. This is not Google review approval.
+- After specific owner confirmation of policy/export declarations, created
+  only Quran Haven in the YahyazLab account (app4972735598475155183). A separate
+  action-time owner approval confirms Google-managed Play App Signing and the
+  bundle upload. The processed artifact15(1.0.0),mapping/native symbols and
+  ar/en-US/es-ES release notes are saved in production draft1. No private key
+  or signing password was uploaded. Store setup/review submission remains open.
+- The Google Play Dashboard now confirms9/11 initial setup tasks complete.
+  Privacy/access/no-ads/government/financial/health disclosures, IARC and
+  category/contact are saved. Store text is saved in en-US/ar/es-ES with eight
+  genuine1080×1920 final native captures per language. Each order begins with
+  reader/Home/guide; no screenshot of an untested physical/tablet/iOS device is
+  fabricated. The icon and feature graphic's AI labels are retained.
+- The saved IARC results are ClassInd All ages, ESRB Teen, PEGI3, USK12+ and
+  Generic/Russia/South Korea3+. Textual references in bundled/downloadable
+  resources were disclosed, without claiming visual scenes. One downloaded
+  Tafsir explicitly discusses prohibited intoxicating substances; raw keyword
+  matches in other texts also refer to ordinary grass or seclusion and are not
+  indiscriminately classified as drug content. Target audience is not silently
+  changed to fit the results; an owner decision is pending. Data Safety and
+  actual Google review submission are still open. No forced shutdown occurred.
+- A read-only check of the project's existing Cloudflare HTTP request dashboard
+  confirms IP/country/client-software and traffic statistics. No Cloudflare
+  setting was changed. Data Safety is saved as a draft for those optional
+  request-data practices (IP identifiers/resource interactions and IP-derived
+  approximate country), not falsely marked zero collection because personal
+  progress is local. Google blocks final submission until Target audience is
+  completed. No GPS, native analytics SDK, remote personal notes, automatic
+  90-day deletion or unimplemented remote deletion mechanism is claimed.
+- The policy request-metadata clarification is available in all three source
+  languages, dated2026-10-15. Local320px/200% and no-JavaScript audience/network
+  checks pass, as do27 multi-engine/language/navigation rows and21 focused
+  320px/200%-text rows. All25 retained native phone PNGs have originalRGBA
+  1080×1920 dimensions and are below8MB;24 are used across the store locales.
+  All18 offline/server tests pass after regenerating the756-file
+  local shell (145231951bytes, identity prefix42a10e282f42). The new policy
+  deployment/public recheck is still pending at this entry.
+
+## Final candidate rechecks — 2026-10-15 (pre-publish history)
 
 - All 39 original H264 videos (13 topics × ar/en/es) play, pause, seek and replay
   in isolated official Chrome. All 39 also pass those operations in a new page
@@ -68,13 +159,15 @@ Final pre-publish recheck after the fixes:
   UI automation cannot capture an idle tree during its continuous animation;
   that diagnostic failure is retained, not a claim of a playback failure.
 
-The website is still build13 below; no source/build/preparation above is a claim
-that Google Play, physical devices or iOS have been accepted or published.
+At the time of these local candidate checks the website was still build13.
+The public build15 results are recorded above; neither section claims Google
+Play approval, physical-device acceptance or iOS publication.
 
-## Local release15 acceptance in progress — 2026-10-14
+## Local release15 acceptance — 2026-10-14 (historical candidates)
 
-This section records development candidates, not a published website or Google
-Play release. The live website remains build13 described below.
+This section records earlier development candidates, not their later publication.
+At that time the live website was build13. The current public build15 and
+Google Play setup evidence are recorded above; the store is not yet in review.
 
 - Original Corpus bytes/source notices retained. Actual morphology navigation,
   indexed first/last Ayahs, raw feature text and source/license controls pass in

@@ -45,8 +45,9 @@ decision is needed for the previously deployed cloud service/data.
 - [x] Prepare disclosures covering local storage, content/audio providers and
   existing website CDN analytics; verify ar/en/es narrow/large-text layouts.
 - [x] Create an owner-authorized private Android upload key outside the repo.
-- [ ] Complete Google Play legal declarations, target audience, signing enrollment
-  and production-bundle submission; no app has been created/uploaded yet.
+- [ ] Complete Google Play target audience, rating, Data Safety, listing and
+  production-review submission. The app and processed AAB15 now exist as drafts;
+  specific owner-approved policy/export and Google-signing steps are complete.
 - [ ] Provide macOS/Xcode, Apple team and physical iOS devices.
 - [ ] Complete install/upgrade, offline, interruption/background audio, denied
   permissions, reminders, large-text and screen-reader acceptance.
@@ -107,7 +108,7 @@ every physical browser/device. See the dated evidence and limitations in
   media-key pause/resume in the emulator. Test signing only; physical devices
   and store signing remain open.
 
-## Expanded local/web scope — build 15 in acceptance
+## Expanded local/web scope — build 15 published
 
 - [x] Personal Ayah notes and arbitrary named Ayah collections, with durable
   local writes, edit/open/reload and confirmed removal.
@@ -127,15 +128,17 @@ every physical browser/device. See the dated evidence and limitations in
   assets; retain the original YahyazLab logo with an explicit external link.
 - [x] Complete independent design acceptance of the guide/UI/media, including
   zoom/reflow, actual seeks, large text and failed-video retry.
-- [ ] Publish and verify the expanded scope through the website resource.
-- [ ] Complete final public/browser acceptance for the expanded scope.
+- [x] Publish and verify the expanded scope through the website resource.
+- [x] Complete the scoped final public/browser functional acceptance for the
+  expanded tools, all 39 online/cold-offline videos and 27 main-screen matrix
+  combinations. Wider physical/device/assistive-technology gates remain above.
 
-Current local browser checks pass notes/collection CRUD and JSON safety-copy/
+Final public build15 checks pass notes/collection CRUD and JSON safety-copy/
 replacement/reload in all three languages, actual Ayah PNG/text/link, last-Surah
-book search and offline saved-Surah playback/seek. Finalized-source and public
-rechecks remain required. Native Android file restore/PNG tools passed actual
-emulator round trips; physical-device/iOS/store gates remain open. Cloud storage
-is cancelled.
+book search and cold-offline saved-Surah playback/seek. Native Android file
+restore/PNG tools passed actual emulator round trips. The owner-approved
+production AAB15 is uploaded to the new Quran Haven Play app as a draft;
+physical-device/iOS/store-review gates remain open. Cloud storage is cancelled.
 
 See [deployment/RELEASE.md](deployment/RELEASE.md) for publication gates,
 [deployment/OFFLINE.md](deployment/OFFLINE.md) for offline boundaries, and
