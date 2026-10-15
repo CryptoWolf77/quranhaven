@@ -4,6 +4,14 @@ A multilingual Flutter Quran app for Android, iOS, Web and PWA, free for everyon
 as Sadakah Jariyah (صدقة جارية). No advertisements, donations, subscriptions or
 paid features.
 
+## iOS release handoff
+
+For continuing the existing project on a Mac, read
+[the Arabic iOS handoff](IOS_HANDOFF_AR.md). It includes the actual Apple bundle
+identifier, SwiftPM setup, signing prerequisites, device acceptance and App Store
+Connect steps. iOS is not yet built, signed or submitted; Android and web results
+must not be presented as iOS acceptance.
+
 ## Local-only personal storage
 
 Since build 6, the app has no accounts, sign-in, cloud backups or cross-device
