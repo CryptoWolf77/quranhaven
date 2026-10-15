@@ -1,6 +1,8 @@
 part of '../audio.dart';
 
 class AudioCtrl extends GetxController {
+  /// Host app artwork configured before creating the native audio controller.
+  static String? initialArtworkAsset;
   /// Optional host-app resolver for a verified browser-local recording.
   /// Return null on a cache miss; native file paths are never changed.
   static Future<String?> Function(String remoteUrl)? webSurahAudioResolver;

@@ -53,6 +53,7 @@ class QuranLibrary {
     Map<int, List<BookmarkModel>>? userBookmarks,
     bool overwriteBookmarks = false,
     NumberConverterCallback? numberConverter,
+    String? audioArtworkAsset,
   }) async {
     if (_isInitialized) return;
     customNumberConverter = numberConverter;
@@ -123,6 +124,7 @@ class QuranLibrary {
     await Future.wait<void>(futures);
 
     /// must be initilized after QuranCtrl, because it uses it
+    AudioCtrl.initialArtworkAsset = audioArtworkAsset;
     AudioCtrl.instance;
 
     // تسجيل الخطوط المحفوظة دفعة واحدة في الخلفية إن كانت متاحة

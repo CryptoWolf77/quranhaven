@@ -20,7 +20,11 @@ Future<void> main() async {
     baseUrl: AppConfig.contentBaseUri?.toString(),
     allowUpstreamFallback: false,
   );
-  await QuranLibrary.init();
+  await QuranLibrary.init(
+    audioArtworkAsset: !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS
+        ? 'assets/brand/quran-haven-book-v2.png'
+        : null,
+  );
   QuranLibrary.initWordAudio();
   runApp(const QuranApp());
 }

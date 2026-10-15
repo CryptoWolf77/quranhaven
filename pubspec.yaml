@@ -28,6 +28,10 @@ dependencies:
   url_launcher: 6.3.3
 
 dev_dependencies:
+  flutter_driver:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
   dio: ^5.9.2
   flutter_test:
     sdk: flutter

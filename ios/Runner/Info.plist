@@ -8,6 +8,12 @@
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
 	<string>Quran Haven</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>ar</string>
+		<string>en</string>
+		<string>es</string>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

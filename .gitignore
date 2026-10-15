@@ -62,6 +62,14 @@ app.*.map.json
 **/*.pem
 **/*.p12
 **/*.pfx
+**/*.p8
+**/*.key
+**/*.mobileprovision
+**/*.provisionprofile
+**/*.certSigningRequest
+**/*.ipa
+**/*.xcarchive/
+**/*.dSYM/
 **/*.part*
 /.agents/
 /.codex/
