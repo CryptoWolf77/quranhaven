@@ -90,9 +90,9 @@ class SurahState {
   bool playSingleAyahOnly = false;
 
   // App icon URL - يمكن للمستخدم تخصيصه / User can customize the app icon URL
-  RxString appIconUrl =
-      'https://raw.githubusercontent.com/alheekmahlib/thegarlanded/master/Photos/Packages/quran_library/quran_library_logo.jpg'
-          .obs;
+  RxString appIconUrl = (AudioCtrl.initialArtworkAsset ??
+          'https://raw.githubusercontent.com/alheekmahlib/thegarlanded/master/Photos/Packages/quran_library/quran_library_logo.jpg')
+      .obs;
   RxBool isSheetOpen = false.obs;
   RxInt get currentAudioListSurahNum => (selectedSurahIndex.value + 1).obs;
 

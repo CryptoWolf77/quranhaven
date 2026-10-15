@@ -802,10 +802,19 @@ class TafsirCtrl extends GetxController {
         tafsirDownloadStatus.value[i] = true;
         continue;
       }
-      final dbName = tafsirAndTranslationsItems[i].databaseName;
+      final resource = tafsirAndTranslationsItems[i];
+      // Translations are saved as <language>.json, while the delivery catalog
+      // names their compressed <language>.json.gz resource.
+      final dbName = resource.isTranslation
+          ? '${resource.fileName}.json'
+          : resource.databaseName;
       String filePath = '${_appDir.path}/$dbName';
       File file = File(filePath);
       final exists = await file.exists();
+      if (exists && !tafsirDownloadIndexList.contains(i)) {
+        tafsirDownloadIndexList.add(i);
+        await box.write('tafsirDownloadIndices', tafsirDownloadIndexList);
+      }
       if (!exists && tafsirDownloadIndexList.contains(i)) {
         tafsirDownloadIndexList.remove(i);
         await box.write('tafsirDownloadIndices', tafsirDownloadIndexList);

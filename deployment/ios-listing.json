@@ -1,0 +1,63 @@
+{
+  "status": "Waiting for Review",
+  "appId": "6823268805",
+  "bundleId": "org.quranflutter.quranFlutter",
+  "sku": "quran-haven-ios",
+  "version": "1.0.0",
+  "build": "15",
+  "primaryLocale": "en-US",
+  "name": "Quran Haven",
+  "copyright": "2026 Yahya Ahmed Nasser AL Hadhrami",
+  "marketingUrl": "https://quranhaven.org/",
+  "releaseMode": "manual-after-approval",
+  "reviewNotes": "No account or sign-in is required. All features are free. The Quran text, 604 page fonts, core reader and 39 guide videos are bundled. Optional Tafsir, translations and recitations need an initial network request; downloaded resources can be used locally. Bookmarks, notes, collections, plans, preferences and reading progress remain on the device. JSON backups are manually exported and imported using user-selected files. There are no ads, donations, subscriptions, in-app purchases, user accounts or personal-data synchronization. The optional YahyazLab portfolio link opens only after the user confirms it. HTTPS verse links identify public verses; Universal Links are not claimed.",
+  "localizations": {
+    "en-US": {
+      "subtitle": "Quran, notes & daily practice",
+      "promotionalText": "A quiet place to read, listen and reflect. Free Quran reading, personal notes, daily plans and practical guides in Arabic, English and Spanish.",
+      "keywords": "Quran,Qur'an,Koran,Islam,Mushaf,tafsir,recitation,Arabic,memorization,bookmarks,offline",
+      "supportUrl": "https://quranhaven.org/privacy.html?lang=en#privacy-en",
+      "description": "Quran Haven is a quiet place for reading, listening, reflection and daily Quran practice. Every feature is free as Sadakah Jariyah, with no ads, donations, subscriptions or paid features.\n\nREAD AND EXPLORE\nRead the Madinah Hafs Mushaf with bundled Quran text and all 604 page fonts. Browse Surahs and Juz, jump to a page, search Arabic Quran text, save bookmarks and return to your last reading position. Choose Arabic, English or Spanish, with light, dark and system appearance.\n\nLISTEN AND LEARN\nChoose from the available recitation profiles, play Surahs or Ayahs, repeat passages and use word-by-word audio for memorization. Download supported Surah recordings for later local playback. Additional Tafsir and translation resources can be downloaded for reading and whole-book search. Network access is needed for initial downloads and word-by-word audio.\n\nBUILD A DAILY PRACTICE\nCreate local Khatmah and memorization plans, set daily targets and track progress. Optional local reminders use your notification permission. Keep personal Ayah notes and named collections. Share an Ayah's complete Arabic text, public verse link or PNG image using the system share sheet.\n\nYOUR PERSONAL RECORDS STAY LOCAL\nThere is no account, cloud backup or cross-device synchronization. Manually export a private JSON backup, preview a chosen backup before replacing local records, and keep a safety copy. Downloaded audio and books are not included in personal backups. Removing the app or its data can erase saved records.\n\nPRACTICAL GUIDES AND ORIGINAL SOURCES\nExplore 13 guide topics in three languages with 39 bundled visual demonstrations. Quranic Arabic Corpus tools show original word segments, parts of speech, roots and features where present, with preserved source and license notices. They are not a full syntactic analysis or a word-meaning dictionary.\n\nPublic-content and recitation requests expose technical request information to their hosts. Local storage does not mean there are no network requests. Read the privacy policy for delivery providers and optional external links.\n\nSupport and privacy: admin@yahyazlab.com",
+      "name": "Quran Haven"
+    },
+    "ar": {
+      "subtitle": "المصحف والتلاوات وخطط القراءة",
+      "promotionalText": "مساحة هادئة للقراءة والاستماع والتدبر، مع ملاحظات شخصية وخطط يومية ودليل عملي بالعربية والإنجليزية والإسبانية. جميع الخصائص مجانية.",
+      "keywords": "قرآن,القرآن,مصحف,تفسير,تلاوة,حفظ,ختمة,تدبر,آيات,ملاحظات,علامات,دون اتصال",
+      "supportUrl": "https://quranhaven.org/privacy.html?lang=ar#privacy-ar",
+      "description": "Quran Haven مساحة هادئة لقراءة القرآن والاستماع إليه والتدبر وبناء عادة يومية. جميع الخصائص مجانية صدقة جارية، بلا إعلانات أو تبرعات أو اشتراكات أو مزايا مدفوعة.\n\nالقراءة والتصفح\nاقرأ مصحف المدينة برواية حفص، بنص القرآن وخطوط الصفحات الـ604 المضمّنة محلياً. تصفح السور والأجزاء، وانتقل إلى صفحة، وابحث في النص القرآني العربي، واحفظ العلامات وعُد إلى آخر موضع قراءة. يدعم التطبيق العربية والإنجليزية والإسبانية، والمظهر الفاتح والداكن والتابع للنظام.\n\nالاستماع والتعلّم\nاختر من ملفات التلاوة المتاحة، وشغّل السورة أو الآية وكرر المقاطع واستخدم صوت الكلمات للمساعدة في الحفظ. نزّل تسجيلات السور المدعومة للاستماع إليها محلياً لاحقاً. يمكن تنزيل موارد التفسير والترجمات لقراءتها والبحث في كامل الكتاب. يحتاج التنزيل الأول وصوت الكلمات إلى الإنترنت.\n\nعادة يومية وبيانات شخصية\nأنشئ خطط ختمة وحفظ محلية بأهداف يومية وتتبّع التقدم. التذكيرات المحلية اختيارية وتستخدم إذن الإشعارات. أضف ملاحظات الآيات والمجموعات المسماة، وشارك نص الآية العربي الكامل أو رابطها العام أو صورتها PNG عبر قائمة مشاركة النظام.\n\nالتخزين المحلي\nلا حسابات ولا نسخ احتياطي سحابي ولا مزامنة بين الأجهزة. صدّر ملف JSON خاصاً بك يدوياً، وراجع معاينة ملف الاستعادة قبل استبدال بياناتك، واحتفظ بنسخة أمان. لا تشمل النسخة الشخصية الكتب أو التسجيلات المنزلة. قد يؤدي حذف التطبيق أو بياناته إلى فقد المحفوظات.\n\nدليل عملي ومصادر أصلية\n13 موضوعاً بثلاث لغات و39 عرضاً مرئياً مضمّناً. تعرض أدوات Quranic Arabic Corpus المقاطع الأصلية وأقسام الكلمات والجذور والخصائص عند توافرها، مع إشعارات المصادر والتراخيص. هذه الأدوات ليست إعراباً كاملاً أو معجماً لمعاني الكلمات.\n\nتُظهر طلبات الموارد العامة والتلاوات معلومات تقنية عن الطلب لجهات الاستضافة. لا يعني التخزين المحلي انعدام اتصالات الشبكة. راجع سياسة الخصوصية لمعلومات مزودي التوصيل والروابط الخارجية الاختيارية.\n\nالدعم والخصوصية: admin@yahyazlab.com",
+      "name": "Quran Haven: ملاذ القرآن"
+    },
+    "es-ES": {
+      "subtitle": "Corán, notas y práctica diaria",
+      "promotionalText": "Un espacio tranquilo para leer, escuchar y reflexionar. Lectura del Corán, notas, planes y guías prácticas en árabe, inglés y español, gratis.",
+      "keywords": "Corán,Coran,Quran,Islam,Mushaf,tafsir,recitación,árabe,memorización,notas,marcadores,sin conexión",
+      "supportUrl": "https://quranhaven.org/privacy.html?lang=es#privacy-es",
+      "description": "Quran Haven es un espacio tranquilo para leer, escuchar, reflexionar y cultivar una práctica diaria del Corán. Todas las funciones son gratuitas como Sadakah Jariyah, sin anuncios, donaciones, suscripciones ni funciones de pago.\n\nLEE Y EXPLORA\nLee el Mushaf de Medina en la lectura Hafs, con el texto del Corán y las fuentes de sus 604 páginas incluidos. Explora suras y yuz, ve a una página, busca texto árabe, guarda marcadores y vuelve a tu última posición. Elige árabe, inglés o español y el aspecto claro, oscuro o del sistema.\n\nESCUCHA Y APRENDE\nElige entre los perfiles de recitación disponibles, reproduce suras o aleyas, repite pasajes y utiliza audio palabra por palabra para memorizar. Descarga grabaciones de suras compatibles para escucharlas localmente. Puedes descargar recursos adicionales de tafsir y traducción y buscar en un libro completo. Las descargas iniciales y el audio palabra por palabra necesitan internet.\n\nUNA PRÁCTICA DIARIA\nCrea planes locales de jatma y memorización, fija objetivos diarios y registra el progreso. Los recordatorios locales son opcionales y utilizan tu permiso de notificaciones. Guarda notas de aleyas y colecciones con nombre. Comparte el texto árabe completo de una aleya, su enlace público o una imagen PNG mediante la hoja de compartir del sistema.\n\nTUS REGISTROS PERSONALES SON LOCALES\nNo hay cuentas, copias de seguridad en la nube ni sincronización entre dispositivos. Exporta manualmente una copia JSON privada, revisa un archivo elegido antes de reemplazar registros y conserva una copia de seguridad. Las copias personales no incluyen libros ni audio descargados. Eliminar la aplicación o sus datos puede borrar los registros guardados.\n\nGUÍAS PRÁCTICAS Y FUENTES ORIGINALES\nExplora 13 temas de guía en tres idiomas con 39 demostraciones visuales incluidas. Las herramientas de Quranic Arabic Corpus muestran segmentos originales, categorías gramaticales, raíces y rasgos cuando están disponibles, con los avisos de fuente y licencia. No son un análisis sintáctico completo ni un diccionario de significados.\n\nLas solicitudes de contenido público y recitaciones exponen información técnica a sus servidores. El almacenamiento local no significa que no haya solicitudes de red. Consulta la política de privacidad sobre los proveedores y enlaces externos opcionales.\n\nSoporte y privacidad: admin@yahyazlab.com",
+      "name": "Quran Haven: Corán"
+    }
+  },
+  "ageRating": {
+    "calculated": "13+",
+    "override": false,
+    "kids": false,
+    "ownerApproved": "2026-10-15"
+  },
+  "availability": {
+    "currentCountriesOrRegions": 174,
+    "excluded": [
+      "France"
+    ],
+    "futureMarkets": true,
+    "ownerApproved": "2026-10-15",
+    "franceReason": "Temporarily excluded with owner approval while French encryption documentation is unresolved."
+  },
+  "encryptionDeclaration": {
+    "standardAlgorithmsOutsideAppleOS": true,
+    "proprietaryAlgorithms": false,
+    "distributionInFrance": false,
+    "appleBuildStatus": "Ready to Submit"
+  },
+  "submittedAt": "2026-10-15T22:27:00+04:00",
+  "submissionId": "06d1f905-0784-43bd-a739-e1b2ac4ef699"
+}
